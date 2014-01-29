@@ -328,7 +328,11 @@ if ($cms_wwwredirect==1)
 
 	if ($tttttmp[0]!=$ttttttmp[0])
 	{
-		header("location: ".$cms_site);
+		$request_url 	= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+		$tmp_array 		= explode("/", str_replace(str_replace("http://","",$cms_site), "", $request_url));
+		array_shift($tmp_array);
+		$new_params 	= "/".implode("/", $tmp_array);
+		header("location: ".$cms_site.$new_params);
 		exit;
 	};
 };
