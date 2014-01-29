@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /link/
+Disallow: /go/
+Disallow: /gosite/
+Disallow: /rotator/
+Disallow: /getfile/
+Disallow: /pm/
+Disallow: /editprofile/
+Disallow: /restore/
+Disallow: /newuser/

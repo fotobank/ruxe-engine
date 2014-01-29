@@ -1,0 +1,54 @@
+body {
+	font-family:verdana,arial,tahoma;
+	font-size:10pt;
+}
+
+A:link { 
+	FONT-WEIGHT: normal; font-size: 10pt; COLOR: #0000A0; TEXT-DECORATION: UNDERLINE; 
+}
+
+A:visited { 
+	FONT-WEIGHT: normal; font-size: 10pt; COLOR: #0000A0; TEXT-DECORATION: UNDERLINE; 
+}
+
+A:hover {
+	FONT-WEIGHT: normal; font-size: 10pt; COLOR: red; TEXT-DECORATION: NONE; 
+}
+
+.ro {
+	text-indent: 30px;
+}
+
+.ro2 {
+	text-indent: 70px;
+}
+
+.ro3 {
+	text-indent: 30px;
+	color: #5D5D5D;
+	font-style:italic;
+}
+
+zagline {
+	
+}
+
+.optionstable{
+	border-left: solid 1px silver;
+	border-top: solid 1px silver;
+	text-align:left;
+}
+
+.optionstable td{
+	border-bottom: solid 1px silver;
+	border-right:solid 1px silver;
+	background-color:white;
+	font-size:10pt;
+	padding:4px;
+}
+
+.titletable td {
+	background-color:#e5e5e5;
+	font-weight: bold;
+	font-size:10pt;
+}

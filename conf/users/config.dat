@@ -1,0 +1,17 @@
+<?
+$polecaption[1] = "ICQ";
+$pole[1] = "1";
+$polecaption[2] = "Сайт";
+$pole[2] = "1";
+$polecaption[3] = "Jabber";
+$pole[3] = "1";
+$polecaption[4] = "Страна";
+$pole[4] = "1";
+$polecaption[5] = "Skype";
+$pole[5] = "1";
+$polecaption[6] = "";
+$pole[6] = "";
+$polecaption[7] = "";
+$pole[7] = "";
+$lastid = 10;
+?>

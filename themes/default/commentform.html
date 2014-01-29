@@ -1,0 +1,129 @@
+<br>
+<noscript>
+	<center>
+		<table border=0 cellpadding=1 cellspacing=0>
+			<tr><td><font color="red"><b>ВКЛЮЧИТЕ ПОДДЕРЖКУ JAVASCRIPT В ВАШЕМ БРАУЗЕРЕ</b></font></td></tr>
+			<tr><td><font color="red">Для полноценной работы необходимо включить JavaScript в Вашем браузере</font></td></tr>
+		</table>
+	</center><br>
+</noscript>
+<script type="text/javascript">
+function copyText(name) {
+  
+  if (window.getSelection) {
+     txt = window.getSelection().toString();
+  } else if (document.getSelection) {
+    txt = document.getSelection();                
+  } else if (document.selection) {
+    txt = document.selection.createRange().text;
+  }
+ if (txt == "") {txt = '[b]'+name+'[/b], ';} else {txt = "[quote="+name+"]"+txt+"[/quote]\n";};  
+ document.getElementById('mess').value+=txt;
+}
+function tag (TXT, startTag, endTag)
+{
+TXT.focus ();
+if (document.selection) with (document.selection.createRange ())
+   {
+   var t = text; text = startTag + text + endTag;
+   if (!t.length) moveEnd ('character', endTag.length * (-1)); select ();
+   }
+else if (TXT.selectionStart >= 0) with (TXT)
+   {
+   var sT = scrollTop, sL = scrollLeft, t = value,
+   stS = selectionStart, leS = selectionEnd - stS,
+   w = (startTag + t.substr (stS, leS) + endTag).length;
+   value = t.substr (0, stS) + startTag + t.substr (stS, leS) + endTag + t.substr (stS + leS);
+   if (leS) 
+   {
+     selectionStart = stS + w;
+     selectionEnd = selectionStart;
+   }
+   else
+   {
+     selectionStart = stS + startTag.length;
+     selectionEnd = selectionStart;
+   };
+   scrollTop = sT, scrollLeft = sL;
+   }
+else TXT.value += startTag + endTag;
+};
+</script>
+<center><a name="messbox"></a>
+ <form name="post" action="{URL}" method="post">
+   {HIDDENS}
+   <table border=0 style="text-align:left;" cellpadding=2 cellspacing=0>
+    <tr><td>Имя:</td><td>
+    [if_user_entered]
+       <b><a href="{USERLINK}" onClick="window.open('{USERLINK}');return false;">{NAME_VALUE}</a></b>
+    [/if_user_entered]
+    [if_user_not_entered]
+       <input maxlength=32 name="ruxeimya" type="text" size=30 {NAME_VALUE}></td></tr>
+       <tr><td>E-mail:</td><td><input maxlength=60 name="ruxemylo" type="text" size=30 {MAIL_VALUE}>
+    [/if_user_not_entered]
+    </td></tr>
+    [if_pm_list]
+      <tr><td>Кому: </td><td><select name="to">{PM_TO}</select></td></tr>
+    [/if_pm_list]
+    [if_pm_input]
+      <tr><td>Кому: </td><td><input type="text" name="to" value="{PM_TO}" maxlength=20 size=30></td></tr>
+    [/if_pm_input]
+    [if_pm]
+      <tr><td>Тема: </td><td><input type="text" name="theme" maxlength=50 size=30></td></tr>
+    [/if_pm]
+    [if_here_mail]
+       <tr><td>Тема:</td><td>
+         <select style="font-size:10pt;" name="subject">
+           {THEMES}
+         </select>
+       </td></tr>
+    [/if_here_mail]
+    [if_can_smiles]
+    <tr><td colspan=2>
+     <input type="button" onClick="if (document.getElementById('smiles').style.display=='none'){document.getElementById('smiles').style.display='block';} else {document.getElementById('smiles').style.display='none';};"
+     value="=)">
+     <table bgcolor="white" class="smilestable" cellpadding=1 cellspacing=0 id="smiles" style="position:absolute;display:none;">
+      <tr><td width=380 align="center">
+       [SMILES={<img alt="{SMILE}" src="{SITE}/includes/smiles/{SMILE}.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById('mess'),'[{SMILE}]',''); document.getElementById('smiles').style.display='none';"> &nbsp;}/SMILES]
+      </td></tr>
+     </table>
+     <input type="button" value="ж" style="font-weight:bold" onClick="tag(document.getElementById('mess'),'[b]','[/b]');">
+     <input type="button" value="к" style="font-style:italic" onClick="tag(document.getElementById('mess'),'[i]','[/i]');">
+     <input type="button" value="ч" style="text-decoration:underline" onClick="tag(document.getElementById('mess'),'[u]','[/u]');">
+     <input type="button" value="п" style="text-decoration:line-through" onClick="tag(document.getElementById('mess'),'[s]','[/s]');">
+     <input type="button" value="&lt;==" onClick="tag(document.getElementById('mess'),'[left]','[/left]');">
+     <input type="button" value="&lt;=&gt;" onClick="tag(document.getElementById('mess'),'[center]','[/center]');">
+     <input type="button" value="==&gt;" onClick="tag(document.getElementById('mess'),'[right]','[/right]');">
+     <input type="button" value="спойлер" onClick="tag(document.getElementById('mess'),'[spoiler=Заголовок спойлера]','[/spoiler]');">
+     <input type="button" value="цитата" onClick="tag(document.getElementById('mess'),'[quote]','[/quote]');">
+     <input type="button" value="скрыть" onClick="tag(document.getElementById('mess'),'[hide]','[/hide]');">
+     [if_pmurl]<input type="button" value="ссылка" onClick="tag(document.getElementById('mess'),'[url]','[/url]');">[/if_pmurl]
+    </td></tr>
+    [/if_can_smiles]
+    <tr><td colspan=2><textarea id="mess" name="ruxesoobchenie" rows=8 cols=75 style="width:620px; height:90px;">{MESSAGE_VALUE}</textarea><br>
+    <div id="info" style="text-align:right; color:gray; font-size:8pt;"></div></td></tr>
+    [if_user_not_entered]
+                         <tr><td>Код: </td><td><img alt="" border=0 src="{SECURITY}"></td></tr>
+                         <tr><td>Введите код: </td><td><input name="ruxekod" type="text" maxlength=10 size=30></td></tr>   
+    [/if_user_not_entered]
+    <tr><td colspan=2><input type="hidden" name="from" value="{FROM}"><input type="submit" name="submit" value="Отправить"></td></tr>
+   </table>
+ </form>
+ <script type="text/javascript">
+
+           function check()  {
+            var len = document.getElementById('mess').value.length; 
+            var result = {MAXMESSAGE} - len;
+            if (result<0)
+            {
+              document.getElementById('info').innerHTML = result*(-1) + " символов будет удалено"; 
+            }
+            else
+            {
+              document.getElementById('info').innerHTML = "Осталось " + result + " символов";
+            }
+            }
+            setInterval(check,100);
+ 
+ </script>
+</center>
