@@ -1,3 +1,5 @@
 .idea
 /avatars/*
 !avatars/noavatar.png
+/rpanel/backups/*
+!rpanel/backups/index.html
