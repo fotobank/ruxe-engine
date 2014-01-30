@@ -468,4 +468,3 @@ Roman Mamedov<br><br>
   $ar = array("{MENU}","{OPTIONS}");
   $br = array("",$echooptions);
   echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
-?>

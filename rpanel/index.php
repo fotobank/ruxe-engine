@@ -2881,4 +2881,3 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
   $log = fopen("../conf/logs/rpanel.log","a");
   fputs($log,"<b>Логин:</b> ".$Filtr->clear($login)."<br><B>IP:</B> ".$Filtr->clear($_SERVER['REMOTE_ADDR'])."<br><B>Дата и время:</B> ".date("d.m.y H:i:s")."<br><b>Браузер: </b>".$Filtr->clear($_SERVER['HTTP_USER_AGENT'])."<br><b>Раздел: </b>".$whatdoing."<br><b>Параметры: </b>?".$Filtr->clear($_SERVER['QUERY_STRING'])."\r\n");
   fclose($log);};
-?>

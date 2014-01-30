@@ -1263,7 +1263,6 @@ class GlobalUsers
 			fwrite($n,"\$pole[".$i."] = \"".$pole[$i]."\";\r\n");
 		};
 		fwrite($n,"\$lastid = ".($lastid+1).";\r\n");
-		fwrite($n,'?>');
 		flock($n,LOCK_UN);
 		fclose($n);
 		return $lastid+1;
@@ -2120,7 +2119,7 @@ class GlobalBFG
 		global $cms_root;
       		include($cms_root."/conf/rss.dat");
       		$rss_dat = fopen($cms_root."/conf/rss.dat","w");
-      		fwrite($rss_dat,"<?\r\n\$rss_pub_date = \"".date("D, d M Y H:i:s")."\";\r\n\$rss_gdd = \"".$rss_gdd."\";\r\n\$cms_rss_id = \"".$cms_rss_id."\";\r\n?>");
+      		fwrite($rss_dat,"<?\r\n\$rss_pub_date = \"".date("D, d M Y H:i:s")."\";\r\n\$rss_gdd = \"".$rss_gdd."\";\r\n\$cms_rss_id = \"".$cms_rss_id."\";\r\n");
       		fclose($rss_dat);
 	}	
 	
@@ -3882,4 +3881,3 @@ function updatesearch() {
 		updatesearchdb();
 }
 //
-?>

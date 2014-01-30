@@ -5,4 +5,3 @@
 			$backup_downloads="keybook=1|ноутпад=2";
 			$backup_views="test=27";
 			$backup_links="";
-			?>

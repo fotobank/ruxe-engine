@@ -88,4 +88,3 @@ $cms_title_length	= 75;
 $cms_registration	= 1;
 $cms_nav_back		= 0;
 $cms_top_news_max	= 5;
-?>

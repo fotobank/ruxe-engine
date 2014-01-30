@@ -596,4 +596,3 @@ $GlobalTemplate->generate_content();
 
 if (isset($_SESSION['captcha_keystring'])) unset($_SESSION['captcha_keystring']);
 
-?>

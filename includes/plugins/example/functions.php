@@ -67,4 +67,3 @@
       $pageredirect = "http://engine.ruxesoft.net";
     };
   };
-?>

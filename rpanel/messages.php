@@ -243,4 +243,3 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
 	$ar = array("{MENU}","{OPTIONS}");
 	$br = array("",$menu.$options);
 	echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
-?>

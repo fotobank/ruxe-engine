@@ -327,4 +327,3 @@ $logincms[13]='<a style="text-decoration:underline;" href="{LINK}">{CAPTION}</a>
 
 //Обязательный системный параметр. Вручную не вносить НИКАКИХ изменений!
 $logincms[90] = "0.2";
-?>

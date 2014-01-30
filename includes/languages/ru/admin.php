@@ -32,4 +32,3 @@
 	$acms['bfg_length_title']		=	'Ошибка';
 	$acms['bfg_length_message']		=	'Длина идентификатора должна быть как минимум 3 символа';
 	$acms['bfg_length_back']		=	'?action=bfg&go=new';
-?>

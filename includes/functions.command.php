@@ -1149,4 +1149,3 @@ global $cms_root,$cms_site,$cms_smiles,$_GET,$_SERVER,$_POST,$lcms,
 	}; 
 };
 
-?>

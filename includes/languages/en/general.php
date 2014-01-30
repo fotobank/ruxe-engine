@@ -207,4 +207,3 @@ $lcms['news_empty'] = "<br><center><h2>The news section {WHO} is empty!</h2></ce
 $lcms['regclosed'] = "Registration from a site is disconnected by the admin.";
 //1.4.5
 $lcms['comments_closed'] = "<br><br><center>Администратор отключил комментирование в данном разделе.</center><br>";
-?>

@@ -254,4 +254,3 @@ $ocms[90] = "0.2";
 //{FULLCOUNTER} - число просмотров + поясняющее слово (напр., 98 просмотров)
 $ocms[30] = '<a href="{URL}" style="font-size:8pt;">{CAPTION}</a><font style="font-size:8pt;"> ({FULLCOUNTER})</font><br>';
 
-?>

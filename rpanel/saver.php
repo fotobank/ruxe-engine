@@ -362,7 +362,7 @@ if (isset($_GET['saverdo']))
 			\$backup_downloads=\"".$backup_downloads."\";
 			\$backup_views=\"".$backup_views."\";
 			\$backup_links=\"".$backup_links."\";
-			?>");
+			");
   			fclose($file);
   			$tmpfile = file("../conf/config.php");
   			$file = fopen("../conf/backup2.php","w");
@@ -932,7 +932,7 @@ if (isset($_GET['saverdo']))
       					fwrite($config,"\$pole[".$i."] = true;\r\n");
      				};
   			};
-  			fwrite($config,"\$lastid=".$lastid.";\r\n?>");
+  			fwrite($config,"\$lastid=".$lastid.";\r\n");
   			fclose($config);
   
   			$file = fopen("../conf/users/hidepages.dat","w");
@@ -1837,7 +1837,7 @@ if (isset($_GET['saverdo']))
 					\$rss_pub_date = \"".$rss_pub_date."\";
 					\$rss_gdd = \"".$Filtr->clear($_POST['rss'])."\";
 					\$cms_rss_id = \"".$Filtr->clear($_POST['rss_id'])."\";
-			?>");
+			");
 			fclose($rss);
 			if ($cms_punycode==1)
 			{
@@ -1936,7 +1936,7 @@ if (isset($_GET['saverdo']))
 					\$cms_registration	= ".(int)$_POST['registration'].";
 					\$cms_nav_back		= ".(int)$_POST['nav_back'].";
 					\$cms_top_news_max	= ".(int)$_POST['top_news_max'].";
-?>");
+");
 
 			$cms_rewrite          = 1;
 			$cms_rewrite_ext      = $Filtr->clear($_POST['rewrite_ext']);
@@ -1949,4 +1949,3 @@ if (isset($_GET['saverdo']))
 	};
 };
 
-?>

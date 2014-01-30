@@ -116,4 +116,3 @@ if (isset($_POST['submit']))
        		echo $GlobalTemplate->template($ar,$br,$cms_root."/rpanel/theme/somemessages.tpl");
 	};
 };
-?>

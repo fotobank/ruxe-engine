@@ -8,4 +8,4 @@ if ($GlobalUsers->checkthisadmin()==false)
 	header('location: index.php');
 	exit;
 };
-?>
+

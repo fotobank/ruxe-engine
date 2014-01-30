@@ -1104,7 +1104,7 @@ echo '</div>
 \$cms_registration	= ".$cms_registration.";
 \$cms_nav_back		= ".$cms_nav_back.";
 \$cms_top_news_max	= ".$cms_top_news_max.";
-?>");
+");
                 fclose($file); 
                 
                 $new	=	fopen('conf/checkbackup.dat','w');
