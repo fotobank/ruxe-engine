@@ -3237,7 +3237,7 @@ class FileManager
 				'</style>{CREDITS}',
 						$zxctext);
 		fwrite($zxcnfile, str_replace('{CREDITS}',
-			'<span style="color:silver; font-family:verdana,arial,tahoma; font-size:10pt;font-weight:bold;">Powered by <a href="http://ruxe-engine.ru/" style="color:silver;" target="_blank">Ruxe Engine</a></span>',
+			'<span style="color:silver; font-size:1em;">Powered by <a href="http://ruxe-engine.ru/" style="color:silver;" target="_blank">Ruxe Engine</a></span>',
 						$zxctext));
 		fclose($zxcnfile);
 		if ($zxcchmod) 
