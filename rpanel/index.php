@@ -469,8 +469,11 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
   			if (function_exists('file_get_contents'))
   			{
        				$this_date    = date("d.m.y");
-       				$ld           = file("../conf/last_checkver.dat");
-       				$ls           = explode("|",$ld[0]);
+					$checkVerFile = file("../conf/last_checkver.dat");
+       				$ld           = "";
+					foreach ($checkVerFile as $line)
+						$ld .= str_replace(array("\r", "\n"), "", $line);
+       				$ls           = explode("|",$ld);
        				$new_version  = $ls[1];
        				if ($this_date!=$ls[0])
        				{
