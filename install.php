@@ -45,7 +45,7 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
 13) Если вы не согласны с условиями данного Лицензионного соглашения, вы обязаны удалить 
 программу и все её части с ваших носителей.
 */
-$version	=	'1.5';
+$version	=	'1.71';
 $tmp		=	file('conf/this_version.dat');
 if ($version!=str_replace(array("\r","\n"),'',$tmp[0]))
 {

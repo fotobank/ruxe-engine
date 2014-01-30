@@ -46,7 +46,7 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
 программу и все её части с ваших носителей.
 */
 	define("ADMINCENTER", true);
-	$this_version 	= 	"1.5";
+	$this_version 	= 	"1.71";
 	$theme_version	=	"0.2";
   $login 	= "no";
   $password 	= "no";
