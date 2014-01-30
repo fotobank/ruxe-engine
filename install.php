@@ -170,7 +170,7 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
 			 <div class="text"><h3>Лицензионное соглашение</h3>
 				<form name="license" method="post" action="?step=2&amp;rand='.rand(1,9999).'">
 					<textarea rows=25 readonly>';
-		   include('LICENSE-FULL-EN');
+		   include('LICENSE-FULL-EN.txt');
 		   echo '</textarea><br>
 <br><input type="checkbox" onClick=\'if (document.license.rule1.checked==true) {document.license.check.style.display="block";} else {document.license.check.style.display="none";}\' name="rule1" value="true"> Я принимаю условия данного лицензионного соглашения и обязуюсь выполнять их
 <br>
