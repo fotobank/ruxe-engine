@@ -51,7 +51,7 @@ if ($action=="rss")
 	};
 	echo "
  <language>ru-ru</language>
- <generator>Ruxe Engine (engine.ruxesoft.net)</generator>
+ <generator>Ruxe Engine (ruxe-engine.ru)</generator>
  "; 
 	echo "
  <lastBuildDate>".$rss_pub_date." ".$rss_gdd."</lastBuildDate> 
@@ -312,7 +312,7 @@ if ($action=="download")
    	{
 		$botfounded 	= true;
 		$ar 		= array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-   		$br 		= array($lcms['botdownload_title'],"Ruxe Engine (engine.ruxesoft.net)","",$lcms['botdownload_message'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
+   		$br 		= array($lcms['botdownload_title'],"Ruxe Engine (ruxe-engine.ru)","",$lcms['botdownload_message'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
    		$openpage 	= $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
    		$pagetitle 	= $lcms['botdownload_title'];
 		//break;
@@ -379,7 +379,7 @@ if ($action=="download")
 		if ($sv_found)
 		{
    			$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-   			$br = array($lcms['download_title'].$sv_name,"Ruxe Engine (engine.ruxesoft.net)",$sv_tmp,str_replace("{URL}",$sv_tmp,$lcms['download_text']),"","",$cms_site,$cms_site."/themes/".$cms_theme);
+   			$br = array($lcms['download_title'].$sv_name,"Ruxe Engine (ruxe-engine.ru)",$sv_tmp,str_replace("{URL}",$sv_tmp,$lcms['download_text']),"","",$cms_site,$cms_site."/themes/".$cms_theme);
    			$pageredirect = $sv_tmp;
    			$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
    			$pagetitle = $lcms['download_title'].$sv_name;
@@ -387,7 +387,7 @@ if ($action=="download")
 		else
 		{
    			$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-   			$br = array($lcms['download_notfound'],"Ruxe Engine (engine.ruxesoft.net)","",str_replace("{URL}","",$lcms['download_notfound_text']),"","",$cms_site,$cms_site."/themes/".$cms_theme);
+   			$br = array($lcms['download_notfound'],"Ruxe Engine (ruxe-engine.ru)","",str_replace("{URL}","",$lcms['download_notfound_text']),"","",$cms_site,$cms_site."/themes/".$cms_theme);
    			$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
    			$pagetitle = $lcms['download_notfound'];
 		};
@@ -413,7 +413,7 @@ if ($action=="restore")
        		if ((time() - $last_restore[0]) < 900)
        		{
           		$ar = array("{TITLE}","{READRESS}","{GENERATOR}","{/READRESS}","{URL}","{MESSAGE}","{SITE}","{THEMEPATH}");
-          		$br = array($lcms['restore_time_title'],"","Ruxe Engine (engine.ruxesoft.net)","",$Navigation->furl('restorelink'),$lcms['restore_time_text'],$cms_site,$cms_site."/themes/".$cms_theme);
+          		$br = array($lcms['restore_time_title'],"","Ruxe Engine (ruxe-engine.ru)","",$Navigation->furl('restorelink'),$lcms['restore_time_text'],$cms_site,$cms_site."/themes/".$cms_theme);
           		$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
           		$pagetitle = $lcms['restore_time_title'];
        		}
@@ -430,7 +430,7 @@ if ($action=="restore")
 								//Проверка на бан пользователя
 								if ($u[4]=="baned") {
 									$ar = array("{TITLE}","{READRESS}","{GENERATOR}","{/READRESS}","{URL}","{MESSAGE}","{SITE}","{THEMEPATH}");
-									$br = array($lcms['ban_title'],"","Ruxe Engine (engine.ruxesoft.net)","",$Navigation->furl('restorelink'),$lcms['baned_text'].$u[19],$cms_site,$cms_site."/themes/".$cms_theme);
+									$br = array($lcms['ban_title'],"","Ruxe Engine (ruxe-engine.ru)","",$Navigation->furl('restorelink'),$lcms['baned_text'].$u[19],$cms_site,$cms_site."/themes/".$cms_theme);
 									$openpage =  $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
 									$pagetitle = $lcms['ban_title'];
 									$doStop = true;
@@ -449,7 +449,7 @@ if ($action=="restore")
 									$message = str_replace($cr,$dr,$lcms['restore_post']);
 									$Mailing->tousers($lcms['restore_1'],$message,$mail);
 									$ar = array("{TITLE}","{READRESS}","{GENERATOR}","{/READRESS}","{URL}","{MESSAGE}","{SITE}","{THEMEPATH}");
-									$br = array($lcms['restore_title'],"<!-- ","Ruxe Engine (engine.ruxesoft.net)"," -->",$Navigation->furl('restorelink'),$lcms['restore_go'],$cms_site,$cms_site."/themes/".$cms_theme);
+									$br = array($lcms['restore_title'],"<!-- ","Ruxe Engine (ruxe-engine.ru)"," -->",$Navigation->furl('restorelink'),$lcms['restore_go'],$cms_site,$cms_site."/themes/".$cms_theme);
 									$openpage= $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
 									$pagetitle = $lcms['restore_title'];           
 								}
@@ -459,7 +459,7 @@ if ($action=="restore")
              			if (!$found)
              			{
                    			$ar = array("{TITLE}","{READRESS}","{GENERATOR}","{/READRESS}","{URL}","{MESSAGE}","{SITE}","{THEMEPATH}");
-                   			$br = array($lcms['user_ae_title'],"","Ruxe Engine (engine.ruxesoft.net)","",$Navigation->furl('restorelink'),$lcms['restore_mail_notfound'],$cms_site,$cms_site."/themes/".$cms_theme);
+                   			$br = array($lcms['user_ae_title'],"","Ruxe Engine (ruxe-engine.ru)","",$Navigation->furl('restorelink'),$lcms['restore_mail_notfound'],$cms_site,$cms_site."/themes/".$cms_theme);
                    			$openpage =  $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
                    			$pagetitle = $lcms['user_ae_title'];
              			};
@@ -467,7 +467,7 @@ if ($action=="restore")
           		else
           		{
             			$ar = array("{TITLE}","{READRESS}","{GENERATOR}","{/READRESS}","{URL}","{MESSAGE}","{SITE}","{THEMEPATH}");
-            			$br = array($lcms['user_ae_title'],"","Ruxe Engine (engine.ruxesoft.net)","",$Navigation->furl('restorelink'),$lcms['restore_off'],$cms_site,$cms_site."/themes/".$cms_theme);
+            			$br = array($lcms['user_ae_title'],"","Ruxe Engine (ruxe-engine.ru)","",$Navigation->furl('restorelink'),$lcms['restore_off'],$cms_site,$cms_site."/themes/".$cms_theme);
             			$openpage =  $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
             			$pagetitle =  $lcms['user_ae_title'];
           		};
@@ -509,7 +509,7 @@ if ($action=="restore")
          			$message = str_replace($cr,$dr,$lcms['new_post']);
          			$Mailing->tousers($lcms['restore_2'],$message,$mail);
          			$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-         			$br = array($lcms['restore_title'],"Ruxe Engnine (engine.ruxesoft.net)","<!-- "," -->",$lcms['restore_ok'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
+         			$br = array($lcms['restore_title'],"Ruxe Engnine (ruxe-engine.ru)","<!-- "," -->",$lcms['restore_ok'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
          			$openpage =  $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
          			$pagetitle = $lcms['restore_title'];
       			}
@@ -526,7 +526,7 @@ if ($action=="restore")
 				$link.='&amp;step=2';
 			else
 				$link.='?step=2';
-        		$br = array("Ruxe Engine (engine.ruxesoft.net)",$cms_site,$cms_site."/themes/".$cms_theme,$link);
+        		$br = array("Ruxe Engine (ruxe-engine.ru)",$cms_site,$cms_site."/themes/".$cms_theme,$link);
         		$openpage = $GlobalTemplate->users($ar,$br,5);
         		$pagetitle = $lcms['restore_title'];
        		};
@@ -589,7 +589,7 @@ if ($cms_registration==1) {
 			$errortext = $GlobalUsers->reg('site');
 			if ($errortext==-1) {
 				$ar 		= array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-				$br 		= ($cms_active==1) ? array($lcms['user_ok_title'],"Ruxe Engine (engine.ruxesoft.net)",$cms_site,$lcms['user_need_activate'],"<!-- "," -->",$cms_site."/themes/".$cms_theme) : array($lcms['user_ok_title'],"Ruxe Engine (engine.ruxesoft.net)",$cms_site,$lcms['user_ok_message'],"<!-- "," -->",$cms_site."/themes/".$cms_theme);
+				$br 		= ($cms_active==1) ? array($lcms['user_ok_title'],"Ruxe Engine (ruxe-engine.ru)",$cms_site,$lcms['user_need_activate'],"<!-- "," -->",$cms_site."/themes/".$cms_theme) : array($lcms['user_ok_title'],"Ruxe Engine (ruxe-engine.ru)",$cms_site,$lcms['user_ok_message'],"<!-- "," -->",$cms_site."/themes/".$cms_theme);
 				$openpage 	= $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
 				$pagetitle	= $lcms['user_ok_title'];
 			} else {
@@ -602,7 +602,7 @@ if ($cms_registration==1) {
 				else
 					$backlink.= '?';
 				$ar 		= array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-				$br 		= array($lcms['user_error_title'],"Ruxe Engine (engine.ruxesoft.net)",$cms_site,$errortext."<center><a href=\"".$backlink."rand=".rand(1,9999)."&amp;login=".$login."&amp;smail=".$smail."&amp;mail=".$mail.
+				$br 		= array($lcms['user_error_title'],"Ruxe Engine (ruxe-engine.ru)",$cms_site,$errortext."<center><a href=\"".$backlink."rand=".rand(1,9999)."&amp;login=".$login."&amp;smail=".$smail."&amp;mail=".$mail.
 							"\">".$lcms['error_back']."</a></center>","","",$cms_site,$cms_site."/themes/".$cms_theme);
 				$openpage 	= $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
 				$pagetitle	= $lcms['user_error_title']; 
@@ -620,20 +620,20 @@ if ($cms_registration==1) {
 				$reglink.='&amp;step=2';
 			else
 				$reglink.='?step=2';
-			$br = array($cms_site,"Ruxe Engine (engine.ruxesoft.net)",$login,$password,$spassword,$mail,$smail,$cms_site."/includes/captcha/?".session_name()."=".session_id(),$cms_site."/themes/".$cms_theme,$reglink);
+			$br = array($cms_site,"Ruxe Engine (ruxe-engine.ru)",$login,$password,$spassword,$mail,$smail,$cms_site."/includes/captcha/?".session_name()."=".session_id(),$cms_site."/themes/".$cms_theme,$reglink);
 			$openpage = $GlobalTemplate->users($ar,$br,3);
 			$pagetitle = $lcms['registerform_title'];
 		};
    	} else {
    		$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-      		$br = array($lcms['user_error_title'],"Ruxe Engine (engine.ruxesoft.net)",$cms_site,
+      		$br = array($lcms['user_error_title'],"Ruxe Engine (ruxe-engine.ru)",$cms_site,
       		'Действие недоступно активным пользователям.',"","",$cms_site,$cms_site."/themes/".$cms_theme);
       		$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
       		$pagetitle=$lcms['user_error_title']; 
    	};
 } else {
 	$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-      	$br = array($lcms['user_error_title'],"Ruxe Engine (engine.ruxesoft.net)",$cms_site,
+      	$br = array($lcms['user_error_title'],"Ruxe Engine (ruxe-engine.ru)",$cms_site,
       		$lcms['regclosed'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
       	$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
       	$pagetitle=$lcms['user_error_title'];
@@ -658,7 +658,7 @@ if ($action=="activate")
                   			if (($o[4]!="active") or ($o[15]==0)) 
                   			{
                     				$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-                    				$br = array($lcms['user_error_title'],"Ruxe Engnine (engine.ruxesoft.net)","","",$lcms['user_already'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
+                    				$br = array($lcms['user_error_title'],"Ruxe Engnine (ruxe-engine.ru)","","",$lcms['user_already'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
                     				$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
                     				$pagetitle = $lcms['user_error_title'];
                     				$stop_down = true;
@@ -675,7 +675,7 @@ if ($action=="activate")
          			$usersfruits[15] = 0;
          			$GlobalUsers->editpoles("user",$user); 			
          			$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-         			$br = array($lcms['user_ok_title'],"Ruxe Engnine (engine.ruxesoft.net)","","",$lcms['user_ok_activate'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
+         			$br = array($lcms['user_ok_title'],"Ruxe Engnine (ruxe-engine.ru)","","",$lcms['user_ok_activate'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
          			$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
          			$pagetitle = $lcms['user_ok_title'];
         		};
@@ -807,7 +807,7 @@ if ($action=="pm")
 						else
 							$pmlink.='?';
 						$aar          = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-                    				$abr          = array($lcms['pm_title_error'],"Ruxe Engine (engine.ruxesoft.net)","","",$lcms['pm_critical'],$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
+                    				$abr          = array($lcms['pm_title_error'],"Ruxe Engine (ruxe-engine.ru)","","",$lcms['pm_critical'],$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
                     				$openpage     = $GlobalTemplate->template($aar,$abr,$cms_root."/themes/".$cms_theme."/message.html");
                     				$pagetitle    = $lcms['pm_title_error'];
                 			};
@@ -843,7 +843,7 @@ if ($action=="pm")
                     				$fnderr    = true;
 						
                     				$aar          = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-                    				$abr          = array($lcms['pm_title_error'],"Ruxe Engine (engine.ruxesoft.net)","","",$lcms['user_notfound_text'].'<center><a href="'.$Navigation->furl('pmnewmessage',$message).'">'.$lcms['error_back'].'</a></center>',$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
+                    				$abr          = array($lcms['pm_title_error'],"Ruxe Engine (ruxe-engine.ru)","","",$lcms['user_notfound_text'].'<center><a href="'.$Navigation->furl('pmnewmessage',$message).'">'.$lcms['error_back'].'</a></center>',$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
                     				$openpage     = $GlobalTemplate->template($aar,$abr,$cms_root."/themes/".$cms_theme."/message.html");
                     				$pagetitle    = $lcms['pm_title_error'];
                  			}
@@ -852,7 +852,7 @@ if ($action=="pm")
                     				if ($message == "")
                     				{
                        					$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-                       					$br = array($lcms['pm_title_error'],"Ruxe Engine (engine.ruxesoft.net)","","",$lcms['error_message'].'<center><a href="'.$Navigation->furl('pmnewmessage',$message).'">'.$lcms['error_back'].'</a></center>',$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
+                       					$br = array($lcms['pm_title_error'],"Ruxe Engine (ruxe-engine.ru)","","",$lcms['error_message'].'<center><a href="'.$Navigation->furl('pmnewmessage',$message).'">'.$lcms['error_back'].'</a></center>',$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
                        					$openpage     = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
                        					$pagetitle    = $lcms['pm_title_error'];
                        					$fnderr = true;
@@ -862,7 +862,7 @@ if ($action=="pm")
                        					if ((time() - $GlobalUsers->thisusertime()) < $cms_noflood)
                        					{ 
                           					$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-                          					$br = array($lcms['pm_title_error'],"Ruxe Engine (engine.ruxesoft.net)","","",$lcms['user_addnoflood'].'<center><a href="'.$Navigation->furl('pmnewmessage',$message).'">'.$lcms['error_back'].'</a></center>',$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
+                          					$br = array($lcms['pm_title_error'],"Ruxe Engine (ruxe-engine.ru)","","",$lcms['user_addnoflood'].'<center><a href="'.$Navigation->furl('pmnewmessage',$message).'">'.$lcms['error_back'].'</a></center>',$pmlink."rand=".rand(1,999),$cms_site,$cms_site."/themes/".$cms_theme);
                           					$openpage     = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
                           					$pagetitle    = $lcms['pm_title_error'];
                           					$fnderr = true;
@@ -1084,7 +1084,7 @@ if ($action=="pm")
   	{
     		$pagetitle = $lcms['pm_title_error'];
     		$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}");
-    		$br = array($lcms['pm_title_error'],"Ruxe Engine (engine.ruxesoft.net)",$cms_site,$lcms['pm_title_error_text'],"<!-- "," -->",$cms_site);
+    		$br = array($lcms['pm_title_error'],"Ruxe Engine (ruxe-engine.ru)",$cms_site,$lcms['pm_title_error_text'],"<!-- "," -->",$cms_site);
     		echo str_replace($ar,$br,$retpldef);
     		exit;
   	};
@@ -1149,7 +1149,7 @@ if ($action=="login")
          		setcookie("site_avatar", $avatar, time() + $cms_time_cookie,"/");
        		};
        		$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-       		$br = array($lcms['ok_enter_title'],"Ruxe Engine (engine.ruxesoft.net)",$back,$lcms['ok_enter'].$login.$lcms['ok_enter_end'].$lcms['refer1']." <a href=\"".$back."\">".$lcms['refer2']."</a>".$lcms['refer3'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
+       		$br = array($lcms['ok_enter_title'],"Ruxe Engine (ruxe-engine.ru)",$back,$lcms['ok_enter'].$login.$lcms['ok_enter_end'].$lcms['refer1']." <a href=\"".$back."\">".$lcms['refer2']."</a>".$lcms['refer3'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
        		$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
        		$pageredirect = $back;
        		$pagetitle = $lcms['ok_enter_title'];
@@ -1157,7 +1157,7 @@ if ($action=="login")
      	else
      	{
        		$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-       		$br = array($lcms['user_error_title'],"Ruxe Engine (engine.ruxesoft.net)",$back,$lcms['user_notvalid'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
+       		$br = array($lcms['user_error_title'],"Ruxe Engine (ruxe-engine.ru)",$back,$lcms['user_notvalid'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
        		$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
        		$pagetitle = $lcms['user_error_title'];
      	};
@@ -1170,7 +1170,7 @@ if ($action=="logout")
   setcookie("site_password", "no", time() + $cms_time_cookie,"/");
   $back = $Loging->referer();
   $ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
-  $br = array($lcms['ok_logout_title'],"Ruxe Engine (engine.ruxesoft.net)",$back,$lcms['ok_logout'].$lcms['refer1']." <a href=\"".$back."\">".$lcms['refer2']."</a>".$lcms['refer3'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
+  $br = array($lcms['ok_logout_title'],"Ruxe Engine (ruxe-engine.ru)",$back,$lcms['ok_logout'].$lcms['refer1']." <a href=\"".$back."\">".$lcms['refer2']."</a>".$lcms['refer3'],"","",$cms_site,$cms_site."/themes/".$cms_theme);
   $openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
   $pageredirect = $back;
   $pagetitle = $lcms['ok_logout_title'];
@@ -1257,7 +1257,7 @@ if ($action=="profile")
 				($pieces[20]!='Начало эпохи Unix')
 			)
 				$pieces[20] = $Filtr->fulldate($pieces[20]);
-       			$br = array($user,"Ruxe Engine (engine.ruxesoft.net)",
+       			$br = array($user,"Ruxe Engine (ruxe-engine.ru)",
        				$pole1,$polecaption[1],$pieces[5],$pole1c,
        				$pole2,$polecaption[2],$pieces[6],$pole2c,
        				$pole3,$polecaption[3],$pieces[7],$pole3c,
@@ -1275,7 +1275,7 @@ if ($action=="profile")
     		else
     		{
        			$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-       			$br = array($lcms['user_notfound_title'],"Ruxe Engine (engine.ruxesoft.net)","<!-- "," -->",$lcms['user_notfound_text'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
+       			$br = array($lcms['user_notfound_title'],"Ruxe Engine (ruxe-engine.ru)","<!-- "," -->",$lcms['user_notfound_text'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
        			$openpage = $GlobalTemplate->template($ar,$br,$cms_site."/themes/".$cms_theme."/message.html");
        			$pagetitle = $lcms['viewprofile_title'].$user;
     		};
@@ -1375,7 +1375,7 @@ if ($action=="myprofile")
                 				$stop_his = true;
                 				$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
 						
-                				$br = array($lcms['user_ae_title'],"Ruxe Engine (engine.ruxesoft.net)","","",$lcms['user_ae_'.$founderror].$lcms['user_add'],$profilelink."rand=".rand(1,9999),$cms_site,$cms_site."/themes/".$cms_theme);
+                				$br = array($lcms['user_ae_title'],"Ruxe Engine (ruxe-engine.ru)","","",$lcms['user_ae_'.$founderror].$lcms['user_add'],$profilelink."rand=".rand(1,9999),$cms_site,$cms_site."/themes/".$cms_theme);
                 				$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
                 				$pagetitle = $lcms['user_ae_title'];
              				}
@@ -1389,7 +1389,7 @@ if ($action=="myprofile")
                 				if (!move_uploaded_file($_FILES['avatarfile']['tmp_name'], $uploadfile)) 
                 				{
                     					$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-                    					$br = array($lcms['user_ae_title'],"Ruxe Engine (engine.ruxesoft.net)","","",$lcms['user_ae_7'].$lcms['user_add'],$profilelink."rand=".rand(1,9999),$cms_site,$cms_site."/themes/".$cms_theme);
+                    					$br = array($lcms['user_ae_title'],"Ruxe Engine (ruxe-engine.ru)","","",$lcms['user_ae_7'].$lcms['user_add'],$profilelink."rand=".rand(1,9999),$cms_site,$cms_site."/themes/".$cms_theme);
                     					$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
                     					$pagetitle = $lcms['user_ae_title'];
                     					$stop_his = true;
@@ -1413,7 +1413,7 @@ if ($action=="myprofile")
                 				$pageredirect = $profilelink."rand=".rand(0,9999);
                 				setcookie("site_avatar",$onotole.substr($_FILES['avatarfile']['name'],strlen($Filtr->tolower($_FILES['avatarfile']['name']))-4,4), time() + $cms_time_cookie,"/");
                 				$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-                				$br = array($lcms['avatar_ok_title'],"Ruxe Engine (engine.ruxesoft.net)","","",$lcms['avatar_ok_text'].str_replace("{URL}",$pageredirect,$lcms['user_add']),$profilelink."rand=".rand(0,9999),$cms_site,$cms_site."/themes/".$cms_theme);
+                				$br = array($lcms['avatar_ok_title'],"Ruxe Engine (ruxe-engine.ru)","","",$lcms['avatar_ok_text'].str_replace("{URL}",$pageredirect,$lcms['user_add']),$profilelink."rand=".rand(0,9999),$cms_site,$cms_site."/themes/".$cms_theme);
                 				$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");               
                 				$pagetitle = $lcms['avatar_ok_title'];
                 
@@ -1490,14 +1490,14 @@ if ($action=="myprofile")
 
           					$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
           					$pageredirect = $profilelink."rand=".rand(1,9999);
-          					$br = array($lcms['user_edit_title'],"Ruxe Engine (engine.ruxesoft.net)","","",str_replace("{URL}",$pageredirect,$lcms['user_edit_text']),$Filtr->clear($_SERVER['HTTP_REFERER']),$cms_site,$cms_site."/themes/".$cms_theme);
+          					$br = array($lcms['user_edit_title'],"Ruxe Engine (ruxe-engine.ru)","","",str_replace("{URL}",$pageredirect,$lcms['user_edit_text']),$Filtr->clear($_SERVER['HTTP_REFERER']),$cms_site,$cms_site."/themes/".$cms_theme);
           					$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
           					$pagetitle = $lcms['user_edit_title'];
           				}
           				else
           				{
            					$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-           					$br = array($lcms['user_notfound_title'],"Ruxe Engine (engine.ruxesoft.net)","","",$errortext.str_replace("{URL}",$profilelink."rand=".rand(1,9999),$lcms['user_add']),$Filtr->clear($_SERVER['HTTP_REFERER']),$cms_site,$cms_site."/themes/".$cms_theme);
+           					$br = array($lcms['user_notfound_title'],"Ruxe Engine (ruxe-engine.ru)","","",$errortext.str_replace("{URL}",$profilelink."rand=".rand(1,9999),$lcms['user_add']),$Filtr->clear($_SERVER['HTTP_REFERER']),$cms_site,$cms_site."/themes/".$cms_theme);
            					$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
            					$pagetitle = $lcms['user_notfound_title'];
           				};
@@ -1574,7 +1574,7 @@ if ($action=="myprofile")
 					$STEP2		=	$ep.'?step=2';
 				};
 				
-       				$br = array($user,"Ruxe Engine (engine.ruxesoft.net)",
+       				$br = array($user,"Ruxe Engine (ruxe-engine.ru)",
        					$pole1,$polecaption[1],$pieces[5],$pole1c,
        					$pole2,$polecaption[2],$pieces[6],$pole2c,
        					$pole3,$polecaption[3],$pieces[7],$pole3c,
@@ -1594,7 +1594,7 @@ if ($action=="myprofile")
     		else
     		{
        			$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-       			$br = array($lcms['user_notfound_title'],"Ruxe Engine (engine.ruxesoft.net)","<!-- "," -->",$lcms['user_notfound_text'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
+       			$br = array($lcms['user_notfound_title'],"Ruxe Engine (ruxe-engine.ru)","<!-- "," -->",$lcms['user_notfound_text'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
        			$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
        			$pagetitle = $lcms['user_notfound_title'];
     		};
@@ -1602,7 +1602,7 @@ if ($action=="myprofile")
   	else
   	{
        		$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
-       		$br = array($lcms['user_notfound_title'],"Ruxe Engine (engine.ruxesoft.net)","<!-- "," -->",$lcms['user_notvalid'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
+       		$br = array($lcms['user_notfound_title'],"Ruxe Engine (ruxe-engine.ru)","<!-- "," -->",$lcms['user_notvalid'],$cms_site,$cms_site,$cms_site."/themes/".$cms_theme);
        		header('Content-type: text/html; charset=utf-8');
        		$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
        		$pagetitle = $lcms['user_notfound_title'];

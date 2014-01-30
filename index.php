@@ -94,7 +94,7 @@ if ($findno)
 {
 	header('Content-type: text/html; charset=utf-8');
 	$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}");
-	$br = array($lcms['findo_title'],"Ruxe Engine (http://engine.ruxesoft.net/)","/rpanel/",$lcms['findo_text'],"<!-- "," -->");
+	$br = array($lcms['findo_title'],"Ruxe Engine (http://ruxe-engine.ru/)","/rpanel/",$lcms['findo_text'],"<!-- "," -->");
 	echo str_replace($ar,$br,$retpldef);
 	exit;
 };
@@ -103,7 +103,7 @@ if (!file_exists($test_cms))
 {
 	header('Content-type: text/html; charset=utf-8');
 	$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}");
-	$br = array($lcms['start_title'],"Ruxe Engine (http://engine.ruxesoft.net/)","rpanel/install.php?step=install","<center>".$lcms['start_text']."</center>","<!-- "," -->");
+	$br = array($lcms['start_title'],"Ruxe Engine (http://ruxe-engine.ru/)","rpanel/install.php?step=install","<center>".$lcms['start_text']."</center>","<!-- "," -->");
 	echo str_replace($ar,$br,$retpldef); 
 	exit; 
 };
@@ -225,7 +225,7 @@ if ($ban_found==5)
 {
 	header('Content-type: text/html; charset=utf-8');
 	$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}");
-	$br = array($lcms['ban_title'],"Ruxe Engine (http://engine.ruxesoft.net/)",$cms_site,$lcms['baned_text'].$ban_message,"<!-- "," -->");
+	$br = array($lcms['ban_title'],"Ruxe Engine (http://ruxe-engine.ru/)",$cms_site,$lcms['baned_text'].$ban_message,"<!-- "," -->");
 	echo str_replace($ar,$br,$retpldef);
 	if ($cms_banlog==1)
 	{
@@ -251,7 +251,7 @@ if ($hidepage)
 {
 	header('Content-type: text/html; charset=utf-8');
 	$ar = array("{TITLE}","{MESSAGE}","{GENERATOR}","{LOGIN}");
-	$br = array($lcms['hidedpage_title'],$lcms['hidedpage_text'],"Ruxe Engine (http://engine.ruxesoft.net/)",$GlobalUsers->returnloginform());
+	$br = array($lcms['hidedpage_title'],$lcms['hidedpage_text'],"Ruxe Engine (http://ruxe-engine.ru/)",$GlobalUsers->returnloginform());
 	echo str_replace($ar,$br,$retpldef);
 	exit;
 };
@@ -271,7 +271,7 @@ if ($role=="active")
    		setcookie("site_password", "no", time() + $cms_time_cookie,"/");
    		setcookie("site_avatar", "noavatar.png", time() + $cms_time_cookie,"/");
    		$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}");
-   		$br = array($lcms['user_no_activated'],"Ruxe Engine (http://engine.ruxesoft.net/)",(isset($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : "",$lcms['user_no_activated'],"<!-- "," -->");
+   		$br = array($lcms['user_no_activated'],"Ruxe Engine (http://ruxe-engine.ru/)",(isset($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : "",$lcms['user_no_activated'],"<!-- "," -->");
    		echo str_replace($ar,$br,$retpldef);
    		exit;
  	};
@@ -286,7 +286,7 @@ if (
 {
   	header('Content-type: text/html; charset=utf-8');
   	$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}");
-  	$br = array($lcms['closed'],"Ruxe Engine (http://engine.ruxesoft.net/)",$cms_site,$cms_closed_text,"<!-- "," -->",$cms_site);
+  	$br = array($lcms['closed'],"Ruxe Engine (http://ruxe-engine.ru/)",$cms_site,$cms_closed_text,"<!-- "," -->",$cms_site);
   	echo str_replace($ar,$br,$retpldef);
   	exit;
 };

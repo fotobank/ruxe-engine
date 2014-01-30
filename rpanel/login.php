@@ -112,7 +112,7 @@ if (isset($_POST['submit']))
 	{
 		header('Content-type: text/html; charset=utf-8');
        		$ar = array("{TITLE}","{GENERATOR}","{MESSAGE}");
-       		$br = array("Вход не выполнен","Ruxe Engine (engine.ruxesoft.net)","Вы ввели неверную пару логин-пароль или не имеете прав администратора");
+       		$br = array("Вход не выполнен","Ruxe Engine (ruxe-engine.ru)","Вы ввели неверную пару логин-пароль или не имеете прав администратора");
        		echo $GlobalTemplate->template($ar,$br,$cms_root."/rpanel/theme/somemessages.tpl");
 	};
 };

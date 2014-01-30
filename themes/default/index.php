@@ -107,7 +107,7 @@
 			alt="Valid HTML 4.01 Transitional" height="31" width="88"></a><a href="http://feed2.w3.org/check.cgi?url=<? here_urlsite(); ?>/rss"><img src="<? here_themepath(); ?>/images/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed"></a><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"
 			src="<? here_themepath(); ?>/images/vcss.gif"
 			alt="Правильный CSS!"></a></td>
-			<td align="right" valign="middle" style="padding-right:10px;">Дизайн: <a style="color:white;" href="http://engine.ruxesoft.net/viewprofile/Dr1D">Dr1D</a>. Генерация: <? here_time_generation(); ?> секунд. {COPYRIGHT}</td></tr>
+			<td align="right" valign="middle" style="padding-right:10px;">Дизайн: <a style="color:white;" href="http://ruxe-engine.ru/viewprofile/Dr1D">Dr1D</a>. Генерация: <? here_time_generation(); ?> секунд. {COPYRIGHT}</td></tr>
 	</table>        
 </div>
 </body>

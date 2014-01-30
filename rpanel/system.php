@@ -67,7 +67,7 @@
     {
           $addpath = $_SERVER['PHP_SELF'];
           $addpath = str_replace("/rpanel/index.php", "", $addpath);
-          $version= "<b>".$this_version."</b> (Последняя версия: <img alt=\"\" src=\"http://engine.ruxesoft.net/enginever.php?rand=".rand(1111,9999)."\" border=0>)";
+          $version= "<b>".$this_version."</b> (Последняя версия: <img alt=\"\" src=\"http://ruxe-engine.ru/enginever.php?rand=".rand(1111,9999)."\" border=0>)";
 
     }
     else if ($go == "log")
@@ -208,10 +208,10 @@ Stanisov и PAT<br><br>
 <a href="http://phpforum.ru/index.php?showtopic=28607">http://phpforum.ru/index.php?showtopic=28607</a><br><br>
 <a href="http://www.kolobok.us">www.kolobok.us</a><br><br>
 <a href="http://stackoverflow.com/users/53114/gumbo" target="_blank">Gumbo</a><br><br>
-<a href="http://engine.ruxesoft.net/viewprofile/Polar">Polar</a><br><br>
+<a href="http://ruxe-engine.ru/viewprofile/Polar">Polar</a><br><br>
 Константин Vanstorm<br><br>
 Александр freshcoder<br><br>
-<a href="http://engine.ruxesoft.net/viewprofile/Buranek">Buranek</a><br><br>
+<a href="http://ruxe-engine.ru/viewprofile/Buranek">Buranek</a><br><br>
 Roman Mamedov<br><br>
 <a href="http://www.answerium.com/user/simplex/">Simplex</a><br><br>
 <a href="http://gv0zdik.livejournal.com/">Gv0zdik</a><br><br> 
@@ -231,9 +231,9 @@ Roman Mamedov<br><br>
               				<p>3) Вы можете распространять программу, но НЕ получая от этого никакой коммерческой выгоды и не нарушая целостность оригинального дистрибутива.</p>
                                         <p>4) Вы НЕ имеете права сдавать в аренду, продавать программу, а также использовать её на сайтах с порно или другим, нарушающим законодательство РФ, контентом.</p> 
 					<p>5) Вы НЕ имеете права использовать программу для создания дорвеев.</p>
-              				<p>6) При использовании любой части кода из программы в личных целях (например, для написания собственной CMS), необходимо указывать следующее: "Следующий код взят из Ruxe Engine (http://engine.ruxesoft.net)". Однако, если вы использовали более 10 Кбайт кода из программы в личных целях, то вам необходимо разместить ссылку на сайт http://engine.ruxesoft.net на видном месте, например: 
-<br><br>echo \'&lt;a href="http://engine.ruxesoft.net" target="_blank"&gt;Скрипт написан на основе кода Ruxe Engine&lt;/a&gt;\';</p>
-              				<p>7) Вы НЕ имеете права препятствовать/удалять или каким-либо другим образом мешать программе отображать на страницах сайта, использующего систему, текст "Powered by Ruxe Engine" с ссылкой на http://engine.ruxesoft.net.</p>
+              				<p>6) При использовании любой части кода из программы в личных целях (например, для написания собственной CMS), необходимо указывать следующее: "Следующий код взят из Ruxe Engine (http://ruxe-engine.ru)". Однако, если вы использовали более 10 Кбайт кода из программы в личных целях, то вам необходимо разместить ссылку на сайт http://ruxe-engine.ru на видном месте, например:
+<br><br>echo \'&lt;a href="http://ruxe-engine.ru" target="_blank"&gt;Скрипт написан на основе кода Ruxe Engine&lt;/a&gt;\';</p>
+              				<p>7) Вы НЕ имеете права препятствовать/удалять или каким-либо другим образом мешать программе отображать на страницах сайта, использующего систему, текст "Powered by Ruxe Engine" с ссылкой на http://ruxe-engine.ru.</p>
               				<p>8) Помните, что Ruxe Engine держится лишь на чистом энтузиазме автора, прибыли от программы никакой.</p>
               				<p>9) Программа распространяется по принципу "как есть". Никаких гарантий автор не предоставляет, а также не несёт ответственности за порчу имущества или информации программой.</p>
               				<p>10) Вы можете использовать данное программное обеспечение в любой стране мира.</p>

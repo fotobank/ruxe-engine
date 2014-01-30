@@ -58,7 +58,7 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
 <head>
   <title>Мастер установки Ruxe Engine</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Ruxe Engine (http://engine.ruxesoft.net)">
+  <meta name="generator" content="Ruxe Engine (http://ruxe-engine.ru)">
   <style>
    body {
         font-family:verdana,arial,tahoma;
@@ -180,11 +180,11 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
 
 5) Вы НЕ имеете права использовать программу для создания дорвеев.
 
-6) При использовании любой части кода из программы в личных целях (например, для написания собственной CMS), необходимо указывать следующее: "Следующий код взят из Ruxe Engine (http://engine.ruxesoft.net)". Однако, если вы использовали более 10 Кбайт кода из программы в личных целях, то вам необходимо разместить ссылку на сайт http://engine.ruxesoft.net на видном месте, например:
+6) При использовании любой части кода из программы в личных целях (например, для написания собственной CMS), необходимо указывать следующее: "Следующий код взят из Ruxe Engine (http://ruxe-engine.ru)". Однако, если вы использовали более 10 Кбайт кода из программы в личных целях, то вам необходимо разместить ссылку на сайт http://ruxe-engine.ru на видном месте, например:
 
-echo \'<a href="http://engine.ruxesoft.net" target="_blank">Скрипт написан на основе кода Ruxe Engine</a>\';
+echo \'<a href="http://ruxe-engine.ru" target="_blank">Скрипт написан на основе кода Ruxe Engine</a>\';
 
-7) Вы НЕ имеете права препятствовать/удалять или каким-либо другим образом мешать программе отображать на страницах сайта, использующего систему, текст "Powered by Ruxe Engine" с ссылкой на http://engine.ruxesoft.net.
+7) Вы НЕ имеете права препятствовать/удалять или каким-либо другим образом мешать программе отображать на страницах сайта, использующего систему, текст "Powered by Ruxe Engine" с ссылкой на http://ruxe-engine.ru.
 
 8) Помните, что Ruxe Engine держится лишь на чистом энтузиазме автора, прибыли от программы никакой.
 
@@ -568,7 +568,7 @@ echo '</div>
                 $found = false;
                 echo '<h3>Анализ важных файлов системы: Конфигурация и др.</h3><br>';
 		$iferror='
-                Все следующие файлы и папки должны быть обязательно загружены и иметь <a href="http://engine.ruxesoft.net/documentation/chmod.html" target="_blank">права на запись</a>:
+                Все следующие файлы и папки должны быть обязательно загружены и иметь <a href="http://ruxe-engine.ru/documentation/chmod.html" target="_blank">права на запись</a>:
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;1. Файл <b>.htaccess</b>
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;2. Каталог <b>/avatars/</b> и все файлы в нём
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;3. Каталог <b>/conf/</b>, все файлы и подкаталоги в нём
@@ -1129,7 +1129,7 @@ echo '</div>
                 Вы установили ';
                 include('conf/this_version.dat');
                 echo ' версию<br>
-                Последняя: <img src="http://engine.ruxesoft.net/enginever.php?rand='.rand(0,9999).'" border=0> версия
+                Последняя: <img src="http://ruxe-engine.ru/enginever.php?rand='.rand(0,9999).'" border=0> версия
                <br><br>
 	       Обратите внимание - Ruxe Engine работает <b>только</b> в UTF-8 (без BOM) кодировке. При изменении страниц или шаблонов внешним редактором (не из админ-центра), сохраняйте в UTF-8 (без BOM) кодировке.
 	       <br><br>
@@ -1137,8 +1137,8 @@ echo '</div>
                 <a style="font-size:14pt;" href="./">Или на главную страницу</a></center>
                 <br><br><br><div style="border: 1px solid silver; background-color:#FFF2D7; text-align:center; margin-left:90px; margin-right:90px;"><b>
                 Ruxe Engine БЕСПЛАТНАЯ программа. Если Вы заплатили за неё деньги<br> 
-                (не считая <a href="http://engine.ruxesoft.net/donate.html" target="_blank">официальной поддержки проекта</a>), требуйте у продавца вернуть Ваши деньги обратно.<br><br>
-                Кроме того, оригинальные и свежие дистрибутивы Ruxe Engine находятся всегда по адресу:<br><a href="http://engine.ruxesoft.net/download" target="_blank">http://engine.ruxesoft.net/download</a>. 
+                (не считая <a href="http://ruxe-engine.ru/donate.html" target="_blank">официальной поддержки проекта</a>), требуйте у продавца вернуть Ваши деньги обратно.<br><br>
+                Кроме того, оригинальные и свежие дистрибутивы Ruxe Engine находятся всегда по адресу:<br><a href="http://ruxe-engine.ru/download" target="_blank">http://ruxe-engine.ru/download</a>.
                 <br>Если у Вас есть сомнения насчёт оригинальности используемого дистрибутива, рекомендуется скачать его по вышеуказанному адресу.                                                                               
                 </b></div> 
                 <br><br>
@@ -1152,6 +1152,6 @@ echo '</div>
     };
   };
 ?>
-<br><br><center><font style="color:#6B6B6B;">Powered by <a target="_blank" style="color:#6B6B6B;font-weight:bold;" href="http://engine.ruxesoft.net">Ruxe Engine</a></font></center>
+<br><br><center><font style="color:#6B6B6B;">Powered by <a target="_blank" style="color:#6B6B6B;font-weight:bold;" href="http://ruxe-engine.ru">Ruxe Engine</a></font></center>
 </body>
 </html>

@@ -64,6 +64,6 @@
     {
       $openpage = "привет";
       $pagetitle = "Тест";
-      $pageredirect = "http://engine.ruxesoft.net";
+      $pageredirect = "http://ruxe-engine.ru";
     };
   };

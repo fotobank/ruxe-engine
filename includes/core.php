@@ -362,7 +362,7 @@ function errortoshow($errno,$errmsg,$file,$line)
 	        echo '<div style="background-color:#f6e79a; border:1px solid black; margin: 2px 2px 2px 2px; padding: 2px 2px 2px 2px;">
 	        <center><b>Ошибка</b></center>
 	        <p>'.$errmsg.' в файле '.$file.' на строке '.$line.'</p>
-	        <p>Пожалуйста, обратитесь по <a href="http://engine.ruxesoft.net/news/problemy-i-oshibki.html" target="_blank">http://engine.ruxesoft.net/news/problemy-i-oshibki.html</a> если вы уверены, что ошибка не по вашей вине</p>
+	        <p>Пожалуйста, обратитесь по <a href="http://ruxe-engine.ru/news/problemy-i-oshibki.html" target="_blank">http://ruxe-engine.ru/news/problemy-i-oshibki.html</a> если вы уверены, что ошибка не по вашей вине</p>
 	        </div>';
 	}
 }
@@ -380,7 +380,7 @@ function etswwr($errno,$errmsg,$file,$line)
 	        <center><b>Ошибка</b></center>
 	        <p>'.$errmsg.' в файле '.$file.' на строке '.$line.'</p>
 
-	        <p>Пожалуйста, обратитесь по <a href="http://engine.ruxesoft.net/news/problemy-i-oshibki.html" target="_blank">http://engine.ruxesoft.net/news/problemy-i-oshibki.html</a> если вы уверены, что ошибка не по вашей вине</p>
+	        <p>Пожалуйста, обратитесь по <a href="http://ruxe-engine.ru/news/problemy-i-oshibki.html" target="_blank">http://ruxe-engine.ru/news/problemy-i-oshibki.html</a> если вы уверены, что ошибка не по вашей вине</p>
 	        </div>';
 	        $error_log = fopen($cms_root."/conf/logs/errors.log","a");
 		fputs($error_log,date("d.m.y, H:i")."||".$errno."||".$errmsg."||".$file."||".$line."||".$Filtr->clear($_SERVER['REMOTE_ADDR'])."||\r\n");
@@ -2849,7 +2849,7 @@ class Commentaries
 				$from.='&amp;';
 			else
 				$from.='?';
-      			$br 		= array($lcms['error_title'],"Ruxe Engine (engine.ruxesoft.net)","","",$errortext."<center><a href=\"".$qwerty."\">".$lcms['error_back']."</a></center>",$from."comment=".$comment."&name=".$name."&message=".$message."&mail=".$mail,$cms_site,$cms_site."/themes/".$cms_theme);
+      			$br 		= array($lcms['error_title'],"Ruxe Engine (ruxe-engine.ru)","","",$errortext."<center><a href=\"".$qwerty."\">".$lcms['error_back']."</a></center>",$from."comment=".$comment."&name=".$name."&message=".$message."&mail=".$mail,$cms_site,$cms_site."/themes/".$cms_theme);
       			$openpage     	= $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
       			$pagetitle    	= $lcms['error_title'];
       			$stop_down    	= true;
@@ -3075,7 +3075,7 @@ class Commentaries
 						$pageredirect	=	str_replace('&amp;','&',$pageredirect);
 					};
 					
-					$br = array($mess_submit_title,"Ruxe Engine (engine.ruxesoft.net)","","",$message_submit.$lcms['refer1']." <a href=\"".$pageredirect."\">".$lcms['refer2']."</a> ".$lcms['refer3'],$pageredirect,$cms_site,$cms_site."/themes/".$cms_theme);
+					$br = array($mess_submit_title,"Ruxe Engine (ruxe-engine.ru)","","",$message_submit.$lcms['refer1']." <a href=\"".$pageredirect."\">".$lcms['refer2']."</a> ".$lcms['refer3'],$pageredirect,$cms_site,$cms_site."/themes/".$cms_theme);
 						
         				$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
         				$pagetitle = $mess_submit_title;

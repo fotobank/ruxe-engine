@@ -229,7 +229,7 @@
       	};
       	$generalmenu = str_replace('{BFGADD}',$bfgadd,$generalmenu);
      	
-     	($action=="users") ? $br = array($title,"Ruxe Engine (engine.ruxesoft.net)",$admin_,$newmess,$cnewmess," onLoad='checkpoles();'",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu) : $br = array($title,"Ruxe Engine (engine.ruxesoft.net)",$admin_,$newmess,$cnewmess,"",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu);
+     	($action=="users") ? $br = array($title,"Ruxe Engine (ruxe-engine.ru)",$admin_,$newmess,$cnewmess," onLoad='checkpoles();'",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu) : $br = array($title,"Ruxe Engine (ruxe-engine.ru)",$admin_,$newmess,$cnewmess,"",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu);
      	header("Cache-Control: no-store"); 
      	header("Expires: " .  date("r"));
      	header('Content-type: text/html; charset=utf-8');
@@ -408,7 +408,7 @@
 							<tr class="titlered"><td colspan=2>ТЕМА ОФОРМЛЕНИЯ САЙТА ПОВРЕЖДЕНА</td></tr>
 							<tr class="redtd"><td colspan=2>
 								Активная тема оформления сайта создана не в соответствии с внутренними правилами шаблонизации версии '.$theme_version.' или повреждена.<br>
-								<a href="http://engine.ruxesoft.net/documentation/repair.html" target="_blank" style="color:black; font-weight:bold;">Узнать подробности и как исправить</a>.
+								<a href="http://ruxe-engine.ru/documentation/repair.html" target="_blank" style="color:black; font-weight:bold;">Узнать подробности и как исправить</a>.
 							</td></tr>
 						';
 			/*
@@ -453,7 +453,7 @@
                          			$new         = fopen("../conf/last_checkver.dat","w");
                          			fwrite($new,$this_date."|".$ls[1]."|1|");
                          			fclose($new);
-                         			$new_version = @file_get_contents("http://engine.ruxesoft.net/lastver.html");
+                         			$new_version = @file_get_contents("http://ruxe-engine.ru/lastver.html");
                          			if ($new_version!='')
                          			{
                             				$new         = fopen("../conf/last_checkver.dat","w");
@@ -475,7 +475,7 @@
        				{
             				$install .= '<tr class="titlegreen"><td colspan=2>ДОСТУПНО ОБНОВЛЕНИЕ</td></tr>
        					<tr class="greentd"><td colspan=2>У Вас установлена '.$this_version.' версия, в то время как последняя версия '.$new_version.'<br>
-       					Настоятельно рекомендуется <a style="color:black; font-weight:bold;" href="http://engine.ruxesoft.net/download">обновиться до новой версии</a></td></tr>';
+       					Настоятельно рекомендуется <a style="color:black; font-weight:bold;" href="http://ruxe-engine.ru/download">обновиться до новой версии</a></td></tr>';
        				};
   			};
   			include("../conf/backup.php");
@@ -2040,7 +2040,7 @@
          		$word_wrap = ($cms_editareawp==1) ? 'true' : 'false';
          		$echooptions = '
          				<h2>Оформление сайта</h2>
-					<font class="desc">Здесь Вы можете отредактировать темы оформления<br><a href="http://engine.ruxesoft.net/documentation/howcreatetheme.html" style="color:#5D5D5D;" target="_blank">Инструкция</a></font><br><br>
+					<font class="desc">Здесь Вы можете отредактировать темы оформления<br><a href="http://ruxe-engine.ru/documentation/howcreatetheme.html" style="color:#5D5D5D;" target="_blank">Инструкция</a></font><br><br>
 					<center>
               					<table border=0 width="99%" cellpadding=4>
                      					<tr><td align="left" valign="top">
@@ -2575,7 +2575,7 @@
           		if ($tmp['plugins_use']==true)
           		{
           			$echooptions.='
-          				<br><font class="desc">Дополнения: (<a style="color:#5D5D5D;" href="?action=plugins">Настроить</a> | <a style="color:#5D5D5D;" href="http://engine.ruxesoft.net/plugins.html">Скачать новые</a> | <a style="color:#5D5D5D;" href="http://engine.ruxesoft.net/documentation/howinstallplugin.html">Как устанавливать дополнения</a> | <a style="color:#5D5D5D;" href="http://engine.ruxesoft.net/documentation/howcreateplugin.html">Как создать дополнение</a>)</font><br><br>
+          				<br><font class="desc">Дополнения: (<a style="color:#5D5D5D;" href="?action=plugins">Настроить</a> | <a style="color:#5D5D5D;" href="http://ruxe-engine.ru/plugins.html">Скачать новые</a> | <a style="color:#5D5D5D;" href="http://ruxe-engine.ru/documentation/howinstallplugin.html">Как устанавливать дополнения</a> | <a style="color:#5D5D5D;" href="http://ruxe-engine.ru/documentation/howcreateplugin.html">Как создать дополнение</a>)</font><br><br>
           				
           			';
           			$plugins      = file("../conf/plugins.dat");
@@ -2832,14 +2832,14 @@
            		break;
      	};
  	$ddd=microtime(); $ddd=((double)strstr($ddd, ' ')+(double)substr($ddd,0,strpos($ddd,' ')));
-     	echo $GlobalTemplate->template("{COPYRIGHT}","Используя данное программное обеспечение, Вы соглашаетесь с <a href=\"?action=system&amp;go=license\" target=\"_blank\" style=\"color:white;\">Лицензионным соглашением</a>.<br>Автор, программирование: <b>Ахрамеев Денис Викторович <a style=\"color:white; font-weight:bold;\" href=\"http://ruxesoft.net/feedback.html\" target=\"_blank\">Includen</a></b>.<br>Дизайн: <b>Игорь</b> <a href=\"http://engine.ruxesoft.net/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>Контроль качества, документация: <b>Олег Прохоров</b> <a href=\"http://www.tanatos-life.ru/aboutme.php\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Tanatos</a>.<br>Генерация: ".number_format(($ddd-$ttt),3)." секунд.","./theme/admincenterend.tpl");
+     	echo $GlobalTemplate->template("{COPYRIGHT}","Используя данное программное обеспечение, Вы соглашаетесь с <a href=\"?action=system&amp;go=license\" target=\"_blank\" style=\"color:white;\">Лицензионным соглашением</a>.<br>Автор, программирование: <b>Ахрамеев Денис Викторович <a style=\"color:white; font-weight:bold;\" href=\"http://ruxesoft.net/feedback.html\" target=\"_blank\">Includen</a></b>.<br>Дизайн: <b>Игорь</b> <a href=\"http://ruxe-engine.ru/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>Контроль качества, документация: <b>Олег Прохоров</b> <a href=\"http://www.tanatos-life.ru/aboutme.php\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Tanatos</a>.<br>Генерация: ".number_format(($ddd-$ttt),3)." секунд.","./theme/admincenterend.tpl");
   }
   else
   {
      	$ar = array("{TITLE}","{GENERATOR}","{SITE}","{COPYRIGHT}","{MESSAGE}");
      	$dmessage = "<br>";
      	if (isset($_COOKIE['admin_password'])) $dmessage = "Перезайдите, пожалуйста.<br><br>";
-     	$br = array("Админ-центр Ruxe Engine","Ruxe Engine (engine.ruxesoft.net)",$cms_site,"Powered by <a href=\"http://engine.ruxesoft.net\" style=\"color:black;\" target=\"_blank\">Ruxe Engine</a>",$dmessage);
+     	$br = array("Админ-центр Ruxe Engine","Ruxe Engine (ruxe-engine.ru)",$cms_site,"Powered by <a href=\"http://ruxe-engine.ru\" style=\"color:black;\" target=\"_blank\">Ruxe Engine</a>",$dmessage);
      	header("Expires: Mod, 26 Jul 1997 05:00:00 GMT");
      	header("Last-Modified: ".gmdate("D, d M Y H:i:s", 10000) . " GMT");
      	header("Cache-Control: no-cache, must-revalidate");

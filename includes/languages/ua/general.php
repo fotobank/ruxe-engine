@@ -160,7 +160,7 @@ $lcms['user_ae_8'] = "Розмір оригінального зображенн
 $lcms['user_a_rules_1'] = "Підтримуються GIF, JPG і PNG зображення, не більше ".$cms_upload_maxsite." КБ та розмірами не більше ".$cms_upload_width." пикселей в ширину и ".$cms_upload_height." в высоту";
 $lcms['user_a_rules_2'] = "Підтримуються GIF, JPG і PNG зображення. Ви можете використовувати зображення будь-яких розмірів (ширини, висоти). Якщо воно буде перевищувати припустимі, то розміри будуть змінені автоматично.";
 $lcms['user_ae_3'] = "Об'єм пам'яті відповідної за розмірами (шириною і висотою) аватари не повинен перевищувати ".$cms_upload_maxsite." КБ";
-$lcms['modifed_generals'] = 'Виявлені зміни в includes/functions.general.php<br>Відновіть вказаний файл з <a href="http://engine.ruxesoft.net/download">оригінального дистрибутива</a> що версії використовується';
+$lcms['modifed_generals'] = 'Виявлені зміни в includes/functions.general.php<br>Відновіть вказаний файл з <a href="http://ruxe-engine.ru/download">оригінального дистрибутива</a> що версії використовується';
 $lcms['rss_title'] = "RSS лента новин";
 $lcms['error_477'] = "User or key not valid";
 $lcms['error_395'] = "User already restore password";
@@ -194,7 +194,7 @@ $lcms['pm_notread_one'] = "нове";
 $lcms['pm_notread_much'] = "нових";
 $lcms['pm_notread_much2'] = "нових";
 $lcms['botdownload_title'] = "Роботи не можуть качати файли";
-$lcms['botdownload_message'] = "Роботам заборонено качати файли. Якщо ви вважаєте це повідомлення помилкою, необхідно звернутись в <a href=\"http://engine.ruxesoft.net/feedback.html\">Технічну підтримку Ruxe Engine</a>.";
+$lcms['botdownload_message'] = "Роботам заборонено качати файли. Якщо ви вважаєте це повідомлення помилкою, необхідно звернутись в <a href=\"http://ruxe-engine.ru/feedback.html\">Технічну підтримку Ruxe Engine</a>.";
 
 $lcms['today'] = 'Сьогодні';
 $lcms['yesterday'] = 'Вчора';

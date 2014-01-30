@@ -12,7 +12,7 @@
 	<table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 		<tr class="titletable"><td colspan=2>О ПРОГРАММЕ</td></tr>
 		<tr><td colspan=2 align="center">
-			<a href="http://engine.ruxesoft.net/" target="_blank">Сайт программы</a> • <a href="http://engine.ruxesoft.net/documentation/" target="_blank">Документация</a> • <a href="http://engine.ruxesoft.net/plugins.html" target="_blank">Дополнения</a> • <a href="?action=system&amp;go=thanks">Благодарности</a> • <a href="http://engine.ruxesoft.net/license.html">Лицензия</a> • <a target="_blank" href="http://engine.ruxesoft.net/donate.html">Поддержка проекта</a>  
+			<a href="http://ruxe-engine.ru/" target="_blank">Сайт программы</a> • <a href="http://ruxe-engine.ru/documentation/" target="_blank">Документация</a> • <a href="http://ruxe-engine.ru/plugins.html" target="_blank">Дополнения</a> • <a href="?action=system&amp;go=thanks">Благодарности</a> • <a href="http://ruxe-engine.ru/license.html">Лицензия</a> • <a target="_blank" href="http://ruxe-engine.ru/donate.html">Поддержка проекта</a>
 		</td></tr>{INSTALL}
 		<tr class="titletable"><td width = "50%">СТАТИСТИКА</td><td width="50%">НЕДАВНИЕ КОММЕНТАРИИ</td></tr>
 		<tr><td valign="top">			

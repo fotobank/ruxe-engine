@@ -3,9 +3,9 @@
 <center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 <tr class="titletable"><td colspan=2>RUXE ENGINE</td></tr>
 <tr><td>Версия Ruxe Engine:</td><td>{VERSION}</td></tr>
-<tr><td>Справка по работе с Ruxe Engine:</td><td><a href="http://engine.ruxesoft.net/documentation">Читать</a></td></tr>
-<tr><td>Поддержка проекта:</td><td><a href="http://engine.ruxesoft.net/donate.html">Подробнее</a></td></tr>
-<tr><td>Нашли ошибку?</td><td><a href="http://engine.ruxesoft.net/news/problemy-i-oshibki.html" target="_blank">Сообщите о ней!</a></td></tr>
+<tr><td>Справка по работе с Ruxe Engine:</td><td><a href="http://ruxe-engine.ru/documentation">Читать</a></td></tr>
+<tr><td>Поддержка проекта:</td><td><a href="http://ruxe-engine.ru/donate.html">Подробнее</a></td></tr>
+<tr><td>Нашли ошибку?</td><td><a href="http://ruxe-engine.ru/news/problemy-i-oshibki.html" target="_blank">Сообщите о ней!</a></td></tr>
 <tr><td>Благодарности</td><td><a href="?action=system&amp;go=thanks">Читать</a></td></tr>
 </table>
 <br>
