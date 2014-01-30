@@ -3,3 +3,5 @@
 !avatars/noavatar.png
 /rpanel/backups/*
 !rpanel/backups/index.html
+/conf/users/pm_*
+/conf/logs/*.log

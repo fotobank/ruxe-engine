@@ -1,9 +1,9 @@
 <?
-$cms_site	=	"http://b9228e0962a78b84f3d5d92f4faa000b";
-$cms_root	=	"/43ec517d68b6edd3015b3edc9a11367b";
+					$cms_site              = "http://ruxe-engine.loc";
+					$cms_root              = "/home/denis/WebServer/ruxe-engine";
 					$cms_gzip              = 0;
 					$cms_sendmess          = 0;
-					$cms_mail              = "admin@domain.here";
+					$cms_mail              = "admin@ruxe-engine.loc";
 					$cms_needlog           = 1;
 					$cms_needalog          = 1;
 					$cms_online_time       = 5;
@@ -78,7 +78,7 @@ $cms_root	=	"/43ec517d68b6edd3015b3edc9a11367b";
 					$cms_punycode		= 0;
 					$cms_visual		= 1;
 					$cms_simcount		= 10;
-					$cms_furl		= 1;
+					$cms_furl		= 0;
 					$cms_showbfghints	= 1;
 					$cms_premod_mess	= 70;
 					$cms_rss_count		= 50;
