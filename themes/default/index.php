@@ -58,7 +58,7 @@
 				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Дополнительное меню:</font><br><br>
 				<ul>
 					<li><a href="<? here_urlsite('somepage.html'); ?>">Как перенести свой дизайн в Ruxe Engine</a></li>
-					<li><a href="<? here_urlsite(); ?>/documentation/">Документация</a></li>
+					<li><a href="<? here_urlsite(); ?>/README.md">Документация</a></li>
 				</ul><br><br><br>
 			
 				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Аккаунт:</font><br><br>
