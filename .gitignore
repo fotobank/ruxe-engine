@@ -5,3 +5,5 @@
 !rpanel/backups/index.html
 /conf/users/pm_*
 /conf/logs/*.log
+/conf/cache/*
+!conf/cache/index.html
