@@ -3382,7 +3382,10 @@ class FileManager
        		fclose($all_hits_file);
        		if ($cms_needlog==1)
        		{
-			$original	=	file($cms_root.'/conf/logs/log.log');
+				$logFileName = $cms_root.'/conf/logs/log.log';
+				$original = array();
+				if (file_exists($logFileName))
+					$original	=	file($logFileName);
 			//Сначала вычисления
 			$needrewriteall	=	false;
 			if (count($original)>=$cms_log_max)

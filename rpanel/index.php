@@ -45,7 +45,7 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
 13) Если вы не согласны с условиями данного Лицензионного соглашения, вы обязаны удалить 
 программу и все её части с ваших носителей.
 */
-	define(ADMINCENTER,true);
+	define("ADMINCENTER", true);
 	$this_version 	= 	"1.5";
 	$theme_version	=	"0.2";
   $login 	= "no";

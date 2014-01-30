@@ -108,7 +108,8 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
           <center><table class="optionstable" style="table-layout: fixed;" border=0 cellpadding=1 cellspacing=0>
            <tr class="titletable"><td>АДРЕС</td><td>ОТКУДА</td><td width=200>БРАУЗЕР</td><td width-120>IP</td><td width=150>ДАТА И ВРЕМЯ</td></tr>
            ';
-          $stat=file("../conf/logs/log.log");
+			$statFileName = "../conf/logs/log.log";
+          $stat= file_exists($statFileName) ? file($statFileName) : array();
           $stat	=	array_reverse($stat);
 	  
 
@@ -153,7 +154,8 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
           <br><br>
           <center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
            ';
-          $stat=file("../conf/logs/rpanel.log");
+			$statFileName = "../conf/logs/rpanel.log";
+          $stat=file_exists($statFileName) ? file($statFileName) : array();
           $stat	=	array_reverse($stat);
           foreach($stat as $element)
           {
@@ -176,7 +178,8 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
           <center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
           <tr class="titletable"><td>ВРЕМЯ</td><td>КОД ОШИБКИ</td><td>СООБЩЕНИЕ ОШИБКИ</td><td>ФАЙЛ</td><td>СТРОКА</td><td>IP</td></tr>
            ';
-          $stat=file("../conf/logs/errors.log");
+			$statFileName = "../conf/logs/errors.log";
+          $stat=file_exists($statFileName) ? file($statFileName) : array();
           $stat	=	array_reverse($stat);
           foreach($stat as $element)
           {
@@ -200,7 +203,8 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
           <center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
           <tr class="titletable"><td>ВРЕМЯ</td><td>IP</td><td>СТРАНИЦА</td><td>БРАУЗЕР</td><td>ОТКУДА</td></tr>
            ';
-          $stat=file("../conf/logs/ban.log");
+		$statFileName = "../conf/logs/ban.log";
+          $stat=file_exists($statFileName) ? file($statFileName) : array();
 	  $stat=array_reverse($stat);
           foreach($stat as $element)
           {
@@ -287,7 +291,8 @@ Roman Mamedov<br><br>
   };
   
   $banlog = "";
-  $data = file("../conf/logs/ban.log");
+  $banLogFileName = "../conf/logs/ban.log";
+  $data = file_exists($banLogFileName) ? file($banLogFileName) : array();
   $i = 0;
   $banlogpages = "";
   $max = $cms_nav_system;
@@ -310,7 +315,8 @@ Roman Mamedov<br><br>
   $alog = "";
   $alogpages = "";
   $i = 0;
-  $stat=file("../conf/logs/rpanel.log");
+  $statFileName = "../conf/logs/rpanel.log";
+  $stat = file_exists($statFileName) ? file($statFileName) : array();
   $stat = array_reverse($stat);
   foreach($stat as $element)
   {
@@ -329,7 +335,8 @@ Roman Mamedov<br><br>
   $log="";
   $logpages="";
   $i = 0;
-  $stat=file("../conf/logs/log.log");
+  $statFileName = "../conf/logs/log.log";
+  $stat = file_exists($statFileName) ? file($statFileName) : array();
   $stat = array_reverse($stat);
   foreach($stat as $element)
   {
@@ -376,7 +383,8 @@ Roman Mamedov<br><br>
   $errors = "";
   $errorspages="";
   $i = 0;
-  $data = file("../conf/logs/errors.log");
+  $dataFileName = "../conf/logs/errors.log";
+  $data = file_exists($dataFileName) ? file($dataFileName) : array();
   $data = array_reverse($data);
   foreach($data as $element)
   {

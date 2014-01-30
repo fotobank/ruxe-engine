@@ -1,7 +1,7 @@
 <?
 
 include("../conf/config.php");
-define(ADMINCENTER,true);
+define("ADMINCENTER",true);
 include("../includes/core.php");
 
 if (isset($_GET['logout']))
