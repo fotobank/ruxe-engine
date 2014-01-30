@@ -1128,7 +1128,7 @@ if ($action=="login")
      	if (isset($_POST['password']))
      		$password = $Filtr->clear($_POST['password']);
      	$founded = false;
-     	$avatar = "noavatar.gif";
+     	$avatar = "noavatar.png";
      	$tmppos	=	$GlobalUsers->finduser($login,false,'',true);
      	if ($tmppos!=-1)
      	{
@@ -1266,14 +1266,14 @@ if ($action=="profile")
         
        			if ($cms_avatars == 1)
 			{
-				$ava 	=	$cms_site.'/avatars/noavatar.gif';
+				$ava 	=	$cms_site.'/avatars/noavatar.png';
 				//$cms_site."/avatars/".str_replace("\\","",str_replace("/","",str_replace("..","",$Filtr->clear($pieces[16]))))
 				if ($cms_gravatars==1)
 				{
-					if ($pieces[16]=='noavatar.gif')
+					if ($pieces[16]=='noavatar.png')
 						$ava	=	$GlobalImaging -> get_gravatar($pieces[2],$cms_upload_width,$cms_gravatars_im,'g',false);
 				};
-				if ($pieces[16]!='noavatar.gif')
+				if ($pieces[16]!='noavatar.png')
 					$ava	=	$cms_site.'/avatars/'.$Filtr->clear($pieces[16]);
         		        $avatar = "<tr><td colspan=2><img src=\"".$ava."\" border=0 alt=\"\"></td></tr>";
 			}
@@ -1423,14 +1423,14 @@ if ($action=="myprofile")
                     					$pagetitle = $lcms['user_ae_title'];
                     					$stop_his = true;
                 				};
-                				if ($GlobalUsers->getpole($login,16)!='noavatar.gif')
+                				if ($GlobalUsers->getpole($login,16)!='noavatar.png')
                 					$FileManager->removefile($uploaddir.$GlobalUsers->getpole($login,16));
                 				/*foreach ($usersfile as $user)
                 				{
                     					$u = explode("|",$user);
                     					if ($Filtr->tolower($u[18])==$Filtr->tolower($login))
                     					{
-                          					if ($u[16]!='noavatar.gif') 
+                          					if ($u[16]!='noavatar.png')
                           						$FileManager->removefile($uploaddir.$u[16]);
                           					break;
                     					};
@@ -1582,13 +1582,13 @@ if ($action=="myprofile")
        				};
        				($cms_avatars_resize == 1)?$rules = $lcms['user_a_rules_2']:$rules=$lcms['user_a_rules_1']; 
 				//str_replace("\\","",str_replace("/","",$Filtr->clear($pieces[16])))
-				//Сначала сделать noavatar.gif
-				$ava	=	$cms_site.'/avatars/noavatar.gif';
+				//Сначала сделать noavatar.png
+				$ava	=	$cms_site.'/avatars/noavatar.png';
 				//Потом сделать с граватарой если нужно
 				if ($cms_gravatars==1)
 					$ava	=	$GlobalImaging -> get_gravatar($pieces[2],$cms_upload_width,$cms_gravatars_im,'g',false);
 				//Потом проверить у юзера - может у него своя аватара
-				if ($pieces[16]!='noavatar.gif')
+				if ($pieces[16]!='noavatar.png')
 					$ava = $cms_site.'/avatars/'.str_replace("\\","",str_replace("/","",$Filtr->clear($pieces[16])));
 				
 				$ep	=	$Navigation->furl('profilelink');

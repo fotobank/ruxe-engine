@@ -967,7 +967,7 @@ if (isset($_GET['saverdo']))
   			$temp = file($fie);
   			$i    = 0;
   			$need = "no";
-  			$avatar	=	'noavatar.gif';
+  			$avatar	=	'noavatar.png';
   			foreach ($temp as $tem)
   			{
        				$te = explode("|",$tem);
@@ -999,7 +999,7 @@ if (isset($_GET['saverdo']))
        				$FileManager->removefile($GlobalUsers->pmpath($GlobalUsers->getid($need)));
   			}; 
   			//А аватару?
-  			if ($avatar!='noavatar.gif')
+  			if ($avatar!='noavatar.png')
   			{
   				if (file_exists($cms_root.'/avatars/'.$avatar))
   					$FileManager->removefile($cms_root.'/avatars/'.$avatar);
@@ -1070,7 +1070,7 @@ if (isset($_GET['saverdo']))
 
 			if ($oldavatar != $avatar)
 			{
-    				if ($oldavatar!="noavatar.gif")
+    				if ($oldavatar!="noavatar.png")
     				{
          				@unlink("../avatars/".$oldavatar);
     				};

@@ -866,7 +866,7 @@ class GlobalUsers
    			{
     				$ar = array("{LOGIN}","{SITE}","{AVATAR}","{THEMEPATH}","{PM}","{PMLINK}","{PROFILELINK}");
    			 	if (!isset($_COOKIE['site_avatar'])) 
-   			 		$avatar = "noavatar.gif";
+   			 		$avatar = "noavatar.png";
    			 	else 
    			 		$avatar = $Filtr->clear($_COOKIE['site_avatar']);
     				$avatar = str_replace(array("%","#","..","\\","/","!","@","$","^","&","_","(",")","*"),'',$avatar);
@@ -891,7 +891,7 @@ class GlobalUsers
 				$retav	=	$cms_site."/avatars/".$avatar;
 				if ($cms_gravatars==1)
 				{
-					if ($avatar=='noavatar.gif')
+					if ($avatar=='noavatar.png')
 						$retav	=	$GlobalImaging->get_gravatar($this->getpole($Filtr->clear($_COOKIE['site_login']),2),$cms_upload_width,$cms_gravatars_im,'g',false);
 				};
     				$br = array($Filtr->clear($_COOKIE['site_login']),$cms_site,$retav,$cms_site."/themes/".$cms_theme,$pm,$Navigation->furl('pmlink'),$Navigation->furl('profilelink'));
@@ -1406,7 +1406,7 @@ class GlobalUsers
 			$usersfruits[12] = $Filtr->clear($_SERVER['REMOTE_ADDR']);
 			$usersfruits[14] = 0;
 			$usersfruits[15] = ($cms_active==1) ? $ackey : '';
-			$usersfruits[16] = 'noavatar.gif';
+			$usersfruits[16] = 'noavatar.png';
 			$usersfruits[18] = $login;
 			$usersfruits[19] = "Не указана";
 			$usersfruits[20] = date("d.m.y, H:i");
@@ -2673,8 +2673,8 @@ class Commentaries
 
 
 				$tr	=	$GlobalUsers->finduser($pieces[1]);
-				//Пусть сначала аватара будет noavatar.gif
-				$avatar = $cms_site."/avatars/noavatar.gif";
+				//Пусть сначала аватара будет noavatar.png
+				$avatar = $cms_site."/avatars/noavatar.png";
 				//Потом если включены граватары - брать из мыла
 				$needgravatar	=	true;
 				$needcenzura	=	true;
@@ -2687,9 +2687,9 @@ class Commentaries
                   				$pieces[1] = $GlobalTemplate->users(array("{SITE}","{THEMEPATH}","{NAME}","{PROFILELINK}"),array($cms_site,$cms_site."/themes/".$cms_theme,$pieces[1],$Navigation->furl('viewprofile',$pieces[1])),8); 
                 	 		} else
                   				$pieces[1] = $GlobalTemplate->users(array("{SITE}","{THEMEPATH}","{NAME}","{PROFILELINK}"),array($cms_site,$cms_site."/themes/".$cms_theme,$pieces[1],$Navigation->furl('viewprofile',$pieces[1])),7);
-					//if ($pie[16]=='noavatar.gif')
+					//if ($pie[16]=='noavatar.png')
 					$pieces[2] = $pie[2];
-					if ($pie[16]!='noavatar.gif')
+					if ($pie[16]!='noavatar.png')
 					{
 						$avatar 	= 	$cms_site."/avatars/".str_replace("\\","",str_replace("..","",str_replace("/","",$Filtr->clear($pie[16]))));
 						$needgravatar	=	false;
@@ -2698,7 +2698,7 @@ class Commentaries
 				};
 				if (($cms_gravatars==1) and ($needgravatar==true))
 					$avatar = $GlobalImaging -> get_gravatar($pieces[2],$cms_upload_width,$cms_gravatars_im,'g',false);
-				//Потом проверить установленную аватару если пользователь и сменить аватару если она не равна noavatar.gif
+				//Потом проверить установленную аватару если пользователь и сменить аватару если она не равна noavatar.png
 				//usebbcodes($text,$do,$imgteg=false,$needcenz=true)
     				$pieces[3] = $GlobalTemplate->usebbcodes($pieces[3],'html',false,$needcenzura);
     				if ($cms_ps==1 && $ps!="")

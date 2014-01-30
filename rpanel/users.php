@@ -277,7 +277,7 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
             };
         };         
 	$ava	=	$cms_site.'/avatars/'.$Filtr->clear($p[16]);
-	if ($p[16]=='noavatar.gif')
+	if ($p[16]=='noavatar.png')
 	{
 		if ($cms_gravatars==1)
 			$ava	=	$GlobalImaging -> get_gravatar($p[2],$cms_upload_width,$cms_gravatars_im,'g',false);
@@ -286,7 +286,7 @@ echo '<a href="http://engine.ruxesoft.net" target="_blank">Скрипт напи
         <tr><td>Аватар:</td><td>
         <input type="hidden" name="avatar" id="av3" value="'.$p[16].'">
         <input type="hidden" name="oldavatar" value="'.$p[16].'">
-        <img id="av" alt="" src="'.$ava.'" border=0> <input id="av2" type="button" onClick="document.getElementById(\'av\').style.display=\'none\'; document.getElementById(\'av2\').style.display=\'none\'; document.getElementById(\'av3\').value=\'noavatar.gif\';" value="Удалить"></td></tr>
+        <img id="av" alt="" src="'.$ava.'" border=0> <input id="av2" type="button" onClick="document.getElementById(\'av\').style.display=\'none\'; document.getElementById(\'av2\').style.display=\'none\'; document.getElementById(\'av3\').value=\'noavatar.png\';" value="Удалить"></td></tr>
         <tr class="sub"><td colspan=2><input type="submit" name="submit" value="Сохранить"></td></tr>
         </table>
         </center>

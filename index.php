@@ -299,7 +299,7 @@ if ($role=="active")
    		header('Content-type: text/html; charset=utf-8');
    		setcookie("site_login", "no", time() + $cms_time_cookie,"/");
    		setcookie("site_password", "no", time() + $cms_time_cookie,"/");
-   		setcookie("site_avatar", "noavatar.gif", time() + $cms_time_cookie,"/");
+   		setcookie("site_avatar", "noavatar.png", time() + $cms_time_cookie,"/");
    		$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}");
    		$br = array($lcms['user_no_activated'],"Ruxe Engine (http://engine.ruxesoft.net/)",(isset($_SERVER['REMOTE_ADDR'])) ? $_SERVER['REMOTE_ADDR'] : "",$lcms['user_no_activated'],"<!-- "," -->");
    		echo str_replace($ar,$br,$retpldef);
