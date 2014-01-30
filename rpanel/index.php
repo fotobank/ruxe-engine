@@ -954,7 +954,7 @@
         		$GlobalUsers->access(1);
          		$whatdoing="Основные настройки";
   			$message = "";
-  			$ar = array("{DESCRIPTION}","{SITE}","{COPYRIGHT}","{DAYVOTE1}","{DAYVOTE2}","{DAYVOTE3}",
+  			$ar = array("{DESCRIPTION}","{SITE}","{CREDITS}","{DAYVOTE1}","{DAYVOTE2}","{DAYVOTE3}",
   					"{HTTPSHOW1}","{HTTPSHOW2}","{NOINDEXSHOW1}","{NOINDEXSHOW2}","{RSS}","{ROOT}",
   					"{ERSHOW1}","{ERSHOW2}","{ERSHOW3}","{MAIL}","{TIME_COOKIE}","{CLSHOW1}","{CLSHOW2}","{CLOSED_TEXT}","{COMMENTSSHOW1}",
   					"{COMMENTSSHOW2}","{SMILESSHOW1}","{SMILESSHOW2}","{PREMODERSHOW1}","{PREMODERSHOW2}","{MESHOW1}","{MESHOW2}","{REC_PAGE}",
@@ -2832,11 +2832,11 @@
            		break;
      	};
  	$ddd=microtime(); $ddd=((double)strstr($ddd, ' ')+(double)substr($ddd,0,strpos($ddd,' ')));
-     	echo $GlobalTemplate->template("{COPYRIGHT}","Используя данное программное обеспечение, Вы соглашаетесь с <a href=\"http://ruxe-engine.ru/license.html\" target=\"_blank\" style=\"color:white;\">Лицензионным соглашением</a>.<br>Автор, программирование: <b>Ахрамеев Денис Викторович <a style=\"color:white; font-weight:bold;\" href=\"http://ruxesoft.net/feedback.html\" target=\"_blank\">Includen</a></b>.<br>Дизайн: <b>Игорь</b> <a href=\"http://ruxe-engine.ru/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>Контроль качества, документация: <b>Олег Прохоров</b> <a href=\"http://www.tanatos-life.ru/aboutme.php\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Tanatos</a>.<br>Генерация: ".number_format(($ddd-$ttt),3)." секунд.","./theme/admincenterend.tpl");
+     	echo $GlobalTemplate->template("{CREDITS}","Используя данное программное обеспечение, Вы соглашаетесь с <a href=\"http://ruxe-engine.ru/license.html\" target=\"_blank\" style=\"color:white;\">Лицензионным соглашением</a>.<br>Автор, программирование: <b>Ахрамеев Денис Викторович <a style=\"color:white; font-weight:bold;\" href=\"http://ruxesoft.net/feedback.html\" target=\"_blank\">Includen</a></b>.<br>Дизайн: <b>Игорь</b> <a href=\"http://ruxe-engine.ru/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>Контроль качества, документация: <b>Олег Прохоров</b> <a href=\"http://www.tanatos-life.ru/aboutme.php\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Tanatos</a>.<br>Генерация: ".number_format(($ddd-$ttt),3)." секунд.","./theme/admincenterend.tpl");
   }
   else
   {
-     	$ar = array("{TITLE}","{GENERATOR}","{SITE}","{COPYRIGHT}","{MESSAGE}");
+     	$ar = array("{TITLE}","{GENERATOR}","{SITE}","{CREDITS}","{MESSAGE}");
      	$dmessage = "<br>";
      	if (isset($_COOKIE['admin_password'])) $dmessage = "Перезайдите, пожалуйста.<br><br>";
      	$br = array("Админ-центр Ruxe Engine","Ruxe Engine (ruxe-engine.ru)",$cms_site,"Powered by <a href=\"http://ruxe-engine.ru\" style=\"color:black;\" target=\"_blank\">Ruxe Engine</a>",$dmessage);

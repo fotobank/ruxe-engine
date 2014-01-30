@@ -77,7 +77,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода контента той или иной страницы --&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;? here_pagecontent(); ?&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- ОБЯЗАТЕЛЬНАЯ команда для вывода текста "Powered by Ruxe Engine" с указанием ссылки на официальный сайт в соответствии с Лицензионным соглашением; местоположение данной команды может быть в любом месте страницы в пределах тегов &lt;body&gt;&lt;/body&gt;--&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{COPYRIGHT}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{CREDITS}<br>
 &lt;/body&gt;<br>
 &lt;/html&gt;
 </div>

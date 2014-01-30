@@ -31,7 +31,7 @@
      </form>
 	</td></tr>
    </table>
-   <br><br>{COPYRIGHT}
+   <br><br>{CREDITS}
  </td></tr></table>
  </body>
 </html>

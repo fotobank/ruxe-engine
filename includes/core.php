@@ -3222,21 +3222,21 @@ class FileManager
 		if ($GlobalTemplate->findcode('<!--',
 						'-->',
 						$zxctext,
-				'{COPYRIGHT}'
+				'{CREDITS}'
 						)=='fail')
-			$zxctext 	= 	str_replace('{COPYRIGHT}',
-				'-->{COPYRIGHT}',
+			$zxctext 	= 	str_replace('{CREDITS}',
+				'-->{CREDITS}',
 						$zxctext);
 		if ($GlobalTemplate->findcode('<style',
 				'/style>',
 						$zxctext,
-				'{COPYRIGHT}'
+				'{CREDITS}'
 						)=='fail')
 			$zxctext 	= 	str_replace(
-				'{COPYRIGHT}',
-				'</style>{COPYRIGHT}',
+				'{CREDITS}',
+				'</style>{CREDITS}',
 						$zxctext);
-		fwrite($zxcnfile, str_replace('{COPYRIGHT}',
+		fwrite($zxcnfile, str_replace('{CREDITS}',
 			'<span style="color:silver; font-family:verdana,arial,tahoma; font-size:10pt;font-weight:bold;">Powered by <a href="http://ruxe-engine.ru/" style="color:silver;" target="_blank">Ruxe Engine</a></span>',
 						$zxctext));
 		fclose($zxcnfile);
@@ -3253,7 +3253,7 @@ class FileManager
 		{
 			foreach (file($cms_root."/themes/".$cms_theme."/index.php") as $tmp33)
 			{
-				if (substr_count($tmp33,'{COPYRIGHT}')!=0)
+				if (substr_count($tmp33,'{CREDITS}')!=0)
 					$tmp22founded=true;
 			};
 		};
@@ -3268,7 +3268,7 @@ class FileManager
 			header('Content-type: text/html; charset=utf-8');
 			header("Cache-Control: no-store");
 			header("Expires: " .  date("r"));
-			die('Обязательная команда {COPYRIGHT} не найдена в шаблоне themes/название_темы/index.php');
+			die('Обязательная команда {CREDITS} не найдена в шаблоне themes/название_темы/index.php');
 			exit;
 		};
        		$date_file=file($cms_root."/conf/date.dat");
