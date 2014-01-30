@@ -3218,34 +3218,26 @@ class FileManager
 		$zxctext 	= 	'';
 		foreach ($zxcfile as $zxcline)
 			$zxctext .= $zxcline;
-		$alphabet	=	$Navigation->alphabet();
-		
-		if ($GlobalTemplate->findcode($alphabet[52].$alphabet[77].$alphabet[73].$alphabet[73],
-						$alphabet[73].$alphabet[73].$alphabet[53],
+
+		if ($GlobalTemplate->findcode('<!--',
+						'-->',
 						$zxctext,
-						$alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59]
+				'{COPYRIGHT}'
 						)=='fail')
-			$zxctext 	= 	str_replace($alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59],
-						$alphabet[73].$alphabet[73].$alphabet[53].$alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59],
+			$zxctext 	= 	str_replace('{COPYRIGHT}',
+				'-->{COPYRIGHT}',
 						$zxctext);
-		if ($GlobalTemplate->findcode($alphabet[52].$alphabet[44].$alphabet[45].$alphabet[50].$alphabet[37].$alphabet[30],
-						$alphabet[56].$alphabet[44].$alphabet[45].$alphabet[50].$alphabet[37].$alphabet[30].$alphabet[53],
+		if ($GlobalTemplate->findcode('<style',
+				'/style>',
 						$zxctext,
-						$alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59]
+				'{COPYRIGHT}'
 						)=='fail')
 			$zxctext 	= 	str_replace(
-						$alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59],
-						$alphabet[52].$alphabet[56].$alphabet[44].$alphabet[45].$alphabet[50].$alphabet[37].$alphabet[30].$alphabet[53].$alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59],
+				'{COPYRIGHT}',
+				'</style>{COPYRIGHT}',
 						$zxctext);
-		fwrite($zxcnfile, str_replace($alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59],
-						$alphabet[52].$alphabet[31].$alphabet[40].$alphabet[39].$alphabet[45].$alphabet[75].$alphabet[44].$alphabet[45].$alphabet[50].$alphabet[37].$alphabet[30].$alphabet[55].$alphabet[54].$alphabet[28].$alphabet[40].$alphabet[37].$alphabet[40].$alphabet[43].$alphabet[60].$alphabet[61].$alphabet[68].$alphabet[70].$alphabet[68].$alphabet[70].$alphabet[68]
-						.$alphabet[70].$alphabet[74].$alphabet[75].$alphabet[31].$alphabet[40].$alphabet[39].$alphabet[45].$alphabet[73].$alphabet[31].$alphabet[26].$alphabet[38].$alphabet[34].$alphabet[37].$alphabet[50].$alphabet[60].$alphabet[47].$alphabet[30].$alphabet[43].$alphabet[29].$alphabet[26].$alphabet[39].$alphabet[26].$alphabet[72].$alphabet[26].$alphabet[43].$alphabet[34].$alphabet[26]
-						.$alphabet[37].$alphabet[72].$alphabet[45].$alphabet[26].$alphabet[33].$alphabet[40].$alphabet[38].$alphabet[26].$alphabet[74].$alphabet[75].$alphabet[31].$alphabet[40].$alphabet[39].$alphabet[45].$alphabet[73].$alphabet[44].$alphabet[34].$alphabet[51].$alphabet[30].$alphabet[60].$alphabet[62].$alphabet[71].$alphabet[41].$alphabet[45].$alphabet[74].$alphabet[31].$alphabet[40]
-						.$alphabet[39].$alphabet[45].$alphabet[73].$alphabet[48].$alphabet[30].$alphabet[34].$alphabet[32].$alphabet[33].$alphabet[45].$alphabet[60].$alphabet[27].$alphabet[40].$alphabet[37].$alphabet[29].$alphabet[74].$alphabet[54].$alphabet[53].$alphabet[15].$alphabet[40].$alphabet[48].$alphabet[30].$alphabet[43].$alphabet[30].$alphabet[29].$alphabet[75].$alphabet[27].$alphabet[50]
-						.$alphabet[75].$alphabet[52].$alphabet[26].$alphabet[75].$alphabet[33].$alphabet[43].$alphabet[30].$alphabet[31].$alphabet[55].$alphabet[54].$alphabet[33].$alphabet[45].$alphabet[45].$alphabet[41].$alphabet[60].$alphabet[56].$alphabet[56].$alphabet[30].$alphabet[39].$alphabet[32].$alphabet[34].$alphabet[39].$alphabet[30].$alphabet[76].$alphabet[43].$alphabet[46].$alphabet[49]
-						.$alphabet[30].$alphabet[44].$alphabet[40].$alphabet[31].$alphabet[45].$alphabet[76].$alphabet[39].$alphabet[30].$alphabet[45].$alphabet[56].$alphabet[54].$alphabet[75].$alphabet[44].$alphabet[45].$alphabet[50].$alphabet[37].$alphabet[30].$alphabet[55].$alphabet[54].$alphabet[28].$alphabet[40].$alphabet[37].$alphabet[40].$alphabet[43].$alphabet[60].$alphabet[61].$alphabet[68]
-						.$alphabet[70].$alphabet[68].$alphabet[70].$alphabet[68].$alphabet[70].$alphabet[74].$alphabet[54].$alphabet[75].$alphabet[45].$alphabet[26].$alphabet[43].$alphabet[32].$alphabet[30].$alphabet[45].$alphabet[55].$alphabet[54].$alphabet[57].$alphabet[27].$alphabet[37].$alphabet[26].$alphabet[39].$alphabet[36].$alphabet[54].$alphabet[53].$alphabet[17].$alphabet[46].$alphabet[49]
-						.$alphabet[30].$alphabet[75].$alphabet[4].$alphabet[39].$alphabet[32].$alphabet[34].$alphabet[39].$alphabet[30].$alphabet[52].$alphabet[56].$alphabet[26].$alphabet[53].$alphabet[52].$alphabet[56].$alphabet[31].$alphabet[40].$alphabet[39].$alphabet[45].$alphabet[53],
+		fwrite($zxcnfile, str_replace('{COPYRIGHT}',
+			'<span style="color:silver; font-family:verdana,arial,tahoma; font-size:10pt;font-weight:bold;">Powered by <a href="http://ruxe-engine.ru/" style="color:silver;" target="_blank">Ruxe Engine</a></span>',
 						$zxctext));
 		fclose($zxcnfile);
 		if ($zxcchmod) 
@@ -3256,19 +3248,18 @@ class FileManager
 	{
 		global $cms_theme, $cms_root, $cms_site, $cms_needlog, $cms_log_max, $_SERVER, $Filtr, $httpuseragent, $Robots, $GlobalUsers, $Navigation;
 		$tmp22founded = false;
-		$alphabet     =	$Navigation->alphabet();
+
 		if (file_exists($cms_root."/themes/".$cms_theme."/index.php"))
 		{
 			foreach (file($cms_root."/themes/".$cms_theme."/index.php") as $tmp33)
 			{
-				if (substr_count($tmp33,$alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59])!=0)
+				if (substr_count($tmp33,'{COPYRIGHT}')!=0)
 					$tmp22founded=true;
 			};
 		};
 		
 		$crithocspec	=	'87451234d03c11240fd3edfdd8dd962f256f519cd03c11240fd3edfdd8dd962f256f519c';
-		
-		
+
 		if (substr_count($_SERVER['SERVER_NAME'],base64_decode($crithocspec))!=0) 
 			$tmp22founded	=	true;
 		
@@ -3277,7 +3268,7 @@ class FileManager
 			header('Content-type: text/html; charset=utf-8');
 			header("Cache-Control: no-store");
 			header("Expires: " .  date("r"));
-			die($alphabet[93].$alphabet[112].$alphabet[143].$alphabet[119].$alphabet[111].$alphabet[130].$alphabet[116].$alphabet[123].$alphabet[140].$alphabet[125].$alphabet[111].$alphabet[143].$alphabet[75].$alphabet[122].$alphabet[126].$alphabet[124].$alphabet[111].$alphabet[125].$alphabet[115].$alphabet[111].$alphabet[75].$alphabet[58].$alphabet[2].$alphabet[14].$alphabet[15].$alphabet[24].$alphabet[17].$alphabet[8].$alphabet[6].$alphabet[7].$alphabet[19].$alphabet[59].$alphabet[75].$alphabet[125].$alphabet[116].$alphabet[75].$alphabet[125].$alphabet[111].$alphabet[121].$alphabet[115].$alphabet[116].$alphabet[125].$alphabet[111].$alphabet[75].$alphabet[113].$alphabet[75].$alphabet[136].$alphabet[111].$alphabet[112].$alphabet[123].$alphabet[126].$alphabet[125].$alphabet[116].$alphabet[75].$alphabet[45].$alphabet[33].$alphabet[30].$alphabet[38].$alphabet[30].$alphabet[44].$alphabet[56].$alphabet[125].$alphabet[111].$alphabet[119].$alphabet[113].$alphabet[111].$alphabet[125].$alphabet[120].$alphabet[116].$alphabet[57].$alphabet[130].$alphabet[116].$alphabet[124].$alphabet[139].$alphabet[56].$alphabet[34].$alphabet[39].$alphabet[29].$alphabet[30].$alphabet[49].$alphabet[76].$alphabet[41].$alphabet[33].$alphabet[41]);
+			die('Обязательная команда {COPYRIGHT} не найдена в шаблоне themes/название_темы/index.php');
 			exit;
 		};
        		$date_file=file($cms_root."/conf/date.dat");
@@ -3709,31 +3700,6 @@ class Navigation
         			$yes	= true;
   		}
   		return $yes;
-	}
-	
-	function getalphabet($text) {
-		global $Filtr;
-		mb_internal_encoding("UTF-8");
-		$a = $this->alphabet();
-		for ($i=0; $i<mb_strlen($text); $i++) {
-			$letter = $Filtr->utf8_substr($text, $i, 1);
-			for ($b=0; $b<count($a); $b++) {
-				if ($a[$b]==$letter) {
-					echo '$alphabet['.$b.'].';
-					break;
-				}
-			}
-		}
-		die();
-	}
-	
-	function alphabet() {
-		$a	=	array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-					"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-					"<",">","\"","=","/","_","{","}",":","#","1","2","3","4","5","6","7","8","9","0",",","-",";"," ",".","!",
-					"А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ы","Ь","Э","Ю","Я",
-					"а","б","в","г","д","е","ё","ж","з","и","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ъ","ы","ь","э","ю","я");
-		return $a;
 	}
 };
 
