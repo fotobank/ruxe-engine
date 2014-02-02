@@ -17,7 +17,7 @@
  */
 
 	define("ADMINCENTER", true);
-	$this_version 	= 	"1.71";
+	$this_version 	= 	"1.72";
 	$theme_version	=	"0.2";
   $login 	= "no";
   $password 	= "no";

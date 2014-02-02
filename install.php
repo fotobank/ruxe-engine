@@ -16,7 +16,7 @@
  *
  */
 
-$version	=	'1.71';
+$version	=	'1.72';
 $tmp		=	file('conf/this_version.dat');
 if ($version!=str_replace(array("\r","\n"),'',$tmp[0]))
 {
