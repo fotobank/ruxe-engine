@@ -1090,7 +1090,7 @@ echo '</div>
                 if (!file_exists("conf/users/pm_1.dat"))
                 {
                     $new = fopen("conf/users/pm_1.dat","w");
-                    fwrite($new, "inbox|false|Мастер установки|".date("d.m.y, H:i")."|Поздравление|0.0.0.0|[center]Поздравляю с установкой Ruxe Engine [wink][/center]|\r\n");
+                    fwrite($new, "inbox|false|Мастер установки|".date("d.m.y, H:i")."|Поздравление|0.0.0.0|[center]Поздравляем с установкой Ruxe Engine [wink][/center]|\r\n");
                     fclose($new);
                     chmod("conf/users/pm_1.dat",0777);
                 };
