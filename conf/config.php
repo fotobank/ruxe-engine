@@ -11,7 +11,7 @@
 					$cms_closed            = 0;
 					$cms_closed_text       = "<center>Сайт на обновлении. Пожалуйста, приходите позднее.</center>";
 					$cms_nocache           = 1;
-					$cms_noshowerr         = 25;
+					$cms_noshowerr         = 1;
 					$cms_ban               = 1;
 					$cms_http              = 1;
 					$cms_noindexlinks      = 0;
