@@ -1110,8 +1110,8 @@ echo '</div>
                <center><a style="font-size:14pt;" href="rpanel/">Перейти в админ-центр</a><font style="font-size:14pt;"><br>('.$site.'/rpanel/)<br></font><br>
                 <a style="font-size:14pt;" href="./">Или на главную страницу</a></center>
                 <br><br><br><div style="border: 1px solid silver; background-color:#FFF2D7; text-align:center; margin-left:90px; margin-right:90px;"><b>
-                Ruxe Engine БЕСПЛАТНАЯ программа. Если Вы заплатили за неё деньги<br> 
-                (не считая <a href="http://ruxe-engine.ru/donate.html" target="_blank">официальной поддержки проекта</a>), требуйте у продавца вернуть Ваши деньги обратно.<br><br>
+                Ruxe Engine БЕСПЛАТНАЯ программа. Если Вы заплатили за неё деньги,<br>
+                требуйте у продавца вернуть Ваши деньги обратно.<br><br>
                 Кроме того, оригинальные и свежие дистрибутивы Ruxe Engine находятся всегда по адресу:<br><a href="http://ruxe-engine.ru/download" target="_blank">http://ruxe-engine.ru/download</a>.
                 <br>Если у Вас есть сомнения насчёт оригинальности используемого дистрибутива, рекомендуется скачать его по вышеуказанному адресу.                                                                               
                 </b></div> 
