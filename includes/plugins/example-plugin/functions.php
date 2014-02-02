@@ -54,13 +54,14 @@
   
   
   */ 
-  function here_example()
+  function here_example_plugin()
   {
       echo "Hello World!";
   };
+
   if (isset($_GET['action']))
   {
-    if ($_GET['action']=="example")
+    if ($_GET['action']=="example_plugin")
     {
       $openpage = "привет";
       $pagetitle = "Тест";
