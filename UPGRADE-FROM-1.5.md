@@ -8,4 +8,3 @@
 5. Скопировать /avatars/noavatar.png в /avatars/ сайта
 6. В /conf/this_version.dat написать 1.71
 7. Загрузить LICENSE-FULL-EN.txt
-8. 
