@@ -108,7 +108,7 @@
 			src="<? here_themepath(); ?>/images/vcss.gif"
 			alt="Правильный CSS!"></a></td>
 			<td align="right" valign="middle" style="padding-right:10px;">Дизайн: <a style="color:white;" href="http://ruxe-engine.ru/viewprofile/Dr1D">Dr1D</a>. Генерация: <? here_time_generation(); ?> секунд. {CREDITS}</td></tr>
-	</table>        
+	</table>
 </div>
 </body>
 </html>

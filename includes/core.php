@@ -3237,7 +3237,14 @@ class FileManager
 				'</style>{CREDITS}',
 						$zxctext);
 		fwrite($zxcnfile, str_replace('{CREDITS}',
-			'<span style="color:silver; font-size:1em;">Powered by <a href="http://ruxe-engine.ru/" style="color:silver;" target="_blank">Ruxe Engine</a></span>',
+			'
+				<span>
+					Powered by
+						<a
+							href="http://ruxe-engine.ru/"
+							target="_blank"
+						>Ruxe Engine</a>
+				</span>',
 						$zxctext));
 		fclose($zxcnfile);
 		if ($zxcchmod) 
@@ -3263,14 +3270,7 @@ class FileManager
 		if (substr_count($_SERVER['SERVER_NAME'],base64_decode($crithocspec))!=0) 
 			$tmp22founded	=	true;
 		
-		if (!$tmp22founded)
-		{
-			header('Content-type: text/html; charset=utf-8');
-			header("Cache-Control: no-store");
-			header("Expires: " .  date("r"));
-			die('Обязательная команда {CREDITS} не найдена в шаблоне themes/название_темы/index.php');
-			exit;
-		};
+
        		$date_file=file($cms_root."/conf/date.dat");
        		if ($date_file[0]!=date("d.m.y"))
        		{
