@@ -1843,15 +1843,19 @@
 				global $config, $cms_furl, $list, $cms_site;
 				$c	=	explode('|', $config[$so]);
 				$tmp	=	explode('/',$so);
-				if ($cms_furl==1)
-					$ass	=	'';
-				else
-					$ass	=	'?viewpage=';
-				if ($so=='index') {
-					$so	=	'index.php';
-					//$ass	=	'';
-				};
-				$list	.=	'<tr><td><a href="'.$cms_site.'/'.$ass.$so.'" target="_blank">'.$ass.'<b>'.$so.'</b></a></td><td>'.$c[1].'</td><td>'.$c[2].'</td><td>'.$c[3].'</td><td>
+				$prefix = '';
+				if ($cms_furl!=1)
+					$prefix	=	'?viewpage=';
+
+				$pageUrl = "{$cms_site}/{$prefix}{$so}";
+				$pageUrlTitle = "{$prefix}<b>{$so}</b>";
+
+				if ($so == 'index') {
+					$pageUrl = $cms_site;
+					$pageUrlTitle = "<b>Главная страница сайта</b>";
+				}
+
+				$list	.=	'<tr><td><a href="'.$pageUrl.'" target="_blank">'.$pageUrlTitle.'</b></a></td><td>'.$c[1].'</td><td>'.$c[2].'</td><td>'.$c[3].'</td><td>
 							<a href="?action=edit&amp;file=../conf/pages/'.$c[4].'.txt">Редактировать</a>
 							<a href="?action=pages&amp;do=editpage&amp;page='.$c[0].'">Параметры</a>
 							<a href="#" onClick="if (checkhead()) location.href=\'?action=pages&amp;do=delpage&amp;page='.$c[0].'&amp;fullpage='.$c[4].'\';">Удалить</a>
