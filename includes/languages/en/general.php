@@ -1,4 +1,4 @@
-<?
+<?php
 $lcms['language_info'] = "English";
 $lcms['install_file_title'] = "Safety infringement";
 $lcms['install_file_text'] = "Please, remove install.php from folder with site";

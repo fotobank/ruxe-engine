@@ -1,4 +1,4 @@
-<?
+<?php
 	$acms['without_get_message']		=	"Не указан параметр";
 	$acms['without_get_title']		=	"Ошибка";
 	

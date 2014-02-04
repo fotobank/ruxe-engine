@@ -1,7 +1,7 @@
 <div class="titlenews"><h1>Обратная связь</h1></div>
 
 <div class="newsbody">
-<? here_hided_counter_views('test'); ?>
-Просмотров страницы: <? here_show_views('test'); ?><br>
-<? here_mail(); ?>
+<?php here_hided_counter_views('test'); ?>
+Просмотров страницы: <?php here_show_views('test'); ?><br>
+<?php here_mail(); ?>
 </div>

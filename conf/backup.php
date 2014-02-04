@@ -1,4 +1,4 @@
-<?
+<?php
 			$backup_date="08.10.2011";
 			$backup_all_hits="3";
 			$backup_all_hosts="1";

@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Ruxe Engine - CMS на файлах
@@ -326,7 +326,7 @@ if (isset($_GET['saverdo']))
   			$backup_date = date("d.m.Y");
   
   			$file = fopen("../conf/backup.php","w");
-  			fwrite($file,"<?
+  			fwrite($file,"<?php
 			\$backup_date=\"".$backup_date."\";
 			\$backup_all_hits=\"".$backup_all_hits."\";
 			\$backup_all_hosts=\"".$backup_all_hosts."\";
@@ -887,7 +887,7 @@ if (isset($_GET['saverdo']))
 			if (!isset($_POST['submit'])){ die("Error.5: Without SUBMIT");};
   			include($cms_root.'/conf/users/config.dat');
   			$config = fopen("../conf/users/config.dat","w");
-  			fwrite($config,"<?\r\n");
+  			fwrite($config,"<?php\r\n");
   			for ($i = 1; $i<=7; $i++)
   			{
      				fwrite($config,"\$polecaption[".$i."] = \"".$Filtr->clear($_POST['pole'.$i])."\";\r\n");
@@ -1804,7 +1804,7 @@ if (isset($_GET['saverdo']))
 			$closed_text = str_replace("\r","",$_POST['closed_text']);
 			$closed_text = str_replace("\n","",$closed_text);
 			$rss = fopen("../conf/rss.dat","w");
-			fwrite($rss,"<?
+			fwrite($rss,"<?php
 					\$rss_pub_date = \"".$rss_pub_date."\";
 					\$rss_gdd = \"".$Filtr->clear($_POST['rss'])."\";
 					\$cms_rss_id = \"".$Filtr->clear($_POST['rss_id'])."\";
@@ -1817,7 +1817,7 @@ if (isset($_GET['saverdo']))
 			}
 			else
 				$_POST['site']	=	$Filtr->clear($_POST['site']);
-			fwrite($config, "<?
+			fwrite($config, "<?php
 					\$cms_site              = \"".$Filtr->delendslash($_POST['site'])."\";
 					\$cms_root              = \"".$Filtr->clear($Filtr->delendslash($_POST['root']))."\";
 					\$cms_gzip              = ".(int)$_POST['gzip'].";

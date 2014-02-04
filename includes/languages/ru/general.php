@@ -1,4 +1,4 @@
-<?
+<?php
 $lcms['language_info'] = "Русский";
 $lcms['install_file_title'] = "Нарушение безопасности";
 $lcms['install_file_text'] = "Удалите файл install.php из каталога с сайтом.";

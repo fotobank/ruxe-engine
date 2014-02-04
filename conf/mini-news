@@ -1,4 +1,4 @@
-<?
+<?php
 			$mininews_count		=	5;
 			$mininews_length	=	150;
 			$mininews_template	=	'<font style="font-size:8pt;">{DATE}:</font><br>

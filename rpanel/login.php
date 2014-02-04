@@ -1,4 +1,4 @@
-<?
+<?php
 
 include("../conf/config.php");
 define("ADMINCENTER",true);

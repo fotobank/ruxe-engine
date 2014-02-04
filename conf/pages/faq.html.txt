@@ -1,9 +1,9 @@
 <div class="titlenews"><h1>Вопросы и ответы</h1></div>
 <div class="newsbody">
-<? here_faq(); ?>
+<?php here_faq(); ?>
 </div>
 <div class="titlenews"><h1>Задать свой вопрос</h1></div>
 
 <div class="newsbody">
-<? here_question(); ?>
+<?php here_question(); ?>
 </div>

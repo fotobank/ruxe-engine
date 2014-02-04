@@ -1,4 +1,4 @@
-<?
+<?php
 $cms_site="http://dev";
 $cms_root="Z:/home/dev/www";
 $cms_gzip=0;

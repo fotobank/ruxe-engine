@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Ruxe Engine - CMS на файлах
@@ -158,7 +158,7 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
   </style>
 </head>
 <body>
-<br><br><?
+<br><br><?php
   if (isset($_GET['step']))
   {
     switch($_GET['step'])
@@ -959,7 +959,7 @@ echo '</div>
                 $usersfruits[20] = date("d.m.y, H:i");
                 $GlobalUsers->editpoles("pos",0);
                 $file = fopen($root."/conf/config.php","w");
-                fwrite($file,"<?
+                fwrite($file,"<?php
 \$cms_site=\"".$Filtr->delendslash($site)."\";
 \$cms_root=\"".$Filtr->delendslash($root)."\";
 \$cms_gzip=".$cms_gzip.";

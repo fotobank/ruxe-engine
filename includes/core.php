@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Ruxe Engine - CMS на файлах
@@ -1227,7 +1227,7 @@ class GlobalUsers
 		include($cms_root.'/conf/users/config.dat');
 		$n = fopen($cms_root.'/conf/users/config.dat','w');
 		flock($n,LOCK_EX);
-		fwrite($n,"<?\r\n");
+		fwrite($n,"<?php\r\n");
 		for ($i=1; $i<=7; $i++)
 		{
 			fwrite($n,"\$polecaption[".$i."] = \"".$polecaption[$i]."\";\r\n");
@@ -2090,7 +2090,7 @@ class GlobalBFG
 		global $cms_root;
       		include($cms_root."/conf/rss.dat");
       		$rss_dat = fopen($cms_root."/conf/rss.dat","w");
-      		fwrite($rss_dat,"<?\r\n\$rss_pub_date = \"".date("D, d M Y H:i:s")."\";\r\n\$rss_gdd = \"".$rss_gdd."\";\r\n\$cms_rss_id = \"".$cms_rss_id."\";\r\n");
+      		fwrite($rss_dat,"<?php\r\n\$rss_pub_date = \"".date("D, d M Y H:i:s")."\";\r\n\$rss_gdd = \"".$rss_gdd."\";\r\n\$cms_rss_id = \"".$cms_rss_id."\";\r\n");
       		fclose($rss_dat);
 	}	
 	
@@ -3236,16 +3236,13 @@ class FileManager
 				'{CREDITS}',
 				'</style>{CREDITS}',
 						$zxctext);
-		fwrite($zxcnfile, str_replace('{CREDITS}',
-			'
-				<span>
-					Powered by
-						<a
-							href="http://ruxe-engine.ru/"
-							target="_blank"
-						>Ruxe Engine</a>
-				</span>',
-						$zxctext));
+		fwrite(
+			$zxcnfile, str_replace(
+				'{CREDITS}',
+				'<span>Powered by <a href="http://ruxe-engine.ru/" target="_blank" >Ruxe Engine</a></span>',
+				$zxctext
+			)
+		);
 		fclose($zxcnfile);
 		if ($zxcchmod) 
 			chmod($cms_root.'/conf/cache/design',0777);

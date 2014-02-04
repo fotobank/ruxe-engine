@@ -1,4 +1,4 @@
-<?
+<?php
 				$name   =  str_replace(array('http:','/'),'',$cms_site).'-'.date("d.m.Y").'-'.substr(md5(rand(1,9999).rand(1,9999)),0,14).'.zip';
 				$backup =  new ZipArchive;
 				if ($backup -> open($cms_root.'/rpanel/backups/'.$name, ZIPARCHIVE::CREATE) == true)

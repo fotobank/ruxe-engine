@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Ruxe Engine - CMS на файлах

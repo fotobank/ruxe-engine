@@ -2,17 +2,17 @@
 
 <div class="newsbody">
 	<br>
-	<a href="<? here_urlsite(); ?>/getfile/ноутпад" style="font-weight:bold;">Notepad++</a><br>
+	<a href="<?php here_urlsite(); ?>/getfile/ноутпад" style="font-weight:bold;">Notepad++</a><br>
 	Свободный текстовый редактор для Windows с подсветкой синтаксиса большого количества языков программирования и разметки.<br>
-	<font style="font-size:8pt;">5,3 МБ - <? here_show_downloads('ноутпад'); ?></font><br><br>
-	<a href="<? here_urlsite(); ?>/getfile/keybook" style="font-weight:bold;">Key Book Plus</a><br>
+	<font style="font-size:8pt;">5,3 МБ - <?php here_show_downloads('ноутпад'); ?></font><br><br>
+	<a href="<?php here_urlsite(); ?>/getfile/keybook" style="font-weight:bold;">Key Book Plus</a><br>
 	Хранитель паролей с необычной системой защиты.<br>
-	<font style="font-size:8pt;">1,5 МБ - <? here_show_downloads('keybook'); ?></font><br><br>
+	<font style="font-size:8pt;">1,5 МБ - <?php here_show_downloads('keybook'); ?></font><br><br>
 </div>
 
 
 <div class="titlenews"><h1> Комментарии</h1></div>
 
 <div class="newsbody">
-	<? here_messages('downloads'); ?>
+	<?php here_messages('downloads'); ?>
 </div>
