@@ -362,47 +362,46 @@
        					';
   			};
   
-  			if (function_exists('file_get_contents'))
-  			{
-       				$this_date    = date("d.m.y");
-					$checkVerFile = file("../conf/last_checkver.dat");
-       				$ld           = "";
-					foreach ($checkVerFile as $line)
-						$ld .= str_replace(array("\r", "\n"), "", $line);
-       				$ls           = explode("|",$ld);
-       				$new_version  = $ls[1];
-       				if ($this_date!=$ls[0])
-       				{
-                     			//if ($ls[2]=='4')
-                     			//{
-                         			$new         = fopen("../conf/last_checkver.dat","w");
-                         			fwrite($new,$this_date."|".$ls[1]."|1|");
-                         			fclose($new);
-                         			$new_version = @file_get_contents("http://ruxe-engine.ru/lastver.html");
-                         			if ($new_version!='')
-                         			{
-                            				$new         = fopen("../conf/last_checkver.dat","w");
-                            				fwrite($new,$this_date."|".$new_version."|1|");
-                            				fclose($new);
-                         			}
-                         			else
-                         				$new_version = $this_version;
-                     			//}
-                     			/*else
-                     			/{
-                         			$ls[2]++;
-                         			$new         = fopen("../conf/last_checkver.dat","w");
-                         			fwrite($new,$this_date."|".$ls[1]."|".$ls[2]."|");
-                         			fclose($new);
-                     			};*/
-       				};
-       				if ($new_version!=$this_version)
-       				{
-            				$install .= '<tr class="titlegreen"><td colspan=2>ДОСТУПНО ОБНОВЛЕНИЕ</td></tr>
-       					<tr class="greentd"><td colspan=2>У Вас установлена '.$this_version.' версия, в то время как последняя версия '.$new_version.'<br>
-       					Настоятельно рекомендуется <a style="color:black; font-weight:bold;" href="http://ruxe-engine.ru/download">обновиться до новой версии</a></td></tr>';
-       				};
-  			};
+  			if (function_exists('file_get_contents')) {
+				$this_date    = date("d.m.y");
+				$checkVerFile = file("../conf/last_checkver.dat");
+				$ld           = "";
+				foreach ($checkVerFile as $line)
+					$ld .= str_replace(array("\r", "\n"), "", $line);
+				$ls           = explode("|",$ld);
+				$new_version  = $ls[1];
+				if ($this_date != $ls[0]) {
+							//if ($ls[2]=='4')
+							//{
+					$new         = fopen("../conf/last_checkver.dat","w");
+					fwrite($new,$this_date."|".$ls[1]."|1|");
+					fclose($new);
+					$new_version = @file_get_contents("http://ruxe-engine.ru/lastver.html");
+					if ($new_version!='')
+					{
+							$new         = fopen("../conf/last_checkver.dat","w");
+							fwrite($new,$this_date."|".$new_version."|1|");
+							fclose($new);
+					}
+					else
+						$new_version = $this_version;
+							//}
+							/*else
+							/{
+								$ls[2]++;
+								$new         = fopen("../conf/last_checkver.dat","w");
+								fwrite($new,$this_date."|".$ls[1]."|".$ls[2]."|");
+								fclose($new);
+							};*/
+				}
+
+				if ($new_version!=$this_version) {
+						$install .= '<tr class="titlegreen"><td colspan=2>ДОСТУПНО ОБНОВЛЕНИЕ</td></tr>
+					<tr class="greentd"><td colspan=2>У Вас установлена '.$this_version.' версия, в то время как последняя версия '.$new_version.'<br>
+					Настоятельно рекомендуется <a style="color:black; font-weight:bold;" href="http://ruxe-engine.ru/download">обновиться до новой версии</a></td></tr>';
+				}
+  			}
+				
   			include("../conf/backup.php");
   			$backup = explode(".",$backup_date);
   			$now    = mktime("00","00","00",date("m"),date("d"),date("Y"));
