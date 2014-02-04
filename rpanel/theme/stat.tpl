@@ -16,8 +16,7 @@
 			<a href="http://ruxe-engine.ru/documentation/" target="_blank">Документация</a> •
 			<a href="http://ruxe-engine.ru/plugins.html" target="_blank">Дополнения</a> •
 			<a href="?action=system&amp;go=thanks">Благодарности</a> •
-			<a href="https://github.com/maindefine/ruxe-engine/blob/master/LICENSE-FULL-EN.txt">Лицензия</a> •
-			<a target="_blank" href="http://ruxe-engine.ru/donate.html">Поддержка проекта</a>
+			<a href="https://github.com/maindefine/ruxe-engine/blob/master/LICENSE-FULL-EN.txt">Лицензия</a>
 		</td></tr>{INSTALL}
 		<tr class="titletable"><td width = "50%">СТАТИСТИКА</td><td width="50%">НЕДАВНИЕ КОММЕНТАРИИ</td></tr>
 		<tr><td valign="top">			
