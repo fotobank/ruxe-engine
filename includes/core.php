@@ -16,7 +16,7 @@
  *
  */
 
-$this_version = '1.72';
+$this_version = '1.73';
 
 class Filtr
 {
