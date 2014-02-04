@@ -1,6 +1,6 @@
 <?php
-$cms_site="http://dev";
-$cms_root="Z:/home/dev/www";
+$cms_site="http://ruxe-engine.loc";
+$cms_root="/home/denis/WebServer/ruxe-engine";
 $cms_gzip=0;
 $cms_sendmess=0;
 $cms_mail="admin@domain.here";
@@ -35,7 +35,7 @@ $cms_avatars = 1;
 $cms_upload_maxsite = 35;
 $cms_upload_width = 96;
 $cms_upload_height = 96;
-$cms_restore = 0;
+$cms_restore = 1;
 $cms_ps = 1;
 $cms_ps_max = 255;
 $cms_plusmess = 0;
@@ -78,7 +78,7 @@ $cms_rss_title		= "RSS лента";
 $cms_punycode		= 0;
 $cms_visual		= 1;
 $cms_simcount		= 10;
-$cms_furl		= 1;
+$cms_furl		= 0;
 $cms_showbfghints	= 1;
 $cms_premod_mess	= 70;
 $cms_rss_count		= 50;

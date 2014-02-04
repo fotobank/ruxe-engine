@@ -16,9 +16,12 @@
  *
  */
 
-$version	=	'1.72';
-$tmp		=	file('conf/this_version.dat');
-if ($version!=str_replace(array("\r","\n"),'',$tmp[0]))
+$installer_version = '1.72';
+
+include('conf/config.php');
+include("includes/core.php");
+
+if ($installer_version != $this_version)
 {
 	header("Expires: Mod, 26 Jul 1997 05:00:00 GMT");
 	header("Last-Modified: ".gmdate("D, d M Y H:i:s", 10000) . " GMT");
@@ -30,10 +33,6 @@ if ($version!=str_replace(array("\r","\n"),'',$tmp[0]))
 	die('Инсталлятор предназначен только для '.$version.' версии');
 	exit;
 };
-include('conf/config.php');
-include("includes/core.php");
-	
-
 
 if (!isset($_GET['step'])) 
 	$_GET['step']='install';
@@ -1100,9 +1099,7 @@ echo '</div>
                 Установка Ruxe Engine успешно завершена, и Вы можете приступить к работе с системой.<br>
                 <b>В целях обеспечения безопасности, удалите файл <i>install.php</i>.</b>
                 <br><br>
-                Вы установили ';
-                include('conf/this_version.dat');
-                echo ' версию<br>
+                Вы установили '.$this_version.' версию<br>
                 Последняя: <img src="http://ruxe-engine.ru/enginever.php?rand='.rand(0,9999).'" border=0> версия
                <br><br>
 	       Обратите внимание - Ruxe Engine работает <b>только</b> в UTF-8 (без BOM) кодировке. При изменении страниц или шаблонов внешним редактором (не из админ-центра), сохраняйте в UTF-8 (без BOM) кодировке.

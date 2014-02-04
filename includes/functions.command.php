@@ -46,11 +46,8 @@ function here_keywords()
          echo $pagekeys;
 };
 function here_generator() 
-{ 
-	//global $cms_root;
-	//$ver	=	file($cms_root.'/conf/this_version.dat');
-	$ver[0]	=	'';
-	echo "Ruxe Engine ".$ver[0]." (ruxe-engine.ru)";
+{
+	echo "Ruxe Engine (ruxe-engine.ru)";
 };
 function here_description()
 {
