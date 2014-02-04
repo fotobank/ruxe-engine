@@ -373,8 +373,8 @@
        				$new_version  = $ls[1];
        				if ($this_date!=$ls[0])
        				{
-                     			if ($ls[2]=='4')
-                     			{
+                     			//if ($ls[2]=='4')
+                     			//{
                          			$new         = fopen("../conf/last_checkver.dat","w");
                          			fwrite($new,$this_date."|".$ls[1]."|1|");
                          			fclose($new);
@@ -387,14 +387,14 @@
                          			}
                          			else
                          				$new_version = $this_version;
-                     			}
-                     			else
-                     			{
+                     			//}
+                     			/*else
+                     			/{
                          			$ls[2]++;
                          			$new         = fopen("../conf/last_checkver.dat","w");
                          			fwrite($new,$this_date."|".$ls[1]."|".$ls[2]."|");
                          			fclose($new);
-                     			};
+                     			};*/
        				};
        				if ($new_version!=$this_version)
        				{
