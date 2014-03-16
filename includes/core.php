@@ -32,14 +32,14 @@ class Filtr
                 return $result; 
 	}
 	function showmess($text) {
-		echo '<div style="width:600px; background-color:#f6e79a; border:1px solid black; margin: 2px 2px 2px 2px; padding: 2px 2px 2px 2px;">
+		echo '<div class="error-message">
 			<center><b>Ошибка</b></center>
 			<p>'.$text.'</p>
 	        </div>';
 	}
 	function showarray($array)
 	{
-		echo '<div style="background-color:#fff59e; border: 1px solid #5d5d5d; margin: 2px 2px 2px 2px; padding: 2px 2px 2px 2px;"><pre>';
+		echo '<div class="error-message"><pre>';
 		print_r($array);
 		echo '</pre></div>';
 	}
@@ -360,7 +360,7 @@ function errortoshow($errno,$errmsg,$file,$line)
  			(!strstr($errmsg,"It is not safe to rely on the system's timezone settings. Please use the date.timezone setting, the TZ environment variable or the date_default_timezone_set() function. In case you used any"))
 	)
 	{
-	        echo '<div style="background-color:#f6e79a; border:1px solid black; margin: 2px 2px 2px 2px; padding: 2px 2px 2px 2px;">
+	        echo '<div class="error-message">
 	        <center><b>Ошибка</b></center>
 	        <p>'.$errmsg.' в файле '.$file.' на строке '.$line.'</p>
 	        <p>Пожалуйста, обратитесь по <a href="http://ruxe-engine.ru/news/problemy-i-oshibki.html" target="_blank">http://ruxe-engine.ru/news/problemy-i-oshibki.html</a> если вы уверены, что ошибка не по вашей вине</p>
@@ -377,7 +377,7 @@ function etswwr($errno,$errmsg,$file,$line)
  			(!strstr($errmsg,"It is not safe to rely on the system's timezone settings. Please use the date.timezone setting, the TZ environment variable or the date_default_timezone_set() function. In case you used any"))
 	)
 	{
-	        echo '<div style="background-color:#f6e79a; border:1px solid black; margin: 2px 2px 2px 2px; padding: 2px 2px 2px 2px;">
+	        echo '<div class="error-message">
 	        <center><b>Ошибка</b></center>
 	        <p>'.$errmsg.' в файле '.$file.' на строке '.$line.'</p>
 
@@ -3240,7 +3240,7 @@ class FileManager
 		fwrite(
 			$zxcnfile, str_replace(
 				'{CREDITS}',
-				'<span>Powered by <a href="http://ruxe-engine.ru/" target="_blank" >Ruxe Engine</a></span>',
+				'<span>Powered by <a href="http://ruxe-engine.ru/" target="_blank" >Ruxe Engine</a>.</span>',
 				$zxctext
 			)
 		);
