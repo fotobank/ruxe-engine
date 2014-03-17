@@ -1,25 +1,71 @@
+/* Eric Meyer CSS reset. http://meyerweb.com/eric/ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+body {line-height:1}
+ol, ul {list-style:none}
+blockquote, q {quotes:none}
+:focus {outline:0}
+ins {	text-decoration:none}
+del {	text-decoration:line-through}
+table {border-collapse:collapse;border-spacing:0}
+/* End of Eric Meyer CSS reset */
 body {
-	margin:0 0 0 0;
-	min-width:950px;
-	font-size:14px;
-        font-family:Arial,Helvetica, sans-serif;
+	margin: 0;
+	min-width: 950px;
+	font-size: 14px;
+        font-family: Arial,Helvetica, sans-serif;
 	/*background:#F2FBFE; #E6F7FF*/
-	background:#fff url(images/body.jpg) repeat-x;
+	background: #fff url(images/body.jpg) repeat-x;
 	
 }
-
 /* Стиль, системных сообщений об ошибках, полностью перенесён из core.php */
-.error-message {
-	background: #fff59e;
-	border: 1px solid #5d5d5d;
-	margin: 2px;
-	padding: px;
+/* Дизайн message.html */
+.title {
+    text-align: center;
 }
-
+.message-table {
+    display: table; /* Таблица */
+	width: 80%;
+	margin-left: 10%;
+	vertical-align: baseline;
+	text-align: ;/* Расположение текста */
+	font-size: ;/* Размер шрифта */
+}
+.message-row {
+	display: table-row; /* Строка таблицы */
+	width: 100%;
+	line-height: 2em;
+	vertical-align: baseline;
+}
+.message-cell {
+	display: table-cell; /* Ячейка таблицы */
+	width: ;
+	vertical-align: baseline;
+	line-height: 2em;
+	text-align: center;
+}
+.title {
+    background:;
+	color: #fff;
+}
+.message {
+    background: #fff;
+	color: #c00;/* Цвет текста */
+	padding: 0 1em;
+}
+.error-message {
+    width: 600px;
+	background-color: #f6e79a;
+	border: 1px solid black;
+	margin: 2px;
+	padding: 2px;
+	text-align: center;
+}
+td {
+    vertical-align: top;
+}
 a {
         color: #1b3045;
 }
-
 .headline {
 	height: 28px; /*background: url(images/headline.jpg);*/ 
 }
