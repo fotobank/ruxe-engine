@@ -33,7 +33,7 @@ class Filtr
 	}
 	function showmess($text) {
 		echo '<div class="error-message">
-			<b>Ошибка</b>
+			<center><b>Ошибка</b></center>
 			<p>'.$text.'</p>
 	        </div>';
 	}
