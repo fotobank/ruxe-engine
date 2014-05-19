@@ -1,64 +1,57 @@
-<div class="titlenews"><h1> Как перенести свой дизайн в Ruxe Engine</h1></div>
-
-         <div class="newsbody">
-<p class="ro">
-   <i>
-      <b>1. Файловая структура темы оформления.</b>
-   </i>
-</p>
-<p class="ro">Тема оформления должна иметь следующую файловую структуру:</p>
-<ul>
-    <li>/themes/</li>
-    <ul>
-        <li>/<b>название_темы</b>/</li>
+<h2>Как перенести свой дизайн в Ruxe Engine</h2>
+<div id="wrapper">
+    <p>
+        <h4>1. Файловая структура темы оформления.</h4>
+        Тема оформления должна иметь следующую файловую структуру:
         <ul>
-             <li>commentform.html</li>
-             <li>index.php</li>
-             <li>list.dat</li>
-             <li>message.html</li>
-             <li>newsfullrecord.html</li>
-             <li>newsrecord.html</li>
-             <li>other.php</li>
-             <li>users.php</li>
-             <li>и другие файлы и каталоги на своё усмотрение</li>
+            <li>/themes/<b>название_темы</b>/</li>
+            <ul>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;commentform.html</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index.php</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.dat</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message.html</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newsfullrecord.html</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newsrecord.html</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other.php</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;users.php</li>
+                <li>и другие файлы и каталоги на своё усмотрение, например папка /<b>js</b>/ со скриптами.</li>
+            </ul>
         </ul>
-    </ul>
-</ul>
-<p class="ro">Рассмотрим каждый элемент по отдельности.</p>
-<center>
-        <table class="optionstable" width="70%" cellpadding=1 cellspacing=0>
-               <tr class="titletable"><td>Элемент</td><td>Описание</td></tr>
-               <tr><td valign="top" align="center">название_темы</td><td>Папка с файлами темы оформления. Каждая папка в каталоге themes - новая тема. Имя папки соответствует её названию. В качестве имён рекомендуется использовать только строчные буквы латинского алфавита и цифры.</td></tr>
-               <tr><td valign="top" align="center">commentform.html</td><td>Здесь находится оформление форм отправки комментариев и личных сообщений. Возьмите его из default темы оформления и вносите изменения, если необходимо.</td></tr>
-               <tr><td valign="top" align="center">index.php</td><td>Шаблон оформления всех страниц сайта.</td></tr>
-               <tr><td valign="top" align="center">list.dat</td><td>В данном файле прописываются имена пользовательских файлов, находящихся в папке темы, которые будут отображены в правой части раздела "Оформление" Админ-центра, в конце списка, и будут доступны для редактирования встроенным редактором.<br>
+	</p>
+	<p>
+        <h4>Рассмотрим каждый элемент по отдельности.</h4>
+        <center>
+        <table style="width:80%; padding:10px;" cellspacing=0>
+               <tr class="titletable"><td style="width:20%; padding:10px;">Элемент</td><td style="width:80%; padding:10px;">Описание</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">название_темы</td><td style="width:80%; padding:10px;">Папка с файлами темы оформления. Каждая папка в каталоге themes - новая тема. Имя папки соответствует её названию. В качестве имён рекомендуется использовать только строчные буквы латинского алфавита и цифры.</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">commentform.html</td><td style="width:80%; padding:10px;">Здесь находится оформление форм отправки комментариев и личных сообщений. Возьмите его из default темы оформления и вносите изменения, если необходимо.</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">index.php</td><td style="width:80%; padding:10px;">Шаблон оформления всех страниц сайта.</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">list.dat</td><td style="width:80%; padding:10px;">В данном файле прописываются имена пользовательских файлов, находящихся в папке темы, которые будут отображены в правой части раздела "Оформление" Админ-центра, в конце списка, и будут доступны для редактирования встроенным редактором.<br>
                                                                       Каждый новый файл - на новой строке.<br>
                                                                       Синтаксис файла следующий:<br>
                                                                       <i>имя_файла.расширение|описание_файла</i><br>
                                                                       <u><i>Пример:</i></u><br>
                                                                       <i>menu.html|Главное меню на сайте</i></td></tr>
-               <tr><td valign="top" align="center">newsfullrecord.html</td><td>Здесь указывается стиль оформления <b>полной</b> записи новостного раздела. Рекомендуется за основу взять шаблон из default темы оформления.</td></tr>
-               <tr><td valign="top" align="center">newsrecord.html</td><td>Здесь находится оформление <b>краткой</b> записи новостного раздела. Рекомендуется за основу взять шаблон из default темы оформления. Краткие записи отображаются в списке новостей.</td></tr>
-               <tr><td valign="top" align="center">other.php</td><td>В файле указывается оформление различных модулей движка и стили их записей. С нуля создавать его нельзя - необходимо брать его из default темы оформления и вносить в него нужные изменения.</td></tr>
-               <tr><td valign="top" align="center">users.php</td><td>Содержит в себе оформление всех пользовательских форм, меню и т.п. С нуля создавать его нельзя - необходимо брать его из default темы оформления и вносить в него нужные изменения.</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">newsfullrecord.html</td><td style="width:80%; padding:10px;">Здесь указывается стиль оформления <b>полной</b> записи новостного раздела. Рекомендуется за основу взять шаблон из default темы оформления.</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">newsrecord.html</td><td style="width:80%; padding:10px;">Здесь находится оформление <b>краткой</b> записи новостного раздела. Рекомендуется за основу взять шаблон из default темы оформления. Краткие записи отображаются в списке новостей.</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">other.php</td><td style="width:80%; padding:10px;">В файле указывается оформление различных модулей движка и стили их записей. С нуля создавать его нельзя - необходимо брать его из default темы оформления и вносить в него нужные изменения.</td></tr>
+               <tr><td style="width:20%; padding:10px;" valign="top" align="center">users.php</td><td style="width:80%; padding:10px;">Содержит в себе оформление всех пользовательских форм, меню и т.п. С нуля создавать его нельзя - необходимо брать его из default темы оформления и вносить в него нужные изменения.</td></tr>
         </table>
-</center>
-<p class="ro">В файлах с расширением .php допускается применять любые языки вёрстки (например, HTML) и веб-программирования, включая серверные (например, PHP). А в файлах с расширением .html - только клиентские языки веб-программирования (например, JavaScript, VisualBasic) и вёрстки. В указанных типах файлов используются HTML-теги и 
-                <a href="http://engine.ruxesoft.net/documentation/commands.html">специальные команды движка</a>.</p>
-<p class="ro">
-   <i>
-       <b>
-           2. Пример оформления простейшего шаблона страницы в файле index.php.
-       </b>
-   </i>
-</p>
+        </center>
+    В файлах с расширением .php допускается применять любые языки вёрстки (например, HTML) и веб-программирования, включая серверные (например, PHP). А в файлах с расширением .html - только клиентские языки веб-программирования (например, JavaScript, VisualBasic) и вёрстки. В указанных типах файлов используются HTML-теги и 
+                <a href="https://github.com/maindefine/ruxe-engine/blob/master/README.md">специальные команды движка</a>.
+
+        </p>
+        <h4>2. Пример оформления простейшего шаблона страницы в файле index.php.</h4>
+        <p>
+
 <font color="green">&lt;!-- Тип документа и синтаксиса языка разметки; RuxeEngine адаптирован под HTMLv4.01 Transitional --&gt;</font><br>
 &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;<br>
 &lt;html&gt;<br>
 &lt;head&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Заголовок страницы --&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;? here_title(); ?&gt;&lt;/title&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- ОБЯЗАТЕЛЬНАЯ команда, которая выводит meta-тег с переадресацией в промежуточных страницах; при отключенных промежуточных страницах оставляет на месте себя только перенос строки --&gt;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- ОБЯЗАТЕЛЬНАЯ команда, которая выводит meta-тег с переадресацией в промежуточных страницах; при отключенных промежуточных страницах оставляет на месте себя только перенос строки --&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;? here_metaredirect(); ?&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Параметры RSS-ленты --&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="alternate" type="application/rss+xml" title="RSS-лента" href="&lt;? here_urlsite(); ?&gt;/rss"&gt;<br>
@@ -73,11 +66,13 @@
 &lt;/head&gt;<br>
 &lt;body&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Здесь может быть заголовок, слоган сайта, главное меню, сайдбар и др.--&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;МОЙСАЙТ&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;МОЙ САЙТ&lt;/h1&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода контента той или иной страницы --&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;? here_pagecontent(); ?&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода текста "Powered by Ruxe Engine" с указанием ссылки на официальный сайт (команда необязательная, но мы надеемся, что вы её будете использовать); местоположение данной команды может быть в любом месте страницы в пределах тегов &lt;body&gt;&lt;/body&gt;--&gt;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода текста "Powered by Ruxe Engine" с указанием ссылки на официальный сайт (команда необязательная, но мы надеемся, что вы её будете использовать); местоположение данной команды может быть в любом месте страницы в пределах тегов &lt;body&gt;&lt;/body&gt;--&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{CREDITS}<br>
 &lt;/body&gt;<br>
 &lt;/html&gt;
+    </p>
+    <br>
 </div>
