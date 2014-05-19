@@ -1,4 +1,4 @@
-/* Eric Meyer CSS reset. http://meyerweb.com/eric/ */
+/* Eric Meyer CSS reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
 body {line-height:1}
 ol, ul {list-style:none}
@@ -8,317 +8,863 @@ ins {	text-decoration:none}
 del {	text-decoration:line-through}
 table {border-collapse:collapse;border-spacing:0}
 /* End of Eric Meyer CSS reset */
-body {
-	margin: 0;
-	min-width: 950px;
-	font-size: 14px;
-        font-family: Arial,Helvetica, sans-serif;
-	/*background:#F2FBFE; #E6F7FF*/
-	background: #fff url(images/body.jpg) repeat-x;
-	
+/* Огромное отдельное спасибо Lea Verou за скрипт "prefix-free.js". http://leaverou.github.io/prefixfree/ */
+/* A special thanks for Lea Verou - "prefix-free.js" author. http://leaverou.github.io/prefixfree/ */
+/* Основные стили */
+html, body {
+    margin:0;
+	padding:0;
+	width:100%;
+	background:#d0d6df;
 }
-/* Стиль, системных сообщений об ошибках, полностью перенесён из core.php */
+body {
+    font-family:Arial, Verdana, Tahoma, sans-serif;
+	font-size:0.938em;
+	line-height:1.5em;
+}
+#wrapper img {
+    float:left;
+	margin-right:10px;
+}
+/* Стиль системных сообщений об ошибках, полностью перенесён из core.php */
 /* Дизайн message.html */
-.title {
-    text-align: center;
+/* Надпись "Ошибка" */
+.messbox {
+	text-align:center;
+}
+.message-row .title {
+    font-size:130%;
+	line-height:200%;
+	text-align:center;
+	margin:10px auto;
+	color:#f00;/* Цвет текста надписи "Ошибка" */
 }
 .message-table {
-    display: table; /* Таблица */
-	width: 80%;
-	margin-left: 10%;
-	vertical-align: baseline;
-	text-align: ;/* Расположение текста */
-	font-size: ;/* Размер шрифта */
+    display:table; /* Таблица */
+	width:70%;
+	margin-left:15%;
+	vertical-align:baseline;
+	text-align:;/* Расположение текста */
+	font-size:;/* Размер шрифта */
 }
 .message-row {
-	display: table-row; /* Строка таблицы */
-	width: 100%;
-	line-height: 2em;
-	vertical-align: baseline;
+	display:table-row; /* Строка таблицы */
+	width:100%;
+	line-height:2em;
+	vertical-align:baseline;
 }
 .message-cell {
-	display: table-cell; /* Ячейка таблицы */
-	width: ;
-	vertical-align: baseline;
-	line-height: 2em;
-	text-align: center;
-}
-.title {
-    background:;
-	color: #fff;
+	display:table-cell; /* Ячейка таблицы */
+	border:solid 1px #f00;
+	vertical-align:baseline;
+	line-height:2em;
+	text-align:center;
 }
 .message {
-    background: #fff;
-	color: #c00;/* Цвет текста */
-	padding: 0 1em;
+    background:#fff;
+	color:#f00;/* Цвет текста */
+	padding:0.5em 1.5em;
 }
 .error-message {
-    width: 600px;
-	background-color: #f6e79a;
-	border: 1px solid black;
-	margin: 2px;
-	padding: 2px;
-	text-align: center;
+    width:80%;
+	margin-left:10%;
+	background-color:#fff;
+	text-align:center;
+	color:f00;
 }
-td {
-    vertical-align: top;
+/* Заголовки */
+h1, h1:link {
+	font-size:200%;
+    line-height:200%;
+	font-weight:normal;
+	font-style:italic;
+	padding-left:40px;
+	color:#fff;
+	text-decoration:none;
 }
-a {
-        color: #1b3045;
+h2 {
+    display:block;
+	background:#4140ae url('images/h2.png') no-repeat;
+	font-size:120%;
+    line-height:200%;
+	font-weight:normal;
+	color:#fff;
+	text-align:center;
 }
-.headline {
-	height: 28px; /*background: url(images/headline.jpg);*/ 
+h2 a:link, h2 a:visited {
+    text-decoration:underline;
+	color:#fff;
+	text-decoration-line:solid 1px;
+	text-decoration-color:#fff;
 }
-.headimage {
-	height: 150px;
-	background-repeat: no-repeat;
-	background-position: center;
+h3 {
+    font-size:130%;
+    line-height:150%;
+	font-weight:normal;
+	text-align:center;
+	color:#fff;
 }
-.sitename {
-	margin: 0 auto;
-	width: 980px;
-	padding-top: 22px;
-	font-size: 23px;
+h4 {
+    font-size:110%;
+    line-height:120%;
+	font-weight:bold;
+	text-align:center;
+	color:#505f7f;
 }
-.menu {
-	color: #fffbf0;
-	background: url(images/headline2.png) repeat-x;
-	margin: 0 auto; 
-	width: 980px;
-	height: 44px;
+h4 a:hover {
+	color:#00a877;
 }
-.menu ul {
-	list-style: none;
-	margin: 0px;
-	margin-left: 20px;
-	height: 36px;
+form {
+    vertical-align:baseline;
 }
-.menu li {
-	text-align: center;
-	display: inline;
-	display: inline-block;
-	padding-right: 9px;
-	height: 44px;
+/* Ссылки*/
+a:link, a:visited {
+    color:#0d55aa;
 }
-.menu a {
- 	text-decoration: none;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #fff;
-	line-height: 44px;
-	font-size: 16px;
+a:hover {
+    color:#00a877;
 }
-.menu a:hover {
-	color:#adce3c;
+p {
+    margin:12px 20px 0;
+	color:#505f7f;
 }
-.main {
-	margin: 0 auto;
-	background: #f3f3f3;
-	overflow: visible;
-	width: 980px;
+
+/* Основные блоки */
+
+/* Шапка сайта. От её высоты зависит положение #top-nav - top:176px; */
+#header{
+    height:176px;
+    width:100%;
+    position:relative;
+	background:url('images/bl-fn.png') repeat;/* Изображение в шапке сайта можно поменять, главное, чтобы оно было повторяющимся, бесшовным */
 }
-.leftbl {
-	overflow: hidden;
-	border-bottom: 0px;
-	border-top: 0px;
-	border-left: #e8e8e8 solid 1px;
-	color: #1a2f44;
-	background:#fff  url(images/rightblock.png) repeat-y right;
-	margin-left: 10px; /* margin-left:10px; */ 
+#header h1{
+	position:absolute;
+	top:40px;
 }
-.leftblContent {
-	width: 685px;
-	float: left;
+/*фиксированное плавающее меню */
+#top-nav{
+    top:176px; /*высота шапки в пикселях*/
+	width:100%;
+    background:#4140ae url('images/head.png') no-repeat;
+    color:#fff;
+    position:fixed;
+    z-index:1000;
 }
-.titlenews{
-	color: #1b3045;
-	height: 30px;
-	background: url(images/newstitle.png);
+#top-nav ul{
+	overflow:hidden;
 }
-.titlenews H1{
-	margin: 0px;
-	line-height: 48px;
-	font-size: 18px;
-	padding-left: 10px;
+#top-nav ul li{
+	display:block;
+	float:left;
+	margin:0 10px;
 }
-.titlenews H1 a {
-	text-decoration: underline;
-	color: #1b3045;
+#top-nav a{
+	display:block;
+	margin:0;
+	padding:15px;
+	text-decoration:underline;
+	color:#fff;
 }
-.drawline {
-	background: #92c9e6;
-	height: 14px;
-	margin: 0px;
-	padding: 0px; /*background: url(linne.png);*/
+#top-nav a:hover{
+	color:#20c897;
 }
-.newsbody {
-	padding: 10px;
-	background: url(images/newst2.png) repeat-x;
+#container {
+    width:900px;
+	min-width:850px;
+	margin:0 auto;
+	text-align:left;
 }
-.newsdown {
-	background: url(images/newsdownpng.png) repeat-x;
-	height: 28px;
-	float: none;
-	clear: both;
+#container hr {
+    width:50%;
+	margin-left:25%;
+	border-color:#fff;
 }
-.rightbl{
-	width: 283px;
-	float: right;
+/* Основное содержание */
+#content {
+	width:100%;
+	margin-bottom:38px;
+	background:#f2f9ff;
 }
-.rightbl2 {
-	margin: 20px 20px 0 20px;
+#wrapper {
+	height:100%;
+	width:80%;
+	margin:2em 10%;
+	text-align:justify;
+	line-height:1.5em;
+	clear:both;
 }
-.footer {
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	margin: 0 auto;
-	width: 980px;
-	background: url(images/headline2.png) repeat-x;
-	color: #fff;
+.advertizing {
+    text-align:center;
 }
-.footer a {
-    color: white;
+.half{
+    width:50%;
+	float:left;
+	text-align:center;
+	line-height:1.125em;
 }
-.optionstable {
-        border-left: solid 1px silver;
-        border-top: solid 1px silver;
-        text-align: left;
+.top-news{
+    /* Пока не используется для "Самое популярное" */
 }
-.optionstable td {
-        border-bottom: solid 1px silver;
-        border-right: solid 1px silver;
-        padding: 4px;
+.counter{
+    font-size:90%;
 }
-.smilestable {
-        border: solid 1px silver;
-        text-align: left;
+/* Нижний блок */
+#footer {
+	width:100%;
+	height:100%;
+	margin:0;
+	background:#4140ae url('images/head.png') no-repeat;
+	text-align:center;
 }
-.smilestable td {
-        border-bottom: none;
-        border-right: none;
-        padding: 4px;
+#footer p {
+	padding:5px;
+	color:#ddd;
 }
-#without {
-        border-right: none;
+#footer a:link, #footer a:visited {
+	color:#dde;
 }
-#without2 {
-        border-left: none;
-        text-align: right;
-        color: gray;
+#footer a:hover {
+	color:#eef;
 }
-.titletable td {
-        background-color:#1b3045;
-        font-weight: bold;
-        color: white;
+/* Дополнительные блоки */
+.content-wrap {
+    width:850px;
+	min-width:850px;
+	width:80%;
+	margin-left:10%;
 }
-.hide {
-        border: solid 1px silver;
-        width: 80%;
-        background-color: #ddd;
-        text-align: left;
-        font-family: Verdana, Arial, Tahoma, sans-serif;
-        font-size: 8pt;
-        font-weight: bold;
-        padding: 4px;
-        margin-bottom: 10px;
+.clear {
+    display:block;
+	clear:both;
 }
-.hidetext {
-        font-family: Verdana, Arial, Tahoma, sans-serif;
-        background-color: #fff;
-        font-size: 10pt;
-        padding: 4px;
-        margin-top: 5px;
-        font-weight: normal;
+#spacer-top {
+    clear:both;
+	width:100%;
+	height:80px;
 }
-.faqtable td {
-        background-color: #eeebeb;
-        }
-input, textarea, select {
-	color: #111;
-	margin-right: 2px;
-	padding: 2px;
-	font-family: Verdana, Arial, Tahoma, sans-serif;
-	font-size: 10pt;
-	border: 1px solid silver;
-	background-color: #fff;
+#spacer {
+    clear:both;
+	width:100%;
+	height:20px;
 }
+#search{
+    text-align:center;
+}
+.search{
+    margin:5px auto;
+}
+.short-search{
+	display:block;
+	width:240px;
+	text-align:center;
+	margin:0 auto;
+}
+.short-search input{
+    display:inline-block;
+	margin:5px auto 0;
+}
+.searching {
+    display:block;
+	width:344px;
+	text-align:center;
+	margin:0 auto;
+}
+.searching input{
+    display:inline-block;
+	margin:5px auto 0;
+}
+#profileedit {
+    width:70%;
+    margin-left:15%;
+}
+#profileedit .label {
+    width:33%;
+}
+/* Оформление даты и имени */
+.last-posts{
+    display:block;
+	margin:10px 20px 0;
+	text-align:left;
+}
+.name{
+	display:inline-block;
+	font-size:80%;
+}
+/* Оформление тегов */
+.tags{
+    margin:1.5em;
+	font-size:80%;
+}
+.tags a:link {
+	padding:0 4px 2px;
+}
+.info{
+    font-size:80%;
+	margin:0 20px;
+	color:#505f7f;
+}
+/* Оформление спойлера */
 .spoiler {
-        border: solid 1px silver;
-        width: 80%;
-        background-color: #ddd;
-        text-align: left;
-        font-family: Verdana, Arial, Tahoma, sans-serif;
-        font-size: 8pt;
-        font-weight: bold;
-        padding: 4px;
-        margin-top: 3px;
-        margin-bottom: 10px;
+	background:#88с;
+	padding:0 0.375em;
+	color:#444;
 }
 .spoilertext {
-        font-family: Verdana, Arial, Tahoma, sans-serif;
-        background-color: #fff;
-        font-size: 10pt;
-        padding: 4px;
-        margin-top: 5px;
-        font-weight: normal;
+    margin:0 0.25em 0 1em;
+    padding:0 0.5em;
 }
+/* Стиль оформления цитат с указанием имени */
 .quote {
-        border: solid 1px silver;
-        width: 80%;
-        background-color:#ddd;
-        text-align: left;
-        font-family: Verdana, Arial, Tahoma, sans-serif;
-        font-size: 8pt;
-        font-weight: bold;
-        padding: 4px;
-        margin-bottom: 10px;
+    display:block;
+    background:#f2f9ff;
+	border:solid 1px #bdf;
+	padding:0 0.375em 0.125em;
 }
 .quotetext {
-        font-family: Verdana, Arial, Tahoma, sans-serif;
-        background-color: #fff;
-        font-size: 10pt;
-        padding: 4px;
-        margin-top: 5px;
-        font-weight: normal;
+    display:block;
+    margin:0 0.25em 0.5em 1em;
+    padding:0 0.5em;
+	font-size:80%;
+    color:#66b;
 }
-input:hover, textarea:hover, select:hover { 
-	border: 1px solid #666;
-	background-color: #f5f5f5;
+/* Стиль оформления скрытого текста */
+.hide {
+    display:block;
+	padding:0 6px;
+	cursor:pointer;
+	background:#4140ae;
+	color:#fff;
 }
-.pager a {
-        padding: 2px 5px;
-        background: #f7f7f7;
-        border: 1px solid #c7c7c7;
-        color: #000;
-        text-decoration: none;
-        margin: 0px 1px;
-        font-weight: bold;
+.hidetext {
+    /*color:ff0;*/
+	font-weight:300;
+	text-align:left;
+	display:none;
 }
-.pager a:hover {
-        background: #fff2d7;
-        border: 1px solid #666;
-        text-decoration: none;
+/* Навигатор страниц */
+.pager {
+    text-align:center;
+	margin:3px;
 }
-.pager a.active{
-        background: #666;
-        border: 1px solid #666;
-        color: #fff;
-        font-weight: bold;
+/* Дизайн форм */
+/* Форма авторизации */
+.log-form {
+    float:right;
 }
-.pager a.active:hover {
-        background: #666;
+.log-form ul {
+	margin:0;
+	padding:0;
+	list-style:none;
 }
-.ro {
-        text-indent: 30px;
+.log-form li {
+	float:left;          
 }
-.ro2 {
-        text-indent: 130px;
+#login-content {
+	display:none;
+	position:absolute;
+	top:41px;
+	right:0;
+	z-index:1000;    
+	background:#4140ae;
+	padding:15px;
+	text-align:center;
+	line-height:1.75em;
 }
-.ro3 {
-        text-indent: 150px;
-        margin-bottom: -5px;
+#login-content a:link {
+	line-height:0.375em;
 }
-.ro4 {
-        text-indent: 150px;
-        font-size: 10pt;
+.log-form li #login-content {
+	right:0;
+	width:250px; 
+}
+/* Детали формы */
+#loginform {
+    display:table;
+	width:80%;
+	margin:0 10%;
+}
+#loginform a:link {
+	color:#eef;
+}
+#loginform a:link, #loginform a:visited {
+    color:#eef;
+}
+.row {
+    display:table-row; /* Строка таблицы */
+	width:100%;
+	float:left;
+	height:auto;
+	vertical-align:baseline;
+}
+.row img {
+	float:left;
+	margin:5px !important;
+}
+.label {
+    display:table-cell;
+    float:left; /* Левая ячейка таблицы */
+    vertical-align:baseline;
+	width:49%;
+	margin:5px auto 0;
+	height:2em;
+	text-align:right;
+	line-height:2em;
+}
+.reg-input {
+    display:table-cell;
+    float:left;
+    vertical-align:baseline;
+	margin:5px;
+	width:44%;
+	height:1.5em;
+	border:solid 1px #cdf;
+}
+.code-input {
+    display:table-cell;
+    float:left;
+    vertical-align:baseline;
+	margin:5px;
+	width:106px;
+	height:1.375em;
+	line-height:1.75em;
+	border:solid 1px #abd;
+}
+.restore-input {
+	margin:10px 34% auto;
+	width:30%;
+	height:1.5em;
+}
+.restore {
+    display:table;
+	width:70%;
+	margin-left:15%;
+	text-align:center;
+}
+.restore .row {
+	width:100%;
+	height:auto;
+	margin:0;
+	text-align:center;
+}
+.restore .row .button {
+	width:30%;
+	height:3em;
+	margin:0.25em auto;
+	float:none;
+	border:solid 1px #080;
+	background:#008080 url('images/button-g.png') no-repeat;
+	color:#fff;
+}
+.restore .button:hover {
+	border:solid 1px #5b5;
+}
+.register {
+    display:table;
+	width:50%;
+	margin-left:25%;
+	text-align:center;
+}
+.register .button {
+	width:40%;
+	height:3em;
+	margin:0.25em auto;
+	float:none;
+	border:solid 1px #080;
+	background:#008080 url('images/button-g.png') no-repeat;
+	color:#fff;
+}
+.register .button:hover {
+	border:solid 1px #5b5;
+}
+.login-input {
+    display:table-cell;
+    float:left;
+    vertical-align:baseline;
+	margin:10px 10%;
+	width:74%;
+	height:1.5em;
+	border:solid 1px #cdf;
+}
+.profile-input {
+    display:table-cell;
+    float:left;
+    vertical-align:baseline;
+	width:45%;
+	height:1.5em;
+	border:solid 1px #cdf;
+}
+#loginform .button {
+	width:96%;
+	height:3em;
+	margin:0.25em;
+	border:solid 1px #080;
+	background:#008080 url('images/button-g.png') no-repeat;
+	color:#fff;
+}
+#loginform .button:hover {
+	border:solid 1px #5b5;
+}
+#account {
+	text-align:center;
+	color:#505f7f;
+}
+.account {
+    display:table; /* Таблица */
+	width:98%;
+	margin:1%;
+	color:#505f7f;
+}
+.log-form .account{
+    color:#fff;
+}
+.register .account {
+    text-align:center;
+    color:#505f7f;
+}
+.register .account img {
+	margin:10px auto;
+}
+#login-content .account .row img {
+	margin:10px 74px !important;
+	text-align:center;
+}
+.account .button, #loginform .button{
+	width:40%;
+	height:3em;
+	margin:0.25em 30%;
+	border:solid 1px #282;
+	background:#008080 url('images/button-g.png') no-repeat;
+	color:#fff;
+}
+.log-form .account .button{
+	width:70%;
+	margin:0.25em 15%;
+}
+.account .button:hover {
+    border:solid 1px #5b5;
+}
+.account .cell {
+	display:table-cell; /* Ячейка таблицы */
+	vertical-align:baseline;
+	float:left;
+	width:100%;
+	height:auto;
+	text-align:left;
+}
+.account .label-name {
+	display:table-cell; /* Ячейка таблицы */
+	vertical-align:baseline;
+	float:left;
+	width:50%;
+	height:auto;
+	text-align:right;
+	line-height:1.75em;
+}
+.account .label-info {
+	display:table-cell; /* Ячейка таблицы */
+	vertical-align:baseline;
+	float:left;
+	width:50%;
+	height:auto;
+	text-align:left;
+	line-height:1.75em;
+}
+.account .row a {
+    line-height:1.5em;
+}
+.account .row input {
+    float:none;
+	text-align:center;
+}
+.register .account .row {
+    display:table-row; /* Строка таблицы */
+	width:100%;
+	float:left;
+	height:1.5em;
+	vertical-align:baseline;
+}
+.privat-message {
+    width:100%;
+	background:#f2f9ff;
+}
+.privat-message .row {
+    width:100%;
+}
+.label-message {
+    float:left; /* Меню - Личные сообщения */
+	width:24%;
+	height:auto;
+	text-align:center;
+}
+.label-message:first-child {
+    text-align:left;
+}
+.label-message:last-child {
+    text-align:right;
+}
+td {
+    text-align:left !important;
+}
+.right {
+    text-align:right;
+}
+.news-full {
+    text-align:center;
+	line-height:1.5em;
+}
+/* Дизайн commentform.html */
+input {
+    outline:none;
+	padding:4px 6px;
+	float:left;
+	border:solid 1px #abd;
+}
+input:hover {
+    border:solid 1px #9d9;
+}
+input:focus {
+    border:solid 1px #5b5;
+}
+select {
+    outline:none;
+	padding:4px 6px;
+	float:left;
+	width:auto;
+	border:solid 1px #abd;
+}
+/* Имя пользователя */
+.user-name {
+    font-family:inherit;
+	font-weight:bold;
+	color:inherit;
+}
+.commentform {
+    width:501px;
+	margin:0 auto;
+	text-align:center;
+}
+.comment-table {
+    display:table; /* Таблица */
+	width:510px;
+	margin:0 auto;
+	text-align:center;/* Расположение текста и кнопки */
+}
+.comment-row {
+	display:table-row; /* Строка таблицы */
+	width:100%;
+	text-align:center;
+	vertical-align:baseline;
+
+}
+.comment-row .input-button {
+	width:196px;
+	height:3em;
+	margin:4px 156px 4px;
+	border:solid 1px #058;
+	background:#4140ae url('images/h2.png') no-repeat;
+	color:#fff;
+}
+.comment-row .input-button:hover {
+    border:solid 1px #0a0;
+}
+.commentform .account .button {
+    width:40%;
+	height:3em;
+	margin:0.25em auto;
+	border:solid 1px #282;
+	background:#008080 url('images/button-g.png') no-repeat;
+	color:#fff;
+}
+.commentform .account .button:hover {
+    border:solid 1px #0ff;
+}
+/* Дизайн надписи "Осталось 10000 знаков" */
+#info {
+    font-size:0.75em;
+	text-align:right;
+}
+/* Поле ввода текста комментария */
+.textarea {
+    box-sizing:content-box;
+    width:492px;
+	height:100px;
+	padding:4px;
+}
+textarea {
+	width:100%;
+	resize:none;
+	font-family:inherit;
+	border:solid 1px #abd;
+}
+/* Ячейка таблицы */
+.comment-cell {
+    float:left;/* Уточнение для глюканутых браузеров */
+    display:table-cell;
+	line-height:1.75em;
+	color:#505f7f;
+}
+.comment-cell img {
+    margin:5px 5px 0;
+}
+.comment-row .label {
+	text-align:right;/* Выравнивание текста можно установить "left" или "center" */
+}
+.commentform .comment-table .comment-row .comment-cell  a:link {
+    line-height:2.25em;
+	font-weight:bold;
+}
+/* Таблица с набором смайликов */
+.smilestable {
+    background:#fff;
+	width:380px !important;
+	text-align:left;
+	vertical-align:baseline;
+	padding:4px;
+    position:absolute;
+	display:none;
+}
+.smilestable  .smiles  img {
+    width:auto !important;
+	height:auto !important;
+	margin:0 4px;
+    border:none;
+	cursor:pointer;
+}
+.smiles {
+
+}
+/* Дизайн вывода таблиц (501px) с комментариями */
+.comment-cell-name img {
+    margin:10px !important;
+}
+.comment-cell-name {
+    display:table-cell;
+	width:116px;
+	background:#fff;
+	font-weight:bold;
+	color:#0d55aa;
+}
+.comment-cell-date {
+    display:table-cell;
+	width:300px;
+	background:#fff;
+	font-weight:bold;
+	color:#0d55aa;
+}
+.comment-cell-cite {
+    display:table-cell;
+	width:103px;
+	background:#fff;
+	font-weight:bold;
+	color:#0d55aa;
+}
+.comment-cell-text {
+    display:table-cell;
+	width:403px;
+	background:#fff;
+	text-align:left;
+	vertical-align:top;
+    color:#505f7f;
+	padding:3px 10px 5px;
+}
+.comment-cell-text-wava {
+    display:table-cell;
+	width:510px;
+	background:#fff;
+	text-align:justify;
+	font-style:italic;
+	vertical-align:top;
+    color:#505f7f;
+	padding:3px 10px 5px;
+}
+/* Таблица с набором смайликов */
+#mess {
+    vertical-align:top;
+}
+.comment-cell .button {
+    border:solid 1px #abd;
+}
+.smilestable {
+    background:#fff;
+	width:330px;
+	text-align:center;
+	vertical-align:baseline;
+	border:solid 1px #abd;
+	padding:4px;
+    position:absolute;
+	display:none;
+}
+.smilestable  .smiles  img {
+    width:auto !important;
+	height:auto !important;
+	margin:0 2px;
+    border:none;
+	cursor:pointer;
+}
+/* Главное оформление модуля F.A.Q. */
+#faq {
+    width:100%;
+	text-align:center;
+}
+/* Оформление записей F.A.Q. */
+.question-table {
+    display:table; /* Таблица */
+	width:80%;
+	margin-left:10%;
+}
+.question-table .row:first-child {
+    border:solid 1px #7b7;
+}
+.question-cell-name {
+	display:table-cell; /* Ячейка таблицы с именем */
+	vertical-align:top;
+	float:left;
+	width:25%;
+	text-align:center;
+	font-weight:600;/* Имя автора - начертание */
+}
+.question-cell {
+	display:table-cell;/* Ячейка с вопросом */
+	vertical-align:top;
+	float:left;
+	width:50%;
+	text-align:left;
+	font-weight:600;/* начертание */
+}
+.question-cell-date {
+	display:table-cell; /* Ячейка таблицы "дата вопроса" */
+	vertical-align:top;
+	float:left;
+	width:25%;
+	text-align:center;
+	font-weight:300;/* Начертание */
+}
+.question-cell-text {
+	display:table-cell; /* Ячейка таблицы с текстом ответа */
+	vertical-align:top;
+	float:left;
+	width:74%;
+	text-align:left;
+	padding-right:1%;
+	font-weight:300;/* Начертание */
+}
+.question-table .row {
+    background:;/* Можно задать цвет фона или фоновое изображение (на будущее) */
+}
+.border {
+    border:solid 1px #ff0;
+}
+/* Медиа - запросы */
+@media handheld, only screen and (max-width: 1280px) {
+.register {
+	width:80%;
+	margin-left:10%;
+}
+}
+@media handheld, only screen and (max-width: 980px) {
+#container {
+	width:98%;
+	margin-left:1%;
+}
 }
