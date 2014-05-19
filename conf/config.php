@@ -1,6 +1,6 @@
 <?php
-$cms_site="http://ruxe-engine.loc";
-$cms_root="/home/denis/WebServer/ruxe-engine";
+$cms_site="http://localhost/ruxe-engine";
+$cms_root="/Users/denis/webserver/ruxe-engine";
 $cms_gzip=0;
 $cms_sendmess=0;
 $cms_mail="admin@domain.here";
