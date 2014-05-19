@@ -1,114 +1,157 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
-<head>
+  <head>
 	<title><?php here_title(); ?></title>
-	<link rel="SHORTCUT ICON" href="<?php here_urlsite(); ?>/favicon.ico">
+	<link rel="shortcut icon" href="<?php here_urlsite(); ?>/favicon.ico" type="image/x-icon">
 	<link rel="alternate" type="application/rss+xml" title="RSS лента" href="<?php here_urlrss(); ?>">
 	<?php here_metaredirect(); ?>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="content-language" content="ru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="<?php here_keywords(); ?>">
 	<meta name="generator" content="<?php here_generator(); ?>">
 	<meta name="description" content="<?php here_description(); ?>">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="<?php here_themepath(); ?>/style.css" type="text/css">
-</head>
-
+	<script type="text/javascript" src="<?php here_themepath(); ?>/js/prefixfree.min.js"></script>
+	<script type="text/javascript" src="<?php here_themepath(); ?>/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+	<script>
+		  $(document).ready(function(){
+				$('#login-trigger').click(function(){
+					$(this).next('#login-content').slideToggle();
+					$(this).toggleClass('active');					
+					
+					if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+						else $(this).find('span').html('&#x25BC;')
+					})
+		  });
+	</script>
+	<script>
+      var h_hght = 176; // высота шапки
+      var h_mrg = 0;     // отступ когда шапка уже не видна
+        $(function(){
+        $(window).scroll(function(){
+      var top = $(this).scrollTop();
+      var elem = $('#top-nav');
+      if (top+h_mrg < h_hght) {
+        elem.css('top', (h_hght-top));
+      } else {
+        elem.css('top', h_mrg);
+      }
+        });
+      });
+    </script>
+  </head>
 <body>
-
-<div class="headimage"> 
-	<div class="sitename"><h1>Мой сайт</h1></div>
-</div>
-
-<div class="menu">
-	<ul>
-		<!--
-			PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.
-		-->
-		<li><a href="<?php here_urlsite(); ?>/">Новости</a></li>
-		<!--
-			Если в качестве параметра передать этой функции имя страницы (Админ-центр - Страницы),
-			то в зависимости от того, задействован ЧПУ или нет (Админ-центр - Настройки - Активировать ЧПУ),
-			вернёт правильный адрес страницы сайта.
-			Пример:
-			ЧПУ активирован, страница "downloads.html", результат: http://ваш_сайт/downloads.html
-			ЧПУ не используется, та же страница, результат: http://ваш_сайт/?viewpage=downloads.html
-		-->
-		<li><a href="<?php here_urlsite('downloads.html'); ?>">Загрузки</a></li>
-		<!--
-			Другими словами, чтобы не вводить адрес сайта, используйте команду here_urlsite() без параметров.
-			А для указания ссылки на страницу сайта, правильнее использовать команду с 
-			параметром here_urlsite('тут имя страницы').
-			
-			Подробнее о командах в документации.
-		-->
-		<li><a href="<?php here_urlsite('faq.html'); ?>">F.A.Q.</a></li>
-		<li><a href="<?php here_urlsite('contact.html'); ?>">Обратная связь</a></li>
-		<li><a href="<?php here_urlsite(); ?>/#">Ссылка 1</a></li>
-		<li><a href="<?php here_urlsite(); ?>/#">Ссылка 2</a></li>
-	</ul>
-</div>
-
-<div class="main">
-	<div class="leftbl">
-		<div class="leftblContent">
-			<?php here_pagecontent(); ?>
+	<div id="header">
+		<div id="container">
+			<a href="#"><h1>Логотип и девиз вашего сайта</h1></a>
 		</div>
-		<div class="rightbl">
-			<div class="rightbl2">
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Дополнительное меню:</font><br><br>
-				<ul>
-					<li><a href="<?php here_urlsite('somepage.html'); ?>">Как перенести свой дизайн в Ruxe Engine</a></li>
-					<li><a href="<?php here_urlsite(); ?>/README.md">Документация</a></li>
-				</ul><br><br><br>
-			
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Аккаунт:</font><br><br>
-				<?php here_login(); ?><br><br><br>
-				
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Вопрос-ответ:</font><br><br>
-				<?php here_random_faq(); ?><br>
-				<a href="<?php here_urlsite('faq.html'); ?>">Ещё</a><br><br><br>
-			
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Статистика:</font><br><br>
-				На сайте: <?php here_online(); ?><br>
-				Рекорд онлайн: <?php here_record_online(); ?><br>
-				Сегодня посетителей: <?php here_hosts(); ?><br>
-				Сегодня ботов: <?php here_bots(); ?><br>
-				Просмотрено страниц: <?php here_hits(); ?><br>
-				Вчера посетителей: <?php here_last_hosts(); ?><br>
-				За всё время посетило: <?php here_all_hosts(); ?><br>
-				И просмотрело страниц: <?php here_all_hits(); ?>
-				<br><br><br>
-			
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Облако меток:</font><br><br>
-				<center><?php here_list_tags('news'); ?></center><br><br><br>
-			
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Последние комментарии:</font><br><br>
-				<?php here_last_posts(); ?><br><br><br>
-			
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Категории новостей:</font><br><br>
-				<ul>
-					<?php here_list_category("news"); ?>
-				</ul><br><br><br>
-				
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Популярные новости:</font><br><br>
-				<?php here_top_news('news'); ?><br><br><br>
-				
-				<font style="font-weight:bold; font-size:12pt; margin-left:10px;">Ротатор баннеров:</font><br><br>
-				<center><?php here_rotator(); ?></center>
+	</div>
+	<div id="top-nav">
+		<div id="container">
+			<ul><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
+				<li>
+					<a href="<?php here_urlsite(); ?>/">Новости</a>
+				</li>
+				    <!--Если в качестве параметра передать этой функции имя страницы (Админ-центр - Страницы), то в зависимости от того, задействован ЧПУ или нет 
+				    (Админ-центр - Настройки - Активировать ЧПУ), вернёт правильный адрес страницы сайта.
+			        Пример:
+			        ЧПУ активирован, страница "downloads.html", результат: http://ваш_сайт/downloads.html
+			        ЧПУ не используется, та же страница, результат: http://ваш_сайт/?viewpage=downloads.html-->
+				<li>
+					<a href="<?php here_urlsite('downloads.html'); ?>">Загрузки</a>
+				</li>
+				    <!--Другими словами, чтобы не вводить адрес сайта, используйте команду here_urlsite() без параметров. А для указания ссылки на страницу сайта, 
+				    правильнее использовать команду с параметром here_urlsite('тут имя страницы'). Подробнее о командах в документации.-->
+				<li>
+					<a href="<?php here_urlsite('faq.html'); ?>">F.A.Q.</a>
+				</li>
+				<li>
+					<a href="<?php here_urlsite('contact.html'); ?>">Обратная связь</a>
+				</li>
+				<li>
+					<a href="<?php here_urlsite(); ?>/README.md" target="_blank">Документация</a>
+				</li>
+			    <li>
+					<a href="<?php here_urlsite('somepage.html'); ?>/#">Ссылка</a>
+				</li>
+				<div class="log-form">
+				    <ul>
+		                <li id="login">
+					        <a id="login-trigger" href="#">Аккаунт <span>&#x25BC;</span></a>
+							<div id="login-content">
+			                    <?php here_login(); ?>							
+		                    </div>
+						</li>
+	                </ul>
+				</div>
+			</ul>
+		</div>
+	</div>
+	<div id="container">
+	    <div id="spacer-top"></div>
+		<div id="content">
+			<?php here_pagecontent(); ?>
+			<!-- Рекламный блок. Если вам не нужен этот блок, закройте его комментариями или удалите -->
+			<h2>Рекламный блок</h2>
+            <div id="wrapper">
+	            <p>
+	                Здесь можно разместить баннеры и контекстную рекламу
+	            </p>
+	            <div class="clear"></div>
+                <br>
+			</div>
+			<!-- Конец рекламного блока -->
+			<!-- Дополнительный блок. Если вам не нужен этот блок, закройте его комментариями или удалите -->
+			<h2>Дополнительный блок</h2>
+            <div id="wrapper">
+	            <div class="half">
+				    <h4>Популярные новости:</h4>
+				    <p>
+				        <ul>
+				            <?php here_top_news('news'); ?>
+				        </ul>
+				    </p>
+                </div>
+				<div class="half">
+					<h4>Категории новостей:</h4>
+				    <p>
+				        <ul>
+				            <?php here_list_category("news"); ?>
+				        </ul>
+				    </p>
+                </div>
+	            <div class="clear"></div>
+                <br>
+			</div>
+			<!-- Конец дополнительного блока -->
+		</div>
+	</div>
+	<div class="clear"></div>
+    <div id="footer">
+		<div id="container">
+		    <div id="wrapper">
+		        <div class="half">
+			        <p><!-- Для тактичного отображения краткой формы поиска скачайте обновлённое дополнение "Поиск" -->
+				        Поиск по сайту:
+				        <div class="short-search">
+					        <?php //here_shortsearch(); ?>
+					    </div>
+				    </p>
+                </div>
+			    <div class="half">
+				    <p>{CREDITS}</p>
+				    <p><a href="http://d-sign.name" target="_blank">Дизайн:</a> <a href="http://ruxe-engine.ru/viewprofile/Wasilich" target="_blank">Wasilich</a></p>
+				    <p>Генерация: <?php here_time_generation(); ?> секунд.</p>
+			    </div>
 			</div>
 		</div>
-		<div style="width:685px;" class="newsdown"></div>
-	</div>
-</div>
-<div class="footer">
-	<table border=0 width="100%" cellpadding=0 cellspacing=0>
-		<tr><td align="left" valign="middle" style="padding-left:10px;"><a href="http://validator.w3.org/check?uri=<?php here_urlsite(); ?>"><img
-			src="<?php here_themepath(); ?>/images/valid-html401.png"
-			alt="Valid HTML 4.01 Transitional" height="31" width="88"></a><a href="http://feed2.w3.org/check.cgi?url=<?php here_urlsite(); ?>/rss"><img src="<?php here_themepath(); ?>/images/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed"></a><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"
-			src="<?php here_themepath(); ?>/images/vcss.gif"
-			alt="Правильный CSS!"></a></td>
-			<td align="right" valign="middle" style="padding-right:10px;">Дизайн: <a style="color:white;" href="http://ruxe-engine.ru/viewprofile/Dr1D">Dr1D</a>. Генерация: <?php here_time_generation(); ?> секунд. {CREDITS}.</td></tr>
-	</table>
-</div>
+		<div class="clear"></div>
+		<br>
+    </div>
 </body>
 </html>

@@ -1,1 +1,6 @@
 404 not found
+<h2>Ошибка 404!</h2>
+<div id="wrapper">
+    <p>Error 404. Page not found!</p>
+<br>
+</div>
