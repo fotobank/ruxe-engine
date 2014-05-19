@@ -1,17 +1,24 @@
-<div class="titlenews"><h1> {TITLE}</h1></div>
-
-<div class="newsbody">
-    <div style="font-size:8pt;">Опубликовал {AUTHOR} - {DATE} - {VIEWS}</div><br>
-            {DESCRIPTION}<br><br>
-    [if_tags]<font style="font-size:8pt; color: #595959;">Метки: [TAGS={<a href="[TAGLINK]" style="font-size:8pt; color: #595959;">[TAGCAPTION]</a>}/TAGS]</font>[/if_tags]
-    [if_similar]
+<h2>{TITLE}</h2>
+<div id="wrapper">
+		{DESCRIPTION}
+        <div class="clear"></div>
+	<p>Опубликовал {AUTHOR} - {DATE} - {VIEWS}</p>
+	<div class="tags">
+		[if_tags]
+		Метки:
+		[TAGS={<a href="[TAGLINK]">[TAGCAPTION]</a>}/TAGS]
+		[/if_tags]
+	</div>
+	<p>
+		[if_similar]
+		Похожие записи:
+		[SIMILAR={<a href="[SIMLINK]">[SIMCAPTION]</a>}/SIMILAR]
+		[/if_similar]
+	</p>
 	<br>
-	<br><font style="font-size:8pt;">Похожие записи:</font><br><ul style="padding-left:40px;">
-	[SIMILAR={<li><a href="[SIMLINK]" style="font-size:8pt;">[SIMCAPTION]</a></li>}/SIMILAR]</ul>
-    [/if_similar]
+	<h4>Комментарии:</h4>
+		{COMMENTFORM}
+	<br>{PAGES}<br>
+        {COMMENTS}
+        {PAGES}
 </div>
-<div style="border-bottom: 1px solid #E8E8E8; width: 100%;"></div>
-{COMMENTFORM}<br>
-<br>{PAGES}<br>
-{COMMENTS}
-{PAGES}
