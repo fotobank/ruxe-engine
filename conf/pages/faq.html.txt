@@ -1,9 +1,8 @@
-<div class="titlenews"><h1>Вопросы и ответы</h1></div>
-<div class="newsbody">
-<?php here_faq(); ?>
-</div>
-<div class="titlenews"><h1>Задать свой вопрос</h1></div>
-
-<div class="newsbody">
-<?php here_question(); ?>
+<h2>Вопросы и ответы</h2>
+<div id="wrapper">
+	<?php here_faq(); ?>
+    <h4>Задать свой вопрос</h4>
+    <?php here_question(); ?>
+	<p>Просмотров страницы: <?php here_show_views('test'); ?></p>
+<br>
 </div>
