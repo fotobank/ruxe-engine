@@ -1,11 +1,11 @@
 <br>
 <noscript>
-	<center>
-		<table border=0 cellpadding=1 cellspacing=0>
-			<tr><td><font color="red"><b>ВКЛЮЧИТЕ ПОДДЕРЖКУ JAVASCRIPT В ВАШЕМ БРАУЗЕРЕ</b></font></td></tr>
-			<tr><td><font color="red">Для полноценной работы необходимо включить JavaScript в Вашем браузере</font></td></tr>
-		</table>
-	</center><br>
+<!-- Для вывода ошибок и предупреждений разработан отдельный стиль -->
+		<div class="error-message">
+			<b>ВКЛЮЧИТЕ ПОДДЕРЖКУ JAVASCRIPT В ВАШЕМ БРАУЗЕРЕ</b><br>
+			Для полноценной работы необходимо включить JavaScript в Вашем браузере
+		</div>
+<br>
 </noscript>
 <script type="text/javascript">
 function copyText(name) {
@@ -49,66 +49,102 @@ else if (TXT.selectionStart >= 0) with (TXT)
 else TXT.value += startTag + endTag;
 };
 </script>
-<center><a name="messbox"></a>
- <form name="post" action="{URL}" method="post">
+<!--a class="messbox" name="messbox"></a-->
+  <form class="commentform" name="post" action="{URL}" method="post">
    {HIDDENS}
-   <table border=0 style="text-align:left;" cellpadding=2 cellspacing=0>
-    <tr><td>Имя:</td><td>
-    [if_user_entered]
-       <b><a href="{USERLINK}" onClick="window.open('{USERLINK}');return false;">{NAME_VALUE}</a></b>
-    [/if_user_entered]
-    [if_user_not_entered]
-       <input maxlength=32 name="ruxeimya" type="text" size=30 {NAME_VALUE}></td></tr>
-       <tr><td>E-mail:</td><td><input maxlength=60 name="ruxemylo" type="text" size=30 {MAIL_VALUE}>
-    [/if_user_not_entered]
-    </td></tr>
+    <div class="comment-table">
+    <div class="comment-row">
+	    <div class="comment-cell label">Ваше имя:&nbsp;</div>
+	    <div class="comment-cell">[if_user_entered]<a href="{USERLINK}" onClick="window.open('{USERLINK}');return false;">{NAME_VALUE}</a>[/if_user_entered]
+        [if_user_not_entered]<input maxlength=32 name="ruxeimya" type="text" {NAME_VALUE}>
+	    </div>
+	</div>
+    <div class="comment-row">
+	    <div class="comment-cell label">E-mail:&nbsp;</div>
+		<div class="comment-cell"><input maxlength=60 name="ruxemylo" type="text" {MAIL_VALUE}>[/if_user_not_entered]
+        </div>
+	</div>
     [if_pm_list]
-      <tr><td>Кому: </td><td><select name="to">{PM_TO}</select></td></tr>
+    <div class="comment-row">
+	    <div class="comment-cell label">Кому:&nbsp;</div>
+		<div class="comment-cell"><select name="to">{PM_TO}</select></div>
+	</div>
     [/if_pm_list]
     [if_pm_input]
-      <tr><td>Кому: </td><td><input type="text" name="to" value="{PM_TO}" maxlength=20 size=30></td></tr>
+    <div class="comment-row">
+	    <div class="comment-cell label">Кому:&nbsp;</div>
+	    <div class="comment-cell"><input type="text" name="to" value="{PM_TO}" maxlength=20></div>
+	</div>
     [/if_pm_input]
     [if_pm]
-      <tr><td>Тема: </td><td><input type="text" name="theme" maxlength=50 size=30></td></tr>
+    <div class="comment-row">
+	    <div class="comment-cell label">Тема письма:&nbsp;</div>
+	    <div class="comment-cell"><input type="text" name="theme" maxlength=50></div>
+	</div>
     [/if_pm]
     [if_here_mail]
-       <tr><td>Тема:</td><td>
-         <select style="font-size:10pt;" name="subject">
-           {THEMES}
-         </select>
-       </td></tr>
+    <div class="comment-row">
+	    <div class="comment-cell label">Тема письма:&nbsp;</div>
+	    <div class="comment-cell select"><select name="subject">{THEMES}</select></div>
+	</div>
     [/if_here_mail]
+	</div>
+	<div class="comment-table">
+	<!-- Кнопки смайлов и форматирования текста слишком перегружают форму комментариев, чтобы использовать их, раскомментируйте строки с 94 по 117 - удалив полностью строки 93 и 118.
     [if_can_smiles]
-    <tr><td colspan=2>
-     <input type="button" onClick="if (document.getElementById('smiles').style.display=='none'){document.getElementById('smiles').style.display='block';} else {document.getElementById('smiles').style.display='none';};"
-     value="=)">
-     <table bgcolor="white" class="smilestable" cellpadding=1 cellspacing=0 id="smiles" style="position:absolute;display:none;">
-      <tr><td width=380 align="center">
-       [SMILES={<img alt="{SMILE}" src="{SITE}/includes/smiles/{SMILE}.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById('mess'),'[{SMILE}]',''); document.getElementById('smiles').style.display='none';"> &nbsp;}/SMILES]
-      </td></tr>
-     </table>
-     <input type="button" value="ж" style="font-weight:bold" onClick="tag(document.getElementById('mess'),'[b]','[/b]');">
-     <input type="button" value="к" style="font-style:italic" onClick="tag(document.getElementById('mess'),'[i]','[/i]');">
-     <input type="button" value="ч" style="text-decoration:underline" onClick="tag(document.getElementById('mess'),'[u]','[/u]');">
-     <input type="button" value="п" style="text-decoration:line-through" onClick="tag(document.getElementById('mess'),'[s]','[/s]');">
-     <input type="button" value="&lt;==" onClick="tag(document.getElementById('mess'),'[left]','[/left]');">
-     <input type="button" value="&lt;=&gt;" onClick="tag(document.getElementById('mess'),'[center]','[/center]');">
-     <input type="button" value="==&gt;" onClick="tag(document.getElementById('mess'),'[right]','[/right]');">
-     <input type="button" value="спойлер" onClick="tag(document.getElementById('mess'),'[spoiler=Заголовок спойлера]','[/spoiler]');">
-     <input type="button" value="цитата" onClick="tag(document.getElementById('mess'),'[quote]','[/quote]');">
-     <input type="button" value="скрыть" onClick="tag(document.getElementById('mess'),'[hide]','[/hide]');">
-     [if_pmurl]<input type="button" value="ссылка" onClick="tag(document.getElementById('mess'),'[url]','[/url]');">[/if_pmurl]
-    </td></tr>
+    <div class="comment-row">
+           <input class="button" type="button" onClick="if (document.getElementById('smiles').style.display=='none'){document.getElementById('smiles').style.display='block';} else {document.getElementById('smiles').style.display='none';};"
+           value="=)">
+            <div class="smilestable" id="smiles">
+              <div class="comment-row">
+		        <div class="comment-cell smiles">
+                 [SMILES={<img alt="{SMILE}" src="{SITE}/includes/smiles/{SMILE}.gif" onClick="tag(document.getElementById('mess'),'[{SMILE}]',''); document.getElementById('smiles').style.display='none';"> &nbsp;}/SMILES]
+                </div>
+	          </div>
+            </div>
+         <input class="button" type="button" value="Ж" style="font-weight:bold" onClick="tag(document.getElementById('mess'),'[b]','[/b]');">
+         <input class="button" type="button" value="Н" style="font-style:italic" onClick="tag(document.getElementById('mess'),'[i]','[/i]');">
+         <input class="button" type="button" value="П" style="text-decoration:underline" onClick="tag(document.getElementById('mess'),'[u]','[/u]');">
+         <input class="button" type="button" value="З" style="text-decoration:line-through" onClick="tag(document.getElementById('mess'),'[s]','[/s]');">
+         <input class="button" type="button" value="&lt;==" onClick="tag(document.getElementById('mess'),'[left]','[/left]');">
+         <input class="button" type="button" value="&lt;=&gt;" onClick="tag(document.getElementById('mess'),'[center]','[/center]');">
+         <input class="button" type="button" value="==&gt;" onClick="tag(document.getElementById('mess'),'[right]','[/right]');">
+         <input class="button" type="button" value="спойлер" onClick="tag(document.getElementById('mess'),'[spoiler=Заголовок спойлера]','[/spoiler]');">
+         <input class="button" type="button" value="цитата" onClick="tag(document.getElementById('mess'),'[quote]','[/quote]');">
+         <input class="button" type="button" value="скрыть" onClick="tag(document.getElementById('mess'),'[hide]','[/hide]');">
+         [if_pmurl]<input class="button" type="button" value="ссылка" onClick="tag(document.getElementById('mess'),'[url]','[/url]');">[/if_pmurl]
+	</div>
     [/if_can_smiles]
-    <tr><td colspan=2><textarea id="mess" name="ruxesoobchenie" rows=8 cols=75 style="width:620px; height:90px;">{MESSAGE_VALUE}</textarea><br>
-    <div id="info" style="text-align:right; color:gray; font-size:8pt;"></div></td></tr>
+	-->
+    <div class="comment-row">
+		<div class="textarea">
+		    <textarea class="textarea" id="mess" name="ruxesoobchenie">{MESSAGE_VALUE}</textarea>
+		    <br>
+            <div id="info"></div>
+		</div>
+	</div>
+	<br>
+	</div>
+	<div class="comment-table">
     [if_user_not_entered]
-                         <tr><td>Код: </td><td><img alt="" border=0 src="{SECURITY}"></td></tr>
-                         <tr><td>Введите код: </td><td><input name="ruxekod" type="text" maxlength=10 size=30></td></tr>   
+    <div class="comment-row">
+		<div class="comment-cell label">Защитный код (Captcha):&nbsp;</div>
+		<div class="comment-cell"><img alt="" border=0 src="{SECURITY}"></div>
+	</div>
+    <div class="comment-row">
+		<div class="comment-cell label">Введите защитный код:&nbsp;</div>
+		<div class="comment-cell"><input class="code-input" name="ruxekod" type="text" maxlength=10></div>
+	</div>  
     [/if_user_not_entered]
-    <tr><td colspan=2><input type="hidden" name="from" value="{FROM}"><input type="submit" name="submit" value="Отправить"></td></tr>
-   </table>
- </form>
+	<div class="comment-row">
+	    <input type="hidden" name="from" value="{FROM}">
+	</div>
+    <div class="comment-row">
+		<input class="input-button" type="submit" name="submit" value="Отправить">
+	</div>
+    </div>
+  </form>
+
  <script type="text/javascript">
 
            function check()  {
@@ -126,4 +162,3 @@ else TXT.value += startTag + endTag;
             setInterval(check,100);
  
  </script>
-</center>
