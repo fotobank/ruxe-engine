@@ -1056,35 +1056,7 @@ echo '</div>
 		fclose($new);
 
 		$GlobalBFG->refreshrewrite(2,true,$addpath);
-                /*if ($cms_furl==1)
-		{
-			$old = file(".htaccess");
-			$new = fopen(".htaccess","w");
-			foreach ($old as $o)
-			{
-				if ($addpath!="")
-				{
-					(strstr($o,"RewriteBase /")) ? fwrite($new,"RewriteBase ".$addpath."\r\n") : fwrite($new,$o);
-				}
-				else
-					fwrite($new,$o);
-			};
-			fclose($new);
-		}
-		else
-		{
-			$old	=	file(".htaccess");
-			$new	=	fopen(".htaccess","w");
-			$stoped	=	false;
-			foreach ($old as $ol)
-			{
-				if (!$stoped)
-					fwrite($new,$ol);
-				if (strstr($ol,'edit a next code'))
-					$stoped	=	true;
-			};
-			fclose($new);
-		};*/
+                
                 
                 if (!file_exists("conf/users/pm_1.dat"))
                 {
