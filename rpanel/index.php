@@ -301,41 +301,7 @@
   				$ofj = "Выключен";
   			$install = "";
 
-			/*
-			 * Проверка версии темы оформления
-			 */
-			$error	= false;
-			if (isset($ocms[90])) {
-				if ($ocms[90]!=$theme_version)
-					$error	= true;
-			} else
-				$error	= true;
-			if (isset($logincms[90])) {
-				if ($logincms[90]!=$theme_version)
-					$error	= true;
-			} else
-				$error	= true;
-			$whatsearch	= array('[TAGS={','[if_tags]','[TAGLINK]','[TAGCAPTION]','}/TAGS]','[/if_tags]');
-			$wheresearch	= array('newsrecord.html','newsfullrecord.html');
-			foreach ($wheresearch as $place) {
-				$file_	= file($cms_root.'/themes/'.$cms_theme.'/'.$place);
-				$lines_	= '';
-				foreach ($file_ as $line_)
-					$lines_.=$line_;
-				foreach ($whatsearch as $word) {
-					if (!strstr($lines_,$word))
-						$error = true;
-				}
-			}
 			
-			if ($error)
-				$install	.= '
-							<tr class="titlered"><td colspan=2>ТЕМА ОФОРМЛЕНИЯ САЙТА ПОВРЕЖДЕНА</td></tr>
-							<tr class="redtd"><td colspan=2>
-								Активная тема оформления сайта создана не в соответствии с внутренними правилами шаблонизации версии '.$theme_version.' или повреждена.<br>
-								<a href="http://ruxe-engine.ru/documentation/repair.html" target="_blank" style="color:black; font-weight:bold;">Узнать подробности и как исправить</a>.
-							</td></tr>
-						';
 			/*
 			 *
 			 */
