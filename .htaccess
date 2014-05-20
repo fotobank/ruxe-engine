@@ -1,2 +1,30 @@
 AddDefaultCharset UTF-8
 #Don't edit a next code
+RewriteEngine On
+RewriteRule ^rss$ rss/
+RewriteRule ^rss/$ index.php?action=rss [L]
+RewriteRule ^viewprofile/(.*) index.php?action=profile&user=$1 [QSA]
+RewriteRule ^link/(.*)/(.*)/ index.php?action=link&id=$1&new=$2 [L]
+RewriteRule ^go/(.*) index.php?action=go&link=$1 [QSA]
+RewriteRule ^tag/(.*)/(.*) $1/?searchtag=$2 [QSA]
+RewriteRule ^gosite/(.*) index.php?action=gosite&url=$1 [QSA]
+RewriteRule ^category/(.*)/(.*) $1/?category=$2 [QSA]
+RewriteRule ^rotator/(.*) index.php?action=rotator&go=$1 [QSA]
+RewriteRule ^getfile/(.*) index.php?action=download&file=$1 [QSA]
+RewriteRule ^pm/(.*) index.php?action=pm&do=$1 [QSA]
+RewriteRule ^editprofile/ index.php?action=myprofile [QSA]
+RewriteRule ^restore/ index.php?action=restore [QSA]
+RewriteRule ^newuser/ index.php?action=newuser [QSA]
+RewriteRule ^index$ index/
+RewriteRule ^index/$ index.php?viewpage=index [QSA]
+RewriteRule ^somepage.html$ somepage.html/
+RewriteRule ^somepage.html/$ index.php?viewpage=somepage.html [QSA]
+RewriteRule ^downloads.html$ downloads.html/
+RewriteRule ^downloads.html/$ index.php?viewpage=downloads.html [QSA]
+RewriteRule ^contact.html$ contact.html/
+RewriteRule ^contact.html/$ index.php?viewpage=contact.html [QSA]
+RewriteRule ^faq.html$ faq.html/
+RewriteRule ^faq.html/$ index.php?viewpage=faq.html [QSA]
+RewriteRule ^news$ news/
+RewriteRule ^news/$ index/ [L]
+RewriteRule ^news/(.*).html index.php?viewpage=index&viewnews=news&record=$1 [QSA]
