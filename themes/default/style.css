@@ -22,10 +22,6 @@ body {
 	font-size:0.938em;
 	line-height:1.5em;
 }
-#wrapper img {
-    float:left;
-	margin-right:10px;
-}
 /* Стиль системных сообщений об ошибках, полностью перенесён из core.php */
 /* Дизайн message.html */
 /* Надпись "Ошибка" */
@@ -106,7 +102,7 @@ h3 {
 }
 h4 {
     font-size:110%;
-    line-height:120%;
+    line-height:110%;
 	font-weight:bold;
 	text-align:center;
 	color:#505f7f;
@@ -128,7 +124,6 @@ p {
     margin:12px 20px 0;
 	color:#505f7f;
 }
-
 /* Основные блоки */
 
 /* Шапка сайта. От её высоты зависит положение #top-nav - top:176px; */
@@ -186,10 +181,14 @@ p {
 	margin-bottom:38px;
 	background:#f2f9ff;
 }
+#wrapper img {
+    float:left;
+	margin-right:10px;
+}
 #wrapper {
 	height:100%;
 	width:80%;
-	margin:2em 10%;
+	margin:1em 10%;
 	text-align:justify;
 	line-height:1.5em;
 	clear:both;
@@ -341,11 +340,6 @@ p {
 	font-weight:300;
 	text-align:left;
 	display:none;
-}
-/* Навигатор страниц */
-.pager {
-    text-align:center;
-	margin:3px;
 }
 /* Дизайн форм */
 /* Форма авторизации */
@@ -854,6 +848,13 @@ textarea {
 }
 .border {
     border:solid 1px #ff0;
+}
+/* Навигатор страниц */
+.pager {
+    margin:-1.250em auto 1em;
+	text-align:center;
+	font-weight:700;
+	color:#505f7f;
 }
 /* Медиа - запросы */
 @media handheld, only screen and (max-width: 1280px) {
