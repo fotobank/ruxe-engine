@@ -715,7 +715,7 @@ F.A.Q.
         {
             $openpage = "привет";
             $pagetitle = "Тест";
-            $pageredirect = "http://engine.ruxesoft.net";
+            $pageredirect = "http://ruxe-engine.ru";
         };
     };
 ?>
@@ -738,7 +738,7 @@ $name = "Тестовый модуль";
 $version = "1.0";
 $description = "Пример дополнения";
 $author = "Ruxe Engine";
-$site = "http://engine.ruxesoft.net/";
+$site = "http://ruxe-engine.ru/";
 $addaction = 1;
 ?>
 ```
