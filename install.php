@@ -541,7 +541,7 @@ echo '</div>
                 $found = false;
                 echo '<h3>Анализ важных файлов системы: Конфигурация и др.</h3><br>';
 		$iferror='
-                Все следующие файлы и папки должны быть обязательно загружены и иметь <a href="http://ruxe-engine.ru/documentation/chmod.html" target="_blank">права на запись</a>:
+                Все следующие файлы и папки должны быть обязательно загружены и иметь права на запись:
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;1. Файл <b>.htaccess</b>
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;2. Каталог <b>/avatars/</b> и все файлы в нём
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;3. Каталог <b>/conf/</b>, все файлы и подкаталоги в нём
