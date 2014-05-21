@@ -173,7 +173,7 @@ $lcms['error_222'] = "ID not found";
 $lcms['error_544'] = "Error: 404. ID#{ID} not found";
 $lcms['error_602'] = "You can not send comments now. The administrator has switched off commenting on a site.";
 $lcms['pm_theme'] = "Тема: ";
-$lcms['guest_not_write'] = "<br><br><center><a href=\"".$cms_site."/registration/\">Зареєструйтесь</a> або увійдіть у ваш аккаунт, щоб залишити коментар</center><br>";
+$lcms['guest_not_write'] = "<br><br><center><a href=\"".$cms_site."/newuser/\">Зареєструйтесь</a> або увійдіть у ваш аккаунт, щоб залишити коментар</center><br>";
 $lcms['comment_0'] = "Коментувати";
 $lcms['comment_one'] = "коментар";
 $lcms['comment_much'] = "коментарів";

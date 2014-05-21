@@ -172,7 +172,7 @@ $lcms['error_222'] = "ID not found";
 $lcms['error_544'] = "Error: 404. ID#{ID} not found";
 $lcms['error_602'] = "You can not send comments now. The administrator has switched off commenting on a site.";
 $lcms['pm_theme'] = "Theme: ";
-$lcms['guest_not_write'] = "<br><br><center><a href=\"".$cms_site."/registration/\">Register</a> or enter into your account to leave the comment</center><br>";
+$lcms['guest_not_write'] = "<br><br><center><a href=\"".$cms_site."/newuser/\">Register</a> or enter into your account to leave the comment</center><br>";
 $lcms['comment_0'] = "Make comment";
 $lcms['comment_one'] = "comment";
 $lcms['comment_much'] = "comments";

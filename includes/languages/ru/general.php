@@ -173,7 +173,7 @@ $lcms['error_222'] = "Идентификатор не найден.";
 $lcms['error_544'] = "Идентификатор {ID} не найден.";
 $lcms['error_602'] = "Администратор отключил возможность комментирования на сайте.";
 $lcms['pm_theme'] = "Тема: ";
-$lcms['guest_not_write'] = "<br><br><center><a href=\"".$cms_site."/registration/\">Зарегистрируйтесь</a> или войдите в Ваш аккаунт, чтобы оставить комментарий.</center><br>";
+$lcms['guest_not_write'] = "<br><br><center><a href=\"".$cms_site."/newuser/\">Зарегистрируйтесь</a> или войдите в Ваш аккаунт, чтобы оставить комментарий.</center><br>";
 $lcms['comment_0'] = "Комментировать";
 $lcms['comment_one'] = "комментарий";
 $lcms['comment_much'] = "комментариев";
