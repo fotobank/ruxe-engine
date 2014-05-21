@@ -163,7 +163,7 @@
 		foreach ($smilesdb as $smilesd) {
 			$smile = str_replace("\r\n","",$smilesd);
 			if ($smile!='')
-				$smiles.='<img alt="'.$smile.'" src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById(\'mess\'),\'['.$smile.']\',\'\'); document.getElementById(\'smiles\').style.display=\'none\';"> ';
+				$smiles.='<img alt="'.$smile.'" src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById(\'mess\'),\'['.$smile.']\',\'\'); document.getElementById(\'smiles\').style.display=\'none\';"> ';
 		};
 		$menu .= "
 				<center><table class=\"optionstable\" border=0 cellpadding=1 cellspacing=0>

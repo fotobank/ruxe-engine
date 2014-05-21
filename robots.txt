@@ -3,7 +3,7 @@ Disallow: /avatars/
 Disallow: /link/
 Disallow: /go/
 Disallow: /gosite/
-Disallow: /includes/captcha/
+Disallow: /captcha/
 Disallow: /rotator/
 Disallow: /rpanel/
 Disallow: /getfile/

@@ -1867,7 +1867,7 @@
             		{
                         		$smile = str_replace("\r\n","",$smile);
                         		if ($smile!="")
-						$smileslist	.=	'<tr><td><b>['.$smile.']</b></td><td><img src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'"></td></tr>';
+						$smileslist	.=	'<tr><td><b>['.$smile.']</b></td><td><img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'"></td></tr>';
             		};
 			$echooptions	=	'
 				<h2>Специальные команды для новостей</h2>
@@ -2219,12 +2219,12 @@
                                    				die("Error.556: File size = 0 bytes");
                                				if (substr($Filtr->tolower($_FILES['userfile']['name']),strlen($Filtr->tolower($_FILES['userfile']['name']))-4,4)!= '.gif')
                                    				die("Error.558: Поддерживаются только GIF изображения");
-                               				if (@copy($_FILES['userfile']['tmp_name'], $cms_root."/includes/smiles/".substr(basename($_FILES['userfile']['name']),0,strlen(basename($_FILES['userfile']['name']))-4).".gif")!=true)
+                               				if (@copy($_FILES['userfile']['tmp_name'], $cms_root."/smiles/".substr(basename($_FILES['userfile']['name']),0,strlen(basename($_FILES['userfile']['name']))-4).".gif")!=true)
                                    				die("Error.560: Файл не загружен");
                                				$smiles = fopen($cms_root."/conf/smiles.dat","a");
                                				fputs($smiles,substr(basename($_FILES['userfile']['name']),0,strlen(basename($_FILES['userfile']['name']))-4)."\r\n");
                                				fclose($smiles);
-                               				chmod($cms_root."/includes/smiles/".substr(basename($_FILES['userfile']['name']),0,strlen(basename($_FILES['userfile']['name']))-4).".gif",0777);
+                               				chmod($cms_root."/smiles/".substr(basename($_FILES['userfile']['name']),0,strlen(basename($_FILES['userfile']['name']))-4).".gif",0777);
                           			}
                           			else
                           			{
@@ -2242,7 +2242,7 @@
                                   			if ($s!=$smile) fwrite($n,$s."\r\n"); 
                           			};
                           			fclose($n);
-                          			$FileManager->removefile($cms_root."/includes/smiles/".$smile.".gif");
+                          			$FileManager->removefile($cms_root."/smiles/".$smile.".gif");
                           			break;
                 	 	};
              		};
@@ -2259,7 +2259,7 @@
                      		$smile = str_replace("\r\n","",$smile);
                      		if ($smile!="")
                      		{ 
-                      			$echooptions .= '<tr><td><img src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 alt=""></td><td>['.$smile.']</td><td>
+                      			$echooptions .= '<tr><td><img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt=""></td><td>['.$smile.']</td><td>
                       			<a href="#" onClick="if (checkhead()) location.href=\'?action=smiles&amp;do=delete&amp;smile='.$smile.'\';">Удалить</a>
                       			</td></tr>';
                      		};

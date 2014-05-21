@@ -26,8 +26,8 @@
             $smile = str_replace("\r\n","",$smilesd);
             if ($smile!='')
             {
-               $smiles1 .= '<img alt="" src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById(\'short\'),\'['.$smile.']\',\'\'); document.getElementById(\'smiles1\').style.display=\'none\';"> ';
-               $smiles2 .= '<img alt="" src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById(\'full\'),\'['.$smile.']\',\'\'); document.getElementById(\'smiles2\').style.display=\'none\';"> ';
+               $smiles1 .= '<img alt="" src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById(\'short\'),\'['.$smile.']\',\'\'); document.getElementById(\'smiles1\').style.display=\'none\';"> ';
+               $smiles2 .= '<img alt="" src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 style="cursor:hand;" onClick="tag(document.getElementById(\'full\'),\'['.$smile.']\',\'\'); document.getElementById(\'smiles2\').style.display=\'none\';"> ';
             };
   };
   $echooptions = '<h2>F.A.Q.</h2>

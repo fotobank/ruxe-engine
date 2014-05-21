@@ -1526,7 +1526,7 @@ class RuxeTemplate
          				$me_themes.="<option value=\"".$mail_select[$q]."\"".$sel.">".$mail_select[$q];
 				};
  			};
- 			$me_security = $cms_site."/includes/captcha/?".session_name()."=".session_id();
+ 			$me_security = $cms_site."/captcha/?".session_name()."=".session_id();
  			if (isset($_GET['message']))
      				$me_mess = $Filtr->clear($_GET['message']);
  			if (($comment_action=="pm") or ($comment_action=="pmnew"))
@@ -1991,7 +1991,7 @@ class RuxeTemplate
 						$text	=	preg_replace('|\[img\](.*)\[\/img\]|Uis',"<img src=\"\${1}\" border=0 alt=\"\">",$text);
 					//smiles
 					foreach ($this->getsmiles() as $smile)
-					        $text	=	str_replace('['.$smile.']',"<img src=\"".$cms_site."/includes/smiles/".$smile.".gif\" border=0 alt=\"[".$smile."]\">",$text);
+					        $text	=	str_replace('['.$smile.']',"<img src=\"".$cms_site."/smiles/".$smile.".gif\" border=0 alt=\"[".$smile."]\">",$text);
 				};
 				//newlinere
 				$text = str_replace("[newlinere]","\r\n",$text);

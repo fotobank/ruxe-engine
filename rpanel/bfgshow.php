@@ -87,8 +87,8 @@
                         		if ($smile!="")
                         		{
 						
-                                		$smileslist1 .= '<img src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'short\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles1\').style.display=\'none\';"> &nbsp;';
-                                		$smileslist2 .= '<img src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'full\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles2\').style.display=\'none\';"> &nbsp;';
+                                		$smileslist1 .= '<img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'short\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles1\').style.display=\'none\';"> &nbsp;';
+                                		$smileslist2 .= '<img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'full\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles2\').style.display=\'none\';"> &nbsp;';
                         		};
                         
                         		$i++;
@@ -352,8 +352,8 @@
                         	$smile = str_replace("\r\n","",$smile);
                         	if ($smile!="")
                         	{
-                                	$smileslist1 .= '<img src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'short\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles1\').style.display=\'none\';"> &nbsp;';
-                                	$smileslist2 .= '<img src="'.$cms_site.'/includes/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'full\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles2\').style.display=\'none\';"> &nbsp;';
+                                	$smileslist1 .= '<img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'short\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles1\').style.display=\'none\';"> &nbsp;';
+                                	$smileslist2 .= '<img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt="'.$smile.'" onClick="editAreaLoader.insertTags(\'full\', \'['.$smile.']\', \'\'); document.getElementById(\'smiles2\').style.display=\'none\';"> &nbsp;';
                         	};
                         
                         	$i++;

@@ -620,7 +620,7 @@ if ($cms_registration==1) {
 				$reglink.='&amp;step=2';
 			else
 				$reglink.='?step=2';
-			$br = array($cms_site,"Ruxe Engine (ruxe-engine.ru)",$login,$password,$spassword,$mail,$smail,$cms_site."/includes/captcha/?".session_name()."=".session_id(),$cms_site."/themes/".$cms_theme,$reglink);
+			$br = array($cms_site,"Ruxe Engine (ruxe-engine.ru)",$login,$password,$spassword,$mail,$smail,$cms_site."/captcha/?".session_name()."=".session_id(),$cms_site."/themes/".$cms_theme,$reglink);
 			$openpage = $GlobalTemplate->users($ar,$br,3);
 			$pagetitle = $lcms['registerform_title'];
 		};

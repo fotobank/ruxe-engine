@@ -220,33 +220,33 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
                 'includes/idna_convert.class.php',
                 'includes/transcode_wrapper.php',
                 'includes/uctc.php',
-                'includes/captcha/index.php',
-                'includes/captcha/kcaptcha.php',
-                'includes/captcha/kcaptcha_config.php',
-                'includes/captcha/fonts/antiqua.png',
-                'includes/captcha/fonts/baskerville.png',
-                'includes/captcha/fonts/batang.png',
-                'includes/captcha/fonts/bookman.png',
-                'includes/captcha/fonts/calisto.png',
-                'includes/captcha/fonts/cambria.png',
-                'includes/captcha/fonts/centaur.png',
-                'includes/captcha/fonts/century.png',
-                'includes/captcha/fonts/chaparral.png',
-                'includes/captcha/fonts/constantia.png',
-                'includes/captcha/fonts/footlight.png',
-                'includes/captcha/fonts/garamond.png',
-                'includes/captcha/fonts/georgia.png',
-                'includes/captcha/fonts/goudy_old.png',
-                'includes/captcha/fonts/kozuka.png',
-                'includes/captcha/fonts/lucida.png',
-                'includes/captcha/fonts/minion.png',
-                'includes/captcha/fonts/palatino.png',
-                'includes/captcha/fonts/perpetua.png',
-                'includes/captcha/fonts/rockwell.png',
-                'includes/captcha/fonts/times.png',
-                'includes/captcha/fonts/warnock.png',
-                'includes/captcha/util/font_preparer.php',
-                'includes/captcha/util/index.php',
+                'captcha/index.php',
+                'captcha/kcaptcha.php',
+                'captcha/kcaptcha_config.php',
+                'captcha/fonts/antiqua.png',
+                'captcha/fonts/baskerville.png',
+                'captcha/fonts/batang.png',
+                'captcha/fonts/bookman.png',
+                'captcha/fonts/calisto.png',
+                'captcha/fonts/cambria.png',
+                'captcha/fonts/centaur.png',
+                'captcha/fonts/century.png',
+                'captcha/fonts/chaparral.png',
+                'captcha/fonts/constantia.png',
+                'captcha/fonts/footlight.png',
+                'captcha/fonts/garamond.png',
+                'captcha/fonts/georgia.png',
+                'captcha/fonts/goudy_old.png',
+                'captcha/fonts/kozuka.png',
+                'captcha/fonts/lucida.png',
+                'captcha/fonts/minion.png',
+                'captcha/fonts/palatino.png',
+                'captcha/fonts/perpetua.png',
+                'captcha/fonts/rockwell.png',
+                'captcha/fonts/times.png',
+                'captcha/fonts/warnock.png',
+                'captcha/util/font_preparer.php',
+                'captcha/util/index.php',
                 'includes/languages/.htaccess',
                 'includes/languages/ru/general.php',
                 'includes/languages/ru/admin.php',
@@ -546,7 +546,7 @@ echo '</div>
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;2. Каталог <b>/avatars/</b> и все файлы в нём
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;3. Каталог <b>/conf/</b>, все файлы и подкаталоги в нём
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;4. Каталог <b>/themes/</b>, все файлы и подкаталоги в нём
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;5. Каталог <b>/includes/smiles/</b> и все файлы в нём
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;5. Каталог <b>/smiles/</b> и все файлы в нём
                 <br>&nbsp;&nbsp;&nbsp;&nbsp;6. Каталог <b>/rpanel/backups/</b><br>
                 <div style="margin-right:130px;text-align:right;"><a href="#footer"><img src="rpanel/theme/images/arrow-down.gif" border=0 alt=""></a> <a href="#footer">Вниз</a></div><br>
                    <center><table class="table" cellpadding=5 width="100%" cellspacing=0 border=0>
@@ -557,13 +557,13 @@ echo '</div>
                 "avatars/",
                 "conf/",
                 "themes/",
-                "includes/smiles",
+                "smiles",
                 "rpanel/backups/"
                 );
                 foreach ($FileManager->listing("avatars/",0) as $a)
                         $codestyle[]="avatars/".$a;
-                foreach ($FileManager->listing("includes/smiles/",0) as $a)
-                        $codestyle[]="includes/smiles/".$a;
+                foreach ($FileManager->listing("smiles/",0) as $a)
+                        $codestyle[]="smiles/".$a;
                 foreach ($FileManager->listing("conf/",0) as $a)
                         $codestyle[]="conf/".$a;
                 foreach ($FileManager->listing("conf/",1) as $a)
