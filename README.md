@@ -909,7 +909,7 @@ Ruxe Engine API
 
 - **Ахрамеев Денис Викторович** ([ruxesoft.net](http://ruxesoft.net)) - Автор, программирование
 - **Игорь Dr1D** - Дизайн
-- **Олег Прохоров** ([www.tanatos-life.ru](http://www.tanatos-life.ru/)) - Контроль качества, документация
+- **Олег Прохоров** ([ruxe-engine.ru/viewprofile/Tanatos](http://ruxe-engine.ru/viewprofile/Tanatos)) - Контроль качества, документация
 
 
 Лицензия

@@ -12,7 +12,7 @@
  * Разработчики:
  * Ахрамеев Денис Викторович (http://ruxesoft.net) Автор, программирование
  * Игорь Dr1D - Дизайн
- * Олег Прохоров (http://www.tanatos-life.ru) - Контроль качества, документация
+ * Олег Прохоров (http://ruxe-engine.ru/viewprofile/Tanatos) - Контроль качества, документация
  *
  */
 
@@ -2705,7 +2705,7 @@
            		break;
      	};
  	$ddd=microtime(); $ddd=((double)strstr($ddd, ' ')+(double)substr($ddd,0,strpos($ddd,' ')));
-     	echo $GlobalTemplate->template("{CREDITS}","Используя данное программное обеспечение, Вы соглашаетесь с <a href=\"https://github.com/maindefine/ruxe-engine/blob/master/LICENSE-FULL-EN.txt\" target=\"_blank\" style=\"color:white;\">Лицензионным соглашением</a>.<br>Автор, программирование: <b>Ахрамеев Денис Викторович <a style=\"color:white; font-weight:bold;\" href=\"http://ruxesoft.net/feedback.html\" target=\"_blank\">Includen</a></b>.<br>Дизайн: <b>Игорь</b> <a href=\"http://ruxe-engine.ru/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>Контроль качества, документация: <b>Олег Прохоров</b> <a href=\"http://www.tanatos-life.ru/aboutme.php\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Tanatos</a>.<br>Генерация: ".number_format(($ddd-$ttt),3)." секунд.","./theme/admincenterend.tpl");
+     	echo $GlobalTemplate->template("{CREDITS}","Используя данное программное обеспечение, Вы соглашаетесь с <a href=\"https://github.com/maindefine/ruxe-engine/blob/master/LICENSE-FULL-EN.txt\" target=\"_blank\" style=\"color:white;\">Лицензионным соглашением</a>.<br>Автор, программирование: <b>Ахрамеев Денис Викторович <a style=\"color:white; font-weight:bold;\" href=\"http://ruxesoft.net/feedback.html\" target=\"_blank\">Includen</a></b>.<br>Дизайн: <b>Игорь</b> <a href=\"http://ruxe-engine.ru/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>Контроль качества, документация: <b>Олег Прохоров</b> <a href=\"http://ruxe-engine.ru/viewprofile/Tanatos\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Tanatos</a>.<br>Генерация: ".number_format(($ddd-$ttt),3)." секунд.","./theme/admincenterend.tpl");
   }
   else
   {
