@@ -307,8 +307,8 @@ if ($action=="download")
    	$botfounded	= 	false;
 	$sv_tmp		=	'';
 	
-   	$useragent  	= 	$Filtr->getuseragent();
-   	if ($Robots->check($_SERVER['HTTP_USER_AGENT']))
+   	$useragent  	= 	isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+   	if ($Robots->check($useragent))
    	{
 		$botfounded 	= true;
 		$ar 		= array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}","{SITE}","{THEMEPATH}");
