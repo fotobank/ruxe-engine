@@ -2065,10 +2065,7 @@ class GlobalBFG
 		};
 		if ($furl==1)
 		{
-			if ($t[0]!="")
-				fwrite($newfile,"RewriteEngine On\r\nRewriteBase ".$t[0]."\r\nRewriteRule ^rss$ rss/\r\nRewriteRule ^rss/$ index.php?action=rss [L]\r\n");
-			else		
-				fwrite($newfile,"RewriteEngine On\r\nRewriteBase /\r\nRewriteRule ^rss$ rss/\r\nRewriteRule ^rss/$ index.php?action=rss [L]\r\n");
+			fwrite($newfile,"RewriteEngine On\r\nRewriteRule ^rss$ rss/\r\nRewriteRule ^rss/$ index.php?action=rss [L]\r\n");
 			fwrite($newfile,"RewriteRule ^viewprofile/(.*) index.php?action=profile&user=\$1 [QSA]\r\nRewriteRule ^link/(.*)/(.*)/ index.php?action=link&id=\$1&new=\$2 [L]\r\nRewriteRule ^go/(.*) index.php?action=go&link=\$1 [QSA]\r\nRewriteRule ^tag/(.*)/(.*) \$1/?searchtag=\$2 [QSA]\r\nRewriteRule ^gosite/(.*) index.php?action=gosite&url=\$1 [QSA]\r\nRewriteRule ^category/(.*)/(.*) \$1/?category=\$2 [QSA]\r\nRewriteRule ^rotator/(.*) index.php?action=rotator&go=\$1 [QSA]\r\nRewriteRule ^getfile/(.*) index.php?action=download&file=\$1 [QSA]\r\nRewriteRule ^pm/(.*) index.php?action=pm&do=\$1 [QSA]\r\nRewriteRule ^editprofile/ index.php?action=myprofile [QSA]\r\nRewriteRule ^restore/ index.php?action=restore [QSA]\r\nRewriteRule ^newuser/ index.php?action=newuser [QSA]\r\n");
 			$pagesconfig = file($cms_root."/conf/pages/config");
 			foreach ($pagesconfig as $pagesline)
