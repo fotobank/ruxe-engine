@@ -907,7 +907,7 @@ Ruxe Engine API
 Разработчики
 ---------------------------------
 
-- **Ахрамеев Денис Викторович** ([ruxesoft.net](http://ruxesoft.net)) - Автор, программирование
+- **Ахрамеев Денис Викторович** ([denisv.me](http://denisv.me)) - Автор, программирование
 - **Игорь Dr1D** - Дизайн
 - **Олег Прохоров** ([ruxe-engine.ru/viewprofile/Tanatos](http://ruxe-engine.ru/viewprofile/Tanatos)) - Контроль качества, документация
 
