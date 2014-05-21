@@ -2169,7 +2169,7 @@ class GlobalBFG
 		$tegs  		= str_replace(",  ",",",$tegs);
 		$tegs  		= str_replace(", ",",",$tegs);
 		(isset($_POST['upped'])) ? $upped = $_POST['upped'] : $upped = "no";
-		$link  		= $Filtr->clear($_POST['link']);
+		$link  		= filter_var($_POST['link'], FILTER_SANITIZE_URL);
 		if ($link=="http://") $link = "";
 		$needdeletefile = "";
 		$date 		= $Filtr->clear($_POST['date']);
@@ -2342,7 +2342,7 @@ class GlobalBFG
   		$tegs  = str_replace(",  ",",",$tegs);
   		$tegs  = str_replace(", ",",",$tegs);
   		$upped = (isset($_POST['upped'])) ? $_POST['upped'] : "no";
-  		$link  = $Filtr->clear($_POST['link']);
+  		$link  = filter_var($_POST['link'], FILTER_SANITIZE_URL);
   		if ($link=="http://") 
   			$link = "";
   		$br 		= (isset($_POST['br'])) ? $_POST['br'] : false;
