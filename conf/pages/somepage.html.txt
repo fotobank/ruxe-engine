@@ -50,25 +50,25 @@
 &lt;html&gt;<br>
 &lt;head&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Заголовок страницы --&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;? here_title(); ?&gt;&lt;/title&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;?php here_title(); ?&gt;&lt;/title&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- ОБЯЗАТЕЛЬНАЯ команда, которая выводит meta-тег с переадресацией в промежуточных страницах; при отключенных промежуточных страницах оставляет на месте себя только перенос строки --&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;? here_metaredirect(); ?&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php here_metaredirect(); ?&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Параметры RSS-ленты --&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="alternate" type="application/rss+xml" title="RSS-лента" href="&lt;? here_urlsite(); ?&gt;/rss"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="alternate" type="application/rss+xml" title="RSS-лента" href="&lt;?php here_urlsite(); ?&gt;/rss"&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Иконка сайта --&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="SHORTCUT ICON" href="&lt;? here_urlsite(); ?&gt;/favicon.ico"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="SHORTCUT ICON" href="&lt;?php here_urlsite(); ?&gt;/favicon.ico"&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!--Тип содержимого и кодировка страницы--&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!--Описание страницы--&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="description" content="&lt;? here_description(); ?&gt;"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="description" content="&lt;?php here_description(); ?&gt;"&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!--Ключевые слова страницы--&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="keywords" content="&lt;? here_keywords(); ?&gt;"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="keywords" content="&lt;?php here_keywords(); ?&gt;"&gt;<br>
 &lt;/head&gt;<br>
 &lt;body&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Здесь может быть заголовок, слоган сайта, главное меню, сайдбар и др.--&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;МОЙ САЙТ&lt;/h1&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода контента той или иной страницы --&gt;</font><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;? here_pagecontent(); ?&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php here_pagecontent(); ?&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода текста "Powered by Ruxe Engine" с указанием ссылки на официальный сайт (команда необязательная, но мы надеемся, что вы её будете использовать); местоположение данной команды может быть в любом месте страницы в пределах тегов &lt;body&gt;&lt;/body&gt;--&gt;</font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{CREDITS}<br>
 &lt;/body&gt;<br>

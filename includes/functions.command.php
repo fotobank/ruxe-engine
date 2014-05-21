@@ -266,8 +266,8 @@ function here_downloads(){
 			echo "<center>";
 			$Filtr->showmess('
 				<b>Внимание! Данное сообщение отображается только для администраторов.</b><br><br>
-				Команда &lt;? here_downloads(); ?&gt; будет отменена в следующих версиях Ruxe Engine.<br>
-				Используйте команду &lt;? here_show_downloads("ID"); ?&gt; и др. для создания каталога файлов.<br>
+				Команда &lt;?php here_downloads(); ?&gt; будет отменена в следующих версиях Ruxe Engine.<br>
+				Используйте команду &lt;?php here_show_downloads("ID"); ?&gt; и др. для создания каталога файлов.<br>
 				Подробнее в Админ-центр - Другие модули - Счётчики загрузок.
 				');
 			echo "</center>";
@@ -613,7 +613,7 @@ function here_guestbook()
 	echo '<div style="background-color:#f6e79a; border:1px solid black; margin: 2px 2px 2px 2px; padding: 2px 2px 2px 2px;">
 	        <center><b>Внимание</b></center>
 	        <p>Гостевая книга (как модуль) удалена. Если вы использовали скрипт обновления, то был создан одиночный раздел "Гостевая книга" (ID: guestbook), куда перенесены все ваши записи.</p>
-	        <p>Используйте команду <b>&lt;? here_messages(\'guestbook\'); ?&gt;</b>.</p>
+	        <p>Используйте команду <b>&lt;?php here_messages(\'guestbook\'); ?&gt;</b>.</p>
 		<p>Администратирование осуществляется в Админ-центр - Другие модули - Разделы комментариев - Гостевая книга.</p>
 	        </div>';
 };

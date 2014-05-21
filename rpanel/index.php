@@ -544,7 +544,7 @@
                    								<td><input type="text" maxlength=9 size=46 name="type"></td></tr>
                   							<tr><td>Описание:<br><font class="desc">Например, <b>Новоcти</b></font></td>
                    									<td><input type="text" maxlength=100 size=46 name="description"></td></tr>
-                  								<tr><td>Страница, где указана или будет команда <b>&lt;? here_news...</b>:</td>
+                  								<tr><td>Страница, где указана или будет команда <b>&lt;?php here_news...</b>:</td>
                    								<td><select name="page1">
                   				';
                   				$pages = file("../conf/pages/config");
@@ -588,7 +588,7 @@
             						       <td><input type="text" maxlength=9 size=46 readonly name="type" value="'.$b[0].'"></td></tr>
             							      <tr><td>Описание:<br><font class="desc">Например, <b>Новоcти</b></font></td>
            										        <td><input type="text" maxlength=100 size=46 name="description" value="'.$b[1].'"></td></tr>
-           								       <tr><td>Страница, где указана или будет команда <b>&lt;? here_news...</b>:</td>
+           								       <tr><td>Страница, где указана или будет команда <b>&lt;?php here_news...</b>:</td>
          								          <td><select name="page1">
                   				';
                   				$pages = file("../conf/pages/config");
@@ -2105,8 +2105,8 @@
 							Счётчики загрузок используются на сайте с помощью следующих команд и путей:<br>
 						</td></tr>
           					<tr><td width=500>'.$Navigation->furl('getfile','<b>ID</b>').'</td><td>Ссылка для загрузки файла по идентификатору с повышением показания счётчика</td></tr>
-						<tr><td>&lt;? here_show_downloads("<b>ID</b>"); ?&gt;</td><td>Команда для вывода показаний счётчика загрузок файла по идентификатору</td></tr>
-						<tr><td>&lt;? here_top_downloads(); ?&gt;</td><td>Выводит список наиболее популярных загрузок</td></tr>
+						<tr><td>&lt;?php here_show_downloads("<b>ID</b>"); ?&gt;</td><td>Команда для вывода показаний счётчика загрузок файла по идентификатору</td></tr>
+						<tr><td>&lt;?php here_top_downloads(); ?&gt;</td><td>Выводит список наиболее популярных загрузок</td></tr>
        					</table></center>
         		';
           		$ar = array("{MENU}","{OPTIONS}");
@@ -2170,7 +2170,7 @@
              			};
           		};
           		$echooptions = '<h2>Счётчики просмотров</h2>
-          				<font class="desc">Управление модулем &lt;? here_show_views(\'Идентификатор\'); ?&gt; и &lt;? here_hided_counter_views(\'Идентификатор\'); ?&gt;</font><br><br>'.$add.'
+          				<font class="desc">Управление модулем &lt;?php here_show_views(\'Идентификатор\'); ?&gt; и &lt;?php here_hided_counter_views(\'Идентификатор\'); ?&gt;</font><br><br>'.$add.'
         	  				<center>
         					  <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
       						     <tr class="titletable"><td>СЧЁТЧИКИ ПРОСМОТРОВ</td><td>ДЕЙСТВИЯ</td></tr>
@@ -2588,7 +2588,7 @@
                  		};
              		};
 			$echooptions = '<h2>Разделы комментариев</h2>
-				<font class="desc">С помощью данных разделов и команды &lt;? here_message(\'ID\'); ?&gt; можно установить на любой странице сайта возможность комментирования</font><br><br>
+				<font class="desc">С помощью данных разделов и команды &lt;?php here_message(\'ID\'); ?&gt; можно установить на любой странице сайта возможность комментирования</font><br><br>
 				'.$add.'
 				<center><table width="93%" border=0 cellpadding=0 cellspacing=0><tr><td>';
 			$listmess = file($cms_root.'/conf/messages/listmess.dat');
@@ -2615,25 +2615,6 @@
 				$i++;
 			}
 			$echooptions.= '</td></tr></table></center>';
-             		/*$echooptions = '<h2>Разделы комментариев</h2>
-             			<font class="desc">С помощью данных разделов и команды &lt;? here_messages(\'Идентификатор\'); ?&gt; можно установить на любой странице сайта возможность комментирования</font><br><br>
-             			'.$add.'
-              			<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-              			<tr class="titletable"><td>РАЗДЕЛЫ</td><td width=330>ДЕЙСТВИЯ</td></tr>
-             		';
-             		$listmess = file("../conf/messages/listmess.dat");
-             		$i = 0;
-             		foreach ($listmess as $list)
-             		{
-                 		$l = explode("|",$list);
-                 		$echooptions.='<tr><td>Идентификатор: <b>'.$l[0].'</b>. Описание: <b>'.$l[1].'</b></td><td>
-                 			<a href="?action=messages&amp;from=message&amp;line='.$i.'&amp;message='.$l[0].'">Комментарии ('.count(file("../conf/messages/mess_".$l[0].".dat")).')</a>
-                 			<a href="?action=message&amp;go=edit&amp;line='.$i.'">Изменить</a>
-                 			<a href="#" onClick="if (checkhead()) location.href=\'saver.php?saverdo=delcomment&amp;frommessage=1&amp;file='.$l[0].'&amp;line='.$i.'\';">Удалить</a> 
-                 		</td></tr>'; 
-                 		$i++;               
-             		};
-             		$echooptions.= '</table></center>';*/
              		$ar = array("{MENU}","{OPTIONS}");
              		$br = array("",$echooptions);
              		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");

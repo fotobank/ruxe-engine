@@ -25,7 +25,7 @@
 		<tr><td>Включить счётчики просмотров записей <a href="?action=bfg" target="_blank">Новостных разделов</a>:</td><td><select name="views_counter"><option value="1" {VIEWS_COUNTER1}>Да<option value="0" {VIEWS_COUNTER2}>Нет</select></td></tr>
 		<tr><td>Учитывать только уникальные просмотры людьми в счётчиках просмотров записей <a href="?action=bfg" target="_blank">Новостных разделов</a>:<br><font class="desc">Если данная опция включена, то просмотры новостей поисковыми роботами и повторные просмотры одним и тем же человеком учитываться не будут.</font></td><td><select name="uniqbfg"><option value="1" {UNIQBFG1}>Да<option value="0" {UNIQBFG2}>Нет</select></td></tr>
 		<tr><td>Максимальная длина заголовка новостей в URL:<font class="desc"><br>Изменение длины происходит только при создании и редактировании новостей</font></td><td><select name="title_length">{TITLE_LENGTH}</select></td></tr>
-		<tr><td>Максимальное количество выводимых ссылок на популярные новости в модуле <font class="desc">&lt;? here_top_news('ID'); ?&gt;</font>:</td><td><select name="top_news_max">{TOP_NEWS_MAX}</select></td></tr>
+		<tr><td>Максимальное количество выводимых ссылок на популярные новости в модуле <font class="desc">&lt;?php here_top_news('ID'); ?&gt;</font>:</td><td><select name="top_news_max">{TOP_NEWS_MAX}</select></td></tr>
 	
 	<tr class="titletable"><td colspan=2>КОММЕНТАРИИ</td></tr>
 		<tr><td>Возможность комментирования на сайте:</td><td><select name="comments"><option value="1" {COMMENTSSHOW1}>Да<option value="0" {COMMENTSSHOW2}>Нет</select></td></tr>
@@ -37,8 +37,8 @@
 		<tr><td>Разрешить BB-код [url][/url] ([url=][/url]) в комментариях:</td><td><select name="createlinks"><option value="1" {CREATELINKS1}>Да<option value="0" {CREATELINKS2}>Нет</select></td></tr>  
 		<tr><td>Темы сообщений для модуля Обратной связи:<br><font class="desc">Разделяйте запятой, без пробела после неё</font><td><input type="text" name="mail_select" value="{MAIL_SELECT}" size=46></td></tr>  
 		<tr><td>Комментариев на одной странице:</td><td><select name="nav_comments">{NAV_COMMENTS}</select></td></tr>
-		<tr><td>Количество выводимых сообщений в модуле <font class="desc">&lt;? here_last_posts(); ?&gt;</font> (последние комментарии):</td><td><select name="lastposts_count">{LASTPOSTS_COUNT}</select></td></tr>
-		<tr><td>Длина сообщений в модуле <font class="desc">&lt;? here_last_posts(); ?&gt;</font> (в символах):{SUBSTRERROR}</td><td><input type="text" name="lastposts_len" value="{LASTPOSTS_LEN}" size=46></td></tr>
+		<tr><td>Количество выводимых сообщений в модуле <font class="desc">&lt;?php here_last_posts(); ?&gt;</font> (последние комментарии):</td><td><select name="lastposts_count">{LASTPOSTS_COUNT}</select></td></tr>
+		<tr><td>Длина сообщений в модуле <font class="desc">&lt;?php here_last_posts(); ?&gt;</font> (в символах):{SUBSTRERROR}</td><td><input type="text" name="lastposts_len" value="{LASTPOSTS_LEN}" size=46></td></tr>
 		<tr><td>Включить цензуру комментариев:{SUBSTRERROR2}</td><td><select name="cenzura"><option value="1" {CENZURA1}>Да<option value="2" {CENZURA2}>Нет</select></td></tr>
 		<tr><td>Цензура: часть слов, заменяющиеся на <font class="desc">***</font>, <b>через запятую БЕЗ пробела и маленькими буквами</b>:<br><font class="desc">Не действует на администраторов</font></td><td><input type="text" name="cenzura_words" value="{CENZURA_WORDS}" size=46></td></tr> 
 	
@@ -108,8 +108,8 @@
 	<tr class="titletable"><td colspan=2>ДРУГОЕ</td></tr>
 		<tr><td><input type="hidden" name="nav_downloads" value="50">Записей F.A.Q. на одной странице:</td><td><select name="nav_faq">{NAV_FAQ}</select></td></tr>
 		<tr><td>Записей логов в разделе <a href="?action=system">Обслуживание</a>:</td><td><select name="nav_system">{NAV_SYSTEM}</select></td></tr>
-		<tr><td>Количество позиций в модуле <font class="desc">&lt;? here_top_downloads(); ?&gt;</font>:</td><td><select name="top_count">{TOP_COUNT}</select></td></tr>
-		<tr><td>Показывать счётчик в модуле <font class="desc">&lt;? here_top_downloads(); ?&gt;</font>:</td><td><select name="top_show"><option value="1" {TOPSHOWSHOW1}>Да<option value="0" {TOPSHOWSHOW2}>Нет</select></td></tr>  
+		<tr><td>Количество позиций в модуле <font class="desc">&lt;?php here_top_downloads(); ?&gt;</font>:</td><td><select name="top_count">{TOP_COUNT}</select></td></tr>
+		<tr><td>Показывать счётчик в модуле <font class="desc">&lt;?php here_top_downloads(); ?&gt;</font>:</td><td><select name="top_show"><option value="1" {TOPSHOWSHOW1}>Да<option value="0" {TOPSHOWSHOW2}>Нет</select></td></tr>
 		<tr><td>Показывать промежуточные страницы переадресаций:<br><font class="desc">С сообщениями, например, "Ваш комментарий успешно добавлен"</font></td><td><select name="fullredirect"><option value="1" {FULLREDIRECT1}>Да<option value="0" {FULLREDIRECT2}>Нет</select></td></tr>
 		<tr><td>Показывать промежуточную страницу с прямой ссылкой при загрузке файла из Каталога файлов:</td><td><select name="directdownload"><option value="1" {DIRECTDOWNLOAD1}>Да<option value="0" {DIRECTDOWNLOAD2}>Нет</select></td></tr> 
 		<tr><td>Скрывать текст <font class="desc">http://</font> при работе модуля "Каталог ссылок":</td><td><select name="http"><option value="1" {HTTPSHOW1}>Да<option value="0" {HTTPSHOW2}>Нет</select></td></tr>
