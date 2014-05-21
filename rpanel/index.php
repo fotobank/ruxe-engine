@@ -2588,7 +2588,7 @@
                  		};
              		};
 			$echooptions = '<h2>Разделы комментариев</h2>
-				<font class="desc">С помощью данных разделов и команды &lt;?php here_message(\'ID\'); ?&gt; можно установить на любой странице сайта возможность комментирования</font><br><br>
+				<font class="desc">С помощью данных разделов и команды &lt;?php here_messages(\'ID\'); ?&gt; можно установить на любой странице сайта возможность комментирования</font><br><br>
 				'.$add.'
 				<center><table width="93%" border=0 cellpadding=0 cellspacing=0><tr><td>';
 			$listmess = file($cms_root.'/conf/messages/listmess.dat');
