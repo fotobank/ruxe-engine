@@ -13,7 +13,7 @@
 		<tr class="titletable"><td colspan=2>О ПРОГРАММЕ</td></tr>
 		<tr><td colspan=2 align="center">
 			<a href="http://ruxe-engine.ru/" target="_blank">Сайт программы</a> •
-			<a href="http://ruxe-engine.ru/documentation/" target="_blank">Документация</a> •
+			<a href="https://github.com/maindefine/ruxe-engine/blob/master/README.md" target="_blank">Документация</a> •
 			<a href="http://ruxe-engine.ru/plugins.html" target="_blank">Дополнения</a> •
 			<a href="?action=system&amp;go=thanks">Благодарности</a> •
 			<a href="https://github.com/maindefine/ruxe-engine/blob/master/LICENSE-FULL-EN.txt">Лицензия</a>
