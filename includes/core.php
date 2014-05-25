@@ -1418,17 +1418,17 @@ class RuxeTemplate
  		$GlobalUsers,$Filtr, $Navigation, $cms_furl;
 
 		$canform = true;
-		if (
-     			($cms_oncomments!=1)
-     			and
-     			($comment_action!="tomail")
-     			and
-     			($comment_action!="question")
-		)
-		{
-			$canform = false;
-     			return $lcms['comments_off'];
-		};
+        if ($cms_oncomments != 1) {
+            switch ($comment_action) {
+                case 'tomail':
+                case 'question':
+                case 'pmnew':
+                case 'pm':
+                    break;
+                default:
+                    return $lcms['comments_off'];
+            }
+        }
 
 		if (
      			($cms_guestnotwrite==1)
