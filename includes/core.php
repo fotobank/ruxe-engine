@@ -2625,8 +2625,8 @@ class Commentaries
 
 	function show($messdata,$pos)
 	{
- 		global $cms_site,$lcms,$cms_avatars,$cms_upload_width,$cms_upload_height,$cms_root,$cms_oncomments,$cms_ps,$cms_ps_max,
- 			$cms_theme,$cms_smiles,$cms_gravatars,$cms_gravatars_im,$cms_createlinks,
+ 		global $cms_site,$lcms,$cms_avatars,$cms_upload_width,$cms_upload_height,$cms_ps,$cms_ps_max,
+ 			$cms_theme,$cms_gravatars,$cms_gravatars_im,
  			$cms_nav_comments,$GlobalTemplate,$GlobalUsers,$Navigation,$GlobalImaging,$Filtr,$fileusers; 
  		
  		$echolist  = "";
@@ -2686,7 +2686,7 @@ class Commentaries
    			};
    			$pos--;
  		};
- 		if ($cms_oncomments!=1) $echolist = "";
+
  		return $echolist;
 	}
 	
