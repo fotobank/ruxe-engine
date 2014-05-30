@@ -343,16 +343,14 @@ p {
 }
 /* Дизайн форм */
 /* Форма авторизации */
+.menu>div {
+    display:inline-block;
+	float:left;
+}
 .log-form {
-    float:right;
-}
-.log-form ul {
 	margin:0;
-	padding:0;
+	padding-left:15px;
 	list-style:none;
-}
-.log-form li {
-	float:left;          
 }
 #login-content {
 	display:none;
@@ -363,12 +361,11 @@ p {
 	background:#4140ae;
 	padding:15px;
 	text-align:center;
-	line-height:1.75em;
 }
 #login-content a:link {
 	line-height:0.375em;
 }
-.log-form li #login-content {
+.log-form #login-content {
 	right:0;
 	width:250px; 
 }
