@@ -23,8 +23,8 @@
 					$(this).next('#login-content').slideToggle();
 					$(this).toggleClass('active');					
 					
-					if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
-						else $(this).find('span').html('&#x25BC;')
+					if ($(this).hasClass('active')) $(this).find('span').html('▲')
+						else $(this).find('span').html('▼')
 					})
 		  });
 	</script>
@@ -46,7 +46,7 @@
   </head>
 <body>
 	<div id="header">
-		<div id="container">
+		<div class="container">
 			<a href="#"><h1>Логотип и девиз вашего сайта</h1></a>
 		</div>
 	</div>
@@ -83,21 +83,21 @@
 			</div>
 			<div class="log-form">
 		        <div id="login">
-					<a id="login-trigger" href="#">Аккаунт <span>&#x25BC;</span></a>
+					<a id="login-trigger" href="#">Аккаунт <span>▼</span></a>
 					<div id="login-content">
-                        <?php here_login(); ?>
+			            <?php here_login(); ?>							
 		            </div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="container">
+	<div class="container">
 	    <div id="spacer-top"></div>
 		<div id="content">
 			<?php here_pagecontent(); ?>
 			<!-- Рекламный блок. Если вам не нужен этот блок, закройте его комментариями или удалите -->
 			<h2>Рекламный блок</h2>
-            <div id="wrapper">
+            <div class="wrapper">
 	            <p>
 	                Здесь можно разместить баннеры и контекстную рекламу
 	            </p>
@@ -107,7 +107,7 @@
 			<!-- Конец рекламного блока -->
 			<!-- Дополнительный блок. Если вам не нужен этот блок, закройте его комментариями или удалите -->
 			<h2>Дополнительный блок</h2>
-            <div id="wrapper">
+            <div class="wrapper">
 	            <div class="half">
 				    <h4>Популярные новости:</h4>
 				    <p>
@@ -132,13 +132,13 @@
 	</div>
 	<div class="clear"></div>
     <div id="footer">
-		<div id="container">
-		    <div id="wrapper">
+		<div class="container">
+		    <div class="wrapper">
 		        <div class="half">
 			        <p><!-- Для тактичного отображения краткой формы поиска скачайте обновлённое дополнение "Поиск" -->
 				        Поиск по сайту:
 				        <div class="short-search">
-					        <?php //here_shortsearch(); ?>
+					        <?php here_shortsearch(); ?>
 					    </div>
 				    </p>
                 </div>
