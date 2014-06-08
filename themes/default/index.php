@@ -6,7 +6,6 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS лента" href="<?php here_urlrss(); ?>">
 	<?php here_metaredirect(); ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta http-equiv="content-language" content="ru">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="<?php here_keywords(); ?>">
 	<meta name="generator" content="<?php here_generator(); ?>">
@@ -52,44 +51,44 @@
 		</div>
 	</div>
 	<div id="top-nav">
-		<div id="container">
-			<ul><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
-				<li>
-					<a href="<?php here_urlsite(); ?>/">Новости</a>
-				</li>
-				    <!--Если в качестве параметра передать этой функции имя страницы (Админ-центр - Страницы), то в зависимости от того, задействован ЧПУ или нет 
-				    (Админ-центр - Настройки - Активировать ЧПУ), вернёт правильный адрес страницы сайта.
-			        Пример:
-			        ЧПУ активирован, страница "downloads.html", результат: http://ваш_сайт/downloads.html
-			        ЧПУ не используется, та же страница, результат: http://ваш_сайт/?viewpage=downloads.html-->
-				<li>
-					<a href="<?php here_urlsite('downloads.html'); ?>">Загрузки</a>
-				</li>
-				    <!--Другими словами, чтобы не вводить адрес сайта, используйте команду here_urlsite() без параметров. А для указания ссылки на страницу сайта, 
-				    правильнее использовать команду с параметром here_urlsite('тут имя страницы'). Подробнее о командах в документации.-->
-				<li>
-					<a href="<?php here_urlsite('faq.html'); ?>">F.A.Q.</a>
-				</li>
-				<li>
-					<a href="<?php here_urlsite('contact.html'); ?>">Обратная связь</a>
-				</li>
-				<li>
-					<a href="<?php here_urlsite(); ?>/README.md" target="_blank">Документация</a>
-				</li>
-			    <li>
-					<a href="<?php here_urlsite('somepage.html'); ?>/#">Ссылка</a>
-				</li>
-				<div class="log-form">
-				    <ul>
-		                <li id="login">
-					        <a id="login-trigger" href="#">Аккаунт <span>&#x25BC;</span></a>
-							<div id="login-content">
-			                    <?php here_login(); ?>							
-		                    </div>
-						</li>
-	                </ul>
+		<div class="container menu">
+			<div>
+			    <ul><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
+				    <li>
+					    <a href="<?php here_urlsite(); ?>/">Новости</a>
+				    </li>
+				        <!--Если в качестве параметра передать этой функции имя страницы (Админ-центр - Страницы), то в зависимости от того, задействован ЧПУ или нет 
+				        (Админ-центр - Настройки - Активировать ЧПУ), вернёт правильный адрес страницы сайта.
+			            Пример:
+			            ЧПУ активирован, страница "downloads.html", результат: http://ваш_сайт/downloads.html
+			            ЧПУ не используется, та же страница, результат: http://ваш_сайт/?viewpage=downloads.html-->
+				    <li>
+					    <a href="<?php here_urlsite('downloads.html'); ?>">Загрузки</a>
+				    </li>
+				        <!--Другими словами, чтобы не вводить адрес сайта, используйте команду here_urlsite() без параметров. А для указания ссылки на страницу сайта, 
+				        правильнее использовать команду с параметром here_urlsite('тут имя страницы'). Подробнее о командах в документации.-->
+				    <li>
+					    <a href="<?php here_urlsite('faq.html'); ?>">F.A.Q.</a>
+				    </li>
+				    <li>
+					    <a href="<?php here_urlsite('contact.html'); ?>">Обратная связь</a>
+				    </li>
+				    <li>
+					    <a href="<?php here_urlsite(); ?>/README.md" target="_blank">Документация</a>
+				    </li>
+			        <li>
+					    <a href="<?php here_urlsite('somepage.html'); ?>/#">Ссылка</a>
+				    </li>
+			    </ul>
+			</div>
+			<div class="log-form">
+		        <div id="login">
+					<a id="login-trigger" href="#">Аккаунт <span>&#x25BC;</span></a>
+					<div id="login-content">
+                        <?php here_login(); ?>
+		            </div>
 				</div>
-			</ul>
+			</div>
 		</div>
 	</div>
 	<div id="container">
