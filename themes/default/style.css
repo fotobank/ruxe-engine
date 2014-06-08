@@ -164,13 +164,13 @@ p {
 #top-nav a:hover{
 	color:#20c897;
 }
-#container {
+.container {
     width:900px;
 	min-width:850px;
 	margin:0 auto;
 	text-align:left;
 }
-#container hr {
+.container hr {
     width:50%;
 	margin-left:25%;
 	border-color:#fff;
@@ -181,11 +181,11 @@ p {
 	margin-bottom:38px;
 	background:#f2f9ff;
 }
-#wrapper img {
+.wrapper img {
     float:left;
 	margin-right:10px;
 }
-#wrapper {
+.wrapper {
 	height:100%;
 	width:80%;
 	margin:1em 10%;
@@ -861,7 +861,7 @@ textarea {
 }
 }
 @media handheld, only screen and (max-width: 980px) {
-#container {
+.container {
 	width:98%;
 	margin-left:1%;
 }
