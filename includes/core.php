@@ -1705,19 +1705,20 @@ class RuxeTemplate
          			if ($cms_smiles==1)
          			{
          				$tmp    = 	array();
-         				preg_match('|\[SMILES\=\{(.*)\}\/SMILES\]|mUis',$res,$tmp);
-                        		$template   = $tmp[1];
-                        		$smilesbase = file($cms_root."/conf/smiles.dat");
-                        		$smiles    = '';
-                        		foreach ($smilesbase as $smile)
-                        		{
-                                 		$smile = str_replace("\r\n","",$smile);
-                                 		if ($smile!="")
-                                 			$smiles.=str_replace(array("{SITE}","{SMILE}"),array($cms_site,$smile),$template);
-                        		};
-                        		$res  = 	$this->checkteg($res,'[SMILES={','}/SMILES]','replace',array(),$smiles);
-                        	};
+         				if (preg_match('|\[SMILES\=\{(.*)\}\/SMILES\]|mUis',$res,$tmp)) {
+                            $template   = $tmp[1];
+                            $smilesbase = file($cms_root."/conf/smiles.dat");
+                            $smiles    = '';
+                            foreach ($smilesbase as $smile)
+                            {
+                                $smile = str_replace("\r\n","",$smile);
+                                if ($smile!="")
+                                    $smiles.=str_replace(array("{SITE}","{SMILE}"),array($cms_site,$smile),$template);
+                            };
+                            $res  = 	$this->checkteg($res,'[SMILES={','}/SMILES]','replace',array(),$smiles);
                         };
+                    };
+                }
          	};
          	
 		return $res;
