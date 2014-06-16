@@ -15,7 +15,7 @@ html, body {
     margin:0;
 	padding:0;
 	width:100%;
-	background:#d0d6df;
+	background:#efd6df;
 }
 body {
     font-family:Arial, Verdana, Tahoma, sans-serif;
@@ -76,11 +76,12 @@ h1, h1:link {
 	font-style:italic;
 	padding-left:40px;
 	color:#fff;
+	text-shadow:0.125em 0 0.250em #000, 0.250em 0.250em 0.5em #000;
 	text-decoration:none;
 }
 h2 {
     display:block;
-	background:#4140ae url('images/h2.png') no-repeat;
+	background:#6c0042 url('images/h2.png') no-repeat;
 	font-size:120%;
     line-height:200%;
 	font-weight:normal;
@@ -106,24 +107,24 @@ h4 {
 	font-weight:bold;
 	text-align:center;
 	margin-top:1em;
-	color:#505f7f;
+	color:#5f305f;
 }
 h4 a:hover {
-	color:#00a877;
+	color:#909;
 }
 form {
     vertical-align:baseline;
 }
 /* Ссылки*/
 a:link, a:visited {
-    color:#0d55aa;
+    color:#0950ca;
 }
 a:hover {
-    color:#00a877;
+    color:#909;
 }
 p {
     margin:12px 20px 0;
-	color:#505f7f;
+	color:#404f6f;
 }
 /* Основные блоки */
 
@@ -132,7 +133,7 @@ p {
     height:176px;
     width:100%;
     position:relative;
-	background:url('images/bl-fn.png') repeat;/* Изображение в шапке сайта можно поменять, главное, чтобы оно было повторяющимся, бесшовным */
+	background:url('images/transmit.gif') repeat;/* Изображение в шапке сайта можно поменять, главное, чтобы оно было повторяющимся, бесшовным */
 }
 #header h1 {
 	position:absolute;
@@ -142,7 +143,7 @@ p {
 #top-nav {
     top:176px; /*высота шапки в пикселях*/
 	width:100%;
-    background:#4140ae url('images/head.png') no-repeat;
+    background:#6c0042 url('images/head.png') no-repeat;
     color:#fff;
     position:fixed;
     z-index:1000;
@@ -166,7 +167,7 @@ p {
 	color:#fff;
 }
 #top-nav a:hover {
-	color:#20c897;
+	color:#f0f;
 }
 .container {
     width:900px;
@@ -183,7 +184,7 @@ p {
 #content {
 	width:100%;
 	margin-bottom:38px;
-	background:#f2f9ff;
+	background:#fcf8ff;
 }
 #wrapper {
 	height:100%;
@@ -217,7 +218,7 @@ p {
 	width:100%;
 	height:100%;
 	margin:0;
-	background:#4140ae url('images/head.png') no-repeat;
+	background:#6c0042 url('images/head.png') no-repeat;
 	text-align:center;
 }
 #footer p {
@@ -360,11 +361,11 @@ p {
 #login-content {
 	display:none;
 	position:absolute;
-	top:41px;
+	top:41px;/* Блок авторизации можно отделить от блока меню, если увеличить это значение */
 	right:10%;
 	z-index:1000;
     width:250px;    
-	background:#4140ae;
+	background:#6c0042;
 	padding:15px;
 	text-align:center;
 }
@@ -421,7 +422,7 @@ p {
 	width:106px;
 	height:1.375em;
 	line-height:1.75em;
-	border:solid 1px #abd;
+	border:solid 1px #bad;
 }
 .restore-input {
 	margin:10px 34% auto;
@@ -446,7 +447,7 @@ p {
 	margin:0.25em auto;
 	float:none;
 	border:solid 1px #080;
-	background:#008080 url('images/button-g.png') no-repeat;
+	background:#6c0042 url('images/button-g.png') no-repeat;
 	color:#fff;
 }
 .restore .button:hover {
@@ -464,7 +465,7 @@ p {
 	margin:0.25em auto;
 	float:none;
 	border:solid 1px #080;
-	background:#008080 url('images/button-g.png') no-repeat;
+	background:#6c0042 url('images/button-g.png') no-repeat;
 	color:#fff;
 }
 .register .button:hover {
@@ -491,12 +492,12 @@ p {
 	width:96%;
 	height:3em;
 	margin:0.25em;
-	border:solid 1px #080;
-	background:#008080 url('images/button-g.png') no-repeat;
+	border:solid 1px #707;
+	background:#6c0042 url('images/button-g.png') no-repeat;
 	color:#fff;
 }
 #loginform .button:hover {
-	border:solid 1px #5b5;
+	border:solid 1px #939;
 }
 #account {
 	text-align:center;
@@ -526,8 +527,8 @@ p {
 	width:40%;
 	height:3em;
 	margin:0.25em 30%;
-	border:solid 1px #282;
-	background:#008080 url('images/button-g.png') no-repeat;
+	border:solid 1px #909;
+	background:#6c0042 url('images/button-g.png') no-repeat;
 	color:#fff;
 }
 .log-form .account .button {
@@ -535,7 +536,7 @@ p {
 	margin:0.25em 15%;
 }
 .account .button:hover {
-    border:solid 1px #5b5;
+    border:solid 1px #f0f;
 }
 .account .cell {
 	display:table-cell; /* Ячейка таблицы */
@@ -611,20 +612,20 @@ input {
     outline:none;
 	padding:4px 6px;
 	float:left;
-	border:solid 1px #abd;
+	border:solid 1px #bad;
 }
 input:hover {
-    border:solid 1px #9d9;
+    border:solid 1px #d9d;
 }
 input:focus {
-    border:solid 1px #5b5;
+    border:solid 1px #d9d;
 }
 select {
     outline:none;
 	padding:4px 6px;
 	float:left;
 	width:auto;
-	border:solid 1px #abd;
+	border:solid 1px #bad;
 }
 /* Имя пользователя */
 .user-name {
@@ -654,23 +655,23 @@ select {
 	width:196px;
 	height:3em;
 	margin:4px 156px 4px;
-	border:solid 1px #058;
-	background:#4140ae url('images/h2.png') no-repeat;
+	border:solid 1px #858;
+	background:#6c0042 url('images/h2.png') no-repeat;
 	color:#fff;
 }
 .comment-row .input-button:hover {
-    border:solid 1px #0a0;
+    border:solid 1px #f0f;
 }
 .commentform .account .button {
     width:40%;
 	height:3em;
 	margin:0.25em auto;
 	border:solid 1px #282;
-	background:#008080 url('images/button-g.png') no-repeat;
+	background:#6c0042 url('images/button-g.png') no-repeat;
 	color:#fff;
 }
 .commentform .account .button:hover {
-    border:solid 1px #0ff;
+    border:solid 1px #f0f;
 }
 /* Дизайн надписи "Осталось 10000 знаков" */
 #info {
@@ -688,7 +689,7 @@ textarea {
 	width:100%;
 	resize:none;
 	font-family:inherit;
-	border:solid 1px #abd;
+	border:solid 1px #bad;
 }
 /* Ячейка таблицы */
 .comment-cell {
@@ -776,14 +777,14 @@ textarea {
     vertical-align:top;
 }
 .comment-cell .button {
-    border:solid 1px #abd;
+    border:solid 1px #bad;
 }
 .smilestable {
     background:#fff;
 	width:330px;
 	text-align:center;
 	vertical-align:baseline;
-	border:solid 1px #abd;
+	border:solid 1px #bad;
 	padding:4px;
     position:absolute;
 	display:none;
@@ -807,7 +808,7 @@ textarea {
 	margin-left:10%;
 }
 .question-table .row:first-child {
-    border:solid 1px #7b7;
+    border:solid 1px #b5b;
 }
 .question-cell-name {
 	display:table-cell; /* Ячейка таблицы с именем */
