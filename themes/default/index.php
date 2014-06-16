@@ -52,7 +52,7 @@
 	</div>
 	<div id="top-nav">
 		<div class="container menu">
-			<div>
+			<div class="menu-item">
 			    <ul><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
 				    <li>
 					    <a href="<?php here_urlsite(); ?>/">Новости</a>

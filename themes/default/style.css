@@ -105,6 +105,7 @@ h4 {
     line-height:110%;
 	font-weight:bold;
 	text-align:center;
+	margin-top:1em;
 	color:#505f7f;
 }
 h4 a:hover {
@@ -127,18 +128,18 @@ p {
 /* Основные блоки */
 
 /* Шапка сайта. От её высоты зависит положение #top-nav - top:176px; */
-#header{
+#header {
     height:176px;
     width:100%;
     position:relative;
 	background:url('images/bl-fn.png') repeat;/* Изображение в шапке сайта можно поменять, главное, чтобы оно было повторяющимся, бесшовным */
 }
-#header h1{
+#header h1 {
 	position:absolute;
 	top:40px;
 }
 /*фиксированное плавающее меню */
-#top-nav{
+#top-nav {
     top:176px; /*высота шапки в пикселях*/
 	width:100%;
     background:#4140ae url('images/head.png') no-repeat;
@@ -146,22 +147,25 @@ p {
     position:fixed;
     z-index:1000;
 }
-#top-nav ul{
+#top-nav ul {
 	overflow:hidden;
 }
-#top-nav ul li{
+#top-nav ul li {
 	display:block;
 	float:left;
 	margin:0 10px;
 }
-#top-nav a{
+#top-nav ul li:first-child {
+	margin-left:0;
+}
+#top-nav a {
 	display:block;
 	margin:0;
 	padding:15px;
 	text-decoration:underline;
 	color:#fff;
 }
-#top-nav a:hover{
+#top-nav a:hover {
 	color:#20c897;
 }
 .container {
@@ -181,11 +185,7 @@ p {
 	margin-bottom:38px;
 	background:#f2f9ff;
 }
-.wrapper img {
-    float:left;
-	margin-right:10px;
-}
-.wrapper {
+#wrapper {
 	height:100%;
 	width:80%;
 	margin:1em 10%;
@@ -193,19 +193,23 @@ p {
 	line-height:1.5em;
 	clear:both;
 }
+#wrapper img {
+    float:left;
+	margin-right:10px;
+}
 .advertizing {
     text-align:center;
 }
-.half{
+.half {
     width:50%;
 	float:left;
 	text-align:center;
 	line-height:1.125em;
 }
-.top-news{
+.top-news {
     /* Пока не используется для "Самое популярное" */
 }
-.counter{
+.counter {
     font-size:90%;
 }
 /* Нижний блок */
@@ -247,19 +251,19 @@ p {
 	width:100%;
 	height:20px;
 }
-#search{
+#search {
     text-align:center;
 }
-.search{
+.search {
     margin:5px auto;
 }
-.short-search{
+.short-search {
 	display:block;
 	width:240px;
 	text-align:center;
 	margin:0 auto;
 }
-.short-search input{
+.short-search input {
     display:inline-block;
 	margin:5px auto 0;
 }
@@ -269,7 +273,7 @@ p {
 	text-align:center;
 	margin:0 auto;
 }
-.searching input{
+.searching input {
     display:inline-block;
 	margin:5px auto 0;
 }
@@ -281,7 +285,7 @@ p {
     width:33%;
 }
 /* Оформление даты и имени */
-.last-posts{
+.last-posts {
     display:block;
 	margin:10px 20px 0;
 	text-align:left;
@@ -291,14 +295,14 @@ p {
 	font-size:80%;
 }
 /* Оформление тегов */
-.tags{
+.tags {
     margin:1.5em;
 	font-size:80%;
 }
 .tags a:link {
 	padding:0 4px 2px;
 }
-.info{
+.info {
     font-size:80%;
 	margin:0 20px;
 	color:#505f7f;
@@ -345,29 +349,27 @@ p {
 /* Форма авторизации */
 .menu>div {
     display:inline-block;
-	float:left;
+}
+.menu-item {
+    float:left;
 }
 .log-form {
-	margin:0;
-	padding-left:15px;
+	float:right;
 	list-style:none;
 }
 #login-content {
 	display:none;
 	position:absolute;
 	top:41px;
-	right:0;
-	z-index:1000;    
+	right:10%;
+	z-index:1000;
+    width:250px;    
 	background:#4140ae;
 	padding:15px;
 	text-align:center;
 }
 #login-content a:link {
 	line-height:0.375em;
-}
-.log-form #login-content {
-	right:0;
-	width:250px; 
 }
 /* Детали формы */
 #loginform {
@@ -506,7 +508,7 @@ p {
 	margin:1%;
 	color:#505f7f;
 }
-.log-form .account{
+.log-form .account {
     color:#fff;
 }
 .register .account {
@@ -520,7 +522,7 @@ p {
 	margin:10px 74px !important;
 	text-align:center;
 }
-.account .button, #loginform .button{
+.account .button, #loginform .button {
 	width:40%;
 	height:3em;
 	margin:0.25em 30%;
@@ -528,7 +530,7 @@ p {
 	background:#008080 url('images/button-g.png') no-repeat;
 	color:#fff;
 }
-.log-form .account .button{
+.log-form .account .button {
 	width:70%;
 	margin:0.25em 15%;
 }
@@ -858,6 +860,9 @@ textarea {
 .register {
 	width:80%;
 	margin-left:10%;
+}
+#login-content {
+	right:0;
 }
 }
 @media handheld, only screen and (max-width: 980px) {
