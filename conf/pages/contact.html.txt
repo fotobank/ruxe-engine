@@ -1,7 +1,5 @@
 <h2>Обратная связь</h2>
-<div id="wrapper">
     <?php here_mail(); ?>
     <?php here_hided_counter_views('test'); ?>
     <p>Просмотров страницы: <?php here_show_views('test'); ?></p>
-    <br>
-</div>
+<br>
