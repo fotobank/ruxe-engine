@@ -1,8 +1,7 @@
 <h2>Вопросы и ответы</h2>
-<div id="wrapper">
+<br>
 	<?php here_faq(); ?>
     <h4>Задать свой вопрос</h4>
     <?php here_question(); ?>
 	<p>Просмотров страницы: <?php here_show_views('test'); ?></p>
 <br>
-</div>

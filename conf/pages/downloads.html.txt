@@ -1,5 +1,5 @@
 <h2>Загрузки</h2>
-<div id="wrapper">
+<br>
 	<h4><a href="<?php here_urlsite(); ?>/getfile/ноутпад">Notepad++</a></h4>
 	    <p>Свободный текстовый редактор для Windows с подсветкой синтаксиса большого количества языков программирования и разметки.</p>
 	<div class="info">
@@ -14,4 +14,3 @@
     <h4>Комментарии</h4>
     <?php here_messages('downloads'); ?>
 <br>
-</div>
