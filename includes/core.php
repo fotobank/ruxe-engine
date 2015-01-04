@@ -3323,8 +3323,8 @@ class FileManager
        		};
        		$hits_file=file($cms_root."/conf/hits.dat");
        		$all_hits_file=file($cms_root."/conf/all_hits.dat");
-       		$hits = $hits_file[0];
-       		$all_hits = $all_hits_file[0];
+       		$hits = isset($hits_file[0]) ? (int)$hits_file[0] : 0;
+       		$all_hits = isset($all_hits_file[0]) ? (int)$all_hits_file[0] : 0;
        		$hits +=1;
        		$all_hits +=1;
        		$hits_file=fopen($cms_root."/conf/hits.dat", "w");
