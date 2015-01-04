@@ -1,5 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+
+<html lang="ru-RU">
+
 <head>
 	<title>{TITLE}</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -7,7 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="theme/rpanel.css">
 	<script type="text/javascript" src="theme/rpanel.js"></script>
 	<script type="text/javascript" src="theme/edit_area/edit_area_full.js"></script>
-	<script type="text/javascript" src="theme/tiny_mce/tiny_mce.js"></script>
+	<script type="text/javascript" src="theme/tiny_mce/tinymce.min.js"></script>
+    <script type="text/javascript" src="theme/tiny_mce/langs/ru.js"></script>
 </head>
 <body{ADDINFO}>
 <a name="top"></a>
