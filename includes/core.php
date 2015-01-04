@@ -2191,7 +2191,7 @@ class GlobalBFG
 		{
     			echodie("Error.1212: LIST not supported");
 		};
-		$title = $_POST['title'];
+		$title = trim($_POST['title']);
 
   		$yes = "no";
   
@@ -2336,7 +2336,7 @@ class GlobalBFG
      			$category = $newcategory;
 
   		$keys  = $Filtr->clear($_POST['keys']);
-  		$title = str_replace("|","",$_POST['title']);
+  		$title = trim(str_replace("|","",$_POST['title']));
   		$tegs  = str_replace("|","",$_POST['tegs']);
   		$tegs  = str_replace(",    ",",",$tegs);
   		$tegs  = str_replace(",   ",",",$tegs);
