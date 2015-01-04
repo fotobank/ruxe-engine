@@ -16,7 +16,7 @@
  *
  */
 
-$installer_version = '1.8.2';
+$installer_version = '1.8.4';
 
 include('conf/config.php');
 include("includes/core.php");
@@ -30,8 +30,7 @@ if ($installer_version != $this_version)
 	header("Cache-Control: max-age=0",false);
 	header("Pragma: no-cache");
 	header('Content-type: text/html; charset=utf-8');
-	die('Инсталлятор предназначен только для '.$version.' версии');
-	exit;
+	die('Инсталлятор предназначен только для '.$installer_version.' версии');
 };
 
 if (!isset($_GET['step'])) 
