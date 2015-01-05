@@ -10,7 +10,7 @@
  * условиях») 4.0 Всемирная (CC BY-SA 4.0).
  *
  * Разработчики:
- * Ахрамеев Денис Викторович (http://denisv.me) Автор, программирование
+ * Ахрамеев Денис Викторович (http://den.bz) Автор, программирование
  * Игорь Dr1D - Дизайн
  * Олег Прохоров (http://ruxe-engine.ru/viewprofile/Tanatos) - Контроль качества, документация
  *
@@ -26,7 +26,7 @@
 				<font class="desc">В данном разделе Вы можете удалить, забанить, изменить профиль пользователей, установить статус (например, администратор или суперпользователь), обнулить счётчики сообщений, добавить новые поля профиля и страницы, доступные для просмотра только администраторам и суперпользователям</font><br><br>
 			';
 	$echooptions 	= "<center><table class=\"optionstable\" border=0 cellpadding=1 cellspacing=0>
-				<tr class=\"titletable\"><td>ИМЯ ПОЛЬЗОВАТЕЛЯ</td><td width=110>СТАТУС (<a target=\"_blank\" title=\"Помощь\" href=\"http://ruxe-engine.ru/documentation/roles.html\">?</a>)</td><td width=85>СООБЩЕНИЙ</td><td width=150>E-MAIL</td><td width=100>IP</td><td width=270>ДЕЙСТВИЕ</td></tr>
+				<tr class=\"titletable\"><td>ИМЯ ПОЛЬЗОВАТЕЛЯ</td><td width=110>СТАТУС (<a target=\"_blank\" title=\"Помощь\" href=\"https://github.com/maindefine/ruxe-engine/blob/master/README.md#user-content-Статусы-пользователей\">?</a>)</td><td width=85>СООБЩЕНИЙ</td><td width=150>E-MAIL</td><td width=100>IP</td><td width=270>ДЕЙСТВИЕ</td></tr>
 			";
 	if (isset($_GET["poles"]))
 		$mess 	= "(Сохранено)";

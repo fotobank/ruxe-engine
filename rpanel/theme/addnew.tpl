@@ -15,7 +15,7 @@
 			</td></tr>
 			<tr><td style="border-bottom: 0px;">
 				Краткая запись{ADD1}:{ADD3}{ADD2}
-				<table cellpadding=0 cellspacing=0>
+				<table cellpadding=0 cellspacing=0 width="100%">
 					<tr><td style="border:none;">
 						{BUTTONS1}
 						<textarea id="short" name="text" style="width:925px; height: 300px;" class="g">{TEXT}</textarea>
@@ -24,7 +24,7 @@
 			</td></tr>
 			<tr><td style="border-bottom: 0px;">
 				Полная запись{ADD1}:{ADD4}{ADD2}
-				<table cellpadding=0 cellspacing=0>
+				<table cellpadding=0 cellspacing=0 width="100%">
 					<tr><td style="border:none;">
 						{BUTTONS2}
 						<textarea id="full" name="textplus" style="width:925px; height: 500px;" class="g">{TEXTPLUS}</textarea>

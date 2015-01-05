@@ -10,13 +10,13 @@
  * условиях») 4.0 Всемирная (CC BY-SA 4.0).
  *
  * Разработчики:
- * Ахрамеев Денис Викторович (http://denisv.me) Автор, программирование
+ * Ахрамеев Денис Викторович (http://den.bz) Автор, программирование
  * Игорь Dr1D - Дизайн
  * Олег Прохоров (http://ruxe-engine.ru/viewprofile/Tanatos) - Контроль качества, документация
  *
  */
 
-$this_version = '1.8.3';
+$this_version = '1.8.4';
 
 class Filtr
 {
@@ -2191,7 +2191,7 @@ class GlobalBFG
 		{
     			echodie("Error.1212: LIST not supported");
 		};
-		$title = $_POST['title'];
+		$title = trim($_POST['title']);
 
   		$yes = "no";
   
@@ -2336,7 +2336,7 @@ class GlobalBFG
      			$category = $newcategory;
 
   		$keys  = $Filtr->clear($_POST['keys']);
-  		$title = str_replace("|","",$_POST['title']);
+  		$title = trim(str_replace("|","",$_POST['title']));
   		$tegs  = str_replace("|","",$_POST['tegs']);
   		$tegs  = str_replace(",    ",",",$tegs);
   		$tegs  = str_replace(",   ",",",$tegs);
@@ -3323,8 +3323,8 @@ class FileManager
        		};
        		$hits_file=file($cms_root."/conf/hits.dat");
        		$all_hits_file=file($cms_root."/conf/all_hits.dat");
-       		$hits = $hits_file[0];
-       		$all_hits = $all_hits_file[0];
+       		$hits = isset($hits_file[0]) ? (int)$hits_file[0] : 0;
+       		$all_hits = isset($all_hits_file[0]) ? (int)$all_hits_file[0] : 0;
        		$hits +=1;
        		$all_hits +=1;
        		$hits_file=fopen($cms_root."/conf/hits.dat", "w");

@@ -10,13 +10,13 @@
  * условиях») 4.0 Всемирная (CC BY-SA 4.0).
  *
  * Разработчики:
- * Ахрамеев Денис Викторович (http://denisv.me) Автор, программирование
+ * Ахрамеев Денис Викторович (http://den.bz) Автор, программирование
  * Игорь Dr1D - Дизайн
  * Олег Прохоров (http://ruxe-engine.ru/viewprofile/Tanatos) - Контроль качества, документация
  *
  */
 
-$installer_version = '1.8.3';
+$installer_version = '1.8.4';
 
 include('conf/config.php');
 include("includes/core.php");
@@ -30,8 +30,7 @@ if ($installer_version != $this_version)
 	header("Cache-Control: max-age=0",false);
 	header("Pragma: no-cache");
 	header('Content-type: text/html; charset=utf-8');
-	die('Инсталлятор предназначен только для '.$version.' версии');
-	exit;
+	die('Инсталлятор предназначен только для '.$installer_version.' версии');
 };
 
 if (!isset($_GET['step'])) 
@@ -315,91 +314,7 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
 		
 		//tinymce
 		'rpanel/theme/tiny_mce/license.txt',
-		'rpanel/theme/tiny_mce/tiny_mce.js',
-		'rpanel/theme/tiny_mce/tiny_mce_popup.js',
-		'rpanel/theme/tiny_mce/langs/en.js',
-		'rpanel/theme/tiny_mce/langs/ru.js',
-		'rpanel/theme/tiny_mce/plugins/fullscreen/editor_plugin.js',
-		'rpanel/theme/tiny_mce/plugins/fullscreen/editor_plugin_src.js',
-		'rpanel/theme/tiny_mce/plugins/fullscreen/fullscreen.htm',
-		'rpanel/theme/tiny_mce/plugins/searchreplace/editor_plugin.js',
-		'rpanel/theme/tiny_mce/plugins/searchreplace/editor_plugin_src.js',
-		'rpanel/theme/tiny_mce/plugins/searchreplace/searchreplace.htm',
-		'rpanel/theme/tiny_mce/plugins/searchreplace/css/searchreplace.css',
-		'rpanel/theme/tiny_mce/plugins/searchreplace/js/searchreplace.js',
-		'rpanel/theme/tiny_mce/plugins/searchreplace/langs/ru_dlg.js',
-		'rpanel/theme/tiny_mce/plugins/searchreplace/langs/en_dlg.js',
-		'rpanel/theme/tiny_mce/plugins/table/cell.htm',
-		'rpanel/theme/tiny_mce/plugins/table/editor_plugin.js',
-		'rpanel/theme/tiny_mce/plugins/table/editor_plugin_src.js',
-		'rpanel/theme/tiny_mce/plugins/table/merge_cells.htm',
-		'rpanel/theme/tiny_mce/plugins/table/row.htm',
-		'rpanel/theme/tiny_mce/plugins/table/table.htm',
-		'rpanel/theme/tiny_mce/plugins/table/css/cell.css',
-		'rpanel/theme/tiny_mce/plugins/table/css/row.css',
-		'rpanel/theme/tiny_mce/plugins/table/css/table.css',
-		'rpanel/theme/tiny_mce/plugins/table/js/cell.js',
-		'rpanel/theme/tiny_mce/plugins/table/js/merge_cells.js',
-		'rpanel/theme/tiny_mce/plugins/table/js/row.js',
-		'rpanel/theme/tiny_mce/plugins/table/js/table.js',
-		'rpanel/theme/tiny_mce/plugins/table/langs/en_dlg.js',
-		'rpanel/theme/tiny_mce/plugins/table/langs/ru_dlg.js',
-		//media
-		'rpanel/theme/tiny_mce/plugins/media/editor_plugin.js',
-		'rpanel/theme/tiny_mce/plugins/media/editor_plugin_src.js',
-		'rpanel/theme/tiny_mce/plugins/media/media.htm',
-		'rpanel/theme/tiny_mce/plugins/media/moxieplayer.swf',
-		'rpanel/theme/tiny_mce/plugins/media/css/media.css',
-		'rpanel/theme/tiny_mce/plugins/media/js/embed.js',
-		'rpanel/theme/tiny_mce/plugins/media/js/media.js',
-		'rpanel/theme/tiny_mce/plugins/media/langs/en_dlg.js',
-		'rpanel/theme/tiny_mce/plugins/media/langs/ru_dlg.js',
-		//
-		'rpanel/theme/tiny_mce/themes/advanced/about.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/anchor.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/charmap.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/color_picker.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/editor_template.js',
-		'rpanel/theme/tiny_mce/themes/advanced/editor_template_src.js',
-		'rpanel/theme/tiny_mce/themes/advanced/image.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/link.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/shortcuts.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/source_editor.htm',
-		'rpanel/theme/tiny_mce/themes/advanced/img/colorpicker.jpg',
-		'rpanel/theme/tiny_mce/themes/advanced/img/flash.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/icons.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/iframe.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/pagebreak.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/quicktime.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/realmedia.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/shockwave.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/trans.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/video.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/img/windowsmedia.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/js/about.js',
-		'rpanel/theme/tiny_mce/themes/advanced/js/anchor.js',
-		'rpanel/theme/tiny_mce/themes/advanced/js/charmap.js',
-		'rpanel/theme/tiny_mce/themes/advanced/js/color_picker.js',
-		'rpanel/theme/tiny_mce/themes/advanced/js/image.js',
-		'rpanel/theme/tiny_mce/themes/advanced/js/link.js',
-		'rpanel/theme/tiny_mce/themes/advanced/js/source_editor.js',
-		'rpanel/theme/tiny_mce/themes/advanced/langs/en.js',
-		'rpanel/theme/tiny_mce/themes/advanced/langs/en_dlg.js',
-		'rpanel/theme/tiny_mce/themes/advanced/langs/ru.js',
-		'rpanel/theme/tiny_mce/themes/advanced/langs/ru_dlg.js',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/content.css',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/dialog.css',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/ui.css',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/img/buttons.png',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/img/items.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/img/menu_arrow.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/img/menu_check.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/img/progress.gif',
-		'rpanel/theme/tiny_mce/themes/advanced/skins/default/img/tabs.gif',
-		'rpanel/theme/tiny_mce/utils/editable_selects.js',
-		'rpanel/theme/tiny_mce/utils/form_utils.js',
-		'rpanel/theme/tiny_mce/utils/mctabs.js',
-		'rpanel/theme/tiny_mce/utils/validate.js',
+		'rpanel/theme/tiny_mce/tinymce.min.js',
 		//
 		
 		//elRTE

@@ -10,7 +10,7 @@
  * условиях») 4.0 Всемирная (CC BY-SA 4.0).
  *
  * Разработчики:
- * Ахрамеев Денис Викторович (http://denisv.me) Автор, программирование
+ * Ахрамеев Денис Викторович (http://den.bz) Автор, программирование
  * Игорь Dr1D - Дизайн
  * Олег Прохоров (http://ruxe-engine.ru/viewprofile/Tanatos) - Контроль качества, документация
  *
@@ -327,7 +327,7 @@ foreach ($ip_file as $ip_file_)
 $hits_file	=	file($cms_root."/conf/hits.dat");
 $all_hits_file	=	file($cms_root."/conf/all_hits.dat");
 $hits 		= 	isset($hits_file[0]) ? $hits_file[0] : 0;
-$all_hits 	= 	$all_hits_file[0];
+$all_hits 	= 	isset($all_hits_file[0]) ? (int)$all_hits_file[0] : 0;
 
 $onuser 	= 	"";
 $onlinefusers 	= 	"";
