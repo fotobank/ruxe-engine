@@ -1,5 +1,5 @@
 <?php
-					$cms_site              = "http://localhost/ruxe-engine";
+					$cms_site              = "http://someserver/";
 					$cms_root              = "/Users/denis/webserver/ruxe-engine";
 					$cms_gzip              = 0;
 					$cms_sendmess          = 0;
