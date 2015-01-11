@@ -36,20 +36,32 @@ if (isset($_COOKIE['lang'])) {
 	}
 }
 include("includes/core.php");
-$GlobalUsers->checkthisuser();
 
-
-
+//Загрузка локализации
 if (isset($cms_language))
 	include("includes/languages/".$cms_language."/general.php");
 else
 	include("includes/languages/ru/general.php");
 
+//Загрузка шаблона сообщений
 $retpldef 	 = 	'';
 $tmp      	 = 	file("rpanel/theme/somemessages.tpl");
-foreach ($tmp as $t) 
+foreach ($tmp as $t)
 	$retpldef.=$t."\r\n";
 
+//Проверка корректности установки
+$test_cms 	= 	$cms_root."/conf/users/config.dat";
+if (!file_exists($test_cms))
+{
+	header('Content-type: text/html; charset=utf-8');
+	$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}");
+	$br = array($lcms['start_title'],"Ruxe Engine (http://ruxe-engine.ru/)","rpanel/install.php?step=install","<center>".$lcms['start_text']."</center>","<!-- "," -->");
+	echo str_replace($ar,$br,$retpldef);
+	exit;
+};
+
+//Проверка авторизации
+$GlobalUsers->checkthisuser();
 
 if (isset($_GET['action']))
 {
@@ -84,7 +96,7 @@ if (isset($_GET['needconfbackup']))
 
 if ($cms_root=="default")
 	$cms_root=$_SERVER['DOCUMENT_ROOT'];
-$test_cms 	= 	$cms_root."/conf/users/config.dat";
+
 $addpath2 	= 	$Filtr->tolower($_SERVER['HTTP_HOST']);
 $findno  	= false;
 
@@ -97,15 +109,6 @@ if ($findno)
 	$br = array($lcms['findo_title'],"Ruxe Engine (http://ruxe-engine.ru/)","/rpanel/",$lcms['findo_text'],"<!-- "," -->");
 	echo str_replace($ar,$br,$retpldef);
 	exit;
-};
-
-if (!file_exists($test_cms))
-{
-	header('Content-type: text/html; charset=utf-8');
-	$ar = array("{TITLE}","{GENERATOR}","{URL}","{MESSAGE}","{READRESS}","{/READRESS}");
-	$br = array($lcms['start_title'],"Ruxe Engine (http://ruxe-engine.ru/)","rpanel/install.php?step=install","<center>".$lcms['start_text']."</center>","<!-- "," -->");
-	echo str_replace($ar,$br,$retpldef); 
-	exit; 
 };
 
 //Прошлое место
@@ -452,7 +455,7 @@ if (!isset($_GET['action']))
 			break;
 		};
 	};
-	
+
 	if (!$foundedpage) { $openpage = "404"; $pagetitle = $lcms['page_not_found']; $pagedesc = ""; $pagekeys = " ";};
   	if ($cms_nocache==1)
   	{
