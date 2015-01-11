@@ -1564,7 +1564,13 @@
                   						<tr><td>Заголовок:</td><td><input type="text" name="title" value="" size=66></td></tr>
                   									<tr><td>Описание:</td><td><input type="text" name="description" value="" size=66 maxlength=210></td></tr>
                   						<tr><td>Ключевые слова:</td><td><input type="text" name="keywords" value="" size=66 maxlength=150></td></tr>
-                  						<tr class="sub"><td colspan=2><input type="submit" name="submit" value="Создать страницу"></td></tr>
+                  						<tr class="sub"><td colspan=2>Тема: <select name="theme">';
+							foreach ($FileManager->listing("../themes/",1) as $f)
+							{
+								$menu.="<option value=\"".$f."\">".$f;
+							};
+
+							$menu .= '</select><input type="submit" name="submit" value="Создать страницу"></td></tr>
                 						</table></form></center>
              					';
              					break;
@@ -1579,6 +1585,7 @@
                  					$title       = $Filtr->clear($_POST['title']);
                  					$description = $Filtr->clear($_POST['description']);
                  					$keywords    = $Filtr->clear($_POST['keywords']);
+									$page_theme  = $Filtr->clear($_POST['theme']);
                  					$config      = file("../conf/pages/config");
                  					$cancontinue = true;
                  					foreach ($config as $line)
@@ -1619,7 +1626,7 @@
                         						};
                     						};
                     						$config = fopen("../conf/pages/config","a");
-                    						fputs($config,$child.$url."|".$title."|".$keywords."|".$description."|".$name."|\r\n");
+											fputs($config,$child.$url."|".$title."|".$keywords."|".$description."|".$name."|".$page_theme."|\r\n");
                     						fclose($config);
                     						$nf = fopen("../conf/pages/".$name.".txt","w");
                     						fwrite($nf,"Страница создана");
@@ -1661,6 +1668,7 @@
              					$description  = $line[3];
              					$keywords     = $line[2];
              					$name         = $line[4];
+								$page_theme   = $line[5];
              					$child        = explode("/",$url); 
              					$foundedchild = false;
              					if (count($child) > 1)
@@ -1720,14 +1728,22 @@
              					{
                   					$menu .= 'Нельзя изменить адрес самой главной страницы<input type="hidden" name="child" value="nochild"><input type="hidden" name="url" value="index"></td></tr>';
              					};
+
              					$menu .='
                   					<tr><td>Заголовок:</td><td><input type="text" name="title" value="'.$title.'" size=66></td></tr>
                   						<tr><td>Описание:</td><td><input type="text" name="description" value="'.$description.'" size=66 maxlength=210></td></tr>
                   					<tr><td>Ключевые слова:</td><td><input type="text" name="keywords" value="'.$keywords.'" size=66 maxlength=150></td></tr>
-                  					<tr class="sub"><td colspan=2><input type="submit" name="submit" value="Сохранить параметры"></td></tr>
+                  					<tr class="sub"><td colspan=2>Тема: <select name="theme">';
+							foreach ($FileManager->listing("../themes/",1) as $f)
+							{
+								($page_theme == $f) ? $menu.="<option value=\"".$f."\" selected>".$f : $menu.="<option value=\"".$f."\">".$f;
+							};
+
+							$menu .= '</select><input type="submit" name="submit" value="Сохранить параметры"></td></tr>
                 					</table></form></center>
              					';
-             					break;
+
+							break;
          				case "savepage":
              					if (isset($_POST['submit']))
              					{
@@ -1739,6 +1755,7 @@
                   					$page        = (int)$_POST['page'];
                   					$keywords    = $_POST['keywords'];
                   					$name        = $_POST['name'];
+									$page_theme  = $_POST['theme'];
                   					$last        = $_POST['last'];
                   					$config      = file("../conf/pages/config");
                   					$cancontinue = true;
@@ -1768,7 +1785,7 @@
                       							$record   = explode("|",$line);
                       							if ($counter == $page)
                       							{
-                            							fwrite($nconfig,$child.$url."|".$title."|".$keywords."|".$description."|".$name."|\r\n");
+													fwrite($nconfig,$child.$url."|".$title."|".$keywords."|".$description."|".$name."|".$page_theme."|\r\n");
                       							}
                       							else
                       							{
