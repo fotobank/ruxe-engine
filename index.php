@@ -438,24 +438,6 @@ include("includes/functions.action.php");
 
 if (!isset($_GET['action']))
 {
-	$foundedpage = false;
-	$pages       = file($cms_root."/conf/pages/config");
-	(isset($_GET['viewpage'])) ? $viewpage = $Filtr->clear($_GET['viewpage']) : $viewpage = "index";
-	foreach ($pages as $onepage)
-	{
-		$opa    = explode("|",$onepage);
-		if ($viewpage == $opa[0])
-		{
-			$pagetitle   = $opa[1];
-			$pagedesc    = $opa[3];
-			$pagekeys    = $opa[2];
-			$foundedpage = true;
-			$openpage    = $opa[4];
-			$cms_theme   = is_dir($cms_root.'/themes/'.$opa[5].'/')?$opa[5]:$cms_theme;
-			break;
-		};
-	};
-
 	if (!$foundedpage) { $openpage = "404"; $pagetitle = $lcms['page_not_found']; $pagedesc = ""; $pagekeys = " ";};
   	if ($cms_nocache==1)
   	{
