@@ -16,7 +16,7 @@
  *
  */
 
-$installer_version = '1.8.5';
+$installer_version = '1.8.6';
 
 include('conf/config.php');
 include("includes/core.php");
