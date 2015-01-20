@@ -128,10 +128,7 @@ if ($cms_gzip == 1)
 	return gzdeflate($output, 9);
   }
 
-  if(isset($_SERVER['HTTP_ACCEPT_ENCODING']))
-	$AE = $_SERVER['HTTP_ACCEPT_ENCODING'];
-  else
-	$AE = $_SERVER['HTTP_TE'];
+	$AE = isset($_SERVER['HTTP_ACCEPT_ENCODING']) ? $_SERVER['HTTP_ACCEPT_ENCODING'] : '';
 
   $support_gzip = (strpos($AE, 'gzip') !== FALSE) || $FORCE_COMPRESSION;
   $support_deflate = (strpos($AE, 'deflate') !== FALSE) || $FORCE_COMPRESSION;
