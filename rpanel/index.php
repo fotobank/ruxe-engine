@@ -2306,6 +2306,14 @@
                              			$original = file("../conf/plugins.dat");
                              			$new      = fopen("../conf/plugins.dat","a");
                              			include("../includes/plugins/".$test."/info.dat");
+                                                
+                                                if(isset($install)){
+                                                        include("../includes/plugins/".$_GET['name']."/functions.php");
+                                                        if(function_exists($install)){
+                                                                $install();
+                                                        }
+                                                }
+
                              			fputs($new,$test."|".$name."|".$addaction."|\r\n");
                              			fclose($new);
                              			break;
@@ -2313,10 +2321,20 @@
                              			$name     = $_GET['name'];
                              			$original = file("../conf/plugins.dat");
                              			$new      = fopen("../conf/plugins.dat","w");
+
                              			foreach ($original as $or)
                              			{
                                    			$o  = explode("|",$or);
-                                   			if ($o[0]!=$name) fwrite($new,$or);                             
+                                   			if ($o[0]!=$name){
+                                                            fwrite($new,$or); 
+                                                        }else{
+                                                            include("../includes/plugins/".$_GET['name']."/info.dat");
+                                                            if(isset($install)){
+                                                                if(function_exists($uninstall)){
+                                                                    $uninstall();
+                                                                }
+                                                            }
+                                                        }
                              			}
                              			fclose($new);
                              			break;
