@@ -2314,14 +2314,21 @@
                              			$new      = fopen("../conf/plugins.dat","a");
                              			include("../includes/plugins/".$test."/info.dat");
                                                 
-                                                if(isset($install)){
+                                                if(isset($install) && !function_exists($install)){
                                                         include("../includes/plugins/".$_GET['name']."/functions.php");
                                                         if(function_exists($install)){
                                                                 $install();
                                                         }
                                                 }
 
-                             			fputs($new,$test."|".$name."|".$addaction."|\r\n");
+                                                $isset = false;
+                                                foreach($original as $lines){
+                                                    $line = explode("|", $lines);
+                                                    if($line[0] == $test)
+                                                        $isset = true;
+                                                }
+                             			if(!$isset)
+                                                    fputs($new,$test."|".$name."|".$addaction."|\r\n");
                              			fclose($new);
                              			break;
                         		case "off":
