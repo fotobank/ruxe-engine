@@ -2321,7 +2321,14 @@
                                                         }
                                                 }
 
-                             			fputs($new,$test."|".$name."|".$addaction."|\r\n");
+                                                $isset = false;
+                                                foreach($original as $lines){
+                                                    $line = explode("|", $lines);
+                                                    if($line[0] == $test)
+                                                        $isset = true;
+                                                }
+                             			if(!$isset)
+                                                    fputs($new,$test."|".$name."|".$addaction."|\r\n");
                              			fclose($new);
                              			break;
                         		case "off":
