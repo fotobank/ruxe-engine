@@ -1876,6 +1876,7 @@ if (isset($_GET['saverdo']))
 					\$cms_guestnotwrite     = ".(int)$_POST['guestnotwrite'].";
 					\$cms_language          = \"".$Filtr->clear($_POST['language'])."\";
 					\$cms_createlinks       = ".(int)$_POST['createlinks'].";
+                                        \$cms_img_comment	= ".(int)$_POST['img_comments'].";
 					\$cms_send_mail         = \"".$Filtr->clear($_POST['send_mail'])."\";
 					\$cms_timezone          = \"".$_POST['timezone']."\";
 					\$cms_adminm            = ".(int)$_POST['adminm'].";

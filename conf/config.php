@@ -57,6 +57,7 @@
 					$cms_guestnotwrite     = 0;
 					$cms_language          = "ru";
 					$cms_createlinks       = 1;
+                                        $cms_img_comment       = 0;
 					$cms_send_mail         = "no-reply@domain.here";
 					$cms_timezone          = "+0";
 					$cms_adminm            = 0;
