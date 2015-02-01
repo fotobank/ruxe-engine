@@ -2314,7 +2314,7 @@
                              			$new      = fopen("../conf/plugins.dat","a");
                              			include("../includes/plugins/".$test."/info.dat");
                                                 
-                                                if(isset($install)){
+                                                if(isset($install) && !function_exists($install)){
                                                         include("../includes/plugins/".$_GET['name']."/functions.php");
                                                         if(function_exists($install)){
                                                                 $install();
