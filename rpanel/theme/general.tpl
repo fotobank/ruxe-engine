@@ -35,7 +35,8 @@
 		<tr><td>Добавлять комментарии администраторов в раздел <a href="?action=newmessages">Новые сообщения</a> и отправлять на email их (если включена отправка новых комментариев на email):</td><td><select name="adminm"><option value="1" {ADMINM1}>Да<option value="0" {ADMINM2}>Нет</select></td></tr> 
 		<tr><td>Разрешить посетителям использовать смайлы и BB-коды:</td><td><select name="smiles"><option value="1" {SMILESSHOW1}>Да<option value="0" {SMILESSHOW2}>Нет</select></td></tr>
 		<tr><td>Разрешить BB-код [url][/url] ([url=][/url]) в комментариях:</td><td><select name="createlinks"><option value="1" {CREATELINKS1}>Да<option value="0" {CREATELINKS2}>Нет</select></td></tr>  
-		<tr><td>Темы сообщений для модуля Обратной связи:<br><font class="desc">Разделяйте запятой, без пробела после неё</font><td><input type="text" name="mail_select" value="{MAIL_SELECT}" size=46></td></tr>  
+		<tr><td>Возможность использовать тег [img] (не рекомендуется):</td><td><select name="img_comments"><option value="1" {IMG_COMMENTS1}>Да<option value="0" {IMG_COMMENTS2}>Нет</select></td></tr>
+                <tr><td>Темы сообщений для модуля Обратной связи:<br><font class="desc">Разделяйте запятой, без пробела после неё</font><td><input type="text" name="mail_select" value="{MAIL_SELECT}" size=46></td></tr>  
 		<tr><td>Комментариев на одной странице:</td><td><select name="nav_comments">{NAV_COMMENTS}</select></td></tr>
 		<tr><td>Количество выводимых сообщений в модуле <font class="desc">&lt;?php here_last_posts(); ?&gt;</font> (последние комментарии):</td><td><select name="lastposts_count">{LASTPOSTS_COUNT}</select></td></tr>
 		<tr><td>Длина сообщений в модуле <font class="desc">&lt;?php here_last_posts(); ?&gt;</font> (в символах):{SUBSTRERROR}</td><td><input type="text" name="lastposts_len" value="{LASTPOSTS_LEN}" size=46></td></tr>

@@ -862,7 +862,7 @@
 					"{RSSTITLE}", "{PUNYCODE1}","{PUNYCODE2}","{VISUAL1}","{VISUAL2}","{SIMCOUNT}", "{FURL1}", "{FURL2}",
 					"{SHOWBFGHINTS1}","{SHOWBFGHINTS2}","{premod_mess}","{RSS_COUNT}","{WHOIS}",
 					"{WWWREDIRECT1}","{WWWREDIRECT2}","{TITLE_LENGTH}","{REG1}","{REG2}",
-					"{NAV_BACK1}","{NAV_BACK2}","{TOP_NEWS_MAX}");
+					"{NAV_BACK1}","{NAV_BACK2}","{TOP_NEWS_MAX}", "{COMMENTSSHOW1}", "{COMMENTSSHOW2}", "{IMG_COMMENTS1}", "{IMG_COMMENTS2}");
   			include("../conf/rss.dat");
   			if (isset($_GET['go']))
   				$message = "(Сохранено)";
@@ -1370,7 +1370,14 @@
   			  $REWRITE1 = "";
   			  $REWRITE2 = "selected";
   			};
-
+                        if($cms_img_comment == 1){
+                          $IMG_COMMENTS1 = "selected";
+                          $IMG_COMMENTS2 = "";
+                        }
+                        else{
+                          $IMG_COMMENTS1 = "";
+                          $IMG_COMMENTS2 = "selected";
+                        };
   			$themes = "";  
   			foreach ($FileManager->listing("../themes/",1) as $f)
   			{
@@ -1517,7 +1524,7 @@
 				$cms_rss_title,$PUNYCODE1,$PUNYCODE2,$VISUAL1,$VISUAL2,$Filtr->progress($cms_simcount,'lastposts'), $FURL1, $FURL2,
 				$SHOWBFGHINTS1,$SHOWBFGHINTS2,$cms_premod_mess,$Filtr->progress($cms_rss_count,'pm'),$cms_whois,
 				$WWWREDIRECT1,$WWWREDIRECT2, $Filtr->progress($cms_title_length,'pm'),$REG1,$REG2,
-				$NAV_BACK1,$NAV_BACK2, $Filtr->progress($cms_top_news_max));
+				$NAV_BACK1,$NAV_BACK2, $Filtr->progress($cms_top_news_max), "","", $IMG_COMMENTS1, $IMG_COMMENTS2);
   			$echooptions = $GlobalTemplate->template($ar,$br,"./theme/general.tpl");
   			$ar = array("{MENU}","{OPTIONS}");
   			if (isset($_GET['go']))

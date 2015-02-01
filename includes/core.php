@@ -1927,7 +1927,7 @@ class RuxeTemplate
 	
 	function usebbcodes($text,$do,$imgteg=false,$needcenz=true)
 	{
-		global $cms_smiles, $GlobalUsers, $lcms, $cms_createlinks, $cms_site, $cms_cenzura, $cms_cenzura_words, $cms_theme, $cms_root, $cms_furl;
+		global $cms_smiles, $GlobalUsers, $lcms, $cms_createlinks, $cms_img_comment, $cms_site, $cms_cenzura, $cms_cenzura_words, $cms_theme, $cms_root, $cms_furl;
 		$text	=	str_replace('[dividinglinere]','|',$text);
 		switch ($do)
 		{
@@ -2006,7 +2006,7 @@ class RuxeTemplate
 							$text    = preg_replace('|\[url=(.*)\](.*)\[/url\]|Uis', "<a href=\"".$cms_site."/?action=gosite&amp;url=\${1}\" target=\"_blank\" rel=\"nofollow\">\${2}</a>", $text);
 					};
 					//img
-					if ($imgteg)
+					if ($imgteg || $cms_img_comment)
 						$text	=	preg_replace('|\[img\](.*)\[\/img\]|Uis',"<img src=\"\${1}\" border=0 alt=\"\">",$text);
 					//smiles
 					foreach ($this->getsmiles() as $smile)
