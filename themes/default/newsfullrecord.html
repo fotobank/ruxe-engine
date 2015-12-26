@@ -1,24 +1,33 @@
-<h2>{TITLE}</h2>
-<div id="wrapper">
+<article role="article">
+    <h2>{TITLE}</h2>
+	<hr>
+	<br>
 		{DESCRIPTION}
         <div class="clear"></div>
+		<br>
+		<br>
 	<p>Опубликовал {AUTHOR} - {DATE} - {VIEWS}</p>
+        <br>
+	
+		[if_similar]
+		<p>Похожие записи:	[SIMILAR={<a href="[SIMLINK]">[SIMCAPTION]</a>}/SIMILAR]</p>
+		[/if_similar]
+		<br>
+	
 	<div class="tags">
 		[if_tags]
-		Метки:
-		[TAGS={<a href="[TAGLINK]">[TAGCAPTION]</a>}/TAGS]
+		<p>Теги: [TAGS={<a href="[TAGLINK]">#[TAGCAPTION]</a> }/TAGS]</p>
 		[/if_tags]
 	</div>
-	<p>
-		[if_similar]
-		Похожие записи:
-		[SIMILAR={<a href="[SIMLINK]">[SIMCAPTION]</a>}/SIMILAR]
-		[/if_similar]
-	</p>
+	
 	<br>
-	<h4>Комментарии:</h4>
+	<h3>Комментарии</h3>
+	<hr>
 		{COMMENTFORM}
-	<br>{PAGES}<br>
+	    {PAGES}<br>
         {COMMENTS}
+		<div class="clearfix"></div>
+		<br>&nbsp;<br>
         {PAGES}
-</div>
+		
+</article>

@@ -1,156 +1,116 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-  <head>
-	<title><?php here_title(); ?></title>
-	<link rel="shortcut icon" href="<?php here_urlsite(); ?>/favicon.ico" type="image/x-icon">
-	<link rel="alternate" type="application/rss+xml" title="RSS лента" href="<?php here_urlrss(); ?>">
-	<?php here_metaredirect(); ?>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="<?php here_keywords(); ?>">
-	<meta name="generator" content="<?php here_generator(); ?>">
-	<meta name="description" content="<?php here_description(); ?>">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="<?php here_themepath(); ?>/style.css" type="text/css">
-	<script type="text/javascript" src="<?php here_themepath(); ?>/js/prefixfree.min.js"></script>
-	<script type="text/javascript" src="<?php here_themepath(); ?>/js/jquery.min.js"></script>
-	<!--[if lt IE 9]>
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+	    <title><?php here_title(); ?></title>
+	    <link rel="shortcut icon" href="<?php here_urlsite(); ?>/favicon.ico" type="image/x-icon">
+	    <link rel="alternate" type="application/rss+xml" title="RSS лента" href="<?php here_urlrss(); ?>">
+	    <?php here_metaredirect(); ?>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="keywords" content="<?php here_keywords(); ?>">
+	    <meta name="generator" content="<?php here_generator(); ?>">
+	    <meta name="description" content="<?php here_description(); ?>">
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic&subset=cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="<?php here_themepath(); ?>/style.css" type="text/css">
+	    <script src="<?php here_themepath(); ?>/js/prefixfree.min.js"></script>
+	    <script src="<?php here_themepath(); ?>/js/jquery-1.7.2.min.js"></script>
+	    <script src="<?php here_themepath(); ?>/js/jquery.leanModal.min.js"></script><!-- Скрипт Модального окна http://leanmodal.finelysliced.com.au/ -->
+	    <script src="<?php here_themepath(); ?>/js/main.js"></script>
+		<!--[if lt IE 9]>
         <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-    <![endif]-->
-	<script>
-		  $(document).ready(function(){
-				$('#login-trigger').click(function(){
-					$(this).next('#login-content').slideToggle();
-					$(this).toggleClass('active');					
-					
-					if ($(this).hasClass('active')) $(this).find('span').html('▲')
-						else $(this).find('span').html('▼')
-					})
-		  });
-	</script>
-	<script>
-      var h_hght = 176; // высота шапки
-      var h_mrg = 0;     // отступ когда шапка уже не видна
-        $(function(){
-        $(window).scroll(function(){
-      var top = $(this).scrollTop();
-      var elem = $('#top-nav');
-      if (top+h_mrg < h_hght) {
-        elem.css('top', (h_hght-top));
-      } else {
-        elem.css('top', h_mrg);
-      }
-        });
-      });
-    </script>
-  </head>
-<body>
-	<div id="header">
-		<div class="container">
-			<a href="#"><h1>Логотип и девиз вашего сайта</h1></a>
-		</div>
-	</div>
-	<div id="top-nav">
-		<div class="container menu">
-			<div class="menu-item">
-			    <ul><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
-				    <li>
-					    <a href="<?php here_urlsite(); ?>/">Новости</a>
-				    </li>
-				        <!--Если в качестве параметра передать этой функции имя страницы (Админ-центр - Страницы), то в зависимости от того, задействован ЧПУ или нет 
-				        (Админ-центр - Настройки - Активировать ЧПУ), вернёт правильный адрес страницы сайта.
-			            Пример:
-			            ЧПУ активирован, страница "downloads.html", результат: http://ваш_сайт/downloads.html
-			            ЧПУ не используется, та же страница, результат: http://ваш_сайт/?viewpage=downloads.html-->
-				    <li>
-					    <a href="<?php here_urlsite('downloads.html'); ?>">Загрузки</a>
-				    </li>
-				        <!--Другими словами, чтобы не вводить адрес сайта, используйте команду here_urlsite() без параметров. А для указания ссылки на страницу сайта, 
-				        правильнее использовать команду с параметром here_urlsite('тут имя страницы'). Подробнее о командах в документации.-->
-				    <li>
-					    <a href="<?php here_urlsite('faq.html'); ?>">F.A.Q.</a>
-				    </li>
-				    <li>
-					    <a href="<?php here_urlsite('contact.html'); ?>">Обратная связь</a>
-				    </li>
-				    <li>
-					    <a href="<?php here_urlsite(); ?>/README.md" target="_blank">Документация</a>
-				    </li>
-			        <li>
-					    <a href="<?php here_urlsite('somepage.html'); ?>/#">Ссылка</a>
-				    </li>
-			    </ul>
+        <![endif]-->
+	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+	    <script>
+	        $(function() {
+            $('.icon').click(function() {
+    
+            if($('.items').is(':visible')) {
+            $('.items').removeClass('showitems'); 
+            }
+            else {
+            $('.items').addClass('showitems'); 
+            }   
+            }); 
+            });
+	    </script>
+	    <script type="text/javascript">
+			$(function() {
+    		$('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });		
+			});
+	    </script>
+	</head>
+    <body>
+
+	    <nav class="menu navbar-default">
+			<div class="group-80-offset-010">
+			    <ul>
+                    <a href="#"><div class="icon fa fa-align-justify"></div></a>
+					<span class="logo pull-left color"><a href="#" title="Главная">Ruxe-Engine</a></span>
+                    <div class="items pull-right">
+                        <a href="<?php here_urlsite(); ?>" title="Главная"><li>Главная</li></a><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
+					    <a href="<?php here_urlsite(); ?>/downloads.html" title="Скачать"><li>Скачать</li></a>
+						<a href="<?php here_urlsite(); ?>/faq.html" title="F.A.Q"><li>F.A.Q</li></a>
+                        <a href="<?php here_urlsite(); ?>/somepage.html" title="Ссылка"><li>Ссылка</li></a>
+					    <a href="<?php here_urlsite(); ?>/contact.html" title="Контакты"><li>Контакты</li></a>
+                    </div>
+                </ul>
+				<div class="clearfix"></div>
 			</div>
-			<div class="log-form">
+        </nav>
+		<!-- Header -->
+        <section id="header" class="text-center" role="banner">
+            <div class="overlay">
+                <div class="content">
+                    <h1>Девиз вашего сайта, <span class="color">или слоган!</span></h1>
+                    <p class="lead">Этот сайт построен на CMS Ruxe-Engine!</p>
+                    <a name="angle" href="#article" class="fa fa-angle-down page-scroll"></a>
+                </div>
+            </div>
+        </section>
+        <!-- Основное содержание страницы -->
+		<a id="article"></a>
+		<div class="spacer"></div>
+        <div class="group-100">
+            <div class="group-60-offset-20">
+		        <?php here_pagecontent(); ?>
+		    </div>
+	    </div>
+	    <div class="spacer"></div>
+		<div class="clearfix"></div>
+	    <!-- Форма авторизации -->
+		<div id="signup">
+		    <div class="loginform">
 		        <div id="login">
-					<a id="login-trigger" href="#">Аккаунт <span>▼</span></a>
-					<div id="login-content">
+				    <div id="login-content">
+				        <a class="modal_close" href="#"></a>
 			            <?php here_login(); ?>							
 		            </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-	    <div id="spacer-top"></div>
-		<div id="content">
-			<?php here_pagecontent(); ?>
-			<!-- Рекламный блок. Если вам не нужен этот блок, закройте его комментариями или удалите -->
-			<h2>Рекламный блок</h2>
-            <div class="wrapper">
-	            <p>
-	                Здесь можно разместить баннеры и контекстную рекламу
-	            </p>
-	            <div class="clear"></div>
-                <br>
-			</div>
-			<!-- Конец рекламного блока -->
-			<!-- Дополнительный блок. Если вам не нужен этот блок, закройте его комментариями или удалите -->
-			<h2>Дополнительный блок</h2>
-            <div class="wrapper">
-	            <div class="half">
-				    <h4>Популярные новости:</h4>
-				    <p>
-				        <ul>
-				            <?php here_top_news('news'); ?>
-				        </ul>
-				    </p>
-                </div>
-				<div class="half">
-					<h4>Категории новостей:</h4>
-				    <p>
-				        <ul>
-				            <?php here_list_category("news"); ?>
-				        </ul>
-				    </p>
-                </div>
-	            <div class="clear"></div>
-                <br>
-			</div>
-			<!-- Конец дополнительного блока -->
-		</div>
-	</div>
-	<div class="clear"></div>
-    <div id="footer">
-		<div class="container">
-		    <div class="wrapper">
-		        <div class="half">
-			        <p><!-- Для тактичного отображения краткой формы поиска скачайте обновлённое дополнение "Поиск" -->
-				        Поиск по сайту:
-				        <div class="short-search">
-					        <?php //here_shortsearch(); ?>
-					    </div>
-				    </p>
-                </div>
-			    <div class="half">
-				    <p>{CREDITS}</p>
-				    <p><a href="http://d-sign.name" target="_blank">Дизайн:</a> <a href="http://ruxe-engine.ru/viewprofile/Wasilich" target="_blank">Wasilich</a></p>
-				    <p>Генерация: <?php here_time_generation(); ?> секунд.</p>
 			    </div>
-			</div>
+		    </div>
 		</div>
-		<div class="clear"></div>
-		<br>
-    </div>
-</body>
+	    <!--  Footer  -->
+	    <div id="footer" class="group-100">
+            <div class="block-90-offset-05">
+                <div class="pull-left">
+                    <p>© 2015. Designed by <a href="http://webdesign.ru.net">D-Sign</a> and {CREDITS}</a></p>
+                </div>
+                <div class="pull-right">
+                    <ul class="footer-social">
+                        <li><a href="<?php here_urlrss(); ?>" target="_blank"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://github.com/maindefine/ruxe-engine" target="_blank"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://vk.com/ruxeengine" target="_blank"><i class="fa fa-vk"></i></a></li>
+					    <li><a id="go" rel="leanModal" name="signup" href="#signup"><i class="fa fa-sign-in"></i></a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+                <br>
+            </div>
+	    </div>
+    </body>
 </html>
