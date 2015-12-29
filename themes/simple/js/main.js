@@ -9,7 +9,7 @@ function main() {
    
     /***** Show Menu on top *****/
     $(window).bind('scroll', function() {
-        var navHeight = $(window).height() - 150;
+        var navHeight = $(window).height() - 444;
         if ($(window).scrollTop() > navHeight) {
             $('.navbar-default').addClass('on');
         } else {
