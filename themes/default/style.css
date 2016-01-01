@@ -564,7 +564,7 @@ td {text-align: left !important;}
 .comment-cell-text {line-height: 150%;}
 .fix-column {float: right;width: 150px;}
 /* Отдельные области в тексте */
-pre, listing, xmp, .code {display:block;margin: 0.625em 0;padding: 0.5em 1em;border: solid 1px #e0e0e0;overflow: auto;font-family: monospace;font-size: 90%;}
+pre, listing, xmp, .code, pre p, listing p, xmp p, .code p {display:block;margin: 0.625em 0;padding: 0.5em 1em;background: #f5f5f5;overflow: auto;font-family: monospace;font-size: 90%;}
 /* Стиль оформления цитат */
 .quote-text, .quote {font-style: italic;color: #59a51b;margin: 0.25em 0.5em 0;padding: 0.125em 0.5em 0.375em;line-height: 130%;}
 .quote-text:before, .quote:before {font-size: 1.5em;content: "\f10d";font-family: 'FontAwesome';font-style: normal;color: #59a51b;font-size: 100%;}
