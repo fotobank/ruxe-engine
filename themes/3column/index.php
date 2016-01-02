@@ -52,7 +52,7 @@
 		</style>
 	</head>
     <body>
-
+        <!-- Navigation -->
 	    <nav class="menu navbar-default">
 			<div class="group-80-offset-010">
 			    <ul>
@@ -81,9 +81,23 @@
         <!-- Основное содержание страницы -->
 		<div class="spacer"></div>
         <div class="group-100">
-            <div class="group-60-offset-20">
-		        <?php here_pagecontent(); ?>
-		    </div>
+            <div class="group-96-offset-02">
+			    <div class="block-25 bordered first">
+				    <div class="content">
+					    <?php here_random_faq(); ?>
+					</div>
+				</div>
+			        <div class="block-50">
+		                <div class="content">
+						    <?php here_pagecontent(); ?>
+						</div>
+		            </div>
+				<div class="block-25 bordered last">
+				    <div class="content">
+					    <?php here_last_posts(); ?>
+					</div>
+				</div>
+			</div>
 	    </div>
 	    <div class="spacer"></div>
 		<div class="clearfix"></div>

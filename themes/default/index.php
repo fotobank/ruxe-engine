@@ -14,6 +14,7 @@
 	    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic&subset=cyrillic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="<?php here_themepath(); ?>/style.css" type="text/css">
 	    <script src="<?php here_themepath(); ?>/js/prefixfree.min.js"></script>
+		<link rel="stylesheet" href="<?php here_themepath(); ?>/layout.css" type="text/css">
 	    <script src="<?php here_themepath(); ?>/js/jquery-1.7.2.min.js"></script>
 	    <script src="<?php here_themepath(); ?>/js/jquery.leanModal.min.js"></script><!-- Скрипт Модального окна http://leanmodal.finelysliced.com.au/ -->
 	    <script src="<?php here_themepath(); ?>/js/main.js"></script>
@@ -44,10 +45,11 @@
     		$('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });		
 			});
 	    </script>
-	    <style>
-		p {font-family: 'Open Sans', sans-serif;font-size: 16px;line-height: 1.5em;padding: 0.375em 0;}
-		li {font-family: inherit;font-size: inherit;line-height: 1.5em;}
-	    </style>
+		<style>
+		    p {font-family: 'Open Sans', sans-serif;font-size: 16px !important;line-height: 1.5em !important;padding: 0.375em 0 !important;}
+			li {font-family: inherit;font-size: inherit;line-height: 1.5em !important;}
+			#footer p {font-size: 12px !important;line-height: 3em  !important;}
+		</style>
 	</head>
     <body>
 

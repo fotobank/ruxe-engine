@@ -17,13 +17,16 @@
 /* Media Queries */
 @media screen and (max-width: 1036px) {
 .edge {display: none;}
-.blox-80-percent {width: 100%;}
-.blox-70-percent {width: 100%;}
-.blox-45-percent {width: 100%;}
+.first {width: 30%;}
+.block-50 {width: 70%;}
+.last {width: 100%;}
+.navy-page {margin-left: -25%;}
 }
 @media screen and (max-width: 992px) {
 [class*=group-80][class*=-offset-010] {width: 90%;margin-left: 5%; margin-right: 5%;}
 [class*=block-50] {width: 100%;margin: 0;}
+.first {width: 100%;}
+.navy-page {display:block;width: 100%;margin: 0.5em 0 1.75em;}
 }
 @media screen and (max-width: 800px) {
 [class*=group-60][class*=-offset-20] {width: 90%;margin-left: 5%; margin-right: 5%;}
