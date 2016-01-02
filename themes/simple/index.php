@@ -45,6 +45,10 @@
     		$('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });		
 			});
 	    </script>
+	    <style>
+		p {font-family: 'Open Sans', sans-serif;font-size: 16px;line-height: 1.5em;padding: 0.375em 0;}
+		li {font-family: inherit;font-size: inherit;line-height: 1.5em;}
+	    </style>
 	</head>
     <body>
 
