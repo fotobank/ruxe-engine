@@ -51,7 +51,7 @@
 .items li {padding-left: 0;}
 .items a li {
     display: table;
-    line-height: 4em;
+    line-height: 4em !important;
 	text-align: center;
 	padding: 0 auto;
 }
