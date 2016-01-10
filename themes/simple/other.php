@@ -184,7 +184,7 @@ $ocms[9]='
 		</div>
 	</div>
 </div>
-<br>';
+<br>&nbsp<br>';
 
 //Оформление одной записи F.A.Q. для here_random_faq();
 //{SITE} - адрес сайта
