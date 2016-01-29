@@ -72,7 +72,7 @@ $lcms['findo_text'] = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Вы согласились
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Работа системы не может быть продолжена. Если Вы считаете это заявление ошибкой и на Вашем сайте нет и не будет порно-материалов, то обратитесь к разработчику.";
 $lcms['start_title'] = "Мастер установки Ruxe Engine";
 $lcms['start_text'] = "Перед началом работы необходимо уточнить главные параметры системы. Мастер установки позволит вам сделать это максимально быстро и просто.<br><br>
-Не забудьте, пожалуйста, прочитать <a href=\"README.md\" target=\"_blank\">документацию</a>.<br><br>
+Не забудьте, пожалуйста, прочитать <a href=\"https://github.com/maindefine/ruxe-engine/blob/master/README.md\" target=\"_blank\">документацию</a>.<br><br>
 <center><noscript><font color=\"red\"><b>Включите JavaScript в вашем браузере, иначе вы не сможете установить Ruxe Engine.</b></font><br><br></noscript><input type=\"button\" value=\"Начать установку\" onClick=\"location.href='install.php?step=install';\"></center>
 ";
 $lcms['ban_title'] = "Нет доступа";

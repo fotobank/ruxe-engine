@@ -472,7 +472,7 @@ echo '</div>
                 "avatars/",
                 "conf/",
                 "themes/",
-                "smiles",
+                "smiles/",
                 "rpanel/backups/"
                 );
                 foreach ($FileManager->listing("avatars/",0) as $a)
@@ -995,7 +995,7 @@ echo '</div>
                 <br><br><br><div style="border: 1px solid silver; background-color:#FFF2D7; text-align:center; margin-left:90px; margin-right:90px;"><b>
                 Ruxe Engine БЕСПЛАТНАЯ программа. Если Вы заплатили за неё деньги,<br>
                 требуйте у продавца вернуть Ваши деньги обратно.<br><br>
-                Кроме того, оригинальные и свежие дистрибутивы Ruxe Engine находятся всегда по адресу:<br><a href="http://ruxe-engine.ru/download" target="_blank">http://ruxe-engine.ru/download</a>.
+                Кроме того, оригинальные и свежие дистрибутивы Ruxe Engine находятся всегда по адресу:<br><a href="http://ruxe-engine.ru" target="_blank">http://ruxe-engine.ru</a>.
                 <br>Если у Вас есть сомнения насчёт оригинальности используемого дистрибутива, рекомендуется скачать его по вышеуказанному адресу.                                                                               
                 </b></div> 
                 <br><br>

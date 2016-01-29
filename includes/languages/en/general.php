@@ -71,7 +71,7 @@ $lcms['findo_text'] = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You have agreed on conditio
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System operation can't be continued. If you consider this announcement by an error and on your site aren't present and there will be no pornomaterials address to the developer.";
 $lcms['start_title'] = "Ruxe Engine wizard";
 $lcms['start_text'] = "Before the operation beginning it is necessary to specify principal parameters of system. The wizard will allow you to make it as fast as possible and simply.<br><br>
-Don't forget to read, please, <a href=\"README.md\" target=\"_blank\">documentation</a>.<br><br>
+Don't forget to read, please, <a href=\"https://github.com/maindefine/ruxe-engine/blob/master/README.md\" target=\"_blank\">documentation</a>.<br><br>
 <center><noscript>Include JavaScript in your browser, differently you can't install Ruxe Engine<br></noscript><input type=\"button\" value=\"Begin install\" onClick=\"location.href='install.php?step=install';\"></center>
 ";
 $lcms['ban_title'] = "Access denied";
