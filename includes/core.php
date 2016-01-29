@@ -381,7 +381,7 @@ function errortoshow($errno,$errmsg,$file,$line)
 	        echo '<div class="error-message">
 	        <center><b>Ошибка</b></center>
 	        <p>'.$errmsg.' в файле '.$file.' на строке '.$line.'</p>
-	        <p>Пожалуйста, обратитесь по <a href="http://ruxe-engine.ru/news/problemy-i-oshibki.html" target="_blank">http://ruxe-engine.ru/news/problemy-i-oshibki.html</a> если вы уверены, что ошибка не по вашей вине</p>
+	        <p>Пожалуйста, обратитесь по <a href="http://ruxe-engine.ru/viewforum.php?f=13" target="_blank">http://ruxe-engine.ru/viewforum.php?f=13</a> если вы уверены, что ошибка не по вашей вине</p>
 	        </div>';
 	}
 }
@@ -399,7 +399,7 @@ function etswwr($errno,$errmsg,$file,$line)
 	        <center><b>Ошибка</b></center>
 	        <p>'.$errmsg.' в файле '.$file.' на строке '.$line.'</p>
 
-	        <p>Пожалуйста, обратитесь по <a href="http://ruxe-engine.ru/news/problemy-i-oshibki.html" target="_blank">http://ruxe-engine.ru/news/problemy-i-oshibki.html</a> если вы уверены, что ошибка не по вашей вине</p>
+	        <p>Пожалуйста, обратитесь по <a href="http://ruxe-engine.ru/viewforum.php?f=13" target="_blank">http://ruxe-engine.ru/viewforum.php?f=13</a> если вы уверены, что ошибка не по вашей вине</p>
 	        </div>';
 	        $error_log = fopen($cms_root."/conf/logs/errors.log","a");
 		fputs($error_log,date("d.m.y, H:i")."||".$errno."||".$errmsg."||".$file."||".$line."||".$Filtr->clear($_SERVER['REMOTE_ADDR'])."||\r\n");
