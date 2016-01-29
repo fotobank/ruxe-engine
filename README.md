@@ -921,9 +921,10 @@ Ruxe Engine API
 Разработчики
 ---------------------------------
 
-- **Ахрамеев Денис Викторович** ([www.den.bz](http://den.bz)) - Автор, программирование
-- **Игорь Dr1D** - Дизайн
-- **Олег Прохоров** ([ruxe-engine.ru/viewprofile/Tanatos](http://ruxe-engine.ru/viewprofile/Tanatos)) - Контроль качества, документация
+- **Ахрамеев Денис Викторович** ([http://ahrameev.ru](http://ahrameev.ru)) - Автор, программирование
+- **Александр Wasilich Плотников** ([http://webdesign.ru.net/](http://webdesign.ru.net/)) - Темы оформления
+- **Игорь Dr1D** - Логотип, дизайн админ-центра
+- **Олег Прохоров** ([htp://ruxe-engine.ru/old/viewprofile/Tanatos](http://ruxe-engine.ru/old/viewprofile/Tanatos)) - Контроль качества, документация
 
 
 Лицензия
