@@ -208,10 +208,10 @@ Stanisov и PAT<br><br>
 <a href="http://phpforum.ru/index.php?showtopic=28607">http://phpforum.ru/index.php?showtopic=28607</a><br><br>
 <a href="http://www.kolobok.us">www.kolobok.us</a><br><br>
 <a href="http://stackoverflow.com/users/53114/gumbo" target="_blank">Gumbo</a><br><br>
-<a href="http://ruxe-engine.ru/viewprofile/Polar">Polar</a><br><br>
+<a href="http://ruxe-engine.ru/old/viewprofile/Polar">Polar</a><br><br>
 Константин Vanstorm<br><br>
 Александр freshcoder<br><br>
-<a href="http://ruxe-engine.ru/viewprofile/Buranek">Buranek</a><br><br>
+<a href="http://ruxe-engine.ru/old/viewprofile/Buranek">Buranek</a><br><br>
 Roman Mamedov<br><br>
 <a href="http://www.answerium.com/user/simplex/">Simplex</a><br><br>
 <a href="http://gv0zdik.livejournal.com/">Gv0zdik</a><br><br> 

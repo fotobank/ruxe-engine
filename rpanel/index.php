@@ -362,7 +362,7 @@
 				if ($new_version!=$this_version) {
 						$install .= '<tr class="titlegreen"><td colspan=2>ДОСТУПНО ОБНОВЛЕНИЕ</td></tr>
 					<tr class="greentd"><td colspan=2>У Вас установлена '.$this_version.' версия, в то время как последняя версия '.$new_version.'<br>
-					Настоятельно рекомендуется <a style="color:black; font-weight:bold;" href="http://ruxe-engine.ru/download">обновиться до новой версии</a></td></tr>';
+					Настоятельно рекомендуется <a style="color:black; font-weight:bold;" href="http://ruxe-engine.ru">обновиться до новой версии</a></td></tr>';
 				}
   			}
 
@@ -1956,7 +1956,7 @@
          		$word_wrap = ($cms_editareawp==1) ? 'true' : 'false';
          		$echooptions = '
          				<h2>Оформление сайта</h2>
-					<font class="desc">Здесь Вы можете отредактировать темы оформления<br><a href="http://ruxe-engine.ru/documentation/howcreatetheme.html" style="color:#5D5D5D;" target="_blank">Инструкция</a></font><br><br>
+					<font class="desc">Здесь Вы можете отредактировать темы оформления<br><a href="https://github.com/maindefine/ruxe-engine/blob/master/README.md#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD%D0%B0" style="color:#5D5D5D;" target="_blank">Инструкция</a></font><br><br>
 					<center>
               					<table border=0 width="99%" cellpadding=4>
                      					<tr><td align="left" valign="top">
@@ -2516,7 +2516,7 @@
           		if ($tmp['plugins_use']==true)
           		{
           			$echooptions.='
-          				<br><font class="desc">Дополнения: (<a style="color:#5D5D5D;" href="?action=plugins">Настроить</a> | <a style="color:#5D5D5D;" href="http://ruxe-engine.ru/plugins.html">Скачать новые</a> | <a style="color:#5D5D5D;" href="http://ruxe-engine.ru/documentation/howinstallplugin.html">Как устанавливать дополнения</a> | <a style="color:#5D5D5D;" href="http://ruxe-engine.ru/documentation/howcreateplugin.html">Как создать дополнение</a>)</font><br><br>
+          				<br><font class="desc">Дополнения: (<a style="color:#5D5D5D;" href="?action=plugins">Настроить</a> | <a style="color:#5D5D5D;" href="http://ruxe-engine.ru/viewforum.php?f=21" target="_blank">Скачать новые</a> | <a style="color:#5D5D5D;" href="https://github.com/maindefine/ruxe-engine/blob/master/README.md#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9" target="_blank">Как устанавливать дополнения</a> | <a style="color:#5D5D5D;" href="https://github.com/maindefine/ruxe-engine/blob/master/README.md#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F" target="_blank">Как создать дополнение</a>)</font><br><br>
           				
           			';
           			$plugins      = file("../conf/plugins.dat");
