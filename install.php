@@ -932,6 +932,7 @@ echo '</div>
 \$cms_guestnotwrite = ".$cms_guestnotwrite.";
 \$cms_language = \"".$language."\";
 \$cms_createlinks = ".$cms_createlinks.";
+\$cms_img_comment	= 0;
 \$cms_send_mail = \"".$cms_send_mail."\";
 \$cms_timezone = \"".$cms_timezone."\";
 \$cms_adminm = ".$cms_adminm.";
