@@ -159,7 +159,7 @@ $lcms['user_ae_8'] = "The weight of the original image shouldn't exceed ".$cms_a
 $lcms['user_a_rules_1'] = "Are supported GIF, JPG and PNG images, weight no more ".$cms_upload_maxsite." KB and the sizes no more ".$cms_upload_width." pixels at width and ".$cms_upload_height." in height";
 $lcms['user_a_rules_2'] = "Are supported GIF, JPG and PNG images. You can use the image of any sizes (width, height). If it exceeds admissible the sizes will be changed automatically.";
 $lcms['user_ae_3'] = "The weight approaching in the sizes (to width and height) shouldn't exceed an avatar ".$cms_upload_maxsite." KB";
-$lcms['modifed_generals'] = 'Changes are found in includes/functions.general.php<br>Recover the specified file from <a href="http://ruxe-engine.ru/download">the original distribution kit</a> the used version';
+$lcms['modifed_generals'] = 'Changes are found in includes/functions.general.php<br>Recover the specified file from <a href="http://ruxe-engine.ru">the original distribution kit</a> the used version';
 $lcms['rss_title'] = "RSS of news";
 $lcms['error_477'] = "User or key not valid";
 $lcms['error_395'] = "User already restore password";
@@ -193,7 +193,7 @@ $lcms['pm_notread_one'] = "new";
 $lcms['pm_notread_much'] = "new";
 $lcms['pm_notread_much2'] = "new";
 $lcms['botdownload_title'] = "Robots can't downloading files";
-$lcms['botdownload_message'] = "It is forbidden to robots to downloading files. If you consider it as an error, most likely - you not the robot so address in  <a href=\"http://ruxe-engine.ru/feedback.html\">Technical support Ruxe Engine</a>.";
+$lcms['botdownload_message'] = "It is forbidden to robots to downloading files. If you consider it as an error, most likely - you not the robot so address in  <a href=\"http://ruxe-engine.ru/\">Technical support Ruxe Engine</a>.";
 
 $lcms['today'] = 'Today';
 $lcms['yesterday'] = 'Yesterday';
