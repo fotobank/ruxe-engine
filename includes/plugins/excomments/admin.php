@@ -237,7 +237,7 @@
         <center>
             <table class=\"optionstable\" border=0 cellpadding=1 cellspacing=0>
                 <tr class=\"titletable\"><td colspan=2>СПРАВКА</td></tr>
-                <tr><td colspan=2>На странице, где необходимо вывести собранные комментарии, используете команду &lt;? here_excomments(\"<b>ID</b>\"); ?&gt;, где <b>ID</b> – идентификатор расширенного раздела.</td></tr>
+                <tr><td colspan=2>На странице, где необходимо вывести собранные комментарии, используете команду &lt;?php here_excomments(\"<b>ID</b>\"); ?&gt;, где <b>ID</b> – идентификатор расширенного раздела.</td></tr>
             </table>
         </center>
     ";
