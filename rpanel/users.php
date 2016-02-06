@@ -26,7 +26,7 @@
 				<font class="desc">В данном разделе Вы можете удалить, забанить, изменить профиль пользователей, установить статус (например, администратор или суперпользователь), обнулить счётчики сообщений, добавить новые поля профиля и страницы, доступные для просмотра только администраторам и суперпользователям</font><br><br>
 			';
 	$echooptions 	= "<center><table class=\"optionstable\" border=0 cellpadding=1 cellspacing=0>
-				<tr class=\"titletable\"><td>ИМЯ ПОЛЬЗОВАТЕЛЯ</td><td width=110>СТАТУС (<a target=\"_blank\" title=\"Помощь\" href=\"https://github.com/maindefine/ruxe-engine/blob/master/README.md#user-content-Статусы-пользователей\">?</a>)</td><td width=85>СООБЩЕНИЙ</td><td width=150>E-MAIL</td><td width=100>IP</td><td width=270>ДЕЙСТВИЕ</td></tr>
+				<tr class=\"titletable\"><td>ИМЯ ПОЛЬЗОВАТЕЛЯ</td><td width=110>СТАТУС (<a target=\"_blank\" title=\"Помощь\" href=\"https://github.com/maindefine/ruxe-engine/blob/master/README.md#user-statuses\">?</a>)</td><td width=85>СООБЩЕНИЙ</td><td width=150>E-MAIL</td><td width=100>IP</td><td width=270>ДЕЙСТВИЕ</td></tr>
 			";
 	if (isset($_GET["poles"]))
 		$mess 	= "(Сохранено)";
@@ -65,7 +65,7 @@
 					<tr><td>E-mail:</td><td><input type="text" name="mail" size=52 value="'.$p[2].'"></td></tr>
 					<tr><td>О себе:</td><td><textarea name="about" cols=40 rows=3>'.str_replace("<br>","\n",$p[3]).'</textarea></td></tr>
 					<tr><td>Подпись:</td><td><textarea name="ps" cols=40 rows=3>'.str_replace("<br>","\n",$p[17]).'</textarea></td></tr>
-					<tr><td>Звание (статус) <a title="Помощь" href="https://github.com/maindefine/ruxe-engine/blob/master/README.md#%D0%A1%D1%82%D0%B0%D1%82%D1%83%D1%81%D1%8B-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9" target="_blank">?</a>:</td><td>
+					<tr><td>Звание (статус) <a title="Помощь" href="https://github.com/maindefine/ruxe-engine/blob/master/README.md#user-statuses" target="_blank">?</a>:</td><td>
 				';
 			if ($pos!=0) {
 				$menu .='<select name="status" id="statuser" onChange="diuc()">';
