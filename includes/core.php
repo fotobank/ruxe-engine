@@ -2084,19 +2084,42 @@ class GlobalBFG
 		};
 		if ($furl==1)
 		{
-			fwrite($newfile,"RewriteEngine On\r\nRewriteRule ^rss$ rss/\r\nRewriteRule ^rss/$ index.php?action=rss [L]\r\n");
-			fwrite($newfile,"RewriteRule ^viewprofile/(.*) index.php?action=profile&user=\$1 [QSA]\r\nRewriteRule ^link/(.*)/(.*)/ index.php?action=link&id=\$1&new=\$2 [L]\r\nRewriteRule ^go/(.*) index.php?action=go&link=\$1 [QSA]\r\nRewriteRule ^tag/(.*)/(.*) \$1/?searchtag=\$2 [QSA]\r\nRewriteRule ^gosite/(.*) index.php?action=gosite&url=\$1 [QSA]\r\nRewriteRule ^category/(.*)/(.*) \$1/?category=\$2 [QSA]\r\nRewriteRule ^rotator/(.*) index.php?action=rotator&go=\$1 [QSA]\r\nRewriteRule ^getfile/(.*) index.php?action=download&file=\$1 [QSA]\r\nRewriteRule ^pm/(.*) index.php?action=pm&do=\$1 [QSA]\r\nRewriteRule ^editprofile/ index.php?action=myprofile [QSA]\r\nRewriteRule ^restore/ index.php?action=restore [QSA]\r\nRewriteRule ^newuser/ index.php?action=newuser [QSA]\r\n");
+			fwrite($newfile,"
+RewriteEngine On
+RewriteRule ^rss$ rss/
+RewriteRule ^rss/$ index.php?action=rss [L]");
+			fwrite($newfile,"
+RewriteRule ^viewprofile/(.*) index.php?action=profile&user=\$1 [QSA]
+RewriteRule ^link/(.*)/(.*)/ index.php?action=link&id=\$1&new=\$2 [L]
+RewriteRule ^go/(.*) index.php?action=go&link=\$1 [QSA]
+RewriteRule ^tag/(.*)/(.*) \$1/?searchtag=\$2 [QSA]
+RewriteRule ^gosite/(.*) index.php?action=gosite&url=\$1 [QSA]
+RewriteRule ^category/(.*)/(.*) \$1/?category=\$2 [QSA]
+RewriteRule ^rotator/(.*) index.php?action=rotator&go=\$1 [QSA]
+RewriteRule ^getfile/(.*) index.php?action=download&file=\$1 [QSA]
+RewriteRule ^pm/(.*) index.php?action=pm&do=\$1 [QSA]
+RewriteRule ^editprofile/ index.php?action=myprofile [QSA]
+RewriteRule ^restore/ index.php?action=restore [QSA]
+RewriteRule ^newuser/ index.php?action=newuser [QSA]
+");
 			$pagesconfig = file($cms_root."/conf/pages/config");
 			foreach ($pagesconfig as $pagesline)
 			{
 				$precords = explode("|",$pagesline);
-				fwrite($newfile,"RewriteRule ^".$precords[0]."$ ".$precords[0]."/\r\nRewriteRule ^".$precords[0]."/$ index.php?viewpage=".$precords[0]." [QSA]\r\n");
+				fwrite($newfile,"
+RewriteRule ^".$precords[0]."$ ".$precords[0]."/
+RewriteRule ^".$precords[0]."/$ index.php?viewpage=".$precords[0]." [QSA]
+");
 			};
 			$bfgconfig = file($cms_root."/conf/bfg.dat");
 			foreach ($bfgconfig as $bfgline)
 			{
 				$bc = explode("|",$bfgline);
-				fwrite($newfile,"RewriteRule ^".$bc[0]."$ ".$bc[0]."/\r\nRewriteRule ^".$bc[0]."/$ ".$bc[2]."/ [L]\r\nRewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&viewnews=".$bc[0]."&record=\$1 [QSA]\r\n");
+				fwrite($newfile,"
+RewriteRule ^".$bc[0]."$ ".$bc[0]."/
+RewriteRule ^".$bc[0]."/$ ".$bc[2]."/ [L]
+RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&viewnews=".$bc[0]."&record=\$1 [QSA]
+");
 			};
 		};
 		fclose($newfile);
