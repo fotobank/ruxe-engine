@@ -16,7 +16,7 @@
  *
  */
 
-$installer_version = '1.8.6';
+$installer_version = '1.9 Beta';
 
 include('conf/config.php');
 include("includes/core.php");
