@@ -3356,12 +3356,12 @@ class FileManager
                         fclose($ip_file);
                         $hosts += 1;
                         $all_hosts += 1;
-                $all_hosts_file = fopen($cms_root . "/conf/all_hosts.dat", "сb");
-                flock($all_hosts_file, LOCK_EX);
-                ftruncate($all_hosts_file, 0);
-                fwrite($all_hosts_file, $all_hosts);
-                flock($all_hosts_file, LOCK_UN);
-                fclose($all_hosts_file);
+                $newAllHostsFile = fopen($cms_root . "/conf/all_hosts.dat", "сb");
+                flock($newAllHostsFile, LOCK_EX);
+                ftruncate($newAllHostsFile, 0);
+                fwrite($newAllHostsFile, $all_hosts);
+                flock($newAllHostsFile, LOCK_UN);
+                fclose($newAllHostsFile);
        		};
        		$hits_file=file($cms_root."/conf/hits.dat");
        		$all_hits_file=file($cms_root."/conf/all_hits.dat");
