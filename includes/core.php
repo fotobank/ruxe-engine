@@ -1244,7 +1244,7 @@ class GlobalUsers
 	{
 		global $cms_root;
 		include($cms_root.'/conf/users/config.dat');
-		$n = fopen($cms_root . '/conf/users/config.dat', 'c');
+		$n = fopen($cms_root . '/conf/users/config.dat', 'cb');
 		flock($n, LOCK_EX);
 		fseek($n, 0);
         ftruncate($n, 0);
@@ -3357,7 +3357,7 @@ class FileManager
                         fclose($ip_file);
                         $hosts += 1;
                         $all_hosts += 1;
-                $all_hosts_file = fopen($cms_root . "/conf/all_hosts.dat", "с");
+                $all_hosts_file = fopen($cms_root . "/conf/all_hosts.dat", "сb");
                 flock($all_hosts_file, LOCK_EX);
                 fseek($all_hosts_file, 0);
                 ftruncate($all_hosts_file, 0);
@@ -3372,7 +3372,7 @@ class FileManager
        		$hits +=1;
        		$all_hits +=1;
 
-        $hits_file = fopen($cms_root . "/conf/hits.dat", "c");
+        $hits_file = fopen($cms_root . "/conf/hits.dat", "cb");
         flock($hits_file, LOCK_EX);
         fseek($hits_file, 0);
         ftruncate($hits_file, 0);
@@ -3380,7 +3380,7 @@ class FileManager
         flock($hits_file, LOCK_UN);
         fclose($hits_file);
 
-        $all_hits_file = fopen($cms_root . "/conf/all_hits.dat", "c");
+        $all_hits_file = fopen($cms_root . "/conf/all_hits.dat", "cb");
         flock($all_hits_file, LOCK_EX);
         fseek($all_hits_file, 0);
         ftruncate($all_hits_file, 0);
@@ -3418,7 +3418,7 @@ class FileManager
 			//Запись в конце производить
 			if ($needrewriteall)
 			{
-                $new = fopen($cms_root . '/conf/logs/log.log', 'c');
+                $new = fopen($cms_root . '/conf/logs/log.log', 'cb');
                 flock($new, LOCK_EX);
                 fseek($new, 0);
                 ftruncate($new, 0);

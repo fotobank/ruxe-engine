@@ -405,7 +405,7 @@ if ($cms_needrecord == 1)
 { 
    $record_online = file($cms_root."/conf/online.dat");
     if ($online_count > $record_online[0]) {
-        $record_online = fopen($cms_root . "/conf/online.dat", "c");
+        $record_online = fopen($cms_root . "/conf/online.dat", "cb");
         flock($record_online, LOCK_EX);
         fseek($record_online, 0);
         ftruncate($record_online, 0);
@@ -419,7 +419,7 @@ if ($online_index >=11 && $online_index <= 14)
       $online_index = 0;
 else
       $online_index = ($online_index %= 10) < 5 ? ($online_index > 2 ? 2 : $online_index): 0;
-$new_online = fopen($cms_root . "/conf/online_users.dat", "c");
+$new_online = fopen($cms_root . "/conf/online_users.dat", "cb");
 flock($new_online, LOCK_EX);
 fseek($new_online, 0);
 ftruncate($new_online, 0);

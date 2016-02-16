@@ -168,7 +168,7 @@ if ($action=="link")
                             			setcookie('view'.$b[0].$l[6], 'viewed', time() + 1209600,"/");
                             			$views = file($cms_root."/conf/".$b[0]."/views.dat");
 
-									$newviews = fopen($cms_root . "/conf/" . $b[0] . "/views.dat", "c");
+									$newviews = fopen($cms_root . "/conf/" . $b[0] . "/views.dat", "cb");
 									flock($newviews, LOCK_EX);
                                     fseek($newviews, 0);
                                     ftruncate($newviews, 0);
@@ -231,7 +231,7 @@ if ($action=="go")
    	$sv_views	=	file($cms_root."/conf/count_links.dat");
    	$sv_found	=	0;
    	$sv_line	=	0;
-    $new_view = fopen($cms_root . "/conf/count_links.dat", "c");
+    $new_view = fopen($cms_root . "/conf/count_links.dat", "cb");
     flock($new_view, LOCK_EX);
     fseek($new_view, 0);
     ftruncate($new_view, 0);
@@ -326,7 +326,7 @@ if ($action=="download")
 		$sv_views =	file($cms_root."/conf/downloads.dat");
 		$sv_found =	0;
 		$sv_line  =	0;
-        $new_view = fopen($cms_root . "/conf/downloads.dat", "c");
+        $new_view = fopen($cms_root . "/conf/downloads.dat", "cb");
         flock($new_view, LOCK_EX);
         fseek($new_view, 0);
         ftruncate($new_view, 0);
@@ -552,7 +552,7 @@ if ($action=="rotator")
 		};
 		if ($founded)
 		{
-            $file = fopen($cms_root . "/conf/rotator_count.dat", "c");
+            $file = fopen($cms_root . "/conf/rotator_count.dat", "cb");
             flock($file, LOCK_EX);
             fseek($file, 0);
             ftruncate($file, 0);

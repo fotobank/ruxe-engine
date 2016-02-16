@@ -97,7 +97,7 @@
                      $vb[$answer]++;
                      setcookie("vote_".$line[0], "voted", time() + 144000,"/");
 
-                   $newvote = fopen($cms_root . "/conf/votes/vote_" . $line[0] . ".dat", "c");
+                   $newvote = fopen($cms_root . "/conf/votes/vote_" . $line[0] . ".dat", "cb");
                    flock($newvote, LOCK_EX);
                    fseek($newvote, 0);
                    ftruncate($newvote, 0);
