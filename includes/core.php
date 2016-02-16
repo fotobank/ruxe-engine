@@ -3356,7 +3356,7 @@ class FileManager
                         fclose($ip_file);
                         $hosts += 1;
                         $all_hosts += 1;
-                $newAllHostsFile = fopen($cms_root . "/conf/all_hosts.dat", "сb");
+                $newAllHostsFile = fopen($cms_root . "/conf/all_hosts.dat", "cb");
                 flock($newAllHostsFile, LOCK_EX);
                 ftruncate($newAllHostsFile, 0);
                 fwrite($newAllHostsFile, $all_hosts);
