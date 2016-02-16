@@ -1246,7 +1246,6 @@ class GlobalUsers
 		include($cms_root.'/conf/users/config.dat');
 		$n = fopen($cms_root . '/conf/users/config.dat', 'cb');
 		flock($n, LOCK_EX);
-		fseek($n, 0);
         ftruncate($n, 0);
 		fwrite($n, "<?php\r\n");
 		for ($i = 1; $i <= 7; $i++) {
@@ -3359,7 +3358,6 @@ class FileManager
                         $all_hosts += 1;
                 $all_hosts_file = fopen($cms_root . "/conf/all_hosts.dat", "сb");
                 flock($all_hosts_file, LOCK_EX);
-                fseek($all_hosts_file, 0);
                 ftruncate($all_hosts_file, 0);
                 fwrite($all_hosts_file, $all_hosts);
                 flock($all_hosts_file, LOCK_UN);
@@ -3374,7 +3372,6 @@ class FileManager
 
         $hits_file = fopen($cms_root . "/conf/hits.dat", "cb");
         flock($hits_file, LOCK_EX);
-        fseek($hits_file, 0);
         ftruncate($hits_file, 0);
         fwrite($hits_file, $hits);
         flock($hits_file, LOCK_UN);
@@ -3382,7 +3379,6 @@ class FileManager
 
         $all_hits_file = fopen($cms_root . "/conf/all_hits.dat", "cb");
         flock($all_hits_file, LOCK_EX);
-        fseek($all_hits_file, 0);
         ftruncate($all_hits_file, 0);
         fwrite($all_hits_file, $all_hits);
         flock($all_hits_file, LOCK_UN);
@@ -3420,7 +3416,6 @@ class FileManager
 			{
                 $new = fopen($cms_root . '/conf/logs/log.log', 'cb');
                 flock($new, LOCK_EX);
-                fseek($new, 0);
                 ftruncate($new, 0);
                 fwrite($new, implode("", $original));
                 fwrite($new, $page . "[=]" . $from . "[=]" . $browser . "[=]" . $ip . "[=]" . $date . "[=]" . $whom . "[=]\r\n");

@@ -170,7 +170,6 @@ if ($action=="link")
 
 									$newviews = fopen($cms_root . "/conf/" . $b[0] . "/views.dat", "cb");
 									flock($newviews, LOCK_EX);
-                                    fseek($newviews, 0);
                                     ftruncate($newviews, 0);
 									foreach ($views as $view) {
 										$vie = explode("|", $view);
@@ -233,7 +232,6 @@ if ($action=="go")
    	$sv_line	=	0;
     $new_view = fopen($cms_root . "/conf/count_links.dat", "cb");
     flock($new_view, LOCK_EX);
-    fseek($new_view, 0);
     ftruncate($new_view, 0);
     foreach ($sv_views as $sv_elemetns) {
         $sv_elemetn = trim($sv_elemetns);
@@ -328,7 +326,6 @@ if ($action=="download")
 		$sv_line  =	0;
         $new_view = fopen($cms_root . "/conf/downloads.dat", "cb");
         flock($new_view, LOCK_EX);
-        fseek($new_view, 0);
         ftruncate($new_view, 0);
         foreach ($sv_views as $sv_elemetns) {
             $sv_elemetn = trim($sv_elemetns);
@@ -554,7 +551,6 @@ if ($action=="rotator")
 		{
             $file = fopen($cms_root . "/conf/rotator_count.dat", "cb");
             flock($file, LOCK_EX);
-            fseek($file, 0);
             ftruncate($file, 0);
             foreach ($new_count as $new)
                 fwrite($file, $new . "\r\n");

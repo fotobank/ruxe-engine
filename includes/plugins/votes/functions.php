@@ -99,7 +99,6 @@
 
                    $newvote = fopen($cms_root . "/conf/votes/vote_" . $line[0] . ".dat", "cb");
                    flock($newvote, LOCK_EX);
-                   fseek($newvote, 0);
                    ftruncate($newvote, 0);
                    fwrite($newvote, $vine[0] . "|" . serialize($va) . "|" . serialize($vb) . "|" . serialize($vc) . "|");
                    flock($newvote, LOCK_UN);

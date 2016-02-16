@@ -359,7 +359,6 @@ function here_hided_counter_views($id = 'noidused')
        $sv_line   = 0;
     $new_view = fopen($cms_root . "/conf/views.dat", "cb");
     flock($new_view, LOCK_EX);
-    fseek($new_view, 0);
     ftruncate($new_view, 0);
     foreach ($sv_views as $sv_elemetns) {
         $sv_elemetn = trim($sv_elemetns);
@@ -448,7 +447,6 @@ function here_rotator()
 
         $ll = fopen($cms_root . "/conf/last_rotator.dat", "cb");
         flock($ll, LOCK_EX);
-        fseek($ll, 0);
         ftruncate($ll, 0);
         fwrite($ll, $last);
         flock($ll, LOCK_UN);
@@ -854,7 +852,6 @@ global $cms_root,$cms_site,$cms_smiles,$_GET,$_SERVER,$_POST,$lcms,
 					{
 						$new_counters = fopen($cms_root."/conf/".$type."/views.dat","cb");
 						flock($new_counters,LOCK_EX);
-                        fseek($new_counters, 0);
                         ftruncate($new_counters, 0);
 					};
 					$fnc = $comment;
