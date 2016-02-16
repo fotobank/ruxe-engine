@@ -96,11 +96,15 @@
                      $vc[] = $ip;
                      $vb[$answer]++;
                      setcookie("vote_".$line[0], "voted", time() + 144000,"/");
-                     $newvote = fopen($cms_root."/conf/votes/vote_".$line[0].".dat","w");
-                     flock($newvote,LOCK_EX);
-                     fwrite($newvote,$vine[0]."|".serialize($va)."|".serialize($vb)."|".serialize($vc)."|");
-                     flock($newvote,LOCK_UN);
-                     fclose($newvote);
+
+                   $newvote = fopen($cms_root . "/conf/votes/vote_" . $line[0] . ".dat", "c");
+                   flock($newvote, LOCK_EX);
+                   fseek($newvote, 0);
+                   ftruncate($newvote, 0);
+                   fwrite($newvote, $vine[0] . "|" . serialize($va) . "|" . serialize($vb) . "|" . serialize($vc) . "|");
+                   flock($newvote, LOCK_UN);
+                   fclose($newvote);
+
                      $pagetitle    = "Ваше мнение учтено";
                      $pageredirect = $_SERVER['HTTP_REFERER'];
                      (strstr($pageredirect,"?")) ? $pageredirect.="&vote=".$line[0] : $pageredirect.="?vote=".$line[0];

@@ -404,13 +404,14 @@ $online_count++;
 if ($cms_needrecord == 1)
 { 
    $record_online = file($cms_root."/conf/online.dat");
-   if ($online_count>$record_online[0])
-   {
-    $record_online = fopen($cms_root."/conf/online.dat","w");
-    flock($record_online,LOCK_EX);
-    fwrite($record_online,$online_count);
-    flock($record_online,LOCK_UN);
-    fclose($record_online);
+    if ($online_count > $record_online[0]) {
+        $record_online = fopen($cms_root . "/conf/online.dat", "c");
+        flock($record_online, LOCK_EX);
+        fseek($record_online, 0);
+        ftruncate($record_online, 0);
+        fwrite($record_online, $online_count);
+        flock($record_online, LOCK_UN);
+        fclose($record_online);
    };
 };
 $online_index = $online_count % 100;
@@ -418,14 +419,15 @@ if ($online_index >=11 && $online_index <= 14)
       $online_index = 0;
 else
       $online_index = ($online_index %= 10) < 5 ? ($online_index > 2 ? 2 : $online_index): 0;
-$new_online = fopen($cms_root."/conf/online_users.dat","w");
-flock($new_online,LOCK_EX);
-for ($onl=0; $onl<count($new_online_data); $onl++)
-{
-    $new_online_data[$onl] = str_replace("\r\n","",$new_online_data[$onl]);
-    fwrite($new_online,$new_online_data[$onl]."\r\n");
+$new_online = fopen($cms_root . "/conf/online_users.dat", "c");
+flock($new_online, LOCK_EX);
+fseek($new_online, 0);
+ftruncate($new_online, 0);
+for ($onl = 0; $onl < count($new_online_data); $onl++) {
+    $new_online_data[$onl] = str_replace("\r\n", "", $new_online_data[$onl]);
+    fwrite($new_online, $new_online_data[$onl] . "\r\n");
 };
-flock($new_online,LOCK_UN);
+flock($new_online, LOCK_UN);
 fclose($new_online);
 
 $pathsfile = file("conf/paths.dat");

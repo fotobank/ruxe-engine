@@ -1244,16 +1244,17 @@ class GlobalUsers
 	{
 		global $cms_root;
 		include($cms_root.'/conf/users/config.dat');
-		$n = fopen($cms_root.'/conf/users/config.dat','w');
-		flock($n,LOCK_EX);
-		fwrite($n,"<?php\r\n");
-		for ($i=1; $i<=7; $i++)
-		{
-			fwrite($n,"\$polecaption[".$i."] = \"".$polecaption[$i]."\";\r\n");
-			fwrite($n,"\$pole[".$i."] = \"".$pole[$i]."\";\r\n");
+		$n = fopen($cms_root . '/conf/users/config.dat', 'c');
+		flock($n, LOCK_EX);
+		fseek($n, 0);
+        ftruncate($n, 0);
+		fwrite($n, "<?php\r\n");
+		for ($i = 1; $i <= 7; $i++) {
+			fwrite($n, "\$polecaption[" . $i . "] = \"" . $polecaption[$i] . "\";\r\n");
+			fwrite($n, "\$pole[" . $i . "] = \"" . $pole[$i] . "\";\r\n");
 		};
-		fwrite($n,"\$lastid = ".($lastid+1).";\r\n");
-		flock($n,LOCK_UN);
+		fwrite($n, "\$lastid = " . ($lastid + 1) . ";\r\n");
+		flock($n, LOCK_UN);
 		fclose($n);
 		return $lastid+1;
 	}
@@ -1290,14 +1291,14 @@ class GlobalUsers
                          		$newpoles   = $usersfruits;
                          		for ($i=0; $i<=$countpoles; $i++)
                          		{
-                                            if (strstr($usersfruits[$i],"ReStandartConst")) 
+                                            if (strstr($usersfruits[$i],"ReStandartConst"))
                                             	$newpoles[$i] = $line[$i];
                                         };
-                         
+
                          		switch ($condition)
                          		{
                                             case "pos":
-                                                       ($pos==$check) ? fwrite($new,implode("|",$newpoles)."|\r\n") : fwrite($new,$orig);  
+                                                       ($pos==$check) ? fwrite($new,implode("|",$newpoles)."|\r\n") : fwrite($new,$orig);
                                                        break;
                                             case "mail":
                                                        ($Filtr->tolower($line[2])==$Filtr->tolower($check)) ? fwrite($new,implode("|",$newpoles)."|\r\n") : fwrite($new,$orig);
@@ -1307,9 +1308,9 @@ class GlobalUsers
                                                        break;
                                             case 'id':
                                             	($line[0]==(int)$check) ? fwrite($new,implode('|',$newpoles)."|\r\n") : fwrite($new,$orig);
-                                            	break; 
+                                            	break;
                          		};
-                         		$pos++;     
+                         		$pos++;
               			};
       			}
       			else
@@ -1317,7 +1318,7 @@ class GlobalUsers
               			for ($i=0; $i<=$countpoles; $i++)
 
               			{
-                                            if (strstr($usersfruits[$i],"ReStandartConst")) 
+                                            if (strstr($usersfruits[$i],"ReStandartConst"))
                                             	$usersfruits[$i] = '';
                                 };
               			fputs($new,implode("|",$usersfruits)."|\r\n");
@@ -3356,11 +3357,13 @@ class FileManager
                         fclose($ip_file);
                         $hosts += 1;
                         $all_hosts += 1;
-                        $all_hosts_file = fopen($cms_root."/conf/all_hosts.dat", "w");
-                        flock($all_hosts_file,LOCK_EX);
-                        fwrite($all_hosts_file, $all_hosts);
-                        flock($all_hosts_file,LOCK_UN);
-                        fclose($all_hosts_file);
+                $all_hosts_file = fopen($cms_root . "/conf/all_hosts.dat", "с");
+                flock($all_hosts_file, LOCK_EX);
+                fseek($all_hosts_file, 0);
+                ftruncate($all_hosts_file, 0);
+                fwrite($all_hosts_file, $all_hosts);
+                flock($all_hosts_file, LOCK_UN);
+                fclose($all_hosts_file);
        		};
        		$hits_file=file($cms_root."/conf/hits.dat");
        		$all_hits_file=file($cms_root."/conf/all_hits.dat");
@@ -3368,16 +3371,22 @@ class FileManager
        		$all_hits = isset($all_hits_file[0]) ? (int)$all_hits_file[0] : 0;
        		$hits +=1;
        		$all_hits +=1;
-       		$hits_file=fopen($cms_root."/conf/hits.dat", "w");
-       		flock($hits_file,LOCK_EX);
-       		fwrite($hits_file, $hits);
-       		flock($hits_file,LOCK_UN);
-       		fclose($hits_file);
-       		$all_hits_file=fopen($cms_root."/conf/all_hits.dat", "w");
-       		flock($all_hits_file,LOCK_EX);
-       		fwrite($all_hits_file, $all_hits); 
-       		flock($all_hits_file,LOCK_UN); 
-       		fclose($all_hits_file);
+
+        $hits_file = fopen($cms_root . "/conf/hits.dat", "c");
+        flock($hits_file, LOCK_EX);
+        fseek($hits_file, 0);
+        ftruncate($hits_file, 0);
+        fwrite($hits_file, $hits);
+        flock($hits_file, LOCK_UN);
+        fclose($hits_file);
+
+        $all_hits_file = fopen($cms_root . "/conf/all_hits.dat", "c");
+        flock($all_hits_file, LOCK_EX);
+        fseek($all_hits_file, 0);
+        ftruncate($all_hits_file, 0);
+        fwrite($all_hits_file, $all_hits);
+        flock($all_hits_file, LOCK_UN);
+        fclose($all_hits_file);
        		if ($cms_needlog==1)
        		{
 				$logFileName = $cms_root.'/conf/logs/log.log';
@@ -3409,12 +3418,14 @@ class FileManager
 			//Запись в конце производить
 			if ($needrewriteall)
 			{
-				$new		=	fopen($cms_root.'/conf/logs/log.log','w');
-				flock($new,LOCK_EX);
-				fwrite($new,implode("",$original));
-				fwrite($new,$page."[=]".$from."[=]".$browser."[=]".$ip."[=]".$date."[=]".$whom."[=]\r\n");
-				flock($new,LOCK_UN);
-				fclose($new);
+                $new = fopen($cms_root . '/conf/logs/log.log', 'c');
+                flock($new, LOCK_EX);
+                fseek($new, 0);
+                ftruncate($new, 0);
+                fwrite($new, implode("", $original));
+                fwrite($new, $page . "[=]" . $from . "[=]" . $browser . "[=]" . $ip . "[=]" . $date . "[=]" . $whom . "[=]\r\n");
+                flock($new, LOCK_UN);
+                fclose($new);
 			}
 			else
 			{
