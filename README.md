@@ -99,9 +99,9 @@ RE работает полностью в UTF-8 кодировке, поддер
 ### 2. Пример оформления простейшего шаблона страницы в файле index.php
 
 ```html
-<!-- Тип документа и синтаксиса языка разметки; RuxeEngine адаптирован под HTMLv4.01 Transitional -->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!-- Тип документа и синтаксиса языка разметки; Ruxe Engine адаптирован под HTML5 -->
+<!DOCTYPE html>
+<html lang="ru">
 <head>
         <!-- Заголовок страницы -->
         <title><?php here_title(); ?></title>

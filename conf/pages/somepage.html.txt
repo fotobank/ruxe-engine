@@ -107,9 +107,9 @@
     </p>
     <h4>2. Пример оформления простейшего шаблона страницы в файле index.php.</h4>
     <p>
-        <font color="green">&lt;!-- Тип документа и синтаксиса языка разметки; RuxeEngine адаптирован под HTMLv4.01 Transitional --&gt;</font><br>
-        &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;<br>
-        &lt;html&gt;<br>
+        <font color="green">&lt;!-- Тип документа и синтаксиса языка разметки; Ruxe Engine адаптирован под HTML5 --&gt;</font><br>
+        &lt;!DOCTYPE html&gt;<br>
+        &lt;html lang="ru"&gt;<br>
         &lt;head&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Заголовок страницы --&gt;</font><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;&lt;?php here_title(); ?&gt;&lt;/title&gt;<br>
