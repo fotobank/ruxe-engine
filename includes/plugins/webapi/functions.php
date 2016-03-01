@@ -8,6 +8,13 @@ require_once __DIR__ . "/Config.php";
 require_once __DIR__ . "/WebAPI.php";
 require_once __DIR__ . "/User.php";
 require_once __DIR__ . "/WebAPIException.php";
+require_once __DIR__ . "/Request.php";
+require_once __DIR__ . "/IAPIMethod.php";
+require_once __DIR__ . "/AAPIMethod.php";
+require_once __DIR__ . "/API/GetAdminNotifications.php";
+require_once __DIR__ . "/API/GetVersion.php";
+require_once __DIR__ . "/API/GetNewToken.php";
+
 
 class WebAPI1 {
 

@@ -8,7 +8,9 @@ class Request
 
     public function __construct($query)
     {
-        $this->query = $query;
+        global $Filtr;
+
+        $this->query = $Filtr->clear($query);
     }
 
     public function getLogin()
@@ -19,5 +21,13 @@ class Request
     public function getPassword()
     {
         return isset($_POST["password"]) ? $_POST["password"] : "no";
+    }
+
+    public function getAPIClassName()
+    {
+        if (! preg_match("~^([a-z]+)$~i", $this->query))
+            return false;
+
+        return $this->query;
     }
 }

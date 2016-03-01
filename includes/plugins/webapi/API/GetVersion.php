@@ -2,9 +2,13 @@
 
 namespace RuxeEngine\Plugins\WebAPI\API;
 
-use includes\plugins\webapi\IAPIMethod;
+use RuxeEngine\Plugins\WebAPI\AAPIMethod;
+use RuxeEngine\Plugins\WebAPI\IAPIMethod;
 
-class GetVersion implements IAPIMethod
+class GetVersion extends AAPIMethod implements IAPIMethod
 {
-
+    public function process()
+    {
+        // TODO: Implement process() method.
+    }
 }
