@@ -752,7 +752,7 @@ echo '</div>
 			$finfo	=	'grey';
 			$sinfo	=	', рекомендуется';
 		};
-		//<tr><td align="left">Включить поддержку кириллических доменов:<br><font style="color:grey;font-size:8pt;">Автоматическое преобразование кириллических доменов (напр., <i>мой-черновик.рф</i>) в Punycode (<b>требуется PHP версии 5.2 или новее</b>).</font></td><td><select name="pc"><option value="yes">Да<option value="no" selected>Нет</select></td></tr>
+		//<tr><td align="left">Включить поддержку кириллических доменов:<br><font style="color:grey;font-size:8pt;">Автоматическое преобразование кириллических доменов в Punycode.</font></td><td><select name="pc"><option value="yes">Да<option value="no" selected>Нет</select></td></tr>
                 echo '<h3>Установка главных параметров</h3><br>
                 <form name="edit" action="?step=6&rand='.rand(0,99999).'" method="post">
                  <center><table border=0 cellpadding=5>

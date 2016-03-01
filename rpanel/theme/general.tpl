@@ -116,7 +116,7 @@
 		<tr><td>Скрывать текст <font class="desc">http://</font> при работе модуля "Каталог ссылок":</td><td><select name="http"><option value="1" {HTTPSHOW1}>Да<option value="0" {HTTPSHOW2}>Нет</select></td></tr>
 		<tr><td>Запретить индексацию поисковиками каталога ссылок:</td><td><select name="noindex"><option value="1" {NOINDEXSHOW1}>Да<option value="0" {NOINDEXSHOW2}>Нет</select></td></tr>
 		<tr><td>Whois сервис, используемый в админ-центре:<font class="desc"><br>В конец адреса подставляется IP, поэтому следует учесть параметры типа ?q=, ?ip= и др.</font></td><td><input type="text" size=46 name="whois" value="{WHOIS}"></td></tr>
-		<tr><td>Включить поддержку кириллических доменов:<br><font class="desc">Автоматическое преобразование кириллических доменов (напр., <i>мой-черновик.рф</i>) в Punycode (<b>требуется PHP версии 5.2.17 или новее</b>)</font></td><td><select name="punycode"><option value="1" {PUNYCODE1}>Да<option value="0" {PUNYCODE2}>Нет</select></td></tr>
+		<tr><td>Включить поддержку кириллических доменов:<br><font class="desc">Автоматическое преобразование кириллических доменов в Punycode</font></td><td><select name="punycode"><option value="1" {PUNYCODE1}>Да<option value="0" {PUNYCODE2}>Нет</select></td></tr>
 		<tr><td>Использовать обратную навигацию:</td><td><select name="nav_back"><option value="1" {NAV_BACK1}>Да<option value="0" {NAV_BACK2}>Нет</select></td></tr>
 	<tr class="sub"><td colspan=2><input type="submit" name="submit" value="Сохранить все изменения"></td></tr>
 </table>

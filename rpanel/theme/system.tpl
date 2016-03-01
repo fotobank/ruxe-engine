@@ -29,7 +29,7 @@
 <input type="hidden" name="check" value="{CONFBACKUPCHECK}">
 <table class="optionstable" cellpadding=1 cellspacing=0>
 	<tr class="titletable"><td colspan=4><a name="confbackup"></a>ПОЛНОЕ РЕЗЕРВНОЕ КОПИРОВАНИЕ КОНФИГУРАЦИИ В ZIP АРХИВ</td></tr>
-	<tr><td colspan=4><font class="desc">Полная резервная копия кофигурации включает в себя каталоги /avatars/, /conf/, /themes/. Для создания резервной копии требуется PHP версии 5.2 или новее.</font></td></tr>
+	<tr><td colspan=4><font class="desc">Полная резервная копия кофигурации включает в себя каталоги /avatars/, /conf/, /themes/.</font></td></tr>
 	<tr class="titletable"><td width=200>ДАТА</td><td>ИМЯ АРХИВА</td><td>РАЗМЕР</td><td>ДЕЙСТВИЯ</td></tr>
 	{CONFBACKUPLIST}
 	<tr class="sub"><td colspan=4><input type="submit" name="submit" value="Создать полную резервную копию конфигурации"></td></tr>
