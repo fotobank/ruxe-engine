@@ -24,25 +24,5 @@ class WebAPI
         /** @var IAPIMethod $method */
         $method = new $class(new Config(), $request, new User());
         $method->process();
-
-/*
-        switch ($request) {
-            case "getAdminNotifications":
-
-                break;
-            case "getNewToken":
-
-                break;
-            case "getVersion":
-                $api->checkTokenPOST();
-                if (! $api->isCorrectToken($_POST["token"])) {
-                    $api->sendErrorResponse("Token не задан или не верен.");
-                }
-
-                $api->sendResponse(true, ["version" => $this_version]);
-                break;
-            default:
-
-        }*/
     }
 }

@@ -4,14 +4,21 @@ namespace RuxeEngine\Plugins\WebAPI\API;
 
 use RuxeEngine\Plugins\WebAPI\AAPIMethod;
 use RuxeEngine\Plugins\WebAPI\IAPIMethod;
+use RuxeEngine\Plugins\WebAPI\Response;
+use RuxeEngine\Plugins\WebAPI\Token;
 
 class GetAdminNotifications extends AAPIMethod implements IAPIMethod
 {
     public function process()
     {
-        $api->checkTokenPOST();
-        if (! $api->isCorrectToken($_POST["token"])) {
-            $api->sendErrorResponse("Token не задан или не верен.");
+        global $cms_root;
+
+        if (! isset($_POST["token"])) {
+            Response::sendError("Некорректный запрос: отсутствует token.");
+        }
+        $token = new Token($this->config, $_POST["token"]);
+        if (! $token->isCorrect()) {
+            Response::sendError("Token не задан или не верен.");
         }
 
         $notifications = [];
@@ -25,6 +32,6 @@ class GetAdminNotifications extends AAPIMethod implements IAPIMethod
             ];
         }
 
-        $api->sendResponse(true, ["notifications" => array_reverse($notifications)]);
+        Response::send(true, ["notifications" => array_reverse($notifications)]);
     }
 }
