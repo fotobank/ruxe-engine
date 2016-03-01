@@ -16,10 +16,10 @@
  *
  */
 
-$installer_version = '1.9 Beta';
+$installer_version = "1.9 Beta 2";
 
-include('conf/config.php');
-include("includes/core.php");
+include(__DIR__ . '/conf/config.php');
+include(__DIR__ . "/includes/core.php");
 
 if ($installer_version != $this_version)
 {

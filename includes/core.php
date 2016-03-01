@@ -16,7 +16,7 @@
  *
  */
 
-$this_version = '1.9 Beta';
+$this_version = "1.9 Beta 2";
 
 class Filtr
 {

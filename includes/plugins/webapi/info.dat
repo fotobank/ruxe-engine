@@ -10,7 +10,8 @@
 
 $name        = "WebAPI";
 $version     = "1.0";
-$description = "Внешнее API для работы с Android приложением <a href=\"ahrameev.ru/project/ruxe-engine-monitor.html\" target=\"_blank\">Ruxe Engine Monitor</a>";
+$description = "Внешнее API для работы с Android приложением <a href=\"http://ahrameev.ru/project/ruxe-engine-monitor.html\" target=\"_blank\">Ruxe Engine Monitor</a>.<br>
+Совместимость: <font color=\"green\"><strong>Ruxe Engine 1.9, PHP 5.4</strong></font>";
 $author      = "Ахрамеев Денис Викторович";
 $site        = "http://ahrameev.ru/";
 $addaction   = 1;
