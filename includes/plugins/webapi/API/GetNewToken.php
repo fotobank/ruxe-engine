@@ -6,7 +6,21 @@ use RuxeEngine\Plugins\WebAPI\AAPIMethod;
 use RuxeEngine\Plugins\WebAPI\IAPIMethod;
 use RuxeEngine\Plugins\WebAPI\Response;
 use RuxeEngine\Plugins\WebAPI\Token;
+use RuxeEngine\Plugins\WebAPI\WebAPIException;
 
+/**
+ * Class GetNewToken
+ *
+ * Генерирует новый токен, сохраняет его и возвращает JSON результат вида
+ * [
+ *     "status" => "good",
+ *     "token" => string
+ * ]
+ *
+ * @author Ахрамеев Денис Викторович (contact@ahrameev.ru)
+ * @link http://ahrameev.ru
+ * @package RuxeEngine\Plugins\WebAPI\API
+ */
 class GetNewToken extends AAPIMethod implements IAPIMethod
 {
     public function process()
@@ -23,12 +37,15 @@ class GetNewToken extends AAPIMethod implements IAPIMethod
             Response::sendError("Указанный пользователь не является администратором или логин/пароль не верны.");
         }
 
-        $token = Token::generate($this->request->getLogin(), $Filtr->clear($_POST['secret']));
+        try {
+            $token = Token::generate($this->request->getLogin(), $Filtr->clear($_POST['secret']));
+            $conf = $this->config->get();
+            $conf['token'] = $token;
+            $this->config->set($conf);
 
-        $conf = $this->config->get();
-        $conf['token'] = $token;
-        $this->config->set($conf);
-
-        Response::send(true, ["token" => $token]);
+            Response::send(true, ["token" => $token]);
+        } catch (WebAPIException $e) {
+            Response::sendError($e->getMessage());
+        }
     }
 }

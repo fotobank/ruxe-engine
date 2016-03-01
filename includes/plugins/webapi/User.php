@@ -2,8 +2,20 @@
 
 namespace RuxeEngine\Plugins\WebAPI;
 
+/**
+ * Class User
+ *
+ * @author Ахрамеев Денис Викторович (contact@ahrameev.ru)
+ * @link http://ahrameev.ru
+ * @package RuxeEngine\Plugins\WebAPI
+ */
 class User
 {
+    /**
+     * @param string $login
+     * @param string $password не хэш, а именно пароль
+     * @return bool
+     */
     public function isAdmin($login, $password)
     {
         global $cms_root, $Filtr;

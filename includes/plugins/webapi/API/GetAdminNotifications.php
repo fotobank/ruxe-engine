@@ -7,6 +7,27 @@ use RuxeEngine\Plugins\WebAPI\IAPIMethod;
 use RuxeEngine\Plugins\WebAPI\Response;
 use RuxeEngine\Plugins\WebAPI\Token;
 
+/**
+ * Class GetAdminNotifications
+ *
+ * Возвращает JSON результат вида
+ * [
+ *     "status" => "good",
+ *     "notifications" => [
+ *         [
+ *             "title" => string,
+ *             "warning" => bool,
+ *             "content" => string
+ *         ],
+ *         ...
+ *     ]
+ * ]
+ * с новыми сообщениями из админ-центра
+ *
+ * @author Ахрамеев Денис Викторович (contact@ahrameev.ru)
+ * @link http://ahrameev.ru
+ * @package RuxeEngine\Plugins\WebAPI\API
+ */
 class GetAdminNotifications extends AAPIMethod implements IAPIMethod
 {
     public function process()

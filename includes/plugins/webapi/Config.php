@@ -2,10 +2,25 @@
 
 namespace RuxeEngine\Plugins\WebAPI;
 
+/**
+ * Class Config
+ *
+ * Конфигурация плагина
+ *
+ * @author Ахрамеев Денис Викторович (contact@ahrameev.ru)
+ * @link http://ahrameev.ru
+ * @package RuxeEngine\Plugins\WebAPI
+ */
 class Config
 {
+    /**
+     * @var string
+     */
     protected $confFileName;
 
+    /**
+     * Config constructor.
+     */
     public function __construct()
     {
         global $cms_root;
@@ -13,6 +28,11 @@ class Config
         $this->confFileName = $cms_root . "/conf/webapi.json";
     }
 
+    /**
+     * Возвращает конфигурацию плагина
+     *
+     * @return array
+     */
     public function get()
     {
         if (! file_exists($this->confFileName)) {
@@ -28,6 +48,11 @@ class Config
         return $result;
     }
 
+    /**
+     * Устанавливает и сохраняет конфигурацию плагина
+     *
+     * @param array $conf
+     */
     public function set(array $conf)
     {
         $file = fopen($this->confFileName, "w");

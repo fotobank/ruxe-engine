@@ -7,6 +7,19 @@ use RuxeEngine\Plugins\WebAPI\IAPIMethod;
 use RuxeEngine\Plugins\WebAPI\Response;
 use RuxeEngine\Plugins\WebAPI\Token;
 
+/**
+ * Class GetVersion
+ *
+ * Возвращает версию установленного на сайте Ruxe Engine в JSON формате вида:
+ * [
+ *     "status" => "good",
+ *     "version" => string
+ * ]
+ *
+ * @author Ахрамеев Денис Викторович (contact@ahrameev.ru)
+ * @link http://ahrameev.ru
+ * @package RuxeEngine\Plugins\WebAPI\API
+ */
 class GetVersion extends AAPIMethod implements IAPIMethod
 {
     public function process()

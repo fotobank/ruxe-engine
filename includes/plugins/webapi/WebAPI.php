@@ -2,6 +2,13 @@
 
 namespace RuxeEngine\Plugins\WebAPI;
 
+/**
+ * Class WebAPI
+ *
+ * @author Ахрамеев Денис Викторович (contact@ahrameev.ru)
+ * @link http://ahrameev.ru
+ * @package RuxeEngine\Plugins\WebAPI
+ */
 class WebAPI
 {
     public function start()
