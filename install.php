@@ -33,7 +33,7 @@ if ($installer_version != $this_version)
 	die('Инсталлятор предназначен только для '.$installer_version.' версии');
 };
 
-if (!isset($_GET['step'])) 
+if (!isset($_GET['step']))
 	$_GET['step']='install';
 //header("location: install.php?step=install&rand=".rand(1,999));
 
@@ -98,7 +98,7 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
 	border-bottom: 1px solid silver;
 	background-color: #F5F5F5;
    }
-   input:hover, textarea:hover { 
+   input:hover, textarea:hover {
 	border-left: 1px solid #000000;
 	border-top: 1px solid #000000;
 	border-right: 1px solid #000000;
@@ -176,7 +176,7 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
 </form>
  </div>           
 </div></Center>    
-            '; 
+            ';
             break;
        case "2":
             echo '
@@ -306,15 +306,15 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
                 'rpanel/theme/edit_area/reg_syntax/html.js',
                 'rpanel/theme/edit_area/reg_syntax/js.js',
                 'rpanel/theme/edit_area/reg_syntax/php.js',
-		
-		
-		
-		
+
+
+
+
 		//tinymce
 		'rpanel/theme/tiny_mce/license.txt',
 		'rpanel/theme/tiny_mce/tinymce.min.js',
 		//
-		
+
 		//elRTE
 		/*'rpanel/theme/elrte/css/elrte.full.css',
 		'rpanel/theme/elrte/css/elrte.min.css',
@@ -346,9 +346,9 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
 		'rpanel/theme/elrte/js/jquery-ui-1.8.13.custom.min.js',
 		'rpanel/theme/elrte/js/i18n/elrte.en.js',
 		'rpanel/theme/elrte/js/i18n/elrte.ru.js',*/
-		
-		
-		
+
+
+
                 'rpanel/theme/images/arrow-down.gif',
                 'rpanel/theme/images/birthday.jpg',
                 'rpanel/theme/images/dir.png',
@@ -374,23 +374,16 @@ $addpath2 = $_SERVER['HTTP_HOST'].strtolower($addpath);
                 );
                 foreach ($codestyle as $code)
                 {
-                    $errorcode = "Нет";
-                    if (file_exists($code))
-                    {
-                      $loaded = "<img src=\"rpanel/theme/images/true.gif\" border=0>";
-                    }
-                    else
-                    {
-                      $loaded = "<img src=\"rpanel/theme/images/false.gif\" border=0>";
-                      $errorcode = "Да";
-                    };
-                    if ($errorcode == "Да") $found=true; 
-			$iferror.='<tr><td>'.$code.'</td><td align="center">'.$loaded.'</td><td align="center">'.$errorcode.'</td></tr>
+                    if (! file_exists($code)) {
+                        $found=true;
+                        $loaded = "<img src=\"rpanel/theme/images/false.gif\" border=0>";
+                        $iferror.='<tr><td>'.$code.'</td><td align="center">'.$loaded.'</td><td align="center">Да</td></tr>
 ';
-                }; 
+                    }
+                };
 		if (!$found)
 		{
-			echo '    
+			echo '
 				Основные файлы системы загружены на сервер.<br><br>
 			';
 		}
@@ -484,7 +477,7 @@ echo '</div>
                         $codestyle[]="conf/".$a;
                         foreach ($FileManager->listing("conf/".$a,0) as $b) $codestyle[]="conf/".$a."/".$b;
                 };
-                
+
                 foreach ($FileManager->listing("themes/",1) as $a)
                 {
                         $codestyle[]="themes/".$a;
@@ -511,15 +504,17 @@ echo '</div>
                       $write = "<img src=\"rpanel/theme/images/false.gif\" border=0>";
                       $errorcode = "Да";
                     };
-                    if ($errorcode == "Да") $found=true; 
-                    $iferror.= '<tr><td>'.$code.'</td><td align="center">'.$loaded.'</td><td align="center">'.$write.'</td><td align="center">'.$errorcode.'</td></tr>
+                    if ($errorcode == "Да") {
+                        $found=true;
+                        $iferror.= '<tr><td>'.$code.'</td><td align="center">'.$loaded.'</td><td align="center">'.$write.'</td><td align="center">'.$errorcode.'</td></tr>
                     ';
-                };    
-                $iferror.= '    
+                    }
+                };
+                $iferror.= '
                    </table></center>
                    <br><a name="footer"> </a>
                    ';
-		
+
                 if ($found)
                 {
 			echo $iferror;
@@ -578,12 +573,12 @@ echo '</div>
                   $gd = "Не установлена";
                   $found=true;
                 }
-                else  
+                else
                   $gd = "Установлена";
                 if (!function_exists('version_compare'))
                   $found = true;
-                
-                
+
+
                 if (function_exists('apache_get_modules'))
                 {
                    if (in_array('mod_rewrite', apache_get_modules()))
@@ -610,8 +605,8 @@ echo '</div>
                   phpinfo(INFO_MODULES);
                   $im = ob_get_contents();
                   ob_end_clean();
-                  
-                  if (strstr($im, 'mod_rewrite') != '') 
+
+                  if (strstr($im, 'mod_rewrite') != '')
                   {
                      $modrewrite="Установлен";
                   }
@@ -628,7 +623,7 @@ echo '</div>
                      };
                   };
                 };
-                
+
                 $ver = phpversion();
                 /*if (is_writeable(".htaccess"))
                 {
@@ -638,11 +633,11 @@ echo '</div>
                 { 
                   $htac = "Не установлены";
                   $found = true;
-                };*/ 
+                };*/
                 if (ini_get('register_globals'))
                 {
                   $rg = "Включён";
-                  $found = true;                
+                  $found = true;
                 }
                 else
                   $rg = "Отключён";
@@ -768,7 +763,7 @@ echo '</div>
                   <tr><td align="left">Адрес сайта:</font></td><td><input type="text" name="site" size=46 value="http://'.$site.'"></td></tr>
                   <tr><td align="left">Полный путь до скриптов:<br><font style="color:grey;font-size:8pt;">Путь к каталогу с системой на сервере. Как правило, указывается в инструкции к хостингу в DOCUMENT_ROOT, но лучше оставить автоматически подставленное значение.</font></td><td><input type="text" name="root" size=46 value="'.$root.'"></td></tr>
 		  <tr><td align="left">Активировать ЧПУ (человекопонятные урл'.$sinfo.'):<br><font style="color:'.$finfo.'; font-size:8pt;">Требуется Apache веб-сервер с mod_rewrite.</font></td><td><select name="furlresult">'.$furl.'</select></td></tr>
-                  <tr><td align="left">Язык:<br><font style="color:grey;font-size:8pt;"><b>Внимание!</b> Смена языка не действует на админ-центр и темы оформления.</font></td><td><select name="language">'.$languages.'</select></td></tr>                  
+                  <tr><td align="left">Язык:<br><font style="color:grey;font-size:8pt;"><b>Внимание!</b> Смена языка не действует на админ-центр и темы оформления.</font></td><td><select name="language">'.$languages.'</select></td></tr>
                  </table></center><br><br>
                  <input type="hidden" name="rule1" value="true">
                  <center><input type="submit" name="submit" value="Продолжить">
@@ -789,7 +784,7 @@ echo '</div>
 <div class="text">
 ';
             $error = false;
-            
+
             if (!$GlobalUsers->checklogin($_POST['login']))
             {
                 echo 'В логине можно использовать только буквы английского и русского алфавита, числа, @, !, - и *. От 4 до 20 символов. ';
@@ -815,9 +810,9 @@ echo '</div>
                 echo 'Вы не указали ROOT адрес. ';
                 $error = true;
             };
-            
-            
-            
+
+
+
             if (!isset($_POST['rule1']))
             {
                 echo 'Вы не приняли условия лицензионного соглашения. Продолжение установки невозможно.';
@@ -845,7 +840,7 @@ echo '</div>
                 $cms_root	=	$root;
                 $cms_site	=	$site;
 		$cms_furl	=	(int)$_POST['furlresult'];
-		
+
 		//$puny		=	$Filtr->clear($_POST['pc']);
 		$puny		=	'no';
 		/*if ($puny=='yes')
@@ -963,15 +958,15 @@ echo '</div>
 \$cms_nav_back		= ".$cms_nav_back.";
 \$cms_top_news_max	= ".$cms_top_news_max.";
 ");
-                fclose($file); 
-                
+                fclose($file);
+
                 $new	=	fopen('conf/checkbackup.dat','w');
 		fwrite($new,md5(rand(1,9999).rand(1,9999)));
 		fclose($new);
 
 		$GlobalBFG->refreshrewrite(2,true,$addpath);
-                
-                
+
+
                 if (!file_exists("conf/users/pm_1.dat"))
                 {
                     $new = fopen("conf/users/pm_1.dat","w");
