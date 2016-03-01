@@ -16,6 +16,6 @@
                    Голосования выводятся в случайном порядке.<br>
                    Оформление в файле template.php.<br>
                    Совместимость: <font color="green"><b>Ruxe Engine 1.9</b></font>';
- $author        = "www.ahrameev.ru";
+ $author        = "Ахрамеев Денис Викторович";
  $site          = "http://ahrameev.ru";
  $addaction     = 1;

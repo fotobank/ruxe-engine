@@ -11,6 +11,6 @@
 На странице, где необходимо вывести собранные комментарии, используйте команду &lt;?php here_excomments(\"ID\"); ?&gt;
 и замените ID на идентификатор расширенного раздела.<br>
 Совместимость: <font color=\"green\"><b>Ruxe Engine 1.9</b></font>";
-	$author        = "www.ahrameev.ru";
+	$author        = "Ахрамеев Денис Викторович";
 	$site          = "http://ahrameev.ru/";
 	$addaction     = 0;

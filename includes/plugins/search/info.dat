@@ -13,6 +13,6 @@ $description   = "
 Для вывода маленькой формы поиска (можно разместить на всех страницах сайта, например) используйте команду &lt;?php here_shortsearch(); ?&gt;.<br>
 Оформление меняется в файле template.php в соответствии с PHP синтаксисом.<br><br>
 Совместимость: <font color=\"green\"><b>Ruxe Engine 1.9</b></font>, поддержка <b>mbstring</b>";
-$author        = "www.ahrameev.ru";
+$author        = "Ахрамеев Денис Викторович";
 $site          = "http://ahrameev.ru";
 $addaction     = 0;
