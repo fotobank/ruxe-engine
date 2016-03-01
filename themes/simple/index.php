@@ -11,7 +11,7 @@
 	    <meta name="keywords" content="<?php here_keywords(); ?>">
 	    <meta name="generator" content="<?php here_generator(); ?>">
 	    <meta name="description" content="<?php here_description(); ?>">
-	    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic&subset=cyrillic' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500italic&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="<?php here_urlsite(); ?>/themes/default/style.css" type="text/css">
 	    <script src="<?php here_urlsite(); ?>/themes/default/js/prefixfree.min.js"></script>
 		<link rel="stylesheet" href="<?php here_themepath(); ?>/layout.css" type="text/css">
@@ -27,7 +27,7 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-	    <script>
+		<script>
             $(document).ready(function(){
 
 	        $(".btn-slide").click(function(){
@@ -35,7 +35,7 @@
 		    $(this).toggleClass("actived"); return false;
 	        });
             });
-            </script>
+        </script>
 	    <script>
 	        $(function() {
             $('.icon').click(function() {
@@ -55,14 +55,12 @@
 			});
 	    </script>
 		<style>
-		    p {font-family: 'Open Sans', sans-serif;font-size: 16px !important;line-height: 1.5em !important;padding: 0.375em 0 !important;}
-			li {font-family: inherit;font-size: inherit;line-height: 1.5em !important;}
-			#footer p {font-size: 12px !important;line-height: 3em  !important;}
+		    p {font-family: 'Roboto', sans-serif;}
 		</style>
 	</head>
     <body>
-                <!-- Nav -->
-	<nav class="menu navbar-default">
+        <!-- Nav -->
+	    <nav class="menu navbar-default">
 			<div class="group-80-offset-010">
 			    <ul>
                     <a href="#"><div class="icon fa fa-align-justify"></div></a>
@@ -78,7 +76,6 @@
 					    <a href="<?php here_urlsite(); ?>/contact.html" title="Контакты"><li>Контакты</li></a>
 					</div>
                 </ul>
-				<div class="clearfix"></div>
 			</div>
 			<div id="panel">
 	            <?php here_shortsearch(); ?>
@@ -87,7 +84,7 @@
 		<!-- Header -->
         <section id="header" class="text-center" role="banner">
             <div class="overlay">
-                <div class="content">
+                <div class="container center-text">
                     <h1>Девиз вашего сайта, <span class="color">или слоган!</span></h1>
                     <p class="lead">Этот сайт построен на CMS Ruxe Engine!</p>
                 </div>
@@ -96,12 +93,13 @@
         <!-- Основное содержание страницы -->
 		<div class="spacer"></div>
         <div class="group-100">
-            <div class="group-60-offset-20">
-		        <?php here_pagecontent(); ?>
+            <div class="group-60-offset-20-bordered">
+		        <div class="content">
+				    <?php here_pagecontent(); ?>
+				</div>
 		    </div>
 	    </div>
 	    <div class="spacer"></div>
-		<div class="clearfix"></div>
 	    <!-- Форма авторизации -->
 		<div id="signup">
 		    <div class="loginform">
@@ -115,7 +113,7 @@
 		</div>
 	    <!--  Footer  -->
 	    <div id="footer" class="group-100">
-            <div class="block-90-offset-05">
+            <div class="block-90-offset-005">
                 <div class="pull-left">
                     <p>© 2015. Designed by <a href="http://webdesign.ru.net">D-Sign</a> and {CREDITS}</a></p>
                 </div>
@@ -126,7 +124,6 @@
                         <li><a href="https://vk.com/ruxeengine" target="_blank"><i class="fa fa-vk"></i></a></li>
                     </ul>
                 </div>
-                <div class="clearfix"></div>
                 <br>
             </div>
 	    </div>

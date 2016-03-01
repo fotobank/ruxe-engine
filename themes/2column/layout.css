@@ -1,6 +1,6 @@
 /**  Header  **/
 #header {
-	background: url(images/03.jpg);
+	background: url(images/04.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -13,65 +13,20 @@
 	height: 500px;
 	background-attachment: fixed;
 }
-#header .content {padding: 15% 0 0;}
-.navy-page {margin-left: 25%;}
-/* Media Queries */
-@media screen and (max-width: 1036px) {
-.group-80-offset-010 {width: 96%; margin-left: 2% !important; margin-right: 2% !important;}
-.navy-page {margin-left: 30%;}
+#header .container {padding: 15% 0 0;}
+[class*=block-70] > [class*=form] {width: 90% !important; margin-left: 5%; margin-right: 5%;}
+@media screen and (max-width: 1280px) {
+[class*=group-100] > [class*=group-70] {width: 80% !important; margin-left: 10%; margin-right: 10%;}
 }
-@media screen and (max-width: 992px) {
-[class*=group-80][class*=-offset-010] {width: 90%;margin-left: 5%; margin-right: 5%;}
-[class*=block-50] {width: 100%;margin: 0;}
+@media screen and (max-width: 1024px) {
+[class*=group-100] > [class*=group-70] {width: 90% !important; margin-left: 5%; margin-right: 5%;}
 }
-@media screen and (max-width: 800px) {
-.block-70 {width: 100%; margin: 0;}
-.block-30 {width: 100%; margin: 0;}
-.navy-page {display:block;width: 100%;margin: 0.5em 0 1.75em;}
-.menu {
-    background-color: #222 !important;
-	text-align: center !important;
-	padding: 0 !important;
-	transition: all 0.5s;
-}
-.icon {
-    display: block;
-	height: 23px;
-	width: 24px;
-	padding: 4px;
-	border: solid 1px #59a51b;
-	margin: 1em auto;
-}
-.logo {display: none;}
-.items {
-    display: none;   
-}
-.items li {padding-left: 0;}
-.items a li {
-    display: table;
-    line-height: 4em !important;
-	text-align: center;
-	padding: 0 auto;
-}
-.showitems {width: 100% !important;}
-.items li:hover {
-	display: block;
-	background: #000;
-}
-.container {width: 100%;margin: 0;}
-.col-md-10 {
-	width: 100%;
-	margin-left: 0;
-}
-#footer .pull-right, #footer .pull-left {
-    float: none !important;
-	text-align: center !important;
-}
-#footer .container p, #footer p {line-height: 3em;}
-#footer .pull-right, #footer .pull-left  {padding-left: 0;padding-right: 0;}
+@media screen and (max-width: 960px) {
+[class*=group-100] > [class*=group-70] > [class=content] > [class=block-70], 
+[class*=group-100] > [class*=group-70] > [class=content] > [class=block-30] {width: 100% !important; margin-left: 0; margin-right: 0;}
 }
 @media screen and (max-width: 800px) {
 #header, #header .overlay {
-    height: 600px;
+    height: 500px;
 }
 }

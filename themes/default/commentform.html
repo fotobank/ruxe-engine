@@ -49,25 +49,19 @@ else if (TXT.selectionStart >= 0) with (TXT)
 else TXT.value += startTag + endTag;
 };
 </script>
-<div class="group-80-offset-010">
+<div class="form group-80-offset-010">
+	<br>
 	<form name="post" action="{URL}" method="post" role="form">
     {HIDDENS}
 		<div class="row group-100 bottom">
 		    <div class="block-50">
 			    <div class="form-group-100">
 					    [if_user_entered]
-					    <span class="pull-left"><a href="{USERLINK}" onClick="window.open('{USERLINK}');return false;">{NAME_VALUE}</a></span>
+					    <label for="exampleInputName">Ваше имя: <a href="{USERLINK}" onClick="window.open('{USERLINK}');return false;"><b>{NAME_VALUE}</b></a></label><br>
 		                [/if_user_entered]
 		                [if_user_not_entered]
 					<label for="exampleInputName">Ваше имя</label>
                     <input name="ruxeimya" type="text" class="form-control" id="exampleInputName" {NAME_VALUE}>
-				</div>
-			</div>
-			<div class="block-50">
-		        <div class="form-group-100">
-					    <label for="exampleInputEmail">Ваш Е-mail</label>
-                        <input maxlength=60 name="ruxemylo" type="text" class="form-control" id="exampleInputEmail" {MAIL_VALUE}>
-		                [/if_user_not_entered]
 						[if_pm_list]
 						<label for="exampleInputName">Кому</label>
 		                <select name="to" class="form-control" id="exampleInputName">{PM_TO}</select>
@@ -77,6 +71,14 @@ else TXT.value += startTag + endTag;
 						<div class="comment-cell"><input type="text" name="to" value="{PM_TO}" maxlength=20></div>
                         <input type="text" name="to" value="{PM_TO}" maxlength=20 class="form-control" id="exampleInputName">
                         [/if_pm_input]
+				</div>
+			</div>
+			<div class="block-50">
+		        <div class="form-group-100">
+					    <label for="exampleInputEmail">Ваш Е-mail</label>
+                        <input maxlength=60 name="ruxemylo" type="text" class="form-control" id="exampleInputEmail" {MAIL_VALUE}>
+		                [/if_user_not_entered]
+
 						[if_pm]
                         <label for="exampleInputTheme">Тема письма:</label>
 						<input type="text" name="theme" maxlength=50 class="form-control" id="exampleInputTheme">
@@ -90,7 +92,6 @@ else TXT.value += startTag + endTag;
 		</div>
 		[if_can_smiles]
         <div class="comment-row">
-            <br>&nbsp;<br>
 			<ul class="inline">
 			    <li type="button" class="btn fa fa-smile-o" title="Смайлики" onClick="if (document.getElementById('smiles').style.display=='none'){document.getElementById('smiles').style.display='block';} else {document.getElementById('smiles').style.display='none';};"></li>
                 <div class="smilestable" id="smiles">
@@ -119,10 +120,8 @@ else TXT.value += startTag + endTag;
 		<div class="form-group-100">
             <label for="mess">Текст сообщения</label>
             <textarea class="form-control" id="mess" name="ruxesoobchenie" rows="3">{MESSAGE_VALUE}</textarea>
-			<br>
             <span id="info" class="pull-right"></span>
         </div>
-		<div class="clearfix"></div>
 		<div class="form-group-100">
 		[if_user_not_entered]
 		    <div class="comment-cell">
@@ -135,10 +134,7 @@ else TXT.value += startTag + endTag;
 		<input type="hidden" name="from" value="{FROM}">
 		<input type="submit" name="submit" class="btn tf-btn btn-default" value="Отправить">
     </form>
-	<div class="clearfix"></div>
 </div>
-<div class="clearfix"></div>
-<br>
 
  <script type="text/javascript">
            function check()  {

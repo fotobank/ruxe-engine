@@ -1,30 +1,14 @@
-/* Eric Meyer CSS reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
-body {line-height: 1}
-ol, ul {list-style: none}
+/* Файл из проекта Block-Engine https://github.com/Wasilich/block-engine - автор Wasilich http://webdesign.ru.net/ */
+/* Axiomatic CSS reset */
+* {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;/* line-height: 1.5em;*/}
+ol, ul {list-style: none; padding: 0;}
 blockquote, q {quotes: none}
-:focus {outline: 0}
-ins {text-decoration: none}
-del {text-decoration: line-through}
-table {border-collapse: collapse;border-spacing: 0}
-/* End of Eric Meyer CSS reset */
+table {border-collapse: collapse; border-spacing: 0}
+* {box-sizing: border-box;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block}
+/* End of CSS reset */
 /* Огромное отдельное спасибо Lea Verou за скрипт "prefix-free.js". http://leaverou.github.io/prefixfree/ */
 /* A special thanks for Lea Verou - "prefix-free.js" author. http://leaverou.github.io/prefixfree/ */
-
-/* Старт */
-* {box-sizing: border-box;}
-* html .clearfix { height: 1%;}
-.clearfix { display: block;}
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-}
-ul, ol{padding: 0;}
-*:before, *:after {box-sizing: border-box;}
 /* Font-Awesome */
 @font-face {
   font-family: 'FontAwesome';
@@ -71,7 +55,9 @@ http://fontawesome.ru/cheatsheet/
 .fa-link:before {content: "\f0c1";}
 .fa-home:before {content: "\f015";}
 .fa-search:before {content: "\f002";}
-/**  group block  **/
+.fa-angle-double-down:before {content: "\f103";}
+/* Старт */
+/* group & block */
 [class*=group], [class*=block] {
     display: block;
 	box-sizing: border-box;
@@ -80,8 +66,10 @@ http://fontawesome.ru/cheatsheet/
 	padding: 0;
 	overflow: visible;
 }
-/**  group block ширина. Используя эти правила, можно создавать новые классы самостоятельно  **/
+[class*=group] {clear: both;}
+/* group&block ширина. Используя эти правила, можно создавать новые классы самостоятельно */
 [class*=group-100], [class*=block-100] {width: 100%;}
+[class*=group-98], [class*=block-98] {width: 98%;}
 [class*=group-96], [class*=block-96] {width: 96%;}
 [class*=group-90], [class*=block-90] {width: 90%;}
 [class*=group-80], [class*=block-80] {width: 80%;}
@@ -91,6 +79,7 @@ http://fontawesome.ru/cheatsheet/
 [class*=group-40], [class*=block-40] {width: 40%;}
 [class*=group-33], [class*=block-33] {width: 33.33333333%;}
 [class*=group-30], [class*=block-30] {width: 30%;}
+[class*=group-29], [class*=block-29] {width: 29%;}
 [class*=group-25], [class*=block-25] {width: 25%;}
 [class*=group-20], [class*=block-20] {width: 20%;}
 [class*=group-16], [class*=block-16] {width: 16.66666667%;}
@@ -100,12 +89,12 @@ http://fontawesome.ru/cheatsheet/
 [class*=group-010], [class*=block-010] {width: 10%;}
 [class*=group-09], [class*=block-09] {width: 9.09090909%;}
 [class*=group-08], [class*=block-08] {width: 8.33333333%;}
-/**  Отступы "margin"  **/
-[class*=group-][class*=-off-00], [class*=block-][class*=-off-00] {margin-left: 0;}
-[class*=group-][class*=-off-02], [class*=block-][class*=-off-02] {margin-left: 2%;}
-[class*=group-][class*=-off-05], [class*=block-][class*=-off-05] {margin-left: 5%;}
-[class*=group-][class*=-off-08], [class*=block-][class*=-off-08] {margin-left: 8.33333333%;}
-[class*=group-][class*=-off-09], [class*=block-][class*=-off-09] {margin-left: 9.09090909%;}
+/* Отступы "margin" */
+[class*=group-][class*=-off-001], [class*=block-][class*=-off-001] {margin-left: 1%;}
+[class*=group-][class*=-off-002], [class*=block-][class*=-off-002] {margin-left: 2%;}
+[class*=group-][class*=-off-005], [class*=block-][class*=-off-005] {margin-left: 5%;}
+[class*=group-][class*=-off-008], [class*=block-][class*=-off-008] {margin-left: 8.33333333%;}
+[class*=group-][class*=-off-009], [class*=block-][class*=-off-009] {margin-left: 9.09090909%;}
 [class*=group-][class*=-off-010], [class*=block-][class*=-off-010] {margin-left: 10%;}
 [class*=group-][class*=-off-11], [class*=block-][class*=-off-11] {margin-left: 11.11111111%;}
 [class*=group-][class*=-off-12], [class*=block-][class*=-off-12] {margin-left: 12.5%;}
@@ -120,9 +109,10 @@ http://fontawesome.ru/cheatsheet/
 [class*=group-][class*=-off-40], [class*=block-][class*=-off-40] {margin-left: 40%;}
 [class*=group-][class*=-off-45], [class*=block-][class*=-off-45] {margin-left: 45%;}
 [class*=group-][class*=-off-50], [class*=block-][class*=-off-50] {margin-left: 50%;}
-/**  Отступы "margin" с двух сторон  **/
-[class*=group-][class*=-offset-02], [class*=block-][class*=-offset-02] {margin-left: 2%; margin-right: 2%;}
-[class*=group-][class*=-offset-05], [class*=block-][class*=-offset-05] {margin-left: 5%; margin-right: 5%;}
+/* Отступы "margin" с двух сторон */
+[class*=group-][class*=-offset-001], [class*=block-][class*=-offset-001] {margin-left: 1%; margin-right: 1%;}
+[class*=group-][class*=-offset-002], [class*=block-][class*=-offset-002] {margin-left: 2%; margin-right: 2%;}
+[class*=group-][class*=-offset-005], [class*=block-][class*=-offset-005] {margin-left: 5%; margin-right: 5%;}
 [class*=group-][class*=-offset-010], [class*=block-][class*=-offset-010] {margin-left: 10%; margin-right: 10%;}
 [class*=group-][class*=-offset-12], [class*=block-][class*=-offset-12] {margin-left: 12.5%; margin-right: 12.5%;}
 [class*=group-][class*=-offset-15], [class*=block-][class*=-offset-15] {margin-left: 15%; margin-right: 15%;}
@@ -130,95 +120,88 @@ http://fontawesome.ru/cheatsheet/
 [class*=group-][class*=-offset-25], [class*=block-][class*=-offset-25] {margin-left: 25%; margin-right: 25%;}
 [class*=group-][class*=-offset-30], [class*=block-][class*=-offset-30] {margin-left: 30%; margin-right: 30%;}
 [class*=group-][class*=-offset-33], [class*=block-][class*=-offset-33] {margin-left: 33.33333333%; margin-right: 33.33333333%;}
-/**  addition  **/
-.row {display: table-row;}
-.content {padding: 1.75em 2em 2em;}
-.fixed {position: fixed;}
-/**  Класс edge позволяет удержать пустой блок от коллапса  **/
-.edge:before {content: "\00A0";height: auto;}
-/**  /edge  **/
-.text-center {text-align: center;}
-.center {margin: 0.125em auto;text-align: center;}
-.center img {margin:1em auto;}
-.pull-right {float: right !important; padding-right: 0.5em;}
-.pull-left {float: left !important; padding-left: 0.5em;}
-.spacer {display: block; width: 100%; height: 4em; clear: both; background: transparent;}
-.em-air {line-height: 3em;}
-.color {color: #8eda32;}
-.color-red {color: #f00;}
-.color-bottom-bordered {border-bottom:solid 1px #8eda32;}
-.border {border:solid 1px #e0e0e0;}
 /* Класс bordered (будьте внимательны с цифровыми значениями, меняйте их одновременно (в примере - 1px)) */
-[class*=-bordered] {border: solid 1px #808080;}
+[class*=-bordered] {border: solid 1px #e5e5e5;background: #ffffff;}
 [class*=-bordered] + [class*=-bordered] {margin-top: -1px;}
-[class*=-bordered] p {padding: 15px 31px}
-.lightbox {float: left;margin: 0.375em 0.75em 0.25em 0;border: solid 2px #a8a8a8;}
+[class=content] p + [class*=-bordered] p {padding: 15px 31px;}
+/* Классы закруглённых блоков */
+[class*=-rounded] {border-radius: 6px;}
+[class*=-round-top] {border-top-left-radius: 6px;border-top-right-radius: 6px;}
+[class*=-round-bottom] {border-bottom-left-radius: 6px;border-bottom-right-radius: 6px;}
+/* Основное */
+body, html{background: #f7f7f7; font-family: 'Roboto', sans-serif; font-weight: 300; color: #555;}
+html {font-size:16px;}
+input, button, select, textarea {font-family: inherit;font-size: inherit;line-height: inherit;}
+account input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {background-color: rgb(0, 0, 0) !important; color: #fff;}
+p {line-height: 1.5em;text-align: justify;}
+#main {margin-top: -200px;}
+/* Заголовки */
+h1 {padding: 0 1.5em 0;}
+h2, h3, h4, h5, h6 {padding: 0 0.5em 0;}
+h1, h2, h3, h4, h6 {text-align:center; text-transform: uppercase;}
+h5{text-align:center;}
+h1 {
+	font-size:2.125em;
+	font-weight: 300;
+}
+h2{
+	font-size:1.5em;
+	font-weight: 400;
+}
+h3{
+    font-size:1.25em;
+	font-weight: 400;
+}
+h4{
+	font-size:1.125em;
+	font-weight: 400;
+}
+h5{
+	font-size:1.063em;
+	font-weight: 400;
+}
+h6{
+	font-size:1em;
+	font-weight: 400;
+}
+/* Addition */
+.spacer {display: block; width: 100%; height: 4em; clear: both; background: transparent;}
+[class*=pull-left] {float: left;}
+[class*=pull-right] {float: right;}
+a {color: #ea800e; text-decoration: none;}
+a:hover, a:focus {color: #dd7700;}
+.fa:link, .fa:hover, .menu a:link, .menu a:hover, #footer a:link, #footer a:hover {text-decoration: none;}
+.color {color: #dd7700;}
+[class*=center-text] {text-align: center !important;}
+[class=center] {text-align: center !important; margin:0 auto 0.25em !important;}
+/* Класс edge позволяет удержать пустой блок от коллапса */
+[class*=edge]:before {content: "\00A0";height: auto;}
+/**********  Layout дополнительные  **********/
+.content {padding: 2em 2.75em 3.5em;}
+.container {padding: 2em;}
 ul, ol{
 	padding: 0;
 	webkit-padding: 0;
 	moz-padding: 0;
 }
-/**  Основное  **/
-body, html{background: #fff; font-family: 'Open Sans', sans-serif;color: #555;}
-html {font-size:16px;}
-input, button, select, textarea {font-family: inherit;font-size: inherit;line-height: inherit;}
-h1{
-	font-size: 1.75em;
-	line-height: 1.5em;
-	text-transform: uppercase;
-	font-weight: 300;
-}
-h2{
-	font-size:1.500em;
-	text-transform: uppercase;
-	font-weight: 400;
-	line-height: 100%;
-	margin: 0 auto 0.75em;
-}
-h3{
-    font-size:1.250em;
-	text-transform: uppercase;
-	font-weight: 400;
-	line-height: 100%;
-	margin: 0 auto 0.75em;
-}
-h4{
-	font-size:1.125em;
-	text-transform: uppercase;
-	font-weight: 400;
-	line-height: 100%;
-	margin: 0 auto 0.75em;
-}
-h5{
-	font-size:1.063em;
-	font-weight: 400;
-	line-height: 20px;
-	margin: 0 auto 0.75em;
-}
-p {font-family: 'Open Sans', sans-serif;font-size: 16px;line-height: 1.5em;padding: 16px 32px;}
-em {font-size: 1.250em;}
-.em {line-height: 1.5em;}
-a {color: #59a51b; text-decoration: none;}
-a:hover, a:focus {text-decoration: none; color: #59a51b;}
 hr {
     margin-top: 0;
     margin-bottom: 0;
     border: 0;
     border-top: 1px solid #eee;
-	border-color: #59a51b;
-	border-width: 3px;
-	width: 30%;
+	border-color: #ff9f45;
+	border-width: 2px;
+	width: 50%;
 	float: left;
 	clear: both;
 }
-/**********  Layout дополнительные  **********/
 /* Fixed menu */
 nav {
 	position: fixed;
 	top: 0;
 	margin: 0;
 	width: 100%;
-	z-index: 100;
+	z-index: 10;
 	line-height: 1.25em;
 }
 .menu {
@@ -229,10 +212,13 @@ nav {
     padding: 2em;
 }
 .menu a {
-    font-weight: 600;
-	color: #8eda32;
+    font-weight: 400;
+	color: #fff;
 	font-size: 12px;
 	letter-spacing: 1px;
+}
+.menu a:hover {
+    color: #ff9f45;
 }
 .menu ul {
     width: 100%;
@@ -246,58 +232,89 @@ nav {
     width: 100%;
     margin: 0;
 }
-.top li .fa {font-size: 16px;}
+.top li {
+	font-size: 14px;
+	padding-left: 0;
+	padding-right: 0.5em;
+}
+.top li .fa {
+	height: 22px;
+	width: 22px;
+	padding: 2px;
+	border-radius: 50%;
+	transition: all 0.2s;
+}
+.top li .fa:hover{
+	/*border-color: #ff9f45;*/
+}
+/******************************/
 #panel {
 	position: relative;
 	background: transparent;
 	width: 100%;
-	text-align: center;
-	padding: 12px;
+	color: #fff;
+	text-align: center !important;
+	padding: 4px auto;
 	font-size: 1em;
-	line-height: 100%;
 	display: none;
 }
 #panel input {
 	border: 0;
-	border-bottom: dotted 2px #555;
+	border-bottom: dotted 1px #777;
 	background: transparent;
 	color: #fff;
 }
-.actived {color: #fff;}/*#4698ea*/
+.on #panel {padding-bottom: 0.75em;}
+.on #panel input {color: #555 !important;}
 .icon {
-    color: #8eda32;
+    color: #555;
     cursor: pointer;
     display: none;
     font-size: 14px;
 }
 .on {
-    background-color: #222;
+    background-color: #fff;
+	color: #555;
     padding: 1em !important;
 	transition: all 0.5s;
+	border-bottom: solid 1px #a0a0a0;
+	box-shadow: -1px 0 8px  rgba(0, 0, 0, 0.5);
 }
+.on  li {color: #555 !important;}
+.on *:hover {color: #ff9f45 !important;}
 .on .group-80-off-010 {width: 90%; margin-left: 5%; transition: all 0.5s;}
 .showitems {
     display: block !important;
 	width: 100%;
 	margin: 0;
 }
+.actived, .on .actived {color: #ff9f45;}
 /* End of Fixed menu */
-.lead {line-height: 200%;}
+.row {display: table-row;}
+.fixed {position: fixed;}
+/**  Класс edge позволяет удержать пустой блок от коллапса  **/
+.edge:before {content: "\00A0";height: auto;}
+/**  /edge  **/
+/* Для Лайтбокса */
+[rel=lightbox] {float: left;margin: 0.375em 0.75em 0.25em 0;border: solid 2px #a8a8a8;}
+/* Header */
+.lead {font-size: 1.125em;line-height: 200%;text-align: center;}
 a.fa.fa-angle-down {
 	padding: 10px 15px;
-	color: #8eda32;
-	border: 2px solid #8eda32;
+	color: #dd7700;
+	border: 2px solid #dd7700;
 	border-radius: 50%;
-	font-size: 24px;
+	font-size: 23px;
 	margin-top: 100px;
 	transition: all 0.5s;
 }
 a.fa.fa-angle-down:hover{
-	background: #8eda32;
+	background: #dd7700;
 	color: #555;
-	border: 2px solid #8eda32;
+	border: 2px solid #dd7700;
 }
 /* Footer */
+#footer {width:100%;margin:0;line-height:3em;padding:0.5em 2em;background:#333;color:#d0d0d0;}
 #footer{
 	position:relative;
 	background: #222;
@@ -310,7 +327,7 @@ ul.footer-social li{
 	margin-right: 10px;
 }
 #footer p{
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 3em;
 }
 #footer i.fa {
@@ -323,19 +340,43 @@ ul.footer-social li{
 	color: #8c8c8c;
 	transition: all 0.2s;
 }
+#footer i.fa.fa-vk {padding: 5px 4px;}
 #footer i.fa:hover{
-	background: #59a51b;
-	border-color: #59a51b;
+	background: #dd7700;
+	border-color: #dd7700;
 	color: #fff;
 }
-/**  Оформление форм  **/
+@media screen and (max-width: 992px) {
+[class*=group-80][class*=-offset-010], [class*=block-80][class*=-offset-010] {width: 90%;margin-left: 5%; margin-right: 5%;}
+#footer p {text-align: center;}
+#footer .pull-right, #footer .pull-left {float: none !important; text-align: center !important; padding-left: 0;padding-right: 0;}
+#footer p {line-height: 3em;}
+[class*=block-50] {width: 100%;margin: 0;}
+}
+/* Оформление форм */
+[alt=Avatar] {border-radius: 50% !important;}
+.padding-left {padding-left: 4px;padding-right: 2px;}
+.padding-right {padding-right: 4px;padding-left: 2px;}
+/*label {padding: 0 8px;font-size: 90%;}*/
+.input, textarea {padding: 4px 12px;border-radius: 2px;}
+textarea {height: 100px;overflow: auto;}
+/* Форма комментариев с ячейками фиксированной ширины */
+.comment-wrapper {float: right;width: 100%;margin-left: -150px;}
+.comment-content {margin-left: 150px;}
+.block-fixed-width {width: 150px;}
+[class*=center-text][class*=avatar] img {text-align: center;margin: 24px auto;}
+[class*=comment-content] {padding: 10px 14px;}
+[class*=comment-content][class*=center-text] {padding-left: 0 !important;}
+[class*=form][class*=block-50] {width: 49%;}
+[class*=block-70] > [class=commentform] > [class*=group-80] {width: 100% !important; margin-left: 0; margin-right: 0;}
+
 label {
 	float: left;
-	padding-left: 0.5em;
-	font-size: 12px;
+	padding-left: 0.625em;
+	font-size: 14px;
 	font-weight: 300;
 	line-height:1.375em;
-	font-family: 'Open Sans', sans-serif;
+	font-family: inherit;
 }
 .form-control, .form-control99 {
 	display: block;
@@ -371,7 +412,7 @@ label {
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-	margin: 0.5em;
+	margin: 0.5em 0.5em 1.5em;
 }
 .btn:hover, .btn:active, .btn:focus {
     color: #fff;
@@ -381,16 +422,16 @@ label {
 }
 button.btn.tf-btn.btn-default, input.btn.tf-btn.btn-default {
 	float: right;
-	background: #4698ea;
+	background: #ff9f45;
 	border: 0;
-	border-radius: 0;
-	padding: 10px 40px;
+	border-radius: 2px;
+	padding: 0.75em 1.75em 0.5em;
 	text-transform: uppercase;
 	color:#fff;
 }
 .loginform .form-content .btn-default {
 	clear: right;
-	background: #4698ea;
+	background: #ff9f45;
 	color: #fff;
 	border: 0;
 	border-radius: 0;
@@ -423,27 +464,30 @@ button.btn.tf-btn.btn-default, input.btn.tf-btn.btn-default {
 	list-style:none;
 	color:#fff;
 }
+.loginform input:active, .loginform input:focus {background: transparent;}
 .loginform input {
-    margin:0.5em auto;
-	padding:0.5em;
-	font-weight:normal;
-	font-size:14px;
-	background:#fff;
-	border:0;
-	color:#333;
+    margin: 0.5em auto;
+	padding: 0.25em;
+	font-weight: normal;
+	font-size: 14px;
+	text-align: center;
+	background: transparent;
+	border-bottom:dotted 1px #555;
+	color:#fff;
 }
-.form-header {text-transform: uppercase;}
+.form-header {text-transform: uppercase;font-weight: 500;}
 #login-content {
 	z-index:1000;
-    width:250px;    
+    width:300px;    
 	background:rgba(0, 0, 0, 0.75);
-	padding:20px 10px;
+	border-radius: 2px;
+	padding:1.25em 1.5em 2em;
 	text-align:center;
 }
 #login-content .row {
     line-height:1.75em;
 }
-/* Детали формы */
+/* Детали формы авторизации */
 #lean_overlay {position:fixed;z-index:100;top:0px;left:0px;height:100%;width:100%;background:#000;display:none;}
 #signup {display:none;}
 .modal_close {display: block;width: 14px;height: 14px;background: url(images/modal_close.png);z-index:100;}
@@ -453,9 +497,10 @@ button.btn.tf-btn.btn-default, input.btn.tf-btn.btn-default {
 	margin:0 10%;
 }
 #loginform {display:table;width:80%;margin:0 10%;}
+.account > .center-text {margin: 0.25em auto;}
 #account {text-align:center;}
 .account .button {
-	background: #59a51b;
+	background: #ff9f45;
 	border: 0;
 	border-radius: 0;
 	padding: 10px 40px;
@@ -468,7 +513,6 @@ button.btn.tf-btn.btn-default, input.btn.tf-btn.btn-default {
 .account .cell {display:table-cell;vertical-align:baseline;float:left;width:100%;height:auto;text-align:left;}
 .account .label-name {display:table-cell;vertical-align:baseline;float:left;width:50%;height:auto;text-align:right;line-height:1.75em;}
 .account .label-info {display:table-cell;vertical-align:baseline;float:left;width:50%;height:auto;text-align:left;line-height:1.75em;}
-.account .row a {line-height:1.5em;}
 .account .row input {float:none;text-align:center;}
 .account .row .form-control:focus, .account .row input:focus, .account .row select:focus {
     border-color: inherit;
@@ -486,7 +530,6 @@ button.btn.tf-btn.btn-default, input.btn.tf-btn.btn-default {
 .label-message {float: left;width: 24%;height: auto;text-align: center;}
 .label-message:first-child {text-align: left;}
 .label-message:last-child {text-align: right;}
-td {text-align: left !important;}
 .right {text-align: right;}
 .content .register .account img {margin: 16px auto;}
 .account .row a:link {line-height: 250%;}
@@ -496,7 +539,7 @@ td {text-align: left !important;}
 .user-name {font-family: inherit;font-weight: normal;color: inherit;}
 .label-name {line-height: 140%;padding-left: 0.375em;}
 /* Комментарии */
-.commentform {display: block;width: 100%;margin-top: 1.5em;padding: 0 15px;line-height: 2.5em;}
+.commentform {display: block;width: 100%;padding: 0 15px;line-height: 2.5em;}
 .colour {background-color: #efefef;font-size: 0.875em;}
 .comment-block {border: solid 1px #e0e0e0;}
 .commentform .comment-block .row {width: 100%;}
@@ -507,31 +550,38 @@ td {text-align: left !important;}
 .comment-cell-top span {margin: 0 1em;}
 .comment-cell-text {line-height: 150%;}
 .fix-column {float: right;width: 150px;}
+.em-air {padding: 0.5em 1em;}
+td {text-align: left !important;}
+.account {line-height: 2.5em;}
+.account ~ table {width: 100% !important;}
+.account ~ table ~ td {width: 25% !important;}
+.loginform .account {line-height: 1.5em;}
 /* Отдельные области в тексте */
 pre, listing, xmp, .code {display:block;margin: 0.625em 0;padding: 0.5em 1em;border: solid 1px #e0e0e0;overflow: auto;font-family: monospace;font-size: 90%;}
 /* Стиль оформления цитат */
-.quote-text, .quote {font-style: italic;color: #59a51b;margin: 0.25em 0.5em 0;padding: 0.125em 0.5em 0.375em;line-height: 130%;}
-.quote-text:before, .quote:before {font-size: 1.5em;content: "\f10d";font-family: 'FontAwesome';font-style: normal;color: #59a51b;font-size: 100%;}
+.quote-text, .quote {font-style: italic;color: #ff9f45;margin: 0.25em 0.5em 0;padding: 0.125em 0.5em 0.375em;line-height: 130%;}
+.quote-text:before, .quote:before {font-size: 1em;content: "\f10d";font-family: 'FontAwesome';font-style: normal;color: #ff9f45;font-size: 100%;}
 .question-table {line-height: 140%;}
 .question-cell-name {font-weight: 700;}
 .question-cell-text {margin-top: 0.5em;}
 .border .row {margin: 0.5em 1em;}
 /* Категории новостей */
 ul.inline li {display:inline-block;margin-right: 10px;}
+ul.inline li:first-child {margin-left: -5px;}
 /* Значки перед заголовками */
 .inline i.fa {
 	height: 34px;
 	width: 34px;
-	border: 2px solid #59a51b;
+	border: 2px solid #ff9f45;
 	font-size: 20px;
 	padding: 5px;
 	border-radius: 50%;
-	color: #59a51b;
+	color: #ff9f45;
 	transition: all 0.2s;
 }
 .inline i.fa:hover, .inline li.fa:hover {
-	background: #59a51b;
-	border-color: #59a51b;
+	background: #ff9f45;
+	border-color: #ff9f45;
 	color: #fff;
 }
 .inline a:link {font-size:1.125em;text-transform:uppercase;}
@@ -547,8 +597,8 @@ ul.inline li {display:inline-block;margin-right: 10px;}
 	margin:4px 3px;
 }
 .comment-row .inline i.fa:hover, .account .inline li.fa:hover {
-	background: #59a51b;
-	border-color: #59a51b;
+	background: #ff9f45;
+	border-color: #ff9f45;
 	color: #fff;
 }
 .comment-row ul li {font-size:1.125em;}
@@ -610,26 +660,88 @@ ul.inline li {display:inline-block;margin-right: 10px;}
 }
 .no-active {color: #777 !important; text-decoration: none;}
 .active {
-    color: #4698ea !important;
+    color: #ff9f45 !important;
 	text-decoration: none;
-	border-color:#4698ea !important;
+	border-color:#ff9f45 !important;
 }
 .pager a:hover {
-	background: #4698ea;
-	border-color: #4698ea;
+	background: #ff9f45;
+	border-color: #ff9f45;
 	color: #fff !important;
 	transition: all 0.2s;
 }
 /* Дизайн надписей типа "Осталось 10000 знаков" и счётчиков */
-#info, .info, .counter {font-size:90%;line-height:120%;padding-bottom:0.5em;color:#59a51b;}
-/* Оформление mini-news можно сделать таким */
-/*
-Внесите изменения в дополнение самостоятельно:
-<div class="mini-news">
-	<a href="{LINK}"><h5>{TITLE}</h5></a>
-	<span class="info">{DATE}, просмотров: {VIEWS}</span>
-</div>
-*/
+#info, .info, .counter {font-size:90%;line-height:120%;padding: 0 0.625em 0.5em;color:#777;}
 [class*=mini-news] {display: block; padding: 0.5em; text-align: center;}
 [class*=mini-news] .info {color:#555;}
 [class*=mini-news] h5 {margin: 0 auto;}
+/* Форма поиска */
+.search {border: solid 1px #bfbfbf;border-radius: 2px;}
+.search input {line-height: 2.063em; padding-left: 1em;width: 80%;}
+.search button {background: #e0e0e0;color: #555;}
+.search button:hover {background: #efefef;color: #000;cursor: pointer;}
+.search .fa {height: 2.063em;width: 3em;border-left: solid 1px #bfbfbf;}
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+[class*=group-80][class*=-offset-010] {width: 90%;margin-left: 5%; margin-right: 5%;}
+.form .group-80-offset-010 {width: 80%;margin-left: 10%; margin-right: 10%;}
+[class*=group-60][class*=-offset-20] {width: 80%;margin-left: 10%; margin-right: 10%;}
+[class*=block-50] {width: 100%;margin: 0;}
+.form [class*=block-50] {width: 50%;}
+}
+@media screen and (max-width: 800px) {
+.content {padding: 0.5em 1em 1em;}
+.commentform * [class*=block-90] {widtn: 100% !important; margin: 0;}
+[class*=group-60][class*=-offset-20] {width: 90%;margin-left: 5%; margin-right: 5%;}
+.form [class*=block-50] {width: 100%;margin: 0;}
+.menu {
+    background-color: rgba(0, 0, 0, 0.7);
+	text-align: center !important;
+	padding: 0 !important;
+	transition: all 0.5s;
+}
+.icon {
+    display: block;
+	height: 23px;
+	width: 24px;
+	padding: 4px;
+	color: #fff;
+	border: solid 1px #fff;
+	margin: 1em auto;
+}
+.fa-home, .fa-search, .fa-sign-in {margin-left: 8px;}
+/*.logo {display: none;}*/
+.items {
+    display: none;   
+}
+.items li {padding-left: 0;}
+.items a li {
+    display: table;
+    line-height: 4em !important;
+	text-align: center;
+	padding: 0 auto;
+}
+.showitems {width: 100% !important;}
+.items li:hover {
+	display: block;
+}
+.on {
+    background-color: #fff !important;
+	color: #555;
+	transition: all 0.5s;
+}
+.on * {color: #555;}
+.on [class*=icon] {border: solid 1px #555;}
+.on *:hover {color: #000;}
+.actived {color: #ff9f45;}
+#footer .pull-right, #footer .pull-left {
+    float: none !important;
+	text-align: center !important;
+}
+#footer p {line-height: 3em;}
+#footer .pull-right, #footer .pull-left  {padding-left: 0;padding-right: 0;}
+[class*=group-80] {width: 100% !important; margin-left: 0 !important; margin-right: 0; !important}
+}
+@media screen and (max-width: 600px) {
+#main {width: 100%; margin-left: 0; margin-right: 0;}
+}

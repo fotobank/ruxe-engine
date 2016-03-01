@@ -7,15 +7,16 @@
 $logincms[0]='
     <form class="loginform" name="loginform" action="{SITE}/index.php?action=login" method="POST">
         <div class="form-header">
-		    <span>Вход на сайт</span>
+		    <span><p class="center-text">Вход на сайт</p></span><br>
+			<img style="border-radius: 50%;" src="{SITE}/avatars/noavatar.png" alt="Avatar">
         </div>
 		<div class="form-content">
 		    <input class="input" type="text" name="login" placeholder="Логин ">
 			<input class="input" type="password" name="password" placeholder="Пароль ">
-		    <div class="row"><input type="checkbox" name="save" value="true"> Запомнить</div>
+		    <div class="block-100 center-text"><input type="checkbox" name="save" value="true"> Запомнить</div>
 			<button type="submit" class="btn-default" name="submit">Вход</button>
-		    <div class="row"><a href="{RESTORELINK}">Забыли пароль?</a></div>
-	        <div class="row"><a href="{REGLINK}">Быстрая регистрация</a></div>
+		    <div class="block-100 center-text"><a href="{RESTORELINK}">Забыли пароль?</a></div>
+	        <div class="block-100 center-text"><a href="{REGLINK}">Быстрая регистрация</a></div>
 		</div>
     </form>
 ';
@@ -29,14 +30,16 @@ $logincms[0]='
 //{PMLINK} - ...
 //{PROFILELINK} - ...
 $logincms[1]='
-<div class="account text-center">
+<form class="loginform">
+<div class="account group-center-text">
     <img src="{AVATAR}" alt="Avatar">
-    <div class="row">Вы вошли как &laquo;{LOGIN}&raquo;</div>
-    <div class="row"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
-    <div class="row"><a href="{PROFILELINK}">Мой профиль</a></div>
-    <div class="row"><a target="_blank" href="{SITE}/rpanel">Админ-центр</a></div>
-    <div class="row"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
+    <div class="block-100 center-text">Вы вошли как &laquo;{LOGIN}&raquo;</div>
+    <div class="block-100 center-text"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
+    <div class="block-100 center-text"><a href="{PROFILELINK}">Мой профиль</a></div>
+    <div class="block-100 center-text"><a target="_blank" href="{SITE}/rpanel">Админ-центр</a></div>
+    <div class="block-100 center-text"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
 </div>
+</form>
 ';
 
 //Меню редактора на сайте
@@ -48,14 +51,16 @@ $logincms[1]='
 //{PMLINK} - ...
 //{PROFILELINK} - ...
 $logincms[14]='
-<div class="account text-center">
+<form class="loginform">
+<div class="account center-text">
     <img src="{AVATAR}" alt="Avatar">
-    <div class="row">Вы вошли как &laquo;{LOGIN}&raquo;</div>
-    <div class="row"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
-    <div class="row"><a href="{PROFILELINK}">Мой профиль</a></div>
-    <div class="row"><a target="_blank" href="{SITE}/rpanel">Управление</a></div>
-    <div class="row"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
+    <div class="block-100 center-text">Вы вошли как &laquo;{LOGIN}&raquo;</div>
+    <div class="block-100 center-text"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
+    <div class="block-100 center-text"><a href="{PROFILELINK}">Мой профиль</a></div>
+    <div class="block-100 center-text"><a target="_blank" href="{SITE}/rpanel">Управление</a></div>
+    <div class="block-100 center-text"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
 </div>
+</form>
 <br>
 ';
 
@@ -68,14 +73,16 @@ $logincms[14]='
 //{PMLINK} - ...
 //{PROFILELINK} - ...
 $logincms[15]='
-<div class="account text-center">
+<form class="loginform">
+<div class="account center-text">
     <img src="{AVATAR}" alt="Avatar">
-    <div class="row">Вы вошли как &laquo;{LOGIN}&raquo;</div>
-    <div class="row"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
-    <div class="row"><a href="{PROFILELINK}">Мой профиль</a></div>
-    <div class="row"><a target="_blank" href="{SITE}/rpanel">Управление</a></div>
-    <div class="row"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
+    <div class="block-100 center-text">Вы вошли как &laquo;{LOGIN}&raquo;</div>
+    <div class="block-100 center-text"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
+    <div class="block-100 center-text"><a href="{PROFILELINK}">Мой профиль</a></div>
+    <div class="block-100 center-text"><a target="_blank" href="{SITE}/rpanel">Управление</a></div>
+    <div class="block-100 center-text"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
 </div>
+</form>
 <br>
 ';
 
@@ -88,13 +95,15 @@ $logincms[15]='
 //{PMLINK} - ...
 //{PROFILELINK} - ...
 $logincms[2]='
-<div class="account text-center">
+<form class="loginform">
+<div class="account center-text">
     <img src="{AVATAR}" alt="Avatar">
-    <div class="row">Вы вошли как &laquo;{LOGIN}&raquo;</div>
-    <div class="row"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
-    <div class="row"><a href="{PROFILELINK}">Мой профиль</a></div>
-    <div class="row"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
+    <div class="block-100 center-text">Вы вошли как &laquo;{LOGIN}&raquo;</div>
+    <div class="block-100 center-text"><a href="{PMLINK}">Личных сообщений ({PM})</a></div>
+    <div class="block-100 center-text"><a href="{PROFILELINK}">Мой профиль</a></div>
+    <div class="block-100 center-text"><a href="{SITE}/index.php?action=logout">Выйти</a></div>
 </div>
+</form>
 <br>
 ';
 
@@ -169,9 +178,9 @@ $logincms[4]='
 	<h2>Просмотр аккаунта</h2>
     <hr>
 	<br>
-        <div class="account text-center">
+        <div class="account center-text">
 		    <h5>Профиль пользователя «{NAME}»</h5>
-			<div class="center">{AVATAR}</div>
+			<div class="center" alt="Avatar">{AVATAR}</div>
 			<br>
 			[if_user_entered]<a href="{PMNEW}">Отправить личное сообщение</a>[/if_user_entered]
 			<br>&nbsp;<br>
@@ -202,8 +211,7 @@ $logincms[4]='
 			[/if_used_about]
         </div>
 </div>
-<div class="clearfix"></div>
-<br>
+<br>&nbsp;<br>
 ';
  
 //Восстановление аккаунта
@@ -297,7 +305,7 @@ else TXT.value += startTag + endTag;
 		<hr>
 		<br>
 			<div class="center">
-			    [if_can_avatars]<img class="center" src="{AVATAR}" alt="avatar">[/if_can_avatars]
+			    [if_can_avatars]<img class="center" src="{AVATAR}" alt="Avatar">[/if_can_avatars]
 			</div>
 	    [if_can_avatars]
 		    <form class="block-100" name="uploadavatar" action="{STEPUPLOAD}" method="POST" enctype="multipart/form-data">
@@ -372,7 +380,7 @@ else TXT.value += startTag + endTag;
 				[if_can_ps]
 				    <span class="block-100">(Подпись, содержащая более {PS_MAX} символов будет урезана)</span>
 					<div class="block-100">
-						<ul class="inline text-center">
+						<ul class="inline center-text">
 						    <li type="button" title="Жирный" class="btn fa fa-bold" onClick="tag(document.getElementById(\'mess\'),\'[ж]\',\'[/ж]\');"></li>
 							<li type="button" title="Наклонный" class="btn fa fa-italic" onClick="tag(document.getElementById(\'mess\'),\'[к]\',\'[/к]\');"></li>
 						    <li type="button" title="Подчёркнутый" class="btn fa fa-underline" onClick="tag(document.getElementById(\'mess\'),\'[ч]\',\'[/ч]\');"></li>
@@ -390,9 +398,9 @@ else TXT.value += startTag + endTag;
 		    <div class="register">
 	            <span class="block-100 color-orange">Не заполняйте следующие ниже поля, если не хотите менять пароль!</span>
 				<br>&nbsp;<br>
-			    <div class="block-100"><div class="label-name">Новый пароль:</div><input class="label-info block-100" type="password" name="newpassword"></div>
-			    <div class="block-100"><div class="label-name">Повторите новый пароль:</div><input class="label-info block-100" type="password" name="newspassword"></div>
-			    <div class="block-100"><div class="label-name">Старый пароль:</div><input class="label-info block-100" type="password" name="oldpassword"></div>
+			    <div class="block-100"><div class="label-name">Новый пароль:</div><input class="form-control block-100" type="password" name="newpassword"></div>
+			    <div class="block-100"><div class="label-name">Повторите новый пароль:</div><input class="form-control block-100" type="password" name="newspassword"></div>
+			    <div class="block-100"><div class="label-name">Старый пароль:</div><input class="form-control block-100" type="password" name="oldpassword"></div>
 			</div>
 			<br>&nbsp;<br>
 			<div class="account">
@@ -402,7 +410,6 @@ else TXT.value += startTag + endTag;
 			</div>
 		</form>
 </div>
-<div class="clearfix"></div>
 <br>
 <script type="text/javascript">
 document.getElementById("profileedit").setAttribute("autocomplete","off");
@@ -425,12 +432,11 @@ $logincms[8]='<a class="user-name" href="{PROFILELINK}" onClick="window.open(\'{
 //{MENU} - меню
 //{LIST} - содержимое
 $logincms[9]='
-<div class="block-90-offset-05">
+<div class="block-90-offset-005">
     <h2>Личные сообщения</h2>
 	    <br>
 	    <div class="block-100">{MENU}</div>
 		<div class="block-100">{LIST}</div>
-		<div class="clearfix"></div>
 	    <br>
 </div>
 ';
@@ -444,25 +450,24 @@ $logincms[9]='
 $logincms[10]='
 <table border=0 cellpadding=1 cellspacing=0 width="100%" margin-left="0">
     <div class="account">
-        <div class="block-100 em-air">
-	            <div class="label-message">Дата</div>
-		        <div class="label-message">Тема</div>
-		        <div class="label-message">{BYORTO}</div>
-		        <div class="label-message">Действия</div>
+        <div class="block-100">
+	            <div class="block-25">Дата</div>
+		        <div class="block-25">Тема</div>
+		        <div class="block-25">{BYORTO}</div>
+		        <div class="block-25">Действия</div>
         </div>
     </div>
     <div class="account">
-        <div class="block-100 em-air">
+        <div class="block-100">
 	        {LIST}
         </div>
     </div>
 </table>
-<div class="clearfix"></div>
 	<br>
 	<div class="block-100">
 		<button class="btn tf-btn btn-default" onClick="{DELETEALLLINK}">Очистить всю папку</button>
 	</div>
-
+<br>&nbsp;<br>
 ';
 
 //Стиль надписи над сообщением из ЛС
@@ -474,7 +479,6 @@ $logincms[11]='
 //Что генерировать после сообщения из ЛС
 //{REPLYFORM} - форма для ответа на сообщение
 $logincms[12]='
-<div class="clearfix"></div>
 <br>&nbsp;<br>
 <h3>Ответить</h3>
 <br>
@@ -486,4 +490,3 @@ $logincms[13]='<a href="{LINK}">{CAPTION}</a>';
 
 //Обязательный системный параметр. Вручную не вносить НИКАКИХ изменений!
 $logincms[90] = "0.2";
-?>

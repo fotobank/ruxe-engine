@@ -27,9 +27,9 @@ $ocms[0] = '
 //{MESSAGE} - комментарий
 //{ONLYNAME} - имя комментатора без генерации тегов
 $ocms[14]='
-<div class="clearfix"></div>
-<form class="commentform block-70" role="form">
-    <div class="comment-block block-100">
+<form class="commentform" role="form">
+    <br> <br>
+	<div class="group-80-offset-010-bordered">
         <div class="row  block-100 colour">
 	        <div class="comment-wrapper">
                 <div class="comment-cell-top">
@@ -51,11 +51,9 @@ $ocms[14]='
                 <img src="{AVATAR}">
             </div>
 	    </div>
-		
     </div>
 </form>
-<br>
-<br>';
+';
 
 //Оформление комментариев без аватаров
 //{NAME} - имя комментатора
@@ -65,7 +63,6 @@ $ocms[14]='
 //{MESSAGE} - комментарий
 //{ONLYNAME} - имя комментатора без генерации тегов
 $ocms[13]='
-<div class="clearfix"></div>
 <form class="commentform block-70" role="form">
     <div class="comment-block block-100">
 	    <div class="row block-100 colour">
@@ -157,7 +154,7 @@ $ocms[8]='
 //{ANSWER} - ответ
 $ocms[9]='
 <div class="question-table">
-    <div class="row block-100 color-bottom-bordered">
+    <div class="row block-100-bordered">
 	    <div class="block-50">
 		    <div class="content">
 			<div class="question-cell-name">
@@ -171,7 +168,6 @@ $ocms[9]='
 			</div>
 			</div>
 		</div>
-	
 	    <div class="block-50">
 		    <div class="content">
 			<div class="question-cell-name">
@@ -184,7 +180,7 @@ $ocms[9]='
 		</div>
 	</div>
 </div>
-<br>&nbsp<br>';
+<br> <br>';
 
 //Оформление одной записи F.A.Q. для here_random_faq();
 //{SITE} - адрес сайта
@@ -206,7 +202,7 @@ $ocms[1]='
 		<div class="question-cell-text">{ANSWER}</div>
 	</div>
 </div>
-<br>&nbsp;
+<br> 
 ';
 
 //Главное оформление модуля Каталог ссылок (записи настраиваются в $ocms[6])
@@ -317,9 +313,8 @@ $ocms[17]='
 //{PAGES} - страницы
 $ocms[18]='
 <div class="row group-100">
-    <div class="navy-page text-center">
+    <div class="navy-page center-text">
         <p>Страницы</p>
-        <div class="clearfix"></div>
         <span class="pager">{PAGES}</span>
     </div>
 </div>
