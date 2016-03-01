@@ -63,6 +63,7 @@ $ocms[14]='
 //{MESSAGE} - комментарий
 //{ONLYNAME} - имя комментатора без генерации тегов
 $ocms[13]='
+<div class="clearfix"></div>
 <form class="commentform block-70" role="form">
     <div class="comment-block block-100">
 	    <div class="row block-100 colour">
@@ -154,7 +155,7 @@ $ocms[8]='
 //{ANSWER} - ответ
 $ocms[9]='
 <div class="question-table">
-    <div class="row block-100-bordered">
+    <div class="row block-100 bordered">
 	    <div class="block-50">
 		    <div class="content">
 			<div class="question-cell-name">
@@ -168,6 +169,7 @@ $ocms[9]='
 			</div>
 			</div>
 		</div>
+	
 	    <div class="block-50">
 		    <div class="content">
 			<div class="question-cell-name">
@@ -313,7 +315,7 @@ $ocms[17]='
 //{PAGES} - страницы
 $ocms[18]='
 <div class="row group-100">
-    <div class="navy-page center-text">
+    <div class="navy-page text-center">
         <p>Страницы</p>
         <span class="pager">{PAGES}</span>
     </div>

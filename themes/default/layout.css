@@ -13,10 +13,7 @@
 	height: 500px;
 	background-attachment: fixed;
 }
-#header .container {padding: 20% 0 0;}
-h1 {
-	color: #555;
-}
+#header .container {padding: 10% 0 0;}
 @media screen and (max-width: 800px) {
 #header, #header .overlay {
     height: 500px;

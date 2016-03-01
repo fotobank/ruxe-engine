@@ -154,7 +154,7 @@ $ocms[8]='
 //{ANSWER} - ответ
 $ocms[9]='
 <div class="question-table">
-    <div class="row block-100-bordered">
+    <div class="row block-100 bordered">
 	    <div class="block-50">
 		    <div class="content">
 			<div class="question-cell-name">
@@ -168,6 +168,7 @@ $ocms[9]='
 			</div>
 			</div>
 		</div>
+	
 	    <div class="block-50">
 		    <div class="content">
 			<div class="question-cell-name">

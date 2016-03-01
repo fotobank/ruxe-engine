@@ -168,6 +168,7 @@ $ocms[9]='
 			</div>
 			</div>
 		</div>
+	
 	    <div class="block-50">
 		    <div class="content">
 			<div class="question-cell-name">
@@ -313,7 +314,7 @@ $ocms[17]='
 //{PAGES} - страницы
 $ocms[18]='
 <div class="row group-100">
-    <div class="navy-page center-text">
+    <div class="navy-page text-center">
         <p>Страницы</p>
         <span class="pager">{PAGES}</span>
     </div>

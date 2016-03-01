@@ -62,13 +62,13 @@
         <!-- Nav -->
 	    <nav class="menu navbar-default">
 			<div class="group-80-offset-010">
-			    <ul>
-                    <a href="#"><div class="icon fa fa-align-justify"></div></a>
-					<div class="top items pull-left color">
-					    <a href="<?php here_urlsite(); ?>" title="Главная"><li><i class="fa fa-home"></i></li></a>
-						<a href="#"><li><i class="fa fa-search btn-slide"></i></li></a>
-						<a id="go" rel="leanModal" name="signup" href="#signup"><li><i class="fa fa-sign-in"></i></li></a>
-					</div>
+                <a href="#"><div class="icon fa fa-align-justify"></div></a>
+				<div class="top items pull-left">
+					<a href="<?php here_urlsite(); ?>" title="Главная"><i class="fa fa-home"></i></a>
+					<a href="#"><i class="fa fa-search btn-slide"></i></a>
+					<a id="go" rel="leanModal" name="signup" href="#signup"><i class="fa fa-sign-in"></i></a>
+				</div>
+				<ul>	
                     <div class="items pull-right">
 					    <a href="<?php here_urlsite(); ?>/downloads.html" title="Скачать"><li>Скачать</li></a><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
 						<a href="<?php here_urlsite(); ?>/faq.html" title="F.A.Q"><li>F.A.Q</li></a>

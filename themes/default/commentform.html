@@ -53,8 +53,8 @@ else TXT.value += startTag + endTag;
 	<br>
 	<form name="post" action="{URL}" method="post" role="form">
     {HIDDENS}
-		<div class="row group-100 bottom">
-		    <div class="block-50">
+		<div class="group-100">
+		    <div class="form block-50">
 			    <div class="form-group-100">
 					    [if_user_entered]
 					    <label for="exampleInputName">Ваше имя: <a href="{USERLINK}" onClick="window.open('{USERLINK}');return false;"><b>{NAME_VALUE}</b></a></label><br>
@@ -73,12 +73,11 @@ else TXT.value += startTag + endTag;
                         [/if_pm_input]
 				</div>
 			</div>
-			<div class="block-50">
+			<div class="form block-50">
 		        <div class="form-group-100">
 					    <label for="exampleInputEmail">Ваш Е-mail</label>
                         <input maxlength=60 name="ruxemylo" type="text" class="form-control" id="exampleInputEmail" {MAIL_VALUE}>
 		                [/if_user_not_entered]
-
 						[if_pm]
                         <label for="exampleInputTheme">Тема письма:</label>
 						<input type="text" name="theme" maxlength=50 class="form-control" id="exampleInputTheme">
@@ -91,7 +90,7 @@ else TXT.value += startTag + endTag;
 			</div>
 		</div>
 		[if_can_smiles]
-        <div class="comment-row">
+        <div class="comment-row center-text">
 			<ul class="inline">
 			    <li type="button" class="btn fa fa-smile-o" title="Смайлики" onClick="if (document.getElementById('smiles').style.display=='none'){document.getElementById('smiles').style.display='block';} else {document.getElementById('smiles').style.display='none';};"></li>
                 <div class="smilestable" id="smiles">
