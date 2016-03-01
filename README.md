@@ -895,9 +895,9 @@ $uninstall - 'uninstallExamplePlugin';
 
 Проверят логин и пароль активного пользователя.
 
-	finduser(string): int
+	finduser($login, $checkPassword = false, $passwordHash = '', $ignoreLoginRegistr = false): int
 
-Ищет идентификатор пользователя string. Если не находит - возвращает -1.
+Возвращает идентификатор пользователя с логином $login. Если не находит - возвращает -1. При активном флаге $checkPassword, кроме соответствия логина обязательным условием будет соответствие **хэша** пароля $passwordHash. Активный флаг $ignoreLoginRegistr означает игнорирование регистра символов логина.  
 
 	getpole(string,int): string
 
