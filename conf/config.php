@@ -89,3 +89,4 @@
 					$cms_registration	= 1;
 					$cms_nav_back		= 0;
 					$cms_top_news_max	= 5;
+                    $cms_notinstalled   = true;

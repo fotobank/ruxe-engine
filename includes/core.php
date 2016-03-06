@@ -3849,7 +3849,9 @@ if (!$withfullpath) {
 }
 foreach ($pluginsfile as $plugline) {
         $plu_ = explode("|",$plugline);
-        include($pluginpath.'includes/plugins/'.$plu_[0].'/functions.php');
+        if (! isset($cms_notinstalled)) {
+            include($pluginpath.'includes/plugins/'.$plu_[0].'/functions.php');
+        }
 };
 
 //Для поиска
