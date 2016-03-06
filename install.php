@@ -18,8 +18,8 @@
 
 $installer_version = "1.9 Beta 2";
 
-include(__DIR__ . '/conf/config.php');
-include(__DIR__ . "/includes/core.php");
+include("conf/config.php");
+include("includes/core.php");
 
 if ($installer_version != $this_version)
 {
