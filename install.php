@@ -624,7 +624,12 @@ echo '</div>
                   };
                 };
 
-                $ver = phpversion();
+                $verColor = "green";
+                if (version_compare(PHP_VERSION, "5.4.0", "<")) {
+                    $verColor = "#CD0000";
+                    $found = true;
+                }
+
                 /*if (is_writeable(".htaccess"))
                 {
                   $htac = "Имеются";
@@ -645,8 +650,8 @@ echo '</div>
 		//<tr><td>Модуль mod_rewrite</td><td>'.$modrewrite.'</td><td>Установлен</td></tr>
                 echo '<center><table class="table" cellpadding=5 width="100%" cellspacing=0 border=0>
                   <tr class="title"><td>ПАРАМЕТР</td><td>ЗНАЧЕНИЕ</td><td>ДОЛЖНО БЫТЬ</td></tr>
+                  <tr><td>Версия PHP</td><td><span style="font-weight: bold; color: ' . $verColor . '">'. phpversion() .'</span></td><td>5.4 или новее</td></tr>
                   <tr><td>GD библиотека</td><td>'.$gd.'</td><td>Установлена</td></tr>
-                  <tr><td>Версия PHP</td><td>'.$ver.'</td><td>5.4 или новее</td></tr>
                   <tr><td>Параметр Register Globals</td><td>'.$rg.'</td><td>Отключён</td></tr>
                 </table></center><br>
                 ';
