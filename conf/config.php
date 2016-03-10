@@ -49,7 +49,7 @@
 					$cms_fullredirect      = 0;
 					$cms_pm_max            = 125;
 					$cms_pm_showusers      = 1;
-					$cms_avatars_resize    = 0;
+					$cms_avatars_resize    = 1;
 					$cms_avatars_maxresize = 300;
 					$cms_log_max           = 300;
 					$cms_gravatars         = 0;
