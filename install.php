@@ -857,7 +857,7 @@ echo '</div>
 			$respc	=	1;
 		}
 		else*/
-			$respc	=	0;
+			$respc	=	1;
                 $cms_root = $root;
                 $usersfruits[0] = 1;
                 $gen			=	$Filtr->randwords(12);
