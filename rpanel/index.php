@@ -67,7 +67,7 @@
      			};
      		};
      	};
-     	$ar 		= array("{TITLE}","{GENERATOR}","{ADMIN}","{NEWMESS}","{/NEWMESS}","{ADDINFO}","{COUNT_NEW}","{LOGO}","{BFGADD}","{GENERALMENU}");
+     	$ar 		= array("{AVATAR}","{TITLE}","{GENERATOR}","{ADMIN}","{NEWMESS}","{/NEWMESS}","{ADDINFO}","{COUNT_NEW}","{LOGO}","{BFGADD}","{GENERALMENU}");
      	$newmess 	= "<!-- ";
      	$cnewmess 	= " -->";
     	$count_new 	= "";
@@ -227,8 +227,10 @@
       			$bfgadd = 'show&amp;type='.$tmp['bfg_types'];
       	};
       	$generalmenu = str_replace('{BFGADD}',$bfgadd,$generalmenu);
-     	
-     	($action=="users") ? $br = array($title,"Ruxe Engine (ruxe-engine.ru)",$admin_,$newmess,$cnewmess," onLoad='checkpoles();'",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu) : $br = array($title,"Ruxe Engine (ruxe-engine.ru)",$admin_,$newmess,$cnewmess,"",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu);
+
+        $avatar = "{$cms_site}/avatars/" . $GlobalUsers->getpole( $Filtr->clear($_COOKIE['site_login']), 16);
+
+     	($action=="users") ? $br = array($avatar, $title,"Ruxe Engine (ruxe-engine.ru)",$admin_,$newmess,$cnewmess," onLoad='checkpoles();'",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu) : $br = array($avatar, $title,"Ruxe Engine (ruxe-engine.ru)",$admin_,$newmess,$cnewmess,"",$Filtr->truecount($count_new,"новое сообщение","новых сообщений","новых сообщения"),$logo,$bfgadd, $generalmenu);
      	header("Cache-Control: no-store"); 
      	header("Expires: " .  date("r"));
      	header('Content-type: text/html; charset=utf-8');
