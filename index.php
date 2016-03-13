@@ -89,7 +89,7 @@ if (isset($_GET['needconfbackup']))
 			$checkbackup = file($cms_root."/conf/checkbackup.dat");
 			if ($Filtr->clear($_GET['check'])==$checkbackup[0])
 			{
-				include('includes/zip.php');			
+				include('includes/zip.php');
 			};
 		};
 };
@@ -115,7 +115,7 @@ if ($findno)
 if ($cms_banlog!=1)
 	$FileManager 	-> 	enablemodules();
 
-if ($cms_gzip == 1) 
+if ($cms_gzip == 1)
 {
   $PREFER_DEFLATE = false;
   $FORCE_COMPRESSION = false;
@@ -148,14 +148,14 @@ if ($cms_gzip == 1)
 		ob_start();
 	}
   }
-}; 
+};
 
 $ban_found = 0;
 
 if ($cms_ban==1)
-{ 
-	$ban_db    = file($cms_root."/conf/ban.dat"); 
-	$ban_found = 0; 
+{
+	$ban_db    = file($cms_root."/conf/ban.dat");
+	$ban_found = 0;
 	foreach ($ban_db as $ban_one)
 	{
   		$bn       	= explode("|",$ban_one);
@@ -166,19 +166,19 @@ if ($cms_ban==1)
   		if ($ban_one_[0] == "*")
   			$ban_found = $ban_found + 1;
   		if ($ban_one_[0] == $remote_dd[0])
-  			$ban_found = $ban_found + 1;  
+  			$ban_found = $ban_found + 1;
   		if ($ban_one_[1] == "*")
   			$ban_found = $ban_found + 1;
   		if ($ban_one_[1] == $remote_dd[1])
-  			$ban_found = $ban_found + 1; 
+  			$ban_found = $ban_found + 1;
   		if ($ban_one_[2] == "*")
   			$ban_found = $ban_found + 1;
   		if ($ban_one_[2] == $remote_dd[2])
-  			$ban_found = $ban_found + 1; 
+  			$ban_found = $ban_found + 1;
   		if ($ban_one_[3] == "*")
   			$ban_found = $ban_found + 1;
   		if ($ban_one_[3] == $remote_dd[3])
-  			$ban_found = $ban_found + 1; 
+  			$ban_found = $ban_found + 1;
   		if ($ban_found == 5)
     			break;
 	};
@@ -203,8 +203,8 @@ for ($i = 0; $i<10; $i++)
     )
    {
       $hidepage = true;
-      if (($role == "baned") 
-       or ($role == "admin") 
+      if (($role == "baned")
+       or ($role == "admin")
        or ($role == "superuser")
        or ($role == "editor")
        or ($role == "moderator")
@@ -232,9 +232,9 @@ if ($ban_found==5)
 		$banlogfile 	= fopen($cms_root."/conf/logs/ban.log","a");
   		$time 		= date("d.m.y, H:i");
   		$add='';
-  		if (isset($_COOKIE['site_login'])) 
+  		if (isset($_COOKIE['site_login']))
   		{
-      			if ($_COOKIE['site_login']!='no') 
+      			if ($_COOKIE['site_login']!='no')
       				$add = ' (<a href="'.$Navigation->furl('viewprofile',$Filtr->clear($_COOKIE['site_login'])).'">'.$Filtr->clear($_COOKIE['site_login']).'</a>)';
   		};
 		$referer = (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : '';
@@ -265,7 +265,7 @@ if ($role=="active")
   			$can_enter = true;
  	};
  	if (!$can_enter)
- 	{ 
+ 	{
    		header('Content-type: text/html; charset=utf-8');
    		setcookie("site_login", "no", time() + $cms_time_cookie,"/");
    		setcookie("site_password", "no", time() + $cms_time_cookie,"/");
@@ -293,13 +293,13 @@ if (
 
 if ($cms_wwwredirect==1)
 {
-	$ttttttmp	=	explode("/",str_replace("http://","",$cms_site));
+	$ttttttmp	=	explode( "/", str_replace(["http://", "https://"], "", $cms_site) );
 	$tttttmp	=	explode(":",$_SERVER['SERVER_NAME']);
 
 	if ($tttttmp[0]!=$ttttttmp[0])
 	{
 		$request_url 	= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-		$tmp_array 		= explode("/", str_replace(str_replace("http://","",$cms_site), "", $request_url));
+		$tmp_array 		= explode( "/", str_replace( str_replace(["http://", "https://"], "", $cms_site), "", $request_url) );
 		array_shift($tmp_array);
 		$new_params 	= "/".implode("/", $tmp_array);
 		header("location: ".$cms_site.$new_params);
@@ -336,7 +336,7 @@ if (isset($_COOKIE['site_password']))
 {
    if (isset($_COOKIE['site_login'])) {$login = $Filtr->clear(str_replace("%","",$_COOKIE['site_login']));} else $login = "no";
    if (isset($_COOKIE['site_password'])) {$password = $_COOKIE['site_password'];} else $password = "no";
-   
+
    $adding	=	true;
    if ($cms_hide_admin==1)
    {
@@ -349,7 +349,7 @@ if (isset($_COOKIE['site_password']))
    	if ($GlobalUsers->finduser($login)!=-1)
    	{
    		$onuser	=	$login;
-   		if ($hideadmin!='hide') 
+   		if ($hideadmin!='hide')
 			$onlinefusers.="<a href=\"".$Navigation->furl('viewprofile',$login)."\">".$login."</a>";
    	};
    };
@@ -381,7 +381,7 @@ for ($onl=0; $onl<count($online_data); $onl++)
 	$online_tmp = explode("|",$online_data[$onl]);
    	if ($online_tmp[2]<time()-$cms_online_time*60)
    	{
-   
+
    	}
    	else
    	{
@@ -402,7 +402,7 @@ $new_online_data[] = $online_user;
 $online_count++;
 //$online_count= count($new_online_data);
 if ($cms_needrecord == 1)
-{ 
+{
    $record_online = file($cms_root."/conf/online.dat");
     if ($online_count > $record_online[0]) {
         $record_online = fopen($cms_root . "/conf/online.dat", "cb");
@@ -438,15 +438,15 @@ if (!isset($_GET['action']))
 	if (!$foundedpage) { $openpage = "404"; $pagetitle = $lcms['page_not_found']; $pagedesc = ""; $pagekeys = " ";};
   	if ($cms_nocache==1)
   	{
-       		header("Cache-Control: no-store"); 
+       		header("Cache-Control: no-store");
        		header("Expires: " .  date("r"));
   	};
   	header('Content-type: text/html; charset=utf-8');
-  
+
   	$wassetview = false;
   	if (
       		(isset($_GET['viewnews']))
-      		&& 
+      		&&
       		($cms_views_counter==1)
   	)
   	{
@@ -457,12 +457,12 @@ if (!isset($_GET['action']))
             			setcookie('view'.$Filtr->clear(str_replace(array("=",",",";"," ","<",">"),"",$_GET['viewnews'].$_GET['record'])), 'viewed', time() + 1209600,"/");
             			$wassetview = true;
           		};
-      		};      
+      		};
   	};
-  
+
   	if (
-   		isset($_GET['viewnews']) 
-    		&& 
+   		isset($_GET['viewnews'])
+    		&&
       		isset($_GET['record'])
   	)
   	{
@@ -481,12 +481,12 @@ if (!isset($_GET['action']))
       				};
     			}
    		};
-  	};  
+  	};
   	$typeopenpage = 'page';
 }
 else
 {
-  
+
   	$actions = array("pm","download","activate","add_comment","new_message","question",
                             "tomail","logout","myprofile","login","newuser","profile","restore","gosite",
                             "link");
@@ -502,7 +502,7 @@ else
   	};
   	if (!$actionsfind)
   	{
-                $openpage  = $lcms['action_not_found']; 
+                $openpage  = $lcms['action_not_found'];
                 $pagetitle = $lcms['page_not_found'];
   	};
   	if (($pageredirect!="") && ($cms_fullredirect==0) && ($Filtr->clear($_GET['action'])!="download"))
@@ -535,11 +535,11 @@ else
 			exit;
 		};
   	};
-  	if ($pageredirect!="") 
+  	if ($pageredirect!="")
   		$pageredirect = "<meta http-equiv=\"refresh\" content=\"4;URL=".$pageredirect."\">\r\n";
   	if ($cms_nocache==1)
   	{
-       		header("Cache-Control: no-store"); 
+       		header("Cache-Control: no-store");
        		header("Expires: " .  date("r"));
   	};
   	header('Content-type: text/html; charset=utf-8');
