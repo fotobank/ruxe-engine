@@ -22,16 +22,17 @@ function jstr_replace(search, replace, subject) {
 	return subject.split(search).join(replace);
 } 
 function generalwwwredirect() {
-	var sitewithout	=	jstr_replace('http://','',document.getElementById('jsite').value);
+	var sitewithout	=	jstr_replace('http://', '', document.getElementById('jsite').value);
+    sitewithout = jstr_replace('https://', '', sitewithout);
 	if (document.getElementById('jsite').value.indexOf('www.') + 1)
 	{ 
 		//document.getElementById('jwww').innerHTML = 'Включить переадресацию с адреса, <b>без</b> поддомена www, на адрес <b>с</b> поддоменом www:';
-		document.getElementById('jwww').innerHTML = 'Включить переадресацию с <b>http://' + jstr_replace('www.','',sitewithout) +'</b> на <b>http://'+ sitewithout + '</b>:'; 
+		document.getElementById('jwww').innerHTML = 'Включить переадресацию с <b>' + jstr_replace('www.','',sitewithout) +'</b> на <b>'+ sitewithout + '</b>:';
 	} 
 	else 
 	{ 
 		//document.getElementById('jwww').innerHTML = 'Включить переадресацию с адреса, <b>имеющим</b> поддомен www, на адрес <b>без</b> поддомена www:'; 
-		document.getElementById('jwww').innerHTML = 'Включить переадресацию с <b>http://www.' + sitewithout +'</b> на <b>http://'+ sitewithout + '</b>:'; 
+		document.getElementById('jwww').innerHTML = 'Включить переадресацию с <b>www.' + sitewithout +'</b> на <b>'+ sitewithout + '</b>:';
 	};
 }
 function diuc() {
