@@ -741,7 +741,9 @@ echo '</div>
                              $languages.='<option value="'.$l.'">'.$info;
                           };
                 };
-                $site = $_SERVER['HTTP_HOST'].$addpath;
+
+                $site = (isset($_SERVER["HTTPS"]) ? "https://" : "http://") . $_SERVER["HTTP_HOST"] . $addpath;
+
                 $root = str_replace("/install.php","",$_SERVER['SCRIPT_FILENAME']);
                 $flag = @file($root."/install.php");
                 if (!$flag) $root = ".";
@@ -765,7 +767,7 @@ echo '</div>
                   <tr><td align="left">Пароль:<br><font style="color:grey;font-size:8pt;">Как и в логине, в пароле можно использовать <b>только</b> буквы английского алфавита, числа, <b>@</b>, <b>!</b>, <b>-</b> и <b>*</b>. От 4 до 20 символов.</font></td><td><input type="password" name="password" size=46></td></tr>
                   <tr><td align="left">Повторите пароль:</td><td><input type="password" name="replaypassword" size=46></td></tr>
                   <tr><td align="left">E-mail:</td><td><input type="text" name="mail" size=46></td></tr>
-                  <tr><td align="left">Адрес сайта:</font></td><td><input type="text" name="site" size=46 value="http://'.$site.'"></td></tr>
+                  <tr><td align="left">Адрес сайта:</font></td><td><input type="text" name="site" size=46 value="'.$site.'"></td></tr>
                   <tr><td align="left">Полный путь до скриптов:<br><font style="color:grey;font-size:8pt;">Путь к каталогу с системой на сервере. Как правило, указывается в инструкции к хостингу в DOCUMENT_ROOT, но лучше оставить автоматически подставленное значение.</font></td><td><input type="text" name="root" size=46 value="'.$root.'"></td></tr>
 		  <tr><td align="left">Активировать ЧПУ (человекопонятные урл'.$sinfo.'):<br><font style="color:'.$finfo.'; font-size:8pt;">Требуется Apache веб-сервер с mod_rewrite.</font></td><td><select name="furlresult">'.$furl.'</select></td></tr>
                   <tr><td align="left">Язык:<br><font style="color:grey;font-size:8pt;"><b>Внимание!</b> Смена языка не действует на админ-центр и темы оформления.</font></td><td><select name="language">'.$languages.'</select></td></tr>
