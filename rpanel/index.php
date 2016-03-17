@@ -1843,6 +1843,10 @@
 					$pageUrlTitle = "<b>Главная страница сайта</b>";
 				}
 
+				$c[1] = empty($c[1]) ? "&nbsp;" : $c[1];
+                $c[2] = empty($c[2]) ? "&nbsp;" : $c[2];
+                $c[3] = empty($c[3]) ? "&nbsp;" : $c[3];
+
 				$list	.=	'<tr><td><a href="'.$pageUrl.'" target="_blank">'.$pageUrlTitle.'</b></a></td><td>'.$c[1].'</td><td>'.$c[2].'</td><td>'.$c[3].'</td><td>
 							<a href="?action=edit&amp;file=../conf/pages/'.$c[4].'.txt">Редактировать</a>
 							<a href="?action=pages&amp;do=editpage&amp;page='.$c[0].'">Параметры</a>
