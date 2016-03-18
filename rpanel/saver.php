@@ -713,21 +713,24 @@ if (isset($_GET['saverdo']))
   			header("location: index.php?action=rotator&rand=".rand(0,9999));
   			exit;
 			break;
-		case 'addrotator':
-			$GlobalUsers->access(1);
-			if (!isset($_POST['submit'])) die("Error.01");
-  			$url = $_POST['url'];
-  			$code = $_POST['code'];
-  			$id = $_POST['id'];
-  			$file = fopen("../conf/rotator.dat","a");
-  			fputs($file,$id."|".$code."|".$url."|\r\n");
-  			fclose($file);
-  			$file = fopen("../conf/rotator_count.dat","a");
-  			fputs($file,$id."=0=\r\n");
-  			fclose($file);
-  			header("location: index.php?action=rotator&rand=".rand(0,9999));
-  			exit;
-			break;
+        case 'addrotator':
+            $GlobalUsers->access(1);
+            if (!isset($_POST['submit'])) die("Error.01");
+            $url = $_POST['url'];
+            $code = $_POST['code'];
+            $id = trim($_POST['id']);
+            if (empty($id)) {
+                die("Пожалуйста, вернитесь <a href=\"javascript:history.go(-1);\">назад</a> и заполните поле \"Идентификатор\" баннера.");
+            }
+            $file = fopen("../conf/rotator.dat","a");
+            fputs($file,$id."|".$code."|".$url."|\r\n");
+            fclose($file);
+            $file = fopen("../conf/rotator_count.dat","a");
+            fputs($file,$id."=0=\r\n");
+            fclose($file);
+            header("location: index.php?action=rotator&rand=".rand(0,9999));
+            exit;
+            break;
 		case 'editrazdel':
 			$GlobalUsers->access(1);
 			$description 	= $Filtr->clear($_POST['description']);
