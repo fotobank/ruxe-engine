@@ -1573,7 +1573,10 @@
                   						<tr><td>Заголовок:</td><td><input type="text" name="title" value="" size=66></td></tr>
                   									<tr><td>Описание:</td><td><input type="text" name="description" value="" size=66 maxlength=210></td></tr>
                   						<tr><td>Ключевые слова:</td><td><input type="text" name="keywords" value="" size=66 maxlength=150></td></tr>
-                  						<tr class="sub"><td colspan=2>Тема: <select name="theme">';
+                  						<tr class="sub"><td colspan=2>Тема:
+                  						<select name="theme">
+                  							<option value="">Выбранная в Основных настройках</option>
+                  						';
 							foreach ($FileManager->listing("../themes/",1) as $f)
 							{
 								$menu.="<option value=\"".$f."\">".$f;
@@ -1742,7 +1745,10 @@
                   					<tr><td>Заголовок:</td><td><input type="text" name="title" value="'.$title.'" size=66></td></tr>
                   						<tr><td>Описание:</td><td><input type="text" name="description" value="'.$description.'" size=66 maxlength=210></td></tr>
                   					<tr><td>Ключевые слова:</td><td><input type="text" name="keywords" value="'.$keywords.'" size=66 maxlength=150></td></tr>
-                  					<tr class="sub"><td colspan=2>Тема: <select name="theme">';
+                  					<tr class="sub"><td colspan=2>Тема:
+                  						<select name="theme">
+                  							<option value="">Выбранная в Основных настройках</option>
+                  					';
 							foreach ($FileManager->listing("../themes/",1) as $f)
 							{
 								($page_theme == $f) ? $menu.="<option value=\"".$f."\" selected>".$f : $menu.="<option value=\"".$f."\">".$f;

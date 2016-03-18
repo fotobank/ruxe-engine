@@ -317,7 +317,9 @@ foreach ($pages as $onepage)
 		$pagekeys    = $opa[2];
 		$foundedpage = true;
 		$openpage    = $opa[4];
-		$cms_theme   = is_dir(__DIR__.'/../themes/'.$opa[5].'/')?$opa[5]:$cms_theme;
+		if (! empty($opa[5])) {
+            $cms_theme = is_dir(__DIR__ . "/../themes/{$opa[5]}/") ? $opa[5] : $cms_theme;
+        }
 		break;
 	};
 };
