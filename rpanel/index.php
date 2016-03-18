@@ -1747,7 +1747,7 @@
                   					<tr><td>Ключевые слова:</td><td><input type="text" name="keywords" value="'.$keywords.'" size=66 maxlength=150></td></tr>
                   					<tr class="sub"><td colspan=2>Тема:
                   						<select name="theme">
-                  							<option value="">Выбранная в Основных настройках</option>
+                  							<option value="" ' . (empty($page_theme) ? "selected" : "") . '>Выбранная в Основных настройках</option>
                   					';
 							foreach ($FileManager->listing("../themes/",1) as $f)
 							{

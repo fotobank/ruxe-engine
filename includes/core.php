@@ -309,19 +309,19 @@ $pages       = file(__DIR__."/../conf/pages/config");
 (isset($_GET['viewpage'])) ? $viewpage = $Filtr->clear($_GET['viewpage']) : $viewpage = "index";
 foreach ($pages as $onepage)
 {
-	$opa    = explode("|",$onepage);
-	if ($viewpage == $opa[0])
-	{
-		$pagetitle   = $opa[1];
-		$pagedesc    = $opa[3];
-		$pagekeys    = $opa[2];
-		$foundedpage = true;
-		$openpage    = $opa[4];
-		if (! empty($opa[5])) {
+    $opa    = explode("|",$onepage);
+    if ($viewpage == $opa[0])
+    {
+        $pagetitle   = $opa[1];
+        $pagedesc    = $opa[3];
+        $pagekeys    = $opa[2];
+        $foundedpage = true;
+        $openpage    = $opa[4];
+        if (! empty($opa[5])) {
             $cms_theme = is_dir(__DIR__ . "/../themes/{$opa[5]}/") ? $opa[5] : $cms_theme;
         }
-		break;
-	};
+        break;
+    };
 };
 
 //if (!defined("ADMINCENTER")) {
