@@ -2729,25 +2729,28 @@
            		';
            		$rotatordat = array_reverse($rotatordat);
            		$i = count($rotatordat)-1;
-           		foreach ($rotatordat as $rotator)
-           		{
-              			$r = explode("|",$rotator);
-              			$o = "Не найдено";
-              			$z = 0;
-              			$x = 0;
-              			foreach ($counts as $count)
-              			{
-                 			$c = explode("=",$count);
-                 			if ($c[0] == $r[0]) {$o = $c[1]; $x = $z; break;};
-                 			$z++;
-              			};
-              			$echooptions.= '<tr><td>'.$r[0].'</td><td>'.str_replace("<","&lt;",str_replace(">","&gt;",$r[1])).'</td>
-              				<td>'.$r[2].'</td><td>'.$o.'</td><td>
-              					<a href="?action=rotator&amp;go=edit&amp;line='.$i.'&amp;id='.$r[0].'">Изменить</a>
-              						<a href="saver.php?saverdo=delfile&amp;fromupdate=1&amp;count='.$x.'">Обнулить</a>
-              						<a href="#" onClick="if (checkhead()) location.href=\'saver.php?saverdo=delfile&amp;fromrotator=1&amp;line='.$i.'&amp;count='.$x.'\';">Удалить</a>
-              					</td></tr>';
-              			$i--;
+
+                foreach ($rotatordat as $rotator) {
+                    $r = explode("|",$rotator);
+
+                    for ($ri = 0; $ri < count($r); $ri++)
+                        $r[$ri] = empty($r[$ri]) ? "&nbsp;" : $r[$ri];
+
+                    $o = "Не найдено";
+                    $z = 0;
+                    $x = 0;
+                    foreach ($counts as $count) {
+                        $c = explode("=",$count);
+                        if ($c[0] == $r[0]) {$o = $c[1]; $x = $z; break;};
+                        $z++;
+                    };
+                    $echooptions.= '<tr><td>'.$r[0].'</td><td>'.str_replace("<","&lt;",str_replace(">","&gt;",$r[1])).'</td>
+                        <td>'.$r[2].'</td><td>'.$o.'</td><td>
+                            <a href="?action=rotator&amp;go=edit&amp;line='.$i.'&amp;id='.$r[0].'">Изменить</a>
+                            <a href="saver.php?saverdo=delfile&amp;fromupdate=1&amp;count='.$x.'">Обнулить</a>
+                            <a href="#" onClick="if (checkhead()) location.href=\'saver.php?saverdo=delfile&amp;fromrotator=1&amp;line='.$i.'&amp;count='.$x.'\';">Удалить</a>
+                        </td></tr>';
+                    $i--;
            		};
            		$echooptions .= '
            			</table></center>';
