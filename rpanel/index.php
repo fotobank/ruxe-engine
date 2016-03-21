@@ -2551,7 +2551,7 @@
                 $newmessages = file("../conf/new_messages.dat");
                 $newmessages = array_reverse($newmessages);
 
-				$newMessagesToTemplate = "";
+                $newMessagesToTemplate = "";
 
                 foreach ($newmessages as $nms) {
                     $nm = explode("|", $nms);
@@ -2565,11 +2565,11 @@
                         }
                     };
 
-					$newMessagesToTemplate .= $GlobalTemplate->template(
-						["{THEME}", "{SHOW_ON_SITE}", "{MESSAGE}"],
-						[$nm[0], $showed_on_site, ($cms_smiles == 1) ? $GlobalTemplate->usebbcodes($nm[2], 'html') : $nm[2]],
-						"./theme/newmessage.tpl"
-					);
+                    $newMessagesToTemplate .= $GlobalTemplate->template(
+                        ["{THEME}", "{SHOW_ON_SITE}", "{MESSAGE}"],
+                        [$nm[0], $showed_on_site, ($cms_smiles == 1) ? $GlobalTemplate->usebbcodes($nm[2], 'html') : $nm[2]],
+                        "./theme/newmessage.tpl"
+                    );
                 };
                 $ar = array("{MENU}", "{OPTIONS}");
                 $br = array("", $GlobalTemplate->template(["{NEW_MESSAGES}"], [$newMessagesToTemplate], "./theme/newmessages.tpl"));
