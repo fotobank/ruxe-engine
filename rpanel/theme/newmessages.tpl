@@ -7,9 +7,12 @@
                        value="Очистить"></td>
         </tr>
     </table>
-
-    <p style="margin-top: 20em;">Следите за новыми сообщениями через мобильное устройство с помощью Ruxe Engine Monitor.</p>
-    <a href="https://play.google.com/store/apps/details?id=ru.ahrameev.ruxeenginemonitor" target="_blank"><img
-                src="theme/images/button-google-play.png" style="width:150px;"></a>
-
 </center>
+
+<p style="margin-top: 20em; text-align: right; color: #555; font-size: .8em;"
+    >Следите за новыми сообщениями через мобильное устройство с помощью
+    <a
+            href="https://play.google.com/store/apps/details?id=ru.ahrameev.ruxeenginemonitor"
+            target="_blank"
+            style="color: #555;"
+    >Ruxe Engine Monitor на Android</a>.</p>
