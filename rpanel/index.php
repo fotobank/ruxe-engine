@@ -2544,50 +2544,37 @@
           		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
           		break;
         	case "newmessages":
-        		$GlobalUsers->access(1);
-            	 	$whatdoing="Новые сообщения";
-          		$echooptions = '<h2>Новые сообщения</h2><br><br>
-           			<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-           		';
-           		$newmessages=file("../conf/new_messages.dat");
-           		$newmessages=array_reverse($newmessages);
-           		foreach($newmessages as $nms)
-           		{
-             			$nm=explode("|",$nms);
-             			if ($nm[1] == "no")
-             			{
-              				$showed_on_site = "<font color=\"red\"><b>Да</b></font>";
-             			}
-             			else 
-             			{
-              				if ($nm[1] == "yes")
-              				{
-               					$showed_on_site = "Нет";
-              				}
-              				else
-              				{
-               					$showed_on_site = "В этом нет необходимости";
-              				}
-             			};
-             			if ($cms_smiles==1) 
-             			{
-               				$echooptions.= "<tr><td><b>Тема:</b> ".$nm[0]."<br><b>Требуется Ваше участие:</b> ".$showed_on_site."<br><b>Сообщение:</b> ".$GlobalTemplate->usebbcodes($nm[2],'html')."</td></tr>
-             				";
-             			}
-             			else
-             			{
-               				$echooptions.= "<tr><td><b>Тема:</b> ".$nm[0]."<br><b>Требуется Ваше участие:</b> ".$showed_on_site."<br><b>Сообщение:</b> ".$nm[2]."</td></tr>
-             				";
-             			};
-           		};
-           		$echooptions .='
-           				<tr class="titletable"><td><input type="button" onClick="location.href=\'saver.php?saverdo=clear&amp;file=newmessages\';" value="Очистить"></td></tr>
-           			</table></center> 
-           			';  
-           		$ar = array("{MENU}","{OPTIONS}");
-           		$br = array("",$echooptions);
-           		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
-           		break;
+                $GlobalUsers->access(1);
+
+                $whatdoing = "Новые сообщения";
+
+                $newmessages = file("../conf/new_messages.dat");
+                $newmessages = array_reverse($newmessages);
+
+				$newMessagesToTemplate = "";
+
+                foreach ($newmessages as $nms) {
+                    $nm = explode("|", $nms);
+                    if ($nm[1] == "no") {
+                        $showed_on_site = "<font color=\"red\"><b>Да</b></font>";
+                    } else {
+                        if ($nm[1] == "yes") {
+                            $showed_on_site = "Нет";
+                        } else {
+                            $showed_on_site = "В этом нет необходимости";
+                        }
+                    };
+
+					$newMessagesToTemplate .= $GlobalTemplate->template(
+						["{THEME}", "{SHOW_ON_SITE}", "{MESSAGE}"],
+						[$nm[0], $showed_on_site, ($cms_smiles == 1) ? $GlobalTemplate->usebbcodes($nm[2], 'html') : $nm[2]],
+						"./theme/newmessage.tpl"
+					);
+                };
+                $ar = array("{MENU}", "{OPTIONS}");
+                $br = array("", $GlobalTemplate->template(["{NEW_MESSAGES}"], [$newMessagesToTemplate], "./theme/newmessages.tpl"));
+                echo $GlobalTemplate->template($ar, $br, "./theme/admincenteroptions.tpl");
+                break;
         	case "message":
         		$tmp	=	$GlobalUsers->getrules($Filtr->clear($_COOKIE['site_login']));
 			if ($tmp['comments_edit']!=true)
