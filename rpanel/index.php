@@ -243,7 +243,8 @@
          		$whatdoing	= "Главная страница центра";
          		$ar 		= array("{ALL_HITS}","{MESSAGE}","{ALL_HOSTS}","{HITS}","{LAST_HOSTS}","{SERVER_TIME}","{HOSTS}",
   						"{ONLINE}","{BOTS}","{RSS_NEWS}","{DEFAULT_ROOT}","{register_globals}","{register_long_arrays)",
-  						"{NOTEPAD}","{RAND}","{WHOONLINE}", "{TIME_RECORD}","{INSTALL}","{UTCTIME}","{MESSAGES}");
+  						"{NOTEPAD}","{RAND}","{WHOONLINE}", "{TIME_RECORD}","{INSTALL}","{UTCTIME}","{MESSAGES}",
+					    "{NOTES}");
   			$hello 		= "";
   			$whoonline 	= "";
   			if (isset($_GET['go']))
@@ -515,9 +516,13 @@
 				}
 				$i++;
 			};
+                $notes = "<a href=\"#\" id=\"flower_1\" class=\"note sortable flower\">fsfdsf</a>";
+                $notes .= $notes;
+                $notes .= $notes;
   			$br = array($all_hits[0],$hello,$all_hosts[0],$hits[0],$last_hosts[0],date("d.m.y H:i:s"),$today_hosts,
   				count(file("../conf/online_users.dat")),$today_bots,($cms_furl==1) ? $cms_site.'/rss' : $cms_site.'/?action=rss',$_SERVER['DOCUMENT_ROOT'],$jfj,$ofj,
-				$notepad,rand(0,99999),$whoonline,$cms_online_time,$install,$Filtr->gettimezonedate(),$messages);
+				$notepad,rand(0,99999),$whoonline,$cms_online_time,$install,$Filtr->gettimezonedate(),$messages,
+                $notes);
   			$echooptions = $GlobalTemplate->template($ar,$br,"./theme/stat.tpl");
   			$ar = array("{MENU}","{OPTIONS}");
   			$br = array("",$echooptions);

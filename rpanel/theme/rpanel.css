@@ -509,3 +509,23 @@ a.black, a.black:hover, a.black:active {
 	font-size:8pt;
 	color:black;
 }
+
+/* Заметки */
+.note {
+    border: 1px solid rgb(189, 195, 199);
+    /*border-radius: 3px; padding: 8px;*/
+    outline: none;
+    display: block;
+    background-color: #fff;
+    margin: 10px 15px;
+    width: inherit;
+    padding: 8px;
+    /*-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;*/
+    color: #333 !important;
+    text-align: left;
+}
+
+.note:hover {
+    background-color: #eee;
+}
