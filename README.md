@@ -1,4 +1,4 @@
-[Ruxe Engine](http://ruxe-engine.ru/) - Понятная CMS для людей
+[Ruxe Engine](http://ruxe-engine.ru/) — Понятная CMS для людей
 =====================================================
 
 0. Оглавление
