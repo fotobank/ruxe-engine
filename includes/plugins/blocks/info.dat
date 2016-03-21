@@ -12,7 +12,7 @@
  $name          = "Блоки с кодом";
  $version       = "1.2";
  $description   = "Дополнение позволит использовать на страницах и в шаблонах блоки с различным HTML, JavaScript и PHP кодом<br>
-Используйте команду &lt;? here_block(\"ID\"); ?&gt;, где ID - идентификатор созданного блока<br>
+Используйте команду <strong>&lt;? here_block(\"ID\"); ?&gt;</strong>, где ID - идентификатор созданного блока<br>
 Совместимость: <font color=\"green\"><b>Ruxe Engine 1.9</b></font>";
  $author        = "Ахрамеев Денис Викторович";
  $site          = "http://ahrameev.ru";
