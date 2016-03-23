@@ -3851,7 +3851,7 @@ if (!$withfullpath) {
 }
 foreach ($pluginsfile as $plugline) {
         $plu_ = explode("|",$plugline);
-        if (! isset($cms_notinstalled)) {
+        if (! isset($cms_notinstalled) && (file_exists($pluginpath.'includes/plugins/'.$plu_[0].'/functions.php'))) {
             include($pluginpath.'includes/plugins/'.$plu_[0].'/functions.php');
         }
 };
