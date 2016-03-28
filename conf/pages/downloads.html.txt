@@ -2,8 +2,11 @@
 <hr>
 <br>
     <h4><a href="<?php here_urlsite(); ?>/getfile/android">Ruxe Engine на Android</a></h4>
+    <p>
+        Приложение является дополнением для сайта, работающего под управлением CMS Ruxe Engine. Оно позволяет проверять новые уведомления из админ-центра, следить за последними постами на форуме проекта, а также узнать о появлении новой версии Ruxe Engine, чтобы не пропустить выход Ruxe Engine 2.
+    </p>
     <div class="info">
-        0,5 МБ - <?php here_show_downloads('android'); ?>
+        1,8 МБ - <?php here_show_downloads('android'); ?>
     </div><br><br>
 
     <h4><a href="<?php here_urlsite(); ?>/getfile/backuper">Small Backuper</a></h4>
