@@ -293,13 +293,13 @@ if (
 
 if ($cms_wwwredirect==1)
 {
-	$ttttttmp	=	explode( "/", str_replace(["http://", "https://"], "", $cms_site) );
+	$ttttttmp	=	explode( "/", str_replace(array("http://", "https://"), "", $cms_site) );
 	$tttttmp	=	explode(":",$_SERVER['SERVER_NAME']);
 
 	if ($tttttmp[0]!=$ttttttmp[0])
 	{
 		$request_url 	= $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-		$tmp_array 		= explode( "/", str_replace( str_replace(["http://", "https://"], "", $cms_site), "", $request_url) );
+		$tmp_array 		= explode( "/", str_replace( str_replace(array("http://", "https://"), "", $cms_site), "", $request_url) );
 		array_shift($tmp_array);
 		$new_params 	= "/".implode("/", $tmp_array);
 		header("location: ".$cms_site.$new_params);
