@@ -63,6 +63,7 @@ $ocms[14]='
 //{MESSAGE} - комментарий
 //{ONLYNAME} - имя комментатора без генерации тегов
 $ocms[13]='
+<div class="clearfix"></div>
 <form class="commentform block-70" role="form">
     <div class="comment-block block-100">
 	    <div class="row block-100 colour">
@@ -313,9 +314,9 @@ $ocms[17]='
 //Навигатор страниц
 //{PAGES} - страницы
 $ocms[18]='
-<div class="row group-100">
-    <div class="navy-page center-text">
-        <p>Страницы</p>
+<div class="row group-100 text-center">
+    <div class="navy-page">
+        <p class="text-center">Страницы</p>
         <span class="pager">{PAGES}</span>
     </div>
 </div>

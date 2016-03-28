@@ -78,15 +78,15 @@
                 </ul>
 			</div>
 			<div id="panel">
-	            <?php here_shortsearch(); ?>
+	            <?php if(function_exists('here_shortsearch')) {here_shortsearch();} ?>
             </div>
         </nav>
 		<!-- Header -->
         <section id="header" role="banner">
             <div class="overlay">
 			        <div class="container center-text">
-                        <h1>Девиз вашего сайта, <span class="color">или слоган!</span></h1>
-                        <p class="lead">Этот сайт построен на CMS Ruxe Engine!</p>
+                        <h1><?php here_title(); ?></h1>
+                        <p class="lead">Этот сайт построен на понятной CMS Ruxe Engine!</p>
                     </div>
             </div>
         </section>

@@ -314,9 +314,9 @@ $ocms[17]='
 //Навигатор страниц
 //{PAGES} - страницы
 $ocms[18]='
-<div class="row group-100">
-    <div class="navy-page text-center">
-        <p>Страницы</p>
+<div class="row group-100 text-center">
+    <div class="navy-page">
+        <p class="text-center">Страницы</p>
         <span class="pager">{PAGES}</span>
     </div>
 </div>

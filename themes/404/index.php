@@ -78,7 +78,7 @@
                 </ul>
 			</div>
 			<div id="panel">
-	            <?php here_shortsearch(); ?>
+	            <?php if(function_exists('here_shortsearch')) {here_shortsearch();} ?>
             </div>
         </nav>
 		<!-- Header -->
