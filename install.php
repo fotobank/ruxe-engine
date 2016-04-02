@@ -57,88 +57,55 @@ $addpath2 = $_SERVER['HTTP_HOST'] . strtolower($addpath);
     <meta name="generator" content="Ruxe Engine (http://ruxe-engine.ru)">
     <style>
         body {
-            font-family: verdana, arial, tahoma;
-            font-size: 10pt;
+            background: #fff;
+			font-family: Verdana, Geneva CY, DejaVu Sans, sans-serif;
+            font-size: 13px;
+			font-weight: normal;
             min-width: 950px;
         }
 
-        .spoiler {
-            border-left: solid 1px silver;
-            border-top: solid 1px silver;
-            border-right: solid 1px silver;
-            border-bottom: solid 1px silver;
-            width: 80%;
-            background-color: #DDDDDD;
-            text-align: left;
-            font-family: verdana, arial, tahoma;
-            font-size: 8pt;
-            font-weight: bold;
-            padding: 4px;
-            margin-top: 3px;
-            margin-bottom: 10px;
-        }
-
-        .spoilertext {
-            font-family: verdana, arial, tahoma;
-            background-color: #FFFFFF;
-            font-size: 10pt;
-            padding: 4px;
-            margin-top: 5px;
-            font-weight: normal;
-        }
-
         input {
-            font-size: 10pt;
-            font-family: verdana, arial, tahoma;
-            color: #111111;
+            font-size: inherit;
+            font-family: inherit;
+            color: #111;
             margin-right: 2px;
-            border-left: 1px solid silver;
-            border-top: 1px solid silver;
-            border-right: 1px solid silver;
-            border-bottom: 1px solid silver;
-            background-color: #F5F5F5;
+			padding: 2px 4px;
+            border: 1px solid silver;
+            background-color: #f5f5f5;
         }
 
         input:hover, textarea:hover {
-            border-left: 1px solid #000000;
-            border-top: 1px solid #000000;
-            border-right: 1px solid #000000;
-            border-bottom: 1px solid #000000;
+            border-color: #000;
             background-color: #eee;
         }
 
         .table {
-            border-left: solid 1px #03A9F4;
-            border-top: solid 1px #03A9F4;
             width: 80%;
             text-align: left;
+			border-collapse: collapse;
         }
 
         .table td {
-            border-bottom: solid 1px #03A9F4;
-            border-right: solid 1px #03A9F4;
+			border: solid 1px #03a9f4;
             padding: 4px;
-            font-family: verdana, arial, tahoma;
-            font-size: 8pt;
+            font-family: inherit;
+            font-size: 11px;
         }
 
         .title td {
             text-align: left;
-            background-color: #03A9F4;
+            background-color: #03a9f4;
             font-weight: bold;
             color: white;
         }
 
         .optionstable {
-            border-left: solid 1px #03A9F4;
-            border-top: solid 1px #03A9F4;
-            border-bottom: solid 1px #03A9F4;
-            border-right: solid 1px #03A9F4;
+            border: solid 1px #03a9f4;
             text-align: left;
-            font-size: 10pt;
+            font-size: 13px;
             width: 70%;
             padding: 5px;
-            background-color: #03A9F4;
+            background-color: #03a9f4;
             font-weight: bold;
         }
 
@@ -147,23 +114,23 @@ $addpath2 = $_SERVER['HTTP_HOST'] . strtolower($addpath);
         }
 
         .text {
-            background-color: #FFFFFF;
+            width: 99%;
+			margin: 5px auto 0;
+			background-color: #fff;
             font-weight: normal;
-            margin-top: 5px;
             padding: 5px;
         }
+		
+		.text form {padding: 0 4px 0 2px;}
 
         textarea {
-            font-size: 8pt;
-            font-family: verdana, arial, tahoma;
-            color: #111111;
+            font-size: 11px;
+			font-family: inherit;
+            color: #111;
             margin-right: 2px;
             width: 100%;
-            border-left: 1px solid silver;
-            border-top: 1px solid silver;
-            border-right: 1px solid silver;
-            border-bottom: 1px solid silver;
-            background-color: #F5F5F5;
+			border: 1px solid silver;
+            background-color: #f5f5f5;
         }
     </style>
 </head>
@@ -895,7 +862,7 @@ if (isset($_GET['step'])) {
                     <a style="font-size:14pt;" href="rpanel/">Перейти в админ-центр</a><font style="font-size:14pt;"><br>(' . $site . '/rpanel/)<br></font>
                     <br><br><br>
                     
-                    <div style="border: 1px solid silver; background-color:#FFF2D7; text-align:center; margin-left:90px; margin-right:90px;">
+                    <div style="border: 1px solid silver; background-color:#f0f5ff; text-align:center; margin: 0 90px; padding: 16px;">
                         <b>
                             Ruxe Engine БЕСПЛАТНАЯ программа. Если Вы заплатили за неё деньги,<br>
                             требуйте у продавца вернуть Ваши деньги обратно.<br><br>

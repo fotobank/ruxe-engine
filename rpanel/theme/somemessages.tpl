@@ -6,20 +6,17 @@
     <meta name="generator" content="{GENERATOR}">
     <style type="text/css">
         body {
-            font-family: verdana, arial, tahoma;
-            font-size: 10pt;
+            font-family: Verdana, Geneva CY, DejaVu Sans, sans-serif;
+            font-size: 13px;
         }
 
         .optionstable {
-            border-left: solid 1px #03A9F4;
-            border-top: solid 1px #03A9F4;
             text-align: left;
-            font-size: 10pt;
+            font-size: 13px;
         }
 
         .optionstable td {
-            border-bottom: solid 1px #03A9F4;
-            border-right: solid 1px #03A9F4;
+			border: solid 2px #03a9f4;
             padding: 4px;
         }
 
@@ -36,7 +33,7 @@
         <td align="center">
             <table class="optionstable" cellpadding=5 width="100%" cellspacing=0 border=0>
                 <tr class="titletable">
-                    <Td>
+                    <td>
                         {TITLE}
                     </td>
                 </tr>
@@ -46,7 +43,6 @@
                     </td>
                 </tr>
             </table>
-
         </td>
     </tr>
 </table>
