@@ -3337,8 +3337,12 @@ class FileManager
        		$stat_ip 	= $Filtr->clear($_SERVER['REMOTE_ADDR']);
        		$found_ip 	= 'no';
        		$ip_file 	= file($cms_root."/conf/ip.dat");
-       		$all_hosts_file = file($cms_root."/conf/all_hosts.dat");
-       		$all_hosts 	= isset($all_hosts_file[0]) ? (int)$all_hosts_file[0] : 0;
+
+            $all_hosts = 0;
+            if (file_exists($cms_root . "/conf/all_hosts.dat")) {
+                $all_hosts = (int)file_get_contents($cms_root . "/conf/all_hosts.dat");
+            }
+
        		$hosts 		= count($ip_file);
        		foreach($ip_file as $stat_element)
        		{
