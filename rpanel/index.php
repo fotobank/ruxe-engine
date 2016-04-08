@@ -1477,7 +1477,7 @@
                           	};
   			};
   			$timezones = '';
-  			for ($i=13; $i>0; $i--)
+  			for ($i=20; $i>0; $i--)
   			{
        				if ($cms_timezone=='+'.$i)
            				$timezones.='<option value="+'.$i.'" selected> +'.$i;
@@ -1488,7 +1488,7 @@
            			$timezones.='<option value="+0" selected> 0';
   			else
            			$timezones.='<option value="+0"> 0';
-  			for ($i=1; $i<14; $i++)
+  			for ($i=1; $i<20; $i++)
   			{
        				if ($cms_timezone=='-'.$i)
            				$timezones.='<option value="-'.$i.'" selected> -'.$i;
