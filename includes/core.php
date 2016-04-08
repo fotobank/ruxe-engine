@@ -3338,7 +3338,7 @@ class FileManager
        		$found_ip 	= 'no';
        		$ip_file 	= file($cms_root."/conf/ip.dat");
        		$all_hosts_file = file($cms_root."/conf/all_hosts.dat");
-       		$all_hosts 	= $all_hosts_file[0];
+       		$all_hosts 	= isset($all_hosts_file[0]) ? (int)$all_hosts_file[0] : 0;
        		$hosts 		= count($ip_file);
        		foreach($ip_file as $stat_element)
        		{
