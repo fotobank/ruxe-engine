@@ -44,7 +44,7 @@
                          <form name="newform" action="?action=plugins&amp;choose=blocks&amp;do=create&amp;rand='.rand(0,9999).'" method="POST">
                          <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
                                 <tr class="titletable"><td colspan=2>СОЗДАТЬ НОВЫЙ БЛОК</td></tr>
-                                <tr><td width="50%">Идентификатор: </td><td width="50%"><input type="text" size=65 name="id"></td></tr>
+                                <tr><td>Идентификатор: </td><td><input type="text" size=65 name="id"></td></tr>
                                 <tr class="sub"><td colspan=2><input type="submit" name="submit" value="Создать блок"></td></tr>
                          </table>
                          </form>
@@ -58,7 +58,7 @@
      $print .= '
      <input type="button" value="Создать новый блок" onClick="location.href=\'?action=plugins&amp;choose=blocks&amp;do=new&amp;rand='.rand(1,999).'\';"><br><br>';
    $print .= '<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-       <tr class="titletable"><td style="width:50%;">ИДЕНТИФИКАТОР</td><td>ДЕЙСТВИЯ</td></tr>';
+       <tr class="titletable"><th>ИДЕНТИФИКАТОР</th><th>ДЕЙСТВИЯ</th></tr>';
    if (is_dir($cms_root."/conf/blocks/"))
    {
        $blocks = 0;
@@ -67,7 +67,8 @@
           foreach ($FileManager->listing($cms_root."/conf/blocks/",0) as $file)
           {
                    $blocks++;
-                   $print .= '<tr><td>'.substr($file,6,strlen($file)-6).'</td><td>
+                   $print .= '<tr><td data-label="Идентификатор">'.substr($file,6,strlen($file)-6).'</td>
+				   <td data-label="Действия">
                    <a href="?action=edit&amp;file=../conf/blocks/'.$file.'">Редактировать код</a> 
                    <a href="#" onClick="if (checkhead()) location.href=\'?action=plugins&amp;choose=blocks&amp;do=del&amp;name='.$file.'\';">Удалить</a>
                    </td></tr>

@@ -66,8 +66,8 @@
 	$print .= '<center>
        <form name="editsearch" method="POST" action="?action=plugins&amp;choose=search&amp;do=save">
          <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-            <tr class="titletable"><td>ПОИСКОВЫЙ ИНДЕКС</td><td colspan=2>НАСТРОЙКА</td></tr>
-            <tr><td rowspan=6>
+            <tr class="titletable"><th>ПОИСКОВЫЙ ИНДЕКС</th><th colspan=2>НАСТРОЙКА</th></tr>
+            <tr><td data-label="ПОИСКОВЫЙ ИНДЕКС" rowspan=6>
                     Дата последнего обновления индекса:
                     <br>&nbsp;&nbsp;&nbsp;<font color="green"><b>'.$date.'</b></font><br>
                     <br>
@@ -78,7 +78,7 @@
                     <input type="checkbox" name="pages" value="true" '.$pages_checked.'> Страницы<br>
                     <input type="checkbox" name="news" value="true" '.$news_checked.'> Новостные разделы<br>
             </td>
-            <td>
+            <td data-label="НАСТРОЙКА">
                     Страница для вывода результатов:<br>
                     <font class="desc">На этой странице должна использоваться команда &lt;? here_results(); ?&gt;</font>
             </td><td>

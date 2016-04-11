@@ -3,9 +3,9 @@
 <center><form name="generaloptions" action="saver.php?saverdo=generalsave" method="post">
 <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 	
-	<tr class="titletable"><td colspan=2>
-		<center><input type="submit" name="submit" value="Сохранить все изменения"></center>
-		СИСТЕМНОЕ</td></tr>
+	<tr class="titletable"><td colspan=2>СИСТЕМНОЕ
+		<center><input class="button" type="submit" name="submit" value="Сохранить все изменения"></center>
+		</td></tr>
 		<tr><td>Адрес сайта:<br><font class="desc">Пример: <b>http://site.com</b></font></td><td><input id="jsite" onKeyUp="generalwwwredirect();" type="text" name="site" value="{SITE}" size=46></td></tr>
 		<tr><td><div id="jwww">Включить переадресацию с адреса, имеющим поддомен www, на адрес без www (или наоборот):</div><font class="desc">Крайне рекомендуется</font></td><td><select name="wwwredirect"><option value="1" {WWWREDIRECT1}>Да<option value="0" {WWWREDIRECT2}>Нет</select></td></tr>
 		<tr><td>Полный путь до скриптов:<br><font class="desc">Пример: <b>/home/mysite/public_html</b></font></td><td><input type="text" name="root" value="{ROOT}" size=46></td></tr>

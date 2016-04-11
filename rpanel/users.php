@@ -26,7 +26,7 @@
 				<font class="desc">В данном разделе Вы можете удалить, забанить, изменить профиль пользователей, установить статус (например, администратор или суперпользователь), обнулить счётчики сообщений, добавить новые поля профиля и страницы, доступные для просмотра только администраторам и суперпользователям</font><br><br>
 			';
 	$echooptions 	= "<center><table class=\"optionstable\" border=0 cellpadding=1 cellspacing=0>
-				<tr class=\"titletable\"><td>ИМЯ ПОЛЬЗОВАТЕЛЯ</td><td width=110>СТАТУС (<a target=\"_blank\" title=\"Помощь\" href=\"https://github.com/maindefine/ruxe-engine/blob/master/README.md#user-statuses\">?</a>)</td><td width=85>СООБЩЕНИЙ</td><td width=150>E-MAIL</td><td width=100>IP</td><td width=270>ДЕЙСТВИЕ</td></tr>
+				<tr class=\"titletable\"><th>ИМЯ ПОЛЬЗОВАТЕЛЯ</th><th>СТАТУС (<a target=\"_blank\" title=\"Помощь\" href=\"https://github.com/maindefine/ruxe-engine/blob/master/README.md#user-statuses\">?</a>)</th><th>СООБЩЕНИЙ</th><th>E-MAIL</th><th>IP</th><th>ДЕЙСТВИЕ</th></tr>
 			";
 	if (isset($_GET["poles"]))
 		$mess 	= "(Сохранено)";
@@ -302,8 +302,8 @@
 			($p[20]!='Начало эпохи Unix')
 		)
 			$p[20]	=	$Filtr->fulldate(str_replace('2011','11',$p[20]));
-		$echooptions.="<tr><td>";
-		$echooptions	.= "<a href=\"".$Navigation->furl('viewprofile',$p[18])."\" onClick=\"window.open('".$Navigation->furl('viewprofile',$p[18])."'); return false;\">".$name."</a><font class=\"desc\"><br>Зарегистрирован: ".str_replace('Не известно','Неизвестно',$p[20])."</font></td><td>";
+		$echooptions.="<tr><td data-label=\"Имя на сайте\">";
+		$echooptions	.= "<a href=\"".$Navigation->furl('viewprofile',$p[18])."\" onClick=\"window.open('".$Navigation->furl('viewprofile',$p[18])."'); return false;\">".$name."</a><font class=\"desc\"><br>Зарегистрирован: ".str_replace('Не известно','Неизвестно',$p[20])."</font></td><td data-label=\"Статус\">";
 		if ($i==count($users)-1) {
 			$echooptions.='
 					<div id="newuser" style="position: absolute; display: none;">
@@ -320,8 +320,8 @@
 					</form>
 					</div>';
 		}
-		$echooptions	.= $status."</td><td>".$p[14]."</td><td>".$p[2]."</td><td>".$Filtr->ipclick($p[12])."</td>
-					<td>
+		$echooptions	.= $status."</td><td data-label=\"Сообщений\">".$p[14]."</td><td data-label=\"Почта\">".$p[2]."</td><td data-label=\"IP\">".$Filtr->ipclick($p[12])."</td>
+					<td data-label=\"Действие\">
 					<a href=\"?action=users&amp;go=edit&amp;user=".$p[0]."&amp;rand=".rand(0,99999)."\">Изменить</a>";
 		if ($i!=0) {
 			if ($p[4]=="baned")
@@ -340,8 +340,8 @@
   </table><br>
   <form name="poles" action="saver.php?saverdo=savepoles" method="POST">
    <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-    <tr class="titletable"><td width="50%">ДОПОЛНИТЕЛЬНЫЕ ПОЛЯ В ПРОФИЛЕ</td><td width="50%">ОГРАНИЧЕННЫЙ ДОСТУП</td></tr>
-    <tr><td valign="top" align="center"><div align="left"><input type="button" onClick="addpole();" value="Добавить поле"></div><br>
+    <tr class="titletable"><th width="50%">ДОПОЛНИТЕЛЬНЫЕ ПОЛЯ В ПРОФИЛЕ</th><th width="50%">ОГРАНИЧЕННЫЙ ДОСТУП</th></tr>
+    <tr><td data-label="ДОПОЛНИТЕЛЬНЫЕ ПОЛЯ В ПРОФИЛЕ" valign="top" align="center"><div align="left"><input type="button" onClick="addpole();" value="Добавить поле"></div><br>
     ';
     for ($i=1; $i<=7; $i++)
     {
@@ -351,7 +351,7 @@
     };
   $pagesconfig = file("../conf/pages/config");
   $echooptions .='
-   </td><td valign="top" align="center">
+   </td><td data-label="ОГРАНИЧЕННЫЙ ДОСТУП" valign="top" align="center">
     <div align="left">Адреса страниц сайта, просмотр которых разрешён только администраторам, модераторам, редакторам и суперпользователям
     <br>
     <select style="margin-top:10px;" id="newpage">

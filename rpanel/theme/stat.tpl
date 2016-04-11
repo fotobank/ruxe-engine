@@ -18,7 +18,7 @@
 			<a href="?action=system&amp;go=thanks">Благодарности</a> •
 			<a href="https://github.com/maindefine/ruxe-engine/blob/master/LICENSE-FULL-EN.txt">Лицензия</a>
 		</td></tr>{INSTALL}
-		<tr class="titletable"><td width = "50%">СТАТИСТИКА</td><td width="50%">НЕДАВНИЕ КОММЕНТАРИИ</td></tr>
+		<tr class="titletable"><th>СТАТИСТИКА</th><th>НЕДАВНИЕ КОММЕНТАРИИ</th></tr>
 		<tr><td valign="top">			
 			<table id="notebook" border=0 class="optionstable2" cellpadding=1 cellspacing=0 style="display:none; position: absolute;">
 				<tr class="titleblue"><td>БЛОКНОТ</td></tr>
@@ -30,19 +30,19 @@
 				</td></tr>
 			</table>
 			<table id="without" border=0>
-				<tr><td>Блокнот:</td><td><a name="note"></a><input type="button" id="notebutton" value="Открыть блокнот" onClick="document.getElementById('notebook').style.display='block'; location.href='#note';"></td></tr>
-				<tr><td>Всего просмотрено страниц:</td><td>{ALL_HITS}</td></tr>
-				<tr><td>За всё время посетило людей:</td><td>{ALL_HOSTS}</td></tr>
-				<tr><td>Сегодня просмотрено страниц:</td><td>{HITS}</td></tr>
-				<tr><td>Вчера посетило людей:</td><td>{LAST_HOSTS}</td></tr>
-				<tr><td>Серверное время:</td><td>{SERVER_TIME}</td></tr>
-				<tr><td>Время с учётом часового пояса:</td><td>{UTCTIME}</td></tr>
-				<tr><td>Сегодня посетило людей:</td><td>{HOSTS}</td></tr>
-				<tr><td>Сейчас людей на сайте:</td><td>{ONLINE}</td></tr>
-				<tr><td>Роботов сегодня:</td><td>{BOTS}</td></tr>
-				<tr><td>RSS-канал новостей:</td><td>{RSS_NEWS}</td></tr>
-				<tr><td>Серверное DOCUMENT_ROOT:</td><td>{DEFAULT_ROOT}</td></tr>
-				<tr><td>register_globals:</td><td>{register_globals}</td></tr>
+				<tr><td><b>Блокнот:</b></td><td><a name="note"></a><input type="button" id="notebutton" value="Открыть блокнот" onClick="document.getElementById('notebook').style.display='block'; location.href='#note';"></td></tr>
+				<tr><td><b>Всего просмотрено страниц:</b></td><td>{ALL_HITS}</td></tr>
+				<tr><td><b>За всё время посетило людей:</b></td><td>{ALL_HOSTS}</td></tr>
+				<tr><td><b>Сегодня просмотрено страниц:</b></td><td>{HITS}</td></tr>
+				<tr><td><b>Вчера посетило людей:</b></td><td>{LAST_HOSTS}</td></tr>
+				<tr><td><b>Серверное время:</b></td><td>{SERVER_TIME}</td></tr>
+				<tr><td><b>Время с учётом часового пояса:</b></td><td>{UTCTIME}</td></tr>
+				<tr><td><b>Сегодня посетило людей:</b></td><td>{HOSTS}</td></tr>
+				<tr><td><b>Сейчас людей на сайте:</b></td><td>{ONLINE}</td></tr>
+				<tr><td><b>Роботов сегодня:</b></td><td>{BOTS}</td></tr>
+				<tr><td><b>RSS-канал новостей:</b></td><td>{RSS_NEWS}</td></tr>
+				<tr><td><b>Серверное DOCUMENT_ROOT:</b></td><td>{DEFAULT_ROOT}</td></tr>
+				<tr><td><b>register_globals:</b></td><td>{register_globals}</td></tr>
 			</table> 
 		</td><td valign="top" align="center">
 			{MESSAGES}
@@ -54,7 +54,7 @@
 <font class="desc">Просмотр информации о посетителях, побывавших на сайте за последние {TIME_RECORD} минут</font><br><br>
 <center> 
 	<table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-		<tr class="titletable"><td width=100>IP</td><td width=300>ПОСЛЕДНЕЕ ДЕЙСТВИЕ</td><td>БРАУЗЕР</td></tr>
+		<tr class="titletable"><th>IP</th><th>ПОСЛЕДНЕЕ ДЕЙСТВИЕ</th><th>БРАУЗЕР</th></th>
 		{WHOONLINE}
 	</table>
 </center>

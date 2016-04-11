@@ -207,15 +207,15 @@
      	if ($GlobalUsers->getstatus($login)=='admin')
      	{
      		$generalmenu ='
-     				<li><a href="?action=index">Главная</a></li>
-      				<li><a href="?action=pages">Страницы</a></li>
-      				<li><a href="?action=bfg{BFGADD}">Новости</a></li>      
-      				<li><a href="?action=users">Пользователи</a></li>
-      				<li><a href="?action=modules">Другие модули</a></li>
-      				<li><a href="?action=style">Оформление</a></li>
-      				<li><a href="?action=manager">Файловый менеджер</a></li>
-				<li><a href="?action=general">Настройки</a></li>
-      				<li><a href="?action=system">Обслуживание</a></li>';
+     				<li class="bordered"><a href="?action=index"><i class="fa fa-home"><span> Главная</span></i></a></li>
+      				<li class="bordered"><a href="?action=pages"><i class="fa fa-files-o"><span> Страницы</span></i></a></li>
+      				<li class="bordered"><a href="?action=bfg{BFGADD}"><i class="fa fa-list-alt"><span> Новости</span></i></a></li>      
+      				<li class="bordered"><a href="?action=users"><i class="fa fa-users"><span> Пользователи</span></i></a></li>
+      				<li class="bordered"><a href="?action=modules"><i class="fa fa-cubes"><span> Другие модули</span></i></a></li>
+      				<li class="bordered"><a href="?action=style"><i class="fa fa-file-code-o"><span> Оформление</span></i></a></li>
+      				<li class="bordered"><a href="?action=manager"><i class="fa fa-folder-o"><span> Файловый менеджер</span></i></a></li>
+				    <li class="bordered"><a href="?action=general"><i class="fa fa-gears"><span> Настройки</span></i></a></li>
+      				<li class="bordered"><a href="?action=system"><i class="fa fa-calendar-check-o"><span> Обслуживание</span></i></a></li>';
       	}
       	else
       	{
@@ -268,7 +268,7 @@
      				if ($w[4]!="")
         				$add = ' (<a href="'.$Navigation->furl('viewprofile',$w[4]).'" target="_blank">'.$w[4].'</a>)';
      				$showed = $w[1];
-     				$whoonline.="<tr><td>".$Filtr->ipclick($w[0]).$add."</td><td><a href=\"".$w[1]."\" target=\"_blank\">".$showed."</a></td><td>".$w[3]."</td></tr>\r\n";
+     				$whoonline.="<tr><td data-label=\"IP\">".$Filtr->ipclick($w[0]).$add."</td><td data-label=\"АДРЕС\"><a href=\"".$w[1]."\" target=\"_blank\">".$showed."</a></td><td data-label=\"БРАУЗЕР\">".$w[3]."</td></tr>\r\n";
   			};
   			$all_hits = file($cms_root."/conf/all_hits.dat");
   			$all_hosts = file($cms_root."/conf/all_hosts.dat");
@@ -745,9 +745,9 @@
           				else
             					$writed = "Нет";
             				//<input type=\"button\" onClick=\"location.href='?action=manager&amp;chmod=1&amp;url=".$url."&amp;type=folder&amp;fname=".$f."';\" value=\"Права\">
-          				$files.= "<tr><td align=\"center\"><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\"><img src=\"theme/images/dir.png\" alt=\"\" border=0></a></td>";
-          				$files.= "<td><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\">".$f."</a></td>\r\n";
-          				$files.= "<td>-</td><td>".$writed."</td><td align=\"center\">
+          				$files.= "<tr><td data-label=\"ТИП\" align=\"center\"><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\"><img src=\"theme/images/dir.png\" alt=\"\" border=0></a></td>";
+          				$files.= "<td data-label=\"ИМЯ\"><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\">".$f."</a></td>\r\n";
+          				$files.= "<td data-label=\"РАЗМЕР\">-</td><td data-label=\"ПРАВА НА ЗАПИСЬ\">".$writed."</td><td data-label=\"ДЕЙСТВИЯ\" align=\"center\">
           						<input type=\"button\" onClick=\"location.href='?action=manager&amp;rename=1&amp;url=".$url."&amp;fname=".$f."';\" value=\"Переименовать\"> 
           						 
           						<input type=\"button\" onClick=\"if (checkhead()) location.href='saver.php?saverdo=deldir&amp;url=".$url."&amp;fname=".$f."';\" value=\"Удалить\"> </td></tr>\r\n";
@@ -769,10 +769,10 @@
         				$size  = $FileManager->fsize($url."/".$f);
 					if (str_replace('.',"",$size)==$size) $size = floor($size);
 					if (substr($size,strpos($size,'.'),strlen($size))==0) $size = floor($size);
-       					$files.= "<tr><td align=\"center\"><img src=\"theme/images/file.png\" alt=\"\" border=0></td>";
-        				$files.= "<td>".$f."</td>\r\n";
+       					$files.= "<tr><td data-label=\"ТИП\" align=\"center\"><img src=\"theme/images/file.png\" alt=\"\" border=0></td>";
+        				$files.= "<td data-label=\"ИМЯ\">".$f."</td>\r\n";
         				//<input type=\"button\" onClick=\"location.href='?action=manager&amp;type=file&amp;chmod=1&amp;url=".$url."&amp;fname=".$f."';\" value=\"Права\">
-        				$files.= "<td>".$size." Кб</td><td>".$writed."</td><td align=\"center\">
+        				$files.= "<td data-label=\"РАЗМЕР\">".$size." Кб</td><td data-label=\"ПРАВА НА ЗАПИСЬ\">".$writed."</td><td data-label=\"ДЕЙСТВИЯ\" align=\"center\">
         				<div style=\"display:none;margin:5px;\" id=\"pathfile".$z."\">
         					<input type=\"text\" id=\"pf".$z."\" value=\"".str_replace($cms_root,$cms_site,realpath($url.'/'.$f))."\" size=33><br>
         				</div><input type=\"button\" id=\"butfile".$z."\" onClick=\"document.getElementById('butfile".$z."').style.display='none'; document.getElementById('pathfile".$z."').style.display='block'; document.getElementById('pf".$z."').select();\" value=\"Адрес\">
@@ -1853,7 +1853,8 @@
                 $c[2] = empty($c[2]) ? "&nbsp;" : $c[2];
                 $c[3] = empty($c[3]) ? "&nbsp;" : $c[3];
 
-				$list	.=	'<tr><td><a href="'.$pageUrl.'" target="_blank">'.$pageUrlTitle.'</b></a></td><td>'.$c[1].'</td><td>'.$c[2].'</td><td>'.$c[3].'</td><td>
+				$list	.=	'<tr><td data-label="Страница"><a href="'.$pageUrl.'" target="_blank">'.$pageUrlTitle.'</b></a></td><td data-label="Заголовок">'.$c[1].'</td><td data-label="Ключевые слова">'.$c[2].'</td><td data-label="Описание">'.$c[3].'</td>
+				            <td data-label="Действия">
 							<a href="?action=edit&amp;file=../conf/pages/'.$c[4].'.txt">Редактировать</a>
 							<a href="?action=pages&amp;do=editpage&amp;page='.$c[0].'">Параметры</a>
 							<a href="#" onClick="if (checkhead()) location.href=\'?action=pages&amp;do=delpage&amp;page='.$c[0].'&amp;fullpage='.$c[4].'\';">Удалить</a>
@@ -2105,7 +2106,7 @@
 
           		<br><center>
           		<table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-           			<tr class="titletable"><td>ID</td><td>ОПИСАНИЕ</td><td>АДРЕС ФАЙЛА</td><td>ЗАГРУЗОК</td><td width=180>ДЕЙСТВИЯ</td></tr>
+           			<tr class="titletable"><th>ID</th><th>ОПИСАНИЕ</th><th>АДРЕС ФАЙЛА</th><th>ЗАГРУЗОК</th><th width=180>ДЕЙСТВИЯ</th></tr>
            		';
           		$paths = file("../conf/paths.dat");
           		$paths = array_reverse($paths);
@@ -2127,7 +2128,7 @@
                  			};
                  			$z++;
              			};
-				$echooptions.='<tr><td>'.$l[0].'</td><td>'.$l[2].'</td><td><a href="'.$l[1].'">'.$l[1].'</a></td><td>'.$f.'</td><td valign="top"><a href="?action=downloads&amp;go=edit&amp;line='.$i.'">Изменить</a>
+				$echooptions.='<tr><td data-label="ID">'.$l[0].'</td><td data-label="ОПИСАНИЕ">'.$l[2].'</td><td data-label="АДРЕС ФАЙЛА"><a href="'.$l[1].'">'.$l[1].'</a></td><td data-label="ЗАГРУЗОК">'.$f.'</td><td data-label="ДЕЙСТВИЯ" valign="top"><a href="?action=downloads&amp;go=edit&amp;line='.$i.'">Изменить</a>
                					<a href="#" onClick="if (checkhead()) location.href=\'saver.php?saverdo=deldownloads&amp;line='.$i.'&amp;c='.$x.'\';">Удалить</a></td></tr>';
              			$i--;
           		}; 
@@ -2209,13 +2210,13 @@
           				<font class="desc">Управление модулем &lt;?php here_show_views(\'Идентификатор\'); ?&gt; и &lt;?php here_hided_counter_views(\'Идентификатор\'); ?&gt;</font><br><br>'.$add.'
         	  				<center>
         					  <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-      						     <tr class="titletable"><td>СЧЁТЧИКИ ПРОСМОТРОВ</td><td>ДЕЙСТВИЯ</td></tr>
+      						     <tr class="titletable"><th>СЧЁТЧИКИ ПРОСМОТРОВ</th><th>ДЕЙСТВИЯ</th></tr>
       			     ';
           		$views = file("../conf/views.dat");
           		for ($i = 0; $i<count($views); $i++)
           		{ 
              			$p = explode("=",$views[$i]);
-             			$echooptions.= '<tr><td>Идентификатор: '.$p[0].'. Показания счётчика: '.str_replace("\r\n","",$p[1]).'.</td><td>
+             			$echooptions.= '<tr><td data-label="СЧЁТЧИК ПРОСМОТРОВ"><br>Идентификатор: '.$p[0].'. Показания счётчика: '.str_replace("\r\n","",$p[1]).'.</td><td data-label="ДЕЙСТВИЯ"><br>
              				<input type="button" onClick="location.href=\'?action=counts&amp;go=reset&amp;line='.$i.'\';" value="Обнулить">
              				<input type="button" onClick="if (checkhead()) location.href=\'?action=counts&amp;go=delete&amp;line='.$i.'\';" value="Удалить">
              				</td></tr>
@@ -2287,7 +2288,7 @@
              				'.$m.'<br><br>
              				<center>
                      			<table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-                             			<tr class="titletable"><td>СМАЙЛ</td><td>BB КОД</td><td>ДЕЙСТВИЕ</td></tr>
+                             			<tr class="titletable"><th>СМАЙЛ</th><th>BB КОД</th><th>ДЕЙСТВИЕ</th></tr>
                         ';
              		$smiles   = file($cms_root."/conf/smiles.dat");
              		foreach ($smiles as $smile)
@@ -2295,8 +2296,8 @@
                      		$smile = str_replace("\r\n","",$smile);
                      		if ($smile!="")
                      		{ 
-                      			$echooptions .= '<tr><td><img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt=""></td><td>['.$smile.']</td><td>
-                      			<a href="#" onClick="if (checkhead()) location.href=\'?action=smiles&amp;do=delete&amp;smile='.$smile.'\';">Удалить</a>
+                      			$echooptions .= '<tr><td data-label="СМАЙЛ"><img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt=""></td><td data-label="BB-код">['.$smile.']</td>
+								<td data-label="ДЕЙСТВИЕ"><a href="#" onClick="if (checkhead()) location.href=\'?action=smiles&amp;do=delete&amp;smile='.$smile.'\';">Удалить</a>
                       			</td></tr>';
                      		};
              		};                
@@ -2463,7 +2464,7 @@
           			</center>
           			<br><center>
           			<table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-          			 <tr class="titletable"><td>АДРЕС</td><td>ИДЕНТИФИКАТОР</td><td>ОПИСАНИЕ</td><td>ПЕРЕХОДОВ</td><td>ДЕЙСТВИЕ</td></tr>';
+          			 <tr class="titletable"><th>АДРЕС</th><th>ИДЕНТИФИКАТОР</th><th>ОПИСАНИЕ</th><th>ПЕРЕХОДОВ</th><th>ДЕЙСТВИЕ</th></tr>';
           		$links = file("../conf/links.dat");
           		$links	=	array_reverse($links);
           		$count_links = file("../conf/count_links.dat");
@@ -2484,7 +2485,7 @@
                  			};
                  			$z++;
              			};
-             			$echooptions .= '<tr><td><a href="'.$l[1].'" target="_blank">'.$l[1].'</a></td><td>'.$l[0].'</td><td>'.$l[2].'</td><td>'.$f.'</td><td>
+             			$echooptions .= '<tr><td data-label="АДРЕС"><a href="'.$l[1].'" target="_blank">'.$l[1].'</a></td><td data-label="ИДЕНТИФИКАТОР">'.$l[0].'</td><td data-label="ОПИСАНИЕ">'.$l[2].'</td><td data-label="ПЕРЕХОДОВ">'.$f.'</td><td data-label="ДЕЙСТВИЕ">
              			
              			<input type="button" onClick="location.href=\'saver.php?saverdo=uplink&amp;id='.$l[0].'\';" value="Вверх">
              			<input type="button" onClick="location.href=\'saver.php?saverdo=downlink&amp;id='.$l[0].'\';" value="Вниз">
@@ -2712,7 +2713,7 @@
            			<font class="desc"></font><br><br>
            			'.$add.'
            			<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-             			<tr class="titletable"><td width=120>ИДЕНТИФИКАТОР</td><td>ГЕНЕРИРУЕМЫЙ КОД</td><td>ССЫЛКА</td><td width=85>ПЕРЕХОДОВ</td><td width=265>ДЕЙСТВИЯ</td></tr>
+             			<tr class="titletable"><th>ИДЕНТИФИКАТОР</th><th>ГЕНЕРИРУЕМЫЙ КОД</th><th>ССЫЛКА</th><th>ПЕРЕХОДОВ</th><th>ДЕЙСТВИЯ</th></tr>
            		';
            		$rotatordat = array_reverse($rotatordat);
            		$i = count($rotatordat)-1;
@@ -2731,8 +2732,8 @@
                         if ($c[0] == $r[0]) {$o = $c[1]; $x = $z; break;};
                         $z++;
                     };
-                    $echooptions.= '<tr><td>'.$r[0].'</td><td>'.str_replace("<","&lt;",str_replace(">","&gt;",$r[1])).'</td>
-                        <td>'.$r[2].'</td><td>'.$o.'</td><td>
+                    $echooptions.= '<tr><td data-label="ИДЕНТИФИКАТОР">'.$r[0].'</td><td data-label="ГЕНЕРИРУЕМЫЙ КОД">'.str_replace("<","&lt;",str_replace(">","&gt;",$r[1])).'</td>
+                        <td data-label="ССЫЛКА">'.$r[2].'</td><td data-label="ПЕРЕХОДОВ">'.$o.'</td><td data-label="ДЕЙСТВИЯ">
                             <a href="?action=rotator&amp;go=edit&amp;line='.$i.'&amp;id='.$r[0].'">Изменить</a>
                             <a href="saver.php?saverdo=delfile&amp;fromupdate=1&amp;count='.$x.'">Обнулить</a>
                             <a href="#" onClick="if (checkhead()) location.href=\'saver.php?saverdo=delfile&amp;fromrotator=1&amp;line='.$i.'&amp;count='.$x.'\';">Удалить</a>
@@ -2760,9 +2761,8 @@
 			"Используя данное программное обеспечение, Вы соглашаетесь
             с <a href=\"https://github.com/maindefine/ruxe-engine/blob/master/LICENSE-FULL-EN.txt\"
             target=\"_blank\" style=\"color:white;\">Лицензионным соглашением</a>.<br>
-            Автор, программирование: <b>Ахрамеев Денис Викторович</b> <a style=\"color:white; font-weight:bold;\" href=\"http://ahrameev.ru\" target=\"_blank\">http://ahrameev.ru</a>.<br>
-            Темы оформления: <b>Александр Плотников</b> <a style=\"color:white; font-weight:bold;\" href=\"http://webdesign.ru.net/\" target=\"_blank\">http://webdesign.ru.net/</a>.<br>
-            Логотип, дизайн админ-центра: <b>Игорь </b> <a href=\"http://ruxe-engine.ru/old/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>
+            Автор, программирование: <b>Ахрамеев Денис Викторович</b> <a style=\"color:white; font-weight:bold;\" href=\"http://ahrameev.ru\" target=\"_blank\">ahrameev.ru</a>.<br>
+            Дизайн: <b>Александр Плотников</b> <a style=\"color:white; font-weight:bold;\" href=\"http://webdesign.ru.net/\" target=\"_blank\">webdesign.ru.net</a> и <b>Игорь </b> <a href=\"http://ruxe-engine.ru/old/viewprofile/Dr1D\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Dr1D</a>.<br>
             Контроль качества, документация: <b>Олег Прохоров</b> <a href=\"http://ruxe-engine.ru/old/viewprofile/Tanatos\" target=\"_blank\" style=\"color:white; font-weight: bold;\">Tanatos</a>.<br>
             Генерация: ".number_format(($ddd-$ttt),3)." секунд.","./theme/admincenterend.tpl");
   }
@@ -2785,5 +2785,5 @@
   };
   if ($cms_needalog == 1){
   $log = fopen("../conf/logs/rpanel.log","a");
-  fputs($log,"<b>Логин:</b> ".$Filtr->clear($login)."<br><B>IP:</B> ".$Filtr->clear($_SERVER['REMOTE_ADDR'])."<br><B>Дата и время:</B> ".date("d.m.y H:i:s")."<br><b>Браузер: </b>".$Filtr->clear($_SERVER['HTTP_USER_AGENT'])."<br><b>Раздел: </b>".$whatdoing."<br><b>Параметры: </b>?".$Filtr->clear($_SERVER['QUERY_STRING'])."\r\n");
+  fputs($log,"<b>Логин</b> ".$Filtr->clear($login)."<br><b>IP</b> ".$Filtr->clear($_SERVER['REMOTE_ADDR'])."<br><b>Дата и время</b> ".date("d.m.y H:i:s")."<br><b>Браузер </b>".$Filtr->clear($_SERVER['HTTP_USER_AGENT'])."<br><b>Раздел </b>".$whatdoing."<br><b>Параметры </b>?".$Filtr->clear($_SERVER['QUERY_STRING'])."\r\n");
   fclose($log);};

@@ -50,9 +50,9 @@
 	if (substr($tmp,strlen($tmp)-1,1)=='.') $tmp = substr($tmp,0,strlen($tmp)-1);
 	if (substr($tmp,strlen($tmp)-2,2)=='.0') $tmp = substr($tmp,0,strlen($tmp)-2);
 	$sizeupdate = $tmp;
-  	$confbackuplist .= '<tr><td>'.$Filtr->fulldate(str_replace('2011','11',$b[1])).'</td><td><a href="'.$cms_site.'/rpanel/backups/'.$b[0].'">'.$b[0].'</a></td>
-  	<td>'.$sizeupdate.' КБ</td>
-  	<td>
+  	$confbackuplist .= '<tr><td data-label="ДАТА">'.$Filtr->fulldate(str_replace('2011','11',$b[1])).'</td><td data-label="ИМЯ АРХИВА"><a href="'.$cms_site.'/rpanel/backups/'.$b[0].'">'.$b[0].'</a></td>
+  	<td data-label="РАЗМЕР">'.$sizeupdate.' КБ</td>
+  	<td data-label="ДЕЙСТВИЯ">
   	<a href="'.$cms_site.'/rpanel/backups/'.$b[0].'">Скачать</a>
   	<a href="#confbackup" onClick="if (checkhead()) location.href=\'saver.php?saverdo=delfile&amp;url='.$cms_root.'/rpanel/backups&amp;fname='.$b[0].'&amp;confbackup=true\';">Удалить</a>
   	</td></tr>
@@ -76,8 +76,8 @@
           $echooptions='<h2>Лог посещений</h2>
           <font class="desc">Новые записи располагаются сверху</font>
           <br><br>
-          <center><table class="optionstable" style="table-layout: fixed;" border=0 cellpadding=1 cellspacing=0>
-           <tr class="titletable"><td>АДРЕС</td><td>ОТКУДА</td><td width=200>БРАУЗЕР</td><td width-120>IP</td><td width=150>ДАТА И ВРЕМЯ</td></tr>
+          <center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
+           <tr class="titletable"><th>АДРЕС</th><th>ОТКУДА</th><th>БРАУЗЕР</th><th>IP</th><th>ДАТА И ВРЕМЯ</th></tr>
            ';
 			$statFileName = "../conf/logs/log.log";
           $stat= file_exists($statFileName) ? file($statFileName) : array();
@@ -108,7 +108,7 @@
 			$pieces[5] == '';
 	    if ($pieces[5]!='')
 		$add	=	' (<a href="'.$Navigation->furl('viewprofile',$Filtr->clear($pieces[5])).'" target="_blank">'.$Filtr->clear($pieces[5]).'</a>)';
-            $echooptions.= "<tr><td>".$pieces[0]."</td><td>".$pieces[1]."</td><td>".$pieces[2]."</td><td>".$Filtr->ipclick($pieces[3]).$add."</td><td>".$Filtr->fulldate($pieces[4],$seconds)."</td></tr>
+            $echooptions.= "<tr><td data-label=\"АДРЕС\">".$pieces[0]."</td><td data-label=\"ОТКУДА\">".$pieces[1]."</td><td data-label=\"БРАУЗЕР\">".$pieces[2]."</td><td data-label=\"IP\">".$Filtr->ipclick($pieces[3]).$add."</td><td data-label=\"ДАТА И ВРЕМЯ\">".$Filtr->fulldate($pieces[4],$seconds)."</td></tr>
             ";
           };
           
@@ -147,7 +147,7 @@
           <font class="desc">Новые записи располагаются сверху</font>
           <br><br>
           <center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-          <tr class="titletable"><td>ВРЕМЯ</td><td>КОД ОШИБКИ</td><td>СООБЩЕНИЕ ОШИБКИ</td><td>ФАЙЛ</td><td>СТРОКА</td><td>IP</td></tr>
+          <tr class="titletable"><th>ВРЕМЯ</th><th>КОД ОШИБКИ</th><th>СООБЩЕНИЕ ОШИБКИ</th><th>ФАЙЛ</th><th>СТРОКА</th><th>IP</th></tr>
            ';
 			$statFileName = "../conf/logs/errors.log";
           $stat=file_exists($statFileName) ? file($statFileName) : array();
@@ -156,7 +156,7 @@
           {
             $elemen = trim($element);
             $p = explode("||",$elemen);
-            $echooptions.= "<tr><td>".$Filtr->fulldate($Filtr->clear($p[0]))."</td><td>".$Filtr->clear($p[1])."</td><td>".$Filtr->clear($p[2])."</td><td>".$Filtr->clear($p[3])."</td><td>".$Filtr->clear($p[4])."</td><td>".$Filtr->ipclick($Filtr->clear($p[5]))."</td></tr>
+            $echooptions.= "<tr><td data-label=\"ВРЕМЯ\">".$Filtr->fulldate($Filtr->clear($p[0]))."</td><td data-label=\"КОД ОШИБКИ\">".$Filtr->clear($p[1])."</td><td data-label=\"СООБЩЕНИЕ ОШИБКИ\">".$Filtr->clear($p[2])."</td><td data-label=\"ФАЙЛ\">".$Filtr->clear($p[3])."</td><td data-label=\"СТРОКА\">".$Filtr->clear($p[4])."</td><td data-label=\"IP\">".$Filtr->ipclick($Filtr->clear($p[5]))."</td></tr>
             ";
           };
           
@@ -181,7 +181,7 @@
           {
             $elemen = trim($element);
             $p = explode("||",$elemen);
-            $echooptions.= "<tr><td>".$Filtr->fulldate($p[0])."</td><td>".$p[1]."</td><td>".$p[4]."</td><td>".$p[2]."</td><td>".$p[3]."</td></tr>
+            $echooptions.= "<tr><td data-label=\"ВРЕМЯ\">".$Filtr->fulldate($p[0])."</td><td data-label=\"IP\">".$p[1]."</td><td data-label=\"СТРАНИЦА\">".$p[4]."</td><td data-label=\"БРАУЗЕР\">".$p[2]."</td><td data-label=\"ОТКУДА\">".$p[3]."</td></tr>
             ";
           };
           
@@ -307,15 +307,15 @@ Roman Mamedov<br><br>
 	else
 		$add	=	'';
         $log.= "<tr><td><table class=\"without\" border=0>
-        <tr><td width=120><b>Страница:</b></td><td>".str_replace($cms_site."/","",$pieces[0])."</td></tr>";
+        <tr><td><b>Страница</b></td><td>".str_replace($cms_site."/","",$pieces[0])."</td></tr>";
 		if (!isset($pieces[1]))
 			$pieces[1] = "";
         if ($pieces[1]!="")
-			$log.="<tr><td><b>Откуда: </b></td><td>".str_replace($cms_site."/","",$pieces[1])."</td></tr>";
-        $log.="<tr><td><b>User Agent: </b></td><td>".$Filtr->clear($pieces[2])."</td></tr>
-        <tr><td><b>IP: </b></td><td>".$Filtr->ipclick($pieces[3]).$add."
+			$log.="<tr><td><b>Откуда </b></td><td>".str_replace($cms_site."/","",$pieces[1])."</td></tr>";
+        $log.="<tr><td><b>User Agent </b></td><td>".$Filtr->clear($pieces[2])."</td></tr>
+        <tr><td><b>IP </b></td><td>".$Filtr->ipclick($pieces[3]).$add."
 	</td></tr>
-        <tr><td><b>Дата и время: </b></td><td>".$Filtr->fulldate($pieces[4],$seconds)."</td></tr>
+        <tr><td><b>Дата и время </b></td><td>".$Filtr->fulldate($pieces[4],$seconds)."</td></tr>
         </table>
         </td></tr>
         ";
@@ -338,7 +338,7 @@ Roman Mamedov<br><br>
   {
         $p = explode("||",$element);
         if ($i<$max) {
-         $errors.= "<tr><td>".$Filtr->fulldate($Filtr->clear($p[0]))."</td><td>".$Filtr->clear($p[1])."</td><td>".$Filtr->clear($p[2])."</td><td>".$Filtr->clear($p[3])."</td><td>".$Filtr->clear($p[4])."</td><td>".$Filtr->ipclick($p[5])."</td></tr>
+         $errors.= "<tr><td data-label=\"ВРЕМЯ\">".$Filtr->fulldate($Filtr->clear($p[0]))."</td><td data-label=\"КОД ОШИБКИ\">".$Filtr->clear($p[1])."</td><td data-label=\"СООБЩЕНИЕ ОШИБКИ\">".$Filtr->clear($p[2])."</td><td data-label=\"ФАЙЛ\">".$Filtr->clear($p[3])."</td><td data-label=\"СТРОКА\">".$Filtr->clear($p[4])."</td><td data-label=\"IP\">".$Filtr->ipclick($p[5])."</td></tr>
          ";
         };
         $i++;

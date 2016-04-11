@@ -39,7 +39,7 @@
 							<font class="desc">Управление комментариями раздела "<b>'.$o[1].'</b>"</font><br><br>  
 						';
 				$messages 	= '<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-							<tr class="titletable"><td>КОММЕНТАРИЙ</td><td>ДЕЙСТВИЯ</td></tr>';
+							<tr class="titletable"><th>КОММЕНТАРИЙ</th><th>ДЕЙСТВИЯ</th></tr>';
 				for ($i=count($file)-1; $i>-1; $i--)
 				{
 					$p = explode("|",$file[$i]);
@@ -48,18 +48,18 @@
 					} else 
 						$p[6]="Нет";
 					($cms_smiles==1) ? $tm = $GlobalTemplate->usebbcodes($p[3],'html') : $tm = $p[3]; 
-					$messages.="<tr><td><b>Дата:</b> ".$Filtr->fulldate($p[0])."<br>
+					$messages.="<tr><td data-label=\"КОММЕНТАРИЙ\"><b>Дата:</b> ".$Filtr->fulldate($p[0])."<br>
 							<b>Имя:</b> ".$p[1]."<br>
 							<b>E-mail:</b> ".$p[2]."<br>
 							<b>IP:</b> ".$Filtr->ipclick($p[5])."<br>
 							<b>Отображено:</b> ".$p[6]."<br>
-							<b>Сообщение:</b> ".$tm."</td><td width=130>";
+							<b>Сообщение:</b> ".$tm."</td><td data-label=\"ДЕЙСТВИЯ\"><br>";
 					if ($p[6]=='Да')
-						$messages.="<a href=\"saver.php?saverdo=showmess&amp;withdo=hidecomment&amp;from=message&amp;file=".$Filtr->clear($_GET['message'])."&amp;line=".$i."&amp;addline=".(int)$_GET['line']."\">Скрыть</a><br><bR>";
+						$messages.="<a href=\"saver.php?saverdo=showmess&amp;withdo=hidecomment&amp;from=message&amp;file=".$Filtr->clear($_GET['message'])."&amp;line=".$i."&amp;addline=".(int)$_GET['line']."\">Скрыть</a><br><br>";
 					else
-						$messages.="<a href=\"saver.php?saverdo=showmess&amp;from=message&amp;file=".$Filtr->clear($_GET['message'])."&amp;line=".$i."&amp;addline=".(int)$_GET['line']."\">Отобразить</a><br><bR>";
+						$messages.="<a href=\"saver.php?saverdo=showmess&amp;from=message&amp;file=".$Filtr->clear($_GET['message'])."&amp;line=".$i."&amp;addline=".(int)$_GET['line']."\">Отобразить</a><br><br>";
 					$messages.="               
-							<a href=\"?action=messages&amp;from=message&amp;go=edit&amp;message=".$Filtr->clear($_GET['message'])."&amp;line=".(int)$_GET['line']."&amp;addline=".$i."\">Изменить</a><br><bR>
+							<a href=\"?action=messages&amp;from=message&amp;go=edit&amp;message=".$Filtr->clear($_GET['message'])."&amp;line=".(int)$_GET['line']."&amp;addline=".$i."\">Изменить</a><br><br>
 							<a href=\"#\" onClick=\"if (checkhead()) location.href='saver.php?saverdo=delcomment&amp;type=".$from."&amp;message=".$Filtr->clear($_GET['message'])."&amp;addline=".(int)$_GET['line']."&amp;line=".$i."';\">Удалить</a>
 					";                   
 				};
@@ -76,13 +76,13 @@
 				<font class="desc">История сообщений, отправленных через форму обратной связи</font><br><br>  
 				';
 			$messages = '<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-					<tr class="titletable"><td>СООБЩЕНИЕ</td><td>ДЕЙСТВИЯ</td></tr>
+					<tr class="titletable"><th>СООБЩЕНИЕ</th><th>ДЕЙСТВИЯ</th></tr>
 				';
 			for ($i=count($file)-1; $i>-1; $i--) {
 				$p = explode("|",$file[$i]);
 				($cms_smiles==1) ? $tm = $GlobalTemplate->usebbcodes($p[1],'html') : $tm = $p[1]; 
-				$messages.="<tr><td>".$p[0]."<br>
-					Сообщение: ".$tm."</td><td width=130>
+				$messages.="<tr><td data-label=\"СООБЩЕНИЕ\">".$p[0]."<br>
+					Сообщение: ".$tm."</td><td data-label=\"ДЕЙСТВИЯ\">
 						<a href=\"#\" onClick=\"if (checkhead()) location.href='saver.php?saverdo=delcomment&amp;type=".$from."&amp;line=".$i."';\">Удалить</a>
 					";                   
 			};
@@ -107,7 +107,7 @@
 					<font class="desc">Управление комментариями записи "<b>'.$p[2].'</b>" новостного раздела <a href="?action=bfgshow&type='.$from.'">'.$nameofbfg.'</a></font><br><br>  
 					';
 				$messages = '<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-						<tr class="titletable"><td>КОММЕНТАРИЙ</td><td>ДЕЙСТВИЯ</td></tr>
+						<tr class="titletable"><th>КОММЕНТАРИЙ</th><th>ДЕЙСТВИЯ</th></tr>
 				';
 				
 				$lastposts = file("../conf/last_posts.dat");
@@ -116,12 +116,12 @@
 					if ($p[6]=="yes") {$p[6]="Да";} else $p[6]="Нет";
 					($cms_smiles==1) ? $tm = $GlobalTemplate->usebbcodes($p[3],'html') : $tm = $p[3];
 					
-					$messages.="<tr><td><b>Дата:</b> ".$Filtr->fulldate($p[0])."<br>
+					$messages.="<tr><td data-label=\"КОММЕНТАРИЙ\"><b>Дата:</b> ".$Filtr->fulldate($p[0])."<br>
 							<b>Имя:</b> ".$p[1]."<br>
 							<b>E-mail:</b> ".$p[2]."<br>
 							<b>IP:</b> ".$Filtr->ipclick($p[5])."<br>
 							<b>Отображено:</b> ".$p[6]."<br>
-							<b>Сообщение:</b> ".$tm."</td><td width=130>
+							<b>Сообщение:</b> ".$tm."</td><td data-label=\"ДЕЙСТВИЯ\">
 							<a href=\"../".$from."/".$_GET['news'].$cms_rewrite_ext."?message=[quote=".$p[1]."]".str_replace('<br>',' ',$p[3])."[/quote]&amp;rand=".rand(1,999)."#messbox\" target=\"_blank\">Ответить</a><br><br>";
 					if ($p[6]=='Да')
 						$messages.="<a href=\"saver.php?saverdo=showmess&amp;withdo=hidecomment&amp;from=".$from."&amp;file=".$Filtr->clear($_GET['news'])."&amp;line=".$i."&amp;lastline=\">Скрыть</a><br><bR>";

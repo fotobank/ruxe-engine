@@ -94,7 +94,7 @@
     $print .= "
         <br><center>
             <table class=\"optionstable\" border=0 cellpadding=1 cellspacing=0>
-                <tr class=\"titletable\"><td>ИДЕНТИФИКАТОР</td><td>ПОДКЛЮЧЕНИЯ</td><td>РАЗДЕЛ ДЛЯ НОВЫХ КОММЕНТАРИЕВ</td><td>ДЕЙСТВИЯ</td></tr>
+                <tr class=\"titletable\"><th>ИДЕНТИФИКАТОР</th><th>ПОДКЛЮЧЕНИЯ</th><th>РАЗДЕЛ ДЛЯ НОВЫХ КОММЕНТАРИЕВ</th><th>ДЕЙСТВИЯ</th></tr>
     ";
     $generalList = $ExtendedComments->getList();
     foreach($generalList as $generalListLine) {
@@ -221,10 +221,10 @@
 		$generalPieces[1] .= (($count>0) ? $add : "");
 				
         $print .= "
-                <tr><td>".$generalPieces[0]."</td>
-					<td>".$generalPieces[1]."</td>
-					<td>".$generalPieces[2]."</td>
-					<td>
+                <tr><td data-label=\"Идентификатор\">".$generalPieces[0]."</td>
+					<td data-label=\"Подключения\"><br>".$generalPieces[1]."</td>
+					<td data-label=\"РАЗДЕЛ ДЛЯ НОВЫХ КОММЕНТАРИЕВ\">".$generalPieces[2]."</td>
+					<td data-label=\"Действия\"><br>
 						<a href=\"?action=plugins&amp;choose=excomments&amp;do=options&amp;id=".$generalPieces[0]."\">Настройки</a>
 						<br><br><a href=\"#\" onClick=\"if (checkhead()) location.href='?action=plugins&amp;choose=excomments&amp;do=remove&amp;id=".$generalPieces[0]."';\">Удалить</a></td>
 				</tr>

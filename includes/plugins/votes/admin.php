@@ -170,7 +170,7 @@
      $print .= '
      <input type="button" value="Создать голосование" onClick="location.href=\'?action=plugins&choose=votes&do=new&rand='.rand(1,999).'\';"><br><br>';
    $print .= '<center><table class="optionstable" border=0 cellpadding=1 cellspacing=0>
-       <tr class="titletable"><td>ГОЛОСОВАНИЕ</td><td width=100>ДЕЙСТВИЯ</td></tr>';
+       <tr class="titletable"><td>ГОЛОСОВАНИЕ</td><th>ДЕЙСТВИЯ</th></tr>';
    if (file_exists($cms_root."/conf/votes/config.dat"))
    {
        $config = file($cms_root."/conf/votes/config.dat");
@@ -183,13 +183,13 @@
               $a = unserialize($x[1]);
               $b = unserialize($x[2]);
               $o = 0;
-              $print .= '<tr><td valign="top">'.$x[0].'<br><table style="margin-left:10px" border=0>';
+              $print .= '<tr><td data-label="ГОЛОСОВАНИЕ" valign="top"><br>'.$x[0].'<br><table style="margin-left:10px" border=0>';
               foreach ($a as $y)
               {
                    $print .= '<tr><td style="border-right:0px; border-bottom:0px;">'.$b[$o].'</td><td style="border-right:0px; border-bottom:0px;">'.$y.'</td></tr>';
                    $o++;
               };
-              $print .= '</table></td><td>
+              $print .= '</table></td><td data-label="ДЕЙСТВИЯ"><br>
               <a href="?action=plugins&choose=votes&do=edit&name='.$c[0].'">Изменить</a><br><br>
               <a href="?action=plugins&choose=votes&do=clear&name='.$c[0].'">Обнулить</a><br><br>
               <a href="?action=plugins&choose=votes&do=del&name='.$c[0].'">Удалить</a>

@@ -30,7 +30,7 @@
 <table class="optionstable" cellpadding=1 cellspacing=0>
 	<tr class="titletable"><td colspan=4><a name="confbackup"></a>ПОЛНОЕ РЕЗЕРВНОЕ КОПИРОВАНИЕ КОНФИГУРАЦИИ В ZIP АРХИВ</td></tr>
 	<tr><td colspan=4><font class="desc">Полная резервная копия кофигурации включает в себя каталоги /avatars/, /conf/, /themes/.</font></td></tr>
-	<tr class="titletable"><td width=200>ДАТА</td><td>ИМЯ АРХИВА</td><td>РАЗМЕР</td><td>ДЕЙСТВИЯ</td></tr>
+	<tr class="titletable"><th>ДАТА</th><th>ИМЯ АРХИВА</th><th>РАЗМЕР</th><th>ДЕЙСТВИЯ</th></tr>
 	{CONFBACKUPLIST}
 	<tr class="sub"><td colspan=4><input type="submit" name="submit" value="Создать полную резервную копию конфигурации"></td></tr>
 </table>
@@ -56,7 +56,6 @@
 [if_log]
 <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 <tr class="titletable"><td colspan=5>ЛОГ ПОСЕЩЕНИЙ</td></tr>
-
 {LOG}
 <tr><td colspan=5>{LOGPAGES}</td></tr>
 <tr class="sub"><td colspan=5><input type="button" onClick="location.href='saver.php?saverdo=clear&amp;file=log';" value="Очистить"></td></tr>
@@ -75,16 +74,17 @@
 [if_elog]
 <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 <tr class="titletable"><td colspan=6>ЛОГ ОШИБОК</td></tr>
-<tr class="titletable"><td width=200>ВРЕМЯ</td><td>КОД ОШИБКИ</td><td>СООБЩЕНИЕ ОШИБКИ</td><td>ФАЙЛ</td><td>СТРОКА</td><td>IP</td></tr>
+<tr class="titletable"><th>ВРЕМЯ</th><th>КОД ОШИБКИ</th><th>СООБЩЕНИЕ ОШИБКИ</th><th>ФАЙЛ</th><th>СТРОКА</th><th>IP</th></tr>
 {ERRORS}
 <tr><td colspan=6>{ERRORSPAGES}</td></tr>
 <tr class="sub"><td colspan=6><input type="button" onClick="location.href='saver.php?saverdo=clear&amp;file=errors';" value="Очистить"></td></tr>
 </table><br>
 [/if_elog]
+
 [if_blog]
 <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 <tr class="titletable"><td colspan=5>ЛОГ БАНА</td></tr>
-<tr class="titletable"><td width=200>ВРЕМЯ</td><td>IP</td><td>СТРАНИЦА</td><td>БРАУЗЕР</td><td>ОТКУДА</td></tr>
+<tr class="titletable"><th>ВРЕМЯ</th><th>IP</th><th>СТРАНИЦА</th><th>БРАУЗЕР</th><th>ОТКУДА</th></tr>
 {BANLOG}
 <tr><td colspan=5>{BANLOGPAGES}</td></tr>
 <tr class="sub"><td colspan=5><input type="button" onClick="location.href='saver.php?saverdo=clear&amp;file=ban';" value="Очистить"></td></tr>

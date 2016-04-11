@@ -74,11 +74,11 @@
 	<center>
 	
 	<table border=0 cellpadding=1 cellspacing=0 class="optionstable">
-				<tr class="titletable"><td>ЧАСТЬ USER AGENT\'А</td><td>ДЕЙСТВИЯ</td></tr>
+				<tr class="titletable"><th>ЧАСТЬ USER AGENT\'А</th><th>ДЕЙСТВИЯ</th></tr>
 				';
 	foreach ($bots as $i => $bot)
 	{
-		$print	.=	'<tr><td>'.$bot.'</td><td>
+		$print	.=	'<tr><td data-label="ЧАСТЬ USER AGENT\'А"><br>'.$bot.'</td><td data-label="ДЕЙСТВИЯ"><br>
 		<input type="button" value="Изменить" onClick="location.href=\'?action=plugins&amp;choose=robots&amp;rand='.rand(1,999).'&amp;do=edit&amp;line='.$i.'\';">
 		<input type="button" value="Удалить" onClick="if (checkhead()) {location.href=\'?action=plugins&amp;choose=robots&amp;rand='.rand(1,999).'&amp;do=delete&amp;line='.$i.'\';}">
 		</td></tr>
