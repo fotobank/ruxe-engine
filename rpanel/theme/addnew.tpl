@@ -24,7 +24,7 @@
 				<table cellpadding=0 cellspacing=0 width="100%">
 					<tr><td style="border:none;">
 						{BUTTONS1}
-						<textarea id="short" name="text" style="height: 300px;" class="g">{TEXT}</textarea>
+						<textarea id="short" name="text" style="height: 300px; width: 100%;" class="g">{TEXT}</textarea>
 					</td></tr>
 				</table>
 			</td></tr>
@@ -33,7 +33,7 @@
 				<table cellpadding=0 cellspacing=0 width="100%">
 					<tr><td style="border:none;">
 						{BUTTONS2}
-						<textarea id="full" name="textplus" style="height: 500px;" class="g">{TEXTPLUS}</textarea>
+						<textarea id="full" name="textplus" style="height: 500px; width: 100%;" class="g">{TEXTPLUS}</textarea>
 					</td></tr>
 				</table>
 			</td></tr>
