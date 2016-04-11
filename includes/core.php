@@ -3489,35 +3489,36 @@ class FileManager
 		return substr(filesize($path)/1024, 0, 4); 
 	}
 
-	function removefile($path) 
-	{
-         	@chmod($path, 0777);
-         	if(@unlink($path))
-         		return TRUE;
-         	else 
-         		return FALSE;
-        }
-        
-        function recoursiveDir($dir)
-        {
-		//thanks for http://mauri.pp.ua/2010/10/18/zip/
-    		global $allfiles, $cms_root;
-    		if (file_exists($dir.'/.htaccess'))
-    			$allfiles[] = $dir.'/.htaccess';
-    		if ($files = glob($dir.'/*'))
-    		{
-        		foreach($files as $file)
-        		{
-            			if (is_dir($file))
-                			$this->recoursiveDir($file);
-            			else
-            			{
-            				if ($file!=$cms_root.'/index.php')
-                				$allfiles[]    =   $file;
-            			};
-        		};
-    		};
-	}
+    function removefile($path)
+    {
+        @chmod($path, 0777);
+        if (@unlink($path))
+            return TRUE;
+        else
+            return FALSE;
+    }
+
+    function recoursiveDir($dir, $files = [])
+    {
+        global $cms_root;
+
+        if (file_exists($dir . "/.htaccess"))
+            $files[] = $dir . "/.htaccess";
+
+        if ($listDir = glob($dir . "/*")) {
+            foreach ($listDir as $item) {
+                if (is_dir($item)) {
+                    $files = array_merge($this->recoursiveDir($item, $files));
+                } else {
+                    if ($item != $cms_root . "/index.php") {
+                        $files[] = $item;
+                    }
+                };
+            };
+        };
+
+        return $files;
+    }
 	
 	function checkfilename($text)
 	{

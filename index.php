@@ -89,6 +89,7 @@ if (isset($_GET['needconfbackup']))
 			$checkbackup = file($cms_root."/conf/checkbackup.dat");
 			if ($Filtr->clear($_GET['check'])==$checkbackup[0])
 			{
+                $allowZipping = true;
 				include('includes/zip.php');
 			};
 		};
