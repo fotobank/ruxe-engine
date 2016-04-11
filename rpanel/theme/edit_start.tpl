@@ -86,6 +86,6 @@
                                 }
                             }
                         </script>
-
+<br><br>
                         <!-- end: Кнопки -->
  <textarea name="text" id="code" style="width:99%; height:500px;">
