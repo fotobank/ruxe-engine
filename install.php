@@ -16,7 +16,7 @@
  *
  */
 
-$installer_version = "1.9 Beta 3";
+$installer_version = "1.9 Beta 4";
 
 include("conf/config.php");
 include("includes/core.php");
