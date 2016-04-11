@@ -107,7 +107,7 @@
 		if (!isset($pieces[5]))
 			$pieces[5] == '';
 	    if ($pieces[5]!='')
-		$add	=	' (<a href="'.$Navigation->furl('viewprofile',$Filtr->clear($pieces[5])).'" target="_blank">'.$Filtr->clear($pieces[5]).'</a>)';
+		$add	=	' <a href="'.$Navigation->furl('viewprofile',$Filtr->clear($pieces[5])).'" target="_blank">'.$Filtr->clear($pieces[5]).'</a>';
             $echooptions.= "<tr><td data-label=\"АДРЕС\">".$pieces[0]."</td><td data-label=\"ОТКУДА\">".$pieces[1]."</td><td data-label=\"БРАУЗЕР\">".$pieces[2]."</td><td data-label=\"IP\">".$Filtr->ipclick($pieces[3]).$add."</td><td data-label=\"ДАТА И ВРЕМЯ\">".$Filtr->fulldate($pieces[4],$seconds)."</td></tr>
             ";
           };
@@ -303,7 +303,7 @@ Roman Mamedov<br><br>
        if ($i<$max) {
         if (str_replace($cms_site."/","",$pieces[0]) == "") $pieces[0] = "Главная страница сайта";
 	if ($pieces[5]!='')
-		$add	=	' (<a href="'.$Navigation->furl('viewprofile',$Filtr->clear($pieces[5])).'" target="_blank">'.$Filtr->clear($pieces[5]).'</a>)';
+		$add	=	' <a href="'.$Navigation->furl('viewprofile',$Filtr->clear($pieces[5])).'" target="_blank">'.$Filtr->clear($pieces[5]).'</a>';
 	else
 		$add	=	'';
         $log.= "<tr><td><table class=\"without\" border=0>
