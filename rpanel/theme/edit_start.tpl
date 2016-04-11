@@ -43,4 +43,49 @@
                           method="post">
                         <input type="hidden" name="file" value="{FILE}">
                         {INFORMATION}<br>
+
+                        <!-- start: Кнопки -->
+
+                        <input type="button" value="Ж" style="font-weight:bold" onClick="addToEditor('bold');">
+                        <input type="button" value="К" style="font-style:italic" onClick="addToEditor('italic');">
+                        <input type="button" value="Ч" style="text-decoration:underline" onClick="addToEditor('underline');">
+                        <input type="button" value="Ссылка" onClick="addToEditor('link');">
+                        <input type="button" value="Изображение" onClick="addToEditor('image');">
+                        <input type="button" value="Счётчик загрузок" onClick="addToEditor('downloadsCounter');">
+                        <input type="button" value="Адрес сайта" onClick="addToEditor('siteUrl');">
+                        <input type="button" value="Путь до темы оформления" onClick="addToEditor('themeUrl');">
+
+                        <script>
+                            function addToEditor(type)
+                            {
+                                switch (type) {
+                                    case "image":
+                                        editAreaLoader.insertTags('code', '<img src="', '" border=0 alt="">');
+                                        break;
+                                    case "link":
+                                        editAreaLoader.insertTags('code', '<a href="" target="_blank">', '</a>');
+                                        break;
+                                    case "downloadsCounter":
+                                        editAreaLoader.insertTags('code', '<?php here_show_downloads("', '"); ?>');
+                                        break;
+                                    case "bold":
+                                        editAreaLoader.insertTags('code', '<b>', '</b>');
+                                        break;
+                                    case "italic":
+                                        editAreaLoader.insertTags('code', '<i>', '</i>');
+                                        break;
+                                    case "underline":
+                                        editAreaLoader.insertTags('code', '<u>', '</u>');
+                                        break;
+                                    case "siteUrl":
+                                        editAreaLoader.insertTags('code', '<?php here_urlsite(); ?>', '');
+                                        break;
+                                    case "themeUrl":
+                                        editAreaLoader.insertTags('code', '<?php here_themepath(); ?>', '');
+                                        break;
+                                }
+                            }
+                        </script>
+
+                        <!-- end: Кнопки -->
  <textarea name="text" id="code" style="width:99%; height:500px;">
