@@ -259,13 +259,18 @@ table td:last-child {border-bottom: 0;}
 [class*=pull-] {width: 100%;}
 }
 }
+[class*=titlered] td {
+	background: #bb0000;
+	border-color: #aa0000;
+	text-align: left;
+	color: #fff;
+	font-size: 13px;
+}
 .titlered td {
-    background-color:#b00000;
-	border-color:#a00000;
-    text-align: left;
-    font-weight: bold;
-    color: white;
-    font-size: 8pt;
+	background: #bb0000;
+	border-color: #aa0000;
+	text-align: left;
+	color: #fff;
 }
 .redtd td {
     background-color: #ffcece;
