@@ -91,9 +91,9 @@
             </div>
         </section>
         <!-- Основное содержание страницы -->
-		<div class="spacer"></div>
-        <div class="group-100">
-            <div class="group-96-offset-002">
+        <div class="group-100 subject">
+            <div class="spacer"></div>
+			<div class="group-96-offset-002">
 			    <div class="block-25-bordered">
 				    <div class="content">
 					    <?php here_random_faq(); ?>
@@ -110,8 +110,8 @@
 					</div>
 				</div>
 			</div>
+			<div class="spacer"></div>
 	    </div>
-	    <div class="spacer"></div>
 	    <!-- Форма авторизации -->
 		<div id="signup">
 		    <div class="loginform">
@@ -127,13 +127,14 @@
 	    <div id="footer" class="group-100">
             <div class="block-90-offset-005">
                 <div class="pull-left">
-                    <p>© 2015. Designed by <a href="http://webdesign.ru.net">D-Sign</a> and {CREDITS}</a></p>
+					<p>© 2016. Дизайн <a href="http://webdesign.ru.net">D-Sign</a>. {CREDITS}</a></p>
                 </div>
                 <div class="pull-right">
                     <ul class="footer-social">
                         <li><a href="<?php here_urlrss(); ?>" target="_blank"><i class="fa fa-rss"></i></a></li>
                         <li><a href="https://github.com/maindefine/ruxe-engine" target="_blank"><i class="fa fa-github"></i></a></li>
                         <li><a href="https://vk.com/ruxeengine" target="_blank"><i class="fa fa-vk"></i></a></li>
+						<li><a href="https://www.facebook.com/groups/1587191988261451/" target="_blank"><i class="fa fa-facebook"></i></a></li>
                     </ul>
                 </div>
                 <br>
