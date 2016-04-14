@@ -44,7 +44,7 @@
 					$cms_cenzura_words     = "хрен,фиг";
 					$cms_lastposts_count   = 3;
 					$cms_lastposts_len     = 255;
-					$cms_theme             = "landing";
+					$cms_theme             = "default";
 					$cms_directdownload    = 1;
 					$cms_fullredirect      = 0;
 					$cms_pm_max            = 125;
