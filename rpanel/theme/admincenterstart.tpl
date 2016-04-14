@@ -6,6 +6,7 @@
 	    <link rel="shortcut icon" href="theme/favicon.ico" type="image/x-icon">
 	    <meta name="generator" content="{GENERATOR}">
 	    <link rel="stylesheet" type="text/css" href="theme/rpanel.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	    <script type="text/javascript" src="theme/rpanel.js"></script>
 	    <script type="text/javascript" src="theme/edit_area/edit_area_full.js"></script>
 	    <script type="text/javascript" src="theme/tiny_mce/tinymce.min.js"></script>

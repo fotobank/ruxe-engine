@@ -54,7 +54,7 @@ http://fontawesome.ru/cheatsheet/
 [class*=bordered]:hover {border: solid 1px #fff;}
 [class*=bordered] + [class*=bordered] {margin-top: -1px;}
 /* Основное */
-body, html {background: #1c304f; font-family: Verdana, Geneva CY, DejaVu Sans, sans-serif !important; font-weight: 300; font-size: 13px; color: #555; height: 100%; margin: 0;}
+body, html {background: #1c304f; font-family: "Open sans", sans-serif !important; font-weight: 400; font-size: 13px; color: #555; height: 100%; margin: 0;}
 input, button, select, textarea {font-family: inherit; font-size: inherit; line-height: inherit;}
 p {line-height: 1.75em; text-align: left;}
 h1 {
