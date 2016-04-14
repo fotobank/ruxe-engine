@@ -327,3 +327,5 @@ table td:last-child {border-bottom: 0;}
 	padding: 4px;
 	width: 260px;
 }
+.pager a:link {font-size: 1.375em; padding: 0.125em;}
+.pager .active {color: #b00; text-decoration: none;}
