@@ -146,8 +146,13 @@ a:hover {color: #a00;}
 [class*=bg-white] {background-color: #fff;}
 [class*=bg-blue] {background-color: #4092e5; color: #fff;}
 .loginform .button-default {margin-top: 8px; font-size: 90%;}
-table {width: 98%; margin-left: 0; vertical-align: top !important; word-break: break-all;}
-.without > tbody > tr > td:first-child {word-break: keep-all;}
+table {width: 98%; margin-left: 0; vertical-align: top !important; overflow: visible; word-break: keep-all;}
+td[data-label=user agent] {word-break: break-all;}
+td[data-label=дата и время] {word-break: break-all;}
+td[data-label=браузер] {word-break: break-all;}
+td[data-label=откуда] {word-break: break-all;}
+td[data-label=адрес] {word-break: break-all;}
+td[data-label=long-word] {word-break: break-all;}
 tbody {width: 100%;}
 tbody tr td {vertical-align: top !important; overflow: visible;}
 table th {font-weight: 300; text-align: left; letter-spacing: 1px; padding: 6px 10px; word-break: keep-all;}
@@ -247,6 +252,7 @@ table td {display: block; text-align: left; font-size: 12px; margin-top: -1px; w
 table td:last-child {border-bottom: 0;}
 .optionstable {vertical-align: top !important;}
 .optionstable td:before {content: attr(data-label); float: left; margin-right: 8px; width: auto; text-transform: uppercase; font-weight: 300; display: block; padding: 0 4px; background: #c8dfff; color: #333;}
+.optionstable td[data-label=long-word]:before {display: none;}
 }
 @media screen and (max-width: 800px) {
 .admin-header .container [class*=pull] {width: 100%; text-align: center; margin-left: 0;}
@@ -260,24 +266,24 @@ table td:last-child {border-bottom: 0;}
 }
 }
 [class*=titlered] td {
-	background: #bb0000;
+    background: #bb0000;
 	border-color: #aa0000;
-	text-align: left;
-	color: #fff;
-	font-size: 13px;
+    text-align: left;
+    color: #fff;
+    font-size: 13px;
 }
 .titlered td {
-	background: #bb0000;
+    background: #bb0000;
 	border-color: #aa0000;
-	text-align: left;
-	color: #fff;
+    text-align: left;
+    color: #fff;
 }
 .redtd td {
-    background-color: #ffcece;
+    background-color: #ffcec0;
     text-align: center;
     font-weight: bold;
     color: black;
-    font-size: 10pt;
+    font-size: 14px;
 }
 .modules {
     margin-bottom:6px;

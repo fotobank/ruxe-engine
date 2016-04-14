@@ -307,12 +307,12 @@ Roman Mamedov<br><br>
 	else
 		$add	=	'';
         $log.= "<tr><td><table class=\"without\" border=0>
-        <tr><td><b>Страница</b></td><td>".str_replace($cms_site."/","",$pieces[0])."</td></tr>";
+        <tr><td><b>Страница</b></td><td data-label=\"long-word\">".str_replace($cms_site."/","",$pieces[0])."</td></tr>";
 		if (!isset($pieces[1]))
 			$pieces[1] = "";
         if ($pieces[1]!="")
-			$log.="<tr><td><b>Откуда </b></td><td>".str_replace($cms_site."/","",$pieces[1])."</td></tr>";
-        $log.="<tr><td><b>User Agent </b></td><td>".$Filtr->clear($pieces[2])."</td></tr>
+			$log.="<tr><td><b>Откуда </b></td><td data-label=\"long-word\">".str_replace($cms_site."/","",$pieces[1])."</td></tr>";
+        $log.="<tr><td><b>User Agent </b></td><td data-label=\"long-word\">".$Filtr->clear($pieces[2])."</td></tr>
         <tr><td><b>IP </b></td><td>".$Filtr->ipclick($pieces[3]).$add."
 	</td></tr>
         <tr><td><b>Дата и время </b></td><td>".$Filtr->fulldate($pieces[4],$seconds)."</td></tr>

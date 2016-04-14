@@ -131,7 +131,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;МОЙ САЙТ&lt;/h1&gt;<br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода контента той или иной страницы --&gt;</font><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php here_pagecontent(); ?&gt;<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода текста "Powered by Ruxe Engine" с указанием ссылки на официальный сайт (команда необязательная, но мы надеемся, что вы её будете использовать); местоположение данной команды может быть в любом месте страницы в пределах тегов &lt;body&gt;&lt;/body&gt;--&gt;</font><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">&lt;!-- Команда для вывода текста "Сделано на Ruxe Engine" с указанием ссылки на официальный сайт (команда необязательная, но мы надеемся, что вы её будете использовать); местоположение данной команды может быть в любом месте страницы в пределах тегов &lt;body&gt;&lt;/body&gt;--&gt;</font><br>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{CREDITS}<br>
         &lt;/body&gt;<br>
         &lt;/html&gt;

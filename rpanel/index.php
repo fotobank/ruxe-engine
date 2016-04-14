@@ -268,7 +268,7 @@
      				if ($w[4]!="")
         				$add = ' (<a href="'.$Navigation->furl('viewprofile',$w[4]).'" target="_blank">'.$w[4].'</a>)';
      				$showed = $w[1];
-     				$whoonline.="<tr><td data-label=\"IP\">".$Filtr->ipclick($w[0]).$add."</td><td data-label=\"АДРЕС\"><a href=\"".$w[1]."\" target=\"_blank\">".$showed."</a></td><td data-label=\"БРАУЗЕР\">".$w[3]."</td></tr>\r\n";
+     				$whoonline.="<tr><td data-label=\"ip\">".$Filtr->ipclick($w[0]).$add."</td><td data-label=\"адрес\"><a href=\"".$w[1]."\" target=\"_blank\">".$showed."</a></td><td data-label=\"браузер\">".$w[3]."</td></tr>\r\n";
   			};
   			$all_hits = file($cms_root."/conf/all_hits.dat");
   			$all_hosts = file($cms_root."/conf/all_hosts.dat");
@@ -745,9 +745,9 @@
           				else
             					$writed = "Нет";
             				//<input type=\"button\" onClick=\"location.href='?action=manager&amp;chmod=1&amp;url=".$url."&amp;type=folder&amp;fname=".$f."';\" value=\"Права\">
-          				$files.= "<tr><td data-label=\"ТИП\" align=\"center\"><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\"><img src=\"theme/images/dir.png\" alt=\"\" border=0></a></td>";
-          				$files.= "<td data-label=\"ИМЯ\"><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\">".$f."</a></td>\r\n";
-          				$files.= "<td data-label=\"РАЗМЕР\">-</td><td data-label=\"ПРАВА НА ЗАПИСЬ\">".$writed."</td><td data-label=\"ДЕЙСТВИЯ\" align=\"center\">
+          				$files.= "<tr><td data-label=\"тип\" align=\"center\"><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\"><img src=\"theme/images/dir.png\" alt=\"\" border=0></a></td>";
+          				$files.= "<td data-label=\"имя\"><a href=\"?action=manager&amp;url=".$url."/".$f."&amp;oldurl=".$url."\">".$f."</a></td>\r\n";
+          				$files.= "<td data-label=\"размер\">-</td><td data-label=\"права на запись\">".$writed."</td><td data-label=\"действия\" align=\"center\">
           						<input type=\"button\" onClick=\"location.href='?action=manager&amp;rename=1&amp;url=".$url."&amp;fname=".$f."';\" value=\"Переименовать\"> 
           						 
           						<input type=\"button\" onClick=\"if (checkhead()) location.href='saver.php?saverdo=deldir&amp;url=".$url."&amp;fname=".$f."';\" value=\"Удалить\"> </td></tr>\r\n";
@@ -769,10 +769,10 @@
         				$size  = $FileManager->fsize($url."/".$f);
 					if (str_replace('.',"",$size)==$size) $size = floor($size);
 					if (substr($size,strpos($size,'.'),strlen($size))==0) $size = floor($size);
-       					$files.= "<tr><td data-label=\"ТИП\" align=\"center\"><img src=\"theme/images/file.png\" alt=\"\" border=0></td>";
-        				$files.= "<td data-label=\"ИМЯ\">".$f."</td>\r\n";
+       					$files.= "<tr><td data-label=\"тип\" align=\"center\"><img src=\"theme/images/file.png\" alt=\"\" border=0></td>";
+        				$files.= "<td data-label=\"имя\">".$f."</td>\r\n";
         				//<input type=\"button\" onClick=\"location.href='?action=manager&amp;type=file&amp;chmod=1&amp;url=".$url."&amp;fname=".$f."';\" value=\"Права\">
-        				$files.= "<td data-label=\"РАЗМЕР\">".$size." Кб</td><td data-label=\"ПРАВА НА ЗАПИСЬ\">".$writed."</td><td data-label=\"ДЕЙСТВИЯ\" align=\"center\">
+        				$files.= "<td data-label=\"размер\">".$size." Кб</td><td data-label=\"права на запись\">".$writed."</td><td data-label=\"действия\" align=\"center\">
         				<div style=\"display:none;margin:5px;\" id=\"pathfile".$z."\">
         					<input type=\"text\" id=\"pf".$z."\" value=\"".str_replace($cms_root,$cms_site,realpath($url.'/'.$f))."\" size=33><br>
         				</div><input type=\"button\" id=\"butfile".$z."\" onClick=\"document.getElementById('butfile".$z."').style.display='none'; document.getElementById('pathfile".$z."').style.display='block'; document.getElementById('pf".$z."').select();\" value=\"Адрес\">
@@ -1853,8 +1853,8 @@
                 $c[2] = empty($c[2]) ? "&nbsp;" : $c[2];
                 $c[3] = empty($c[3]) ? "&nbsp;" : $c[3];
 
-				$list	.=	'<tr><td data-label="Страница"><a href="'.$pageUrl.'" target="_blank">'.$pageUrlTitle.'</b></a></td><td data-label="Заголовок">'.$c[1].'</td><td data-label="Ключевые слова">'.$c[2].'</td><td data-label="Описание">'.$c[3].'</td>
-				            <td data-label="Действия">
+				$list	.=	'<tr><td data-label="страница"><a href="'.$pageUrl.'" target="_blank">'.$pageUrlTitle.'</b></a></td><td data-label="заголовок">'.$c[1].'</td><td data-label="ключевые слова">'.$c[2].'</td><td data-label="описание">'.$c[3].'</td>
+				            <td data-label="действия">
 							<a href="?action=edit&amp;file=../conf/pages/'.$c[4].'.txt">Редактировать</a>
 							<a href="?action=pages&amp;do=editpage&amp;page='.$c[0].'">Параметры</a>
 							<a href="#" onClick="if (checkhead()) location.href=\'?action=pages&amp;do=delpage&amp;page='.$c[0].'&amp;fullpage='.$c[4].'\';">Удалить</a>
@@ -2128,7 +2128,7 @@
                  			};
                  			$z++;
              			};
-				$echooptions.='<tr><td data-label="ID">'.$l[0].'</td><td data-label="ОПИСАНИЕ">'.$l[2].'</td><td data-label="АДРЕС ФАЙЛА"><a href="'.$l[1].'">'.$l[1].'</a></td><td data-label="ЗАГРУЗОК">'.$f.'</td><td data-label="ДЕЙСТВИЯ" valign="top"><a href="?action=downloads&amp;go=edit&amp;line='.$i.'">Изменить</a>
+				$echooptions.='<tr><td data-label="id">'.$l[0].'</td><td data-label="описание">'.$l[2].'</td><td data-label="адрес файла"><a href="'.$l[1].'">'.$l[1].'</a></td><td data-label="загрузок">'.$f.'</td><td data-label="действия" valign="top"><a href="?action=downloads&amp;go=edit&amp;line='.$i.'">Изменить</a>
                					<a href="#" onClick="if (checkhead()) location.href=\'saver.php?saverdo=deldownloads&amp;line='.$i.'&amp;c='.$x.'\';">Удалить</a></td></tr>';
              			$i--;
           		}; 
@@ -2141,8 +2141,8 @@
 						<tr><td colspan=2>
 							Счётчики загрузок используются на сайте с помощью следующих команд и путей:<br>
 						</td></tr>
-          					<tr><td width=500>'.$Navigation->furl('getfile','<b>ID</b>').'</td><td>Ссылка для загрузки файла по идентификатору с повышением показания счётчика</td></tr>
-						<tr><td>&lt;?php here_show_downloads("<b>ID</b>"); ?&gt;</td><td>Команда для вывода показаний счётчика загрузок файла по идентификатору</td></tr>
+          					<tr><td width=500>'.$Navigation->furl('getfile','<b>id</b>').'</td><td>Ссылка для загрузки файла по идентификатору с повышением показания счётчика</td></tr>
+						<tr><td>&lt;?php here_show_downloads("<b>id</b>"); ?&gt;</td><td>Команда для вывода показаний счётчика загрузок файла по идентификатору</td></tr>
 						<tr><td>&lt;?php here_top_downloads(); ?&gt;</td><td>Выводит список наиболее популярных загрузок</td></tr>
        					</table></center>
         		';
@@ -2216,7 +2216,7 @@
           		for ($i = 0; $i<count($views); $i++)
           		{ 
              			$p = explode("=",$views[$i]);
-             			$echooptions.= '<tr><td data-label="СЧЁТЧИК ПРОСМОТРОВ"><br>Идентификатор: '.$p[0].'. Показания счётчика: '.str_replace("\r\n","",$p[1]).'.</td><td data-label="ДЕЙСТВИЯ"><br>
+             			$echooptions.= '<tr><td data-label="счётчик просмотров"><br>Идентификатор: '.$p[0].'. Показания счётчика: '.str_replace("\r\n","",$p[1]).'.</td><td data-label="действия"><br>
              				<input type="button" onClick="location.href=\'?action=counts&amp;go=reset&amp;line='.$i.'\';" value="Обнулить">
              				<input type="button" onClick="if (checkhead()) location.href=\'?action=counts&amp;go=delete&amp;line='.$i.'\';" value="Удалить">
              				</td></tr>
@@ -2296,8 +2296,8 @@
                      		$smile = str_replace("\r\n","",$smile);
                      		if ($smile!="")
                      		{ 
-                      			$echooptions .= '<tr><td data-label="СМАЙЛ"><img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt=""></td><td data-label="BB-код">['.$smile.']</td>
-								<td data-label="ДЕЙСТВИЕ"><a href="#" onClick="if (checkhead()) location.href=\'?action=smiles&amp;do=delete&amp;smile='.$smile.'\';">Удалить</a>
+                      			$echooptions .= '<tr><td data-label="смайл"><img src="'.$cms_site.'/smiles/'.$smile.'.gif" border=0 alt=""></td><td data-label="bb-код">['.$smile.']</td>
+								<td data-label="действие"><a href="#" onClick="if (checkhead()) location.href=\'?action=smiles&amp;do=delete&amp;smile='.$smile.'\';">Удалить</a>
                       			</td></tr>';
                      		};
              		};                
@@ -2485,7 +2485,7 @@
                  			};
                  			$z++;
              			};
-             			$echooptions .= '<tr><td data-label="АДРЕС"><a href="'.$l[1].'" target="_blank">'.$l[1].'</a></td><td data-label="ИДЕНТИФИКАТОР">'.$l[0].'</td><td data-label="ОПИСАНИЕ">'.$l[2].'</td><td data-label="ПЕРЕХОДОВ">'.$f.'</td><td data-label="ДЕЙСТВИЕ">
+             			$echooptions .= '<tr><td data-label="адрес"><a href="'.$l[1].'" target="_blank">'.$l[1].'</a></td><td data-label="идентификатор">'.$l[0].'</td><td data-label="описание">'.$l[2].'</td><td data-label="переходов">'.$f.'</td><td data-label="действие">
              			
              			<input type="button" onClick="location.href=\'saver.php?saverdo=uplink&amp;id='.$l[0].'\';" value="Вверх">
              			<input type="button" onClick="location.href=\'saver.php?saverdo=downlink&amp;id='.$l[0].'\';" value="Вниз">
@@ -2732,8 +2732,8 @@
                         if ($c[0] == $r[0]) {$o = $c[1]; $x = $z; break;};
                         $z++;
                     };
-                    $echooptions.= '<tr><td data-label="ИДЕНТИФИКАТОР">'.$r[0].'</td><td data-label="ГЕНЕРИРУЕМЫЙ КОД">'.str_replace("<","&lt;",str_replace(">","&gt;",$r[1])).'</td>
-                        <td data-label="ССЫЛКА">'.$r[2].'</td><td data-label="ПЕРЕХОДОВ">'.$o.'</td><td data-label="ДЕЙСТВИЯ">
+                    $echooptions.= '<tr><td data-label="идентификатор">'.$r[0].'</td><td data-label="генерируемый код">'.str_replace("<","&lt;",str_replace(">","&gt;",$r[1])).'</td>
+                        <td data-label="ссылка">'.$r[2].'</td><td data-label="переходов">'.$o.'</td><td data-label="действия">
                             <a href="?action=rotator&amp;go=edit&amp;line='.$i.'&amp;id='.$r[0].'">Изменить</a>
                             <a href="saver.php?saverdo=delfile&amp;fromupdate=1&amp;count='.$x.'">Обнулить</a>
                             <a href="#" onClick="if (checkhead()) location.href=\'saver.php?saverdo=delfile&amp;fromrotator=1&amp;line='.$i.'&amp;count='.$x.'\';">Удалить</a>

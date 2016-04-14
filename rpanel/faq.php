@@ -146,7 +146,7 @@
   {
      $faq=explode("|",$faqs);
      $d++;
-     $echooptions.= "<tr><td data-label=\"ДАННЫЕ\"><b>Вопрос:</b><br>".$GlobalTemplate->usebbcodes($faq[4],'html')."<br><br><b>Ответ: </b><br>".$GlobalTemplate->usebbcodes($faq[6],'html',true)."<br><br><b>Статус сообщения: </b>
+     $echooptions.= "<tr><td data-label=\"данные\"><b>Вопрос:</b><br>".$GlobalTemplate->usebbcodes($faq[4],'html')."<br><br><b>Ответ: </b><br>".$GlobalTemplate->usebbcodes($faq[6],'html',true)."<br><br><b>Статус сообщения: </b>
      ";
      if ($faq[3]=="show")
      {
@@ -157,7 +157,7 @@
      $echooptions.= "скрыто";
      };
    $echooptions.= "</td>
-   <td data-label=\"ВЫБРАТЬ\"><input type=\"radio\" NAME=\"select\" VALUE=\"".$d."\"></td></tr>
+   <td data-label=\"выбрать\"><input type=\"radio\" NAME=\"select\" VALUE=\"".$d."\"></td></tr>
    ";
   };
    $echooptions.= "<tr class=\"titletable\"><td colspan=2>ДЕЙСТВИЕ</td></tr>
