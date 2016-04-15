@@ -13,12 +13,6 @@
 					{LISTCATEGORY}
 				</select> <input type="text" id="nc" name="newcategory" value="" style="width: 30%;"> <a href="#categ" id="nl" onClick="document.getElementById('ns').style.display='none'; document.getElementById('nl').style.display='none'; document.getElementById('nc').style.display='inline';">Создать новую</a>
 			</td></tr>
-			<!--
-			<tr><td style="border-bottom: 0px;">
-				<a name="img"></a>LIGHTBOX:<br>
-				<div id="uploadButton"></div> <span id="status"></span>
-			</td></tr>
-			 -->
 			<tr><td style="border-bottom: 0px;">
 				Краткая запись{ADD1}:{ADD3}{ADD2}
 				<table cellpadding=0 cellspacing=0 width="100%">
@@ -71,33 +65,3 @@
 	</center>
 </form>
 <br>
-<!-- { -->
-<div id="uploadForm">
-	<table class="optionstable2" border=0 cellpadding=1 cellspacing=0>
-		<tr class="titletable"><td>Загрузка изображения</td></tr>
-		<tr><td style="border-bottom: 0px;">Заголовок:<br>
-			<input type="text" id="uploadTitle" class="uploadTitleStyle">
-		</td></tr>
-		<tr><td style="border-bottom: 0px;">Крупное изображение:<br>
-			Ширина: <input type="text" id="uploadFullWidth" class="uploadWidthStyle"> пикс.
-		</td></tr>
-		<tr><td style="border-bottom: 0px;">Миниатюра:<br>
-			Ширина: <input type="text" id="uploadWidth" class="uploadWidthStyle"> пикс.
-		</td></tr>
-		<tr><td style="border-bottom: 0px;">Ссылка:<bR>
-			<input type="radio" name="uploadLink" value="normal"> Нормальная
-			<input type="radio" name="uploadLink" value="window"> В новой вкладке
-			<input type="radio" name="uploadLink" value="lightbox"> Lightbox
-		<tr><td>Атрибут Rel:<br>
-			<input type="text" id="uploadRel" class="uploadRelStyle">
-		</td></tr>
-		<tr class="sub"><td>
-			<button id="pasteImage">Вставить</button> <button id="removeImage">Удалить</button>
-		</td></tr>
-	</table>
-</div>
-<script src="../images/js/jquery-1.9.0.min.js"></script>
-<script src="../images/js/swfupload.js"></script>
-<script src="../images/js/swfupload.cookies.js"></script>
-<script src="../images/js/upload.js"></script>
-<!-- } -->

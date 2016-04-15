@@ -12,9 +12,6 @@
 	    <script type="text/javascript" src="theme/edit_area/edit_area_full.js"></script>
 	    <script type="text/javascript" src="theme/tiny_mce/tinymce.min.js"></script>
         <script type="text/javascript" src="theme/tiny_mce/langs/ru.js"></script>
-	    <!-- { -->
-	    <link rel="stylesheet" type="text/css" href="../images/css/upload.css">
-	    <!-- } -->
     </head>
     <body{ADDINFO}>
         <div id="main">
