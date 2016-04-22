@@ -164,7 +164,7 @@
      	if (
       		(date("d.m")=="11.02")
       		or
-      		(date("d.m")=="22.04")
+      		(date("d.m")=="17.07")
      	)
        		$logo = "birthday";
      	else
