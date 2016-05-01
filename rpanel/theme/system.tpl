@@ -12,31 +12,27 @@
 <form name="ban" method="post" action="saver.php?saverdo=addban">
 <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 <tr class="titletable"><td colspan=2>БАН IP АДРЕСОВ</td></tr>
-<tr><td colspan=2>
-<table class="bordernone" width="100%" border=0 cellspacing=0 cellpadding=1>
-<tr><td width="50%">IP адрес (например, 127.0.*.1): </td><td><input type="text" name="ip" value="" size=40></td></tr>
-<tr><td>Причина бана:</td><td><input type="text" name="why" value="" size=40></td></tr>
-<tr><td></td><td><input type="submit" name="submit" value="Заблокировать"></td></tr>
-</table>
-</td></tr>
+<tr class="bordernone"><td>IP адрес (например, 127.0.*.1): </td></tr>
+<tr class="bordernone"><td><input type="text" name="ip" value=""></td></tr>
+<tr class="bordernone"><td>Причина бана:</td></tr>
+<tr class="bordernone"><td><input type="text" name="why" value="" style="width:100%;"></td></tr>
+<tr class="bordernone" width="100%" border=0 cellspacing=0 cellpadding=1><td><input type="submit" name="submit" value="Заблокировать"></td></tr>
 {BANLIST}
 </table>
 <br>
 </form>
-
 <form name="confbackup2" method="get" action="../index.php">
 <input type="hidden" name="needconfbackup" value="true">
 <input type="hidden" name="check" value="{CONFBACKUPCHECK}">
-<table class="optionstable" cellpadding=1 cellspacing=0>
-	<tr class="titletable"><td colspan=4><a name="confbackup"></a>ПОЛНОЕ РЕЗЕРВНОЕ КОПИРОВАНИЕ КОНФИГУРАЦИИ В ZIP АРХИВ</td></tr>
-	<tr><td colspan=4><font class="desc">Полная резервная копия кофигурации включает в себя каталоги /avatars/, /conf/, /themes/.</font></td></tr>
-	<tr class="titletable"><th>ДАТА</th><th>ИМЯ АРХИВА</th><th>РАЗМЕР</th><th>ДЕЙСТВИЯ</th></tr>
-	{CONFBACKUPLIST}
-	<tr class="sub"><td colspan=4><input type="submit" name="submit" value="Создать полную резервную копию конфигурации"></td></tr>
+<table class="optionstable">
+<tr class="titletable"><td colspan=4><a name="confbackup"></a>ПОЛНОЕ РЕЗЕРВНОЕ КОПИРОВАНИЕ КОНФИГУРАЦИИ В ZIP АРХИВ</td></tr>
+<tr><td colspan=4><font class="desc">Полная резервная копия кофигурации включает в себя каталоги /avatars/, /conf/, /themes/.</font></td></tr>
+<tr class="titletable"><th>ДАТА</th><th>ИМЯ АРХИВА</th><th>РАЗМЕР</th><th>ДЕЙСТВИЯ</th></tr>
+{CONFBACKUPLIST}
+<tr class="sub"><td colspan=4><input class="button" type="submit" name="submit" value="Создать полную резервную копию"></td></tr>
 </table>
 <br>
 </form>
-
 <form name="backup" method="post" action="saver.php?saverdo=restorebackup">
 <table class="optionstable" border=0 cellpadding=1 cellspacing=0>
 <tr class="titletable"><td colspan=2><a name="backup"></a>ЧАСТИЧНОЕ РЕЗЕРВНОЕ КОПИРОВАНИЕ</td></tr>
