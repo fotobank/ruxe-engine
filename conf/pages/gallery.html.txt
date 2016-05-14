@@ -1,0 +1,4 @@
+<h2>Галерея</h2>
+<hr>
+<br>
+<?php if (function_exists("here_gallery")) here_gallery(); ?>
