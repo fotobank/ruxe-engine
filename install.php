@@ -190,6 +190,7 @@ if (isset($_GET['step'])) {
                     'index.php',
                     'assets/index.html',
                     'assets/plugins/index.html',
+                    'uploads/index.html',
                     'includes/core.php',
                     'includes/functions.action.php',
                     'includes/functions.command.php',
@@ -375,12 +376,13 @@ if (isset($_GET['step'])) {
                 echo '<h3>Анализ важных файлов системы: Конфигурация и др.</h3><br>';
                 $iferror = '
                 Все следующие файлы и папки должны быть обязательно загружены и иметь права на запись (CHMOD 777):
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;1. Файл <b>.htaccess</b>
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;2. Каталог <b>/avatars/</b> и все файлы в нём
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;3. Каталог <b>/conf/</b>, все файлы и подкаталоги в нём
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;4. Каталог <b>/themes/</b>, все файлы и подкаталоги в нём
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;5. Каталог <b>/smiles/</b> и все файлы в нём
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;6. Каталог <b>/rpanel/backups/</b><br>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;1. Файл <strong>.htaccess</strong>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;2. Каталог <strong>/avatars/</strong> и все файлы в нём
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;3. Каталог <strong>/conf/</strong>, все файлы и подкаталоги в нём
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;4. Каталог <strong>/themes/</strong>, все файлы и подкаталоги в нём
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;5. Каталог <strong>/smiles/</strong> и все файлы в нём
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;6. Каталог <strong>/rpanel/backups/</strong>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;7. Каталог <strong>/uploads/</strong> и все файлы и подкаталоги в нём<br>
                 <div style="margin-right:130px;text-align:right;"><a href="#footer"><img src="rpanel/theme/images/arrow-down.gif" border=0 alt=""></a> <a href="#footer">Вниз</a></div><br>
                    <center><table class="table" cellpadding=5 width="100%" cellspacing=0 border=0>
                     <tr class="title"><td>ПУТЬ</td><td width=75>ЗАГРУЖЕН</td><td width=125>ПРАВА НА ЗАПИСЬ</td><td width=60>ОШИБКА</td></tr>
@@ -391,7 +393,8 @@ if (isset($_GET['step'])) {
                     "conf/",
                     "themes/",
                     "smiles/",
-                    "rpanel/backups/"
+                    "rpanel/backups/",
+                    "uploads/",
                 );
                 foreach ($FileManager->listing("avatars/", 0) as $a)
                     $codestyle[] = "avatars/" . $a;
