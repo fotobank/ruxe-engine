@@ -58,8 +58,8 @@
             p {font-family: 'Roboto', sans-serif;}
         </style>
         <!-- Add fancyBox -->
-        <link rel="stylesheet" href="/assets/plugins/gallery/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-        <script type="text/javascript" src="/assets/plugins/gallery/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+        <link rel="stylesheet" href="<?php here_urlsite(); ?>/assets/plugins/gallery/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        <script type="text/javascript" src="<?php here_urlsite(); ?>/assets/plugins/gallery/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     </head>
     <body>
         
@@ -75,10 +75,10 @@
                 <ul>    
                     <div class="items pull-right">
 						<a href="<?php here_urlsite(); ?>/somepage.html" title="Применение дизайна"><li>Применение дизайна</li></a>
+                        <a href="<?php here_urlsite(); ?>/gallery.html" title="Галерея"><li>Галерея</li></a>
 						<a href="<?php here_urlsite(); ?>/downloads.html" title="Скачать"><li>Скачать</li></a><!--PHP функция here_urlsite(); возвращает полный адрес сайта (с http://), без / на конце.-->
 						<a href="<?php here_urlsite(); ?>/faq.html" title="F.A.Q"><li>F.A.Q</li></a>
 						<a href="<?php here_urlsite(); ?>/contact.html" title="Контакты"><li>Контакты</li></a>
-						<a href="<?php here_urlsite(); ?>/gallery.html" title="Галерея"><li>Галерея</li></a>
                     </div>
                 </ul>
             </div>
