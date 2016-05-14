@@ -3281,7 +3281,7 @@ class FileManager
 		fwrite(
 			$zxcnfile, str_replace(
 				'{CREDITS}',
-				'<span>Построено на <a href="http://ruxe-engine.ru/" target="_blank" >Ruxe Engine</a>.</span>',
+				'<span>Построено на <a href="https://ruxe-engine.ru/" target="_blank" >Ruxe Engine</a>.</span>',
 				$zxctext
 			)
 		);

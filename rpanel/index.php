@@ -2771,7 +2771,7 @@
      	$ar = array("{TITLE}","{GENERATOR}","{SITE}","{CREDITS}","{MESSAGE}");
      	$dmessage = "<br>";
      	if (isset($_COOKIE['admin_password'])) $dmessage = "Перезайдите, пожалуйста.<br><br>";
-     	$br = array("Админ-центр Ruxe Engine","Ruxe Engine (ruxe-engine.ru)",$cms_site,"Построено на <a href=\"http://ruxe-engine.ru\" style=\"color:black;\" target=\"_blank\">Ruxe Engine</a>",$dmessage);
+     	$br = array("Админ-центр Ruxe Engine","Ruxe Engine (ruxe-engine.ru)",$cms_site,"Построено на <a href=\"https://ruxe-engine.ru\" style=\"color:black;\" target=\"_blank\">Ruxe Engine</a>",$dmessage);
      	header("Expires: Mod, 26 Jul 1997 05:00:00 GMT");
      	header("Last-Modified: ".gmdate("D, d M Y H:i:s", 10000) . " GMT");
      	header("Cache-Control: no-cache, must-revalidate");
