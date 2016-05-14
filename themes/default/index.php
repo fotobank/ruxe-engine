@@ -57,6 +57,9 @@
         <style>
             p {font-family: 'Roboto', sans-serif;}
         </style>
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="/assets/plugins/gallery/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        <script type="text/javascript" src="/assets/plugins/gallery/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     </head>
     <body>
         

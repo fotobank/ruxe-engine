@@ -2,3 +2,8 @@
 <hr>
 <br>
 <?php if (function_exists("here_gallery")) here_gallery(); ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
