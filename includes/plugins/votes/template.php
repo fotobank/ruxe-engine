@@ -1,4 +1,4 @@
-<? 
+<?php
   //Оформление ответов в форме голосования
   $answer = '<tr><td><input type="radio" name="answer" value="{VALUE}"> {CAPTION}</td></tr>';
   

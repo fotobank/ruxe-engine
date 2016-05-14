@@ -80,7 +80,7 @@
             </td>
             <td data-label="НАСТРОЙКА">
                     Страница для вывода результатов:<br>
-                    <font class="desc">На этой странице должна использоваться команда &lt;? here_results(); ?&gt;</font>
+                    <font class="desc">На этой странице должна использоваться команда &lt;?php here_results(); ?&gt;</font>
             </td><td>
                     <select name="npage">
                      '.$pages.'
