@@ -187,34 +187,31 @@ if ($cms_ban==1)
 
 $tmp 		= (isset($_COOKIE['site_login'])) ? $Filtr->clear($_COOKIE['site_login']) : 'no';
 $role		=	$GlobalUsers->getstatus($tmp);
-$hidepages 	= file($cms_root."/conf/users/hidepages.dat");
-$hidepage 	= false;
-$h 		= explode("|",$hidepages[0]);
-//$f 		= explode("?",$_SERVER['REQUEST_URI']);
-//$f[0] 		= str_replace(str_replace("/index.php","",$_SERVER['PHP_SELF']),"",$f[0]);
-$f[0]		=	'/'.$Filtr->clear($_GET['viewpage']);
-//die($f[0]);
-for ($i = 0; $i<10; $i++)
-{
-   if ($h[$i]=="") $h[$i]="abcdefghijklmnopqrst123456789";
-   if (
-    ($h[$i] == $f[0])
-    or
-    ($h[$i]."/" == $f[0])
-    )
-   {
-      $hidepage = true;
-      if (($role == "baned")
-       or ($role == "admin")
-       or ($role == "superuser")
-       or ($role == "editor")
-       or ($role == "moderator")
-      )
-      {
-          $hidepage = false;
-      };
-   };
-};
+$isHiddenPage = false;
+$hiddenPages = explode("|", file_get_contents($cms_root . "/conf/users/hidepages.dat"));
+$hiddenPageRequest =	"/" . $Filtr->clear(isset($_GET["viewpage"]) ? $_GET["viewpage"] : "");
+
+for ($i = 0; $i < 50; ++$i) {
+    if (empty($hiddenPages[$i]))
+        continue;
+
+    if (
+        ($hiddenPages[$i] == $hiddenPageRequest)
+        ||
+        ("{$hiddenPages[$i]}/" == $hiddenPageRequest)
+    ) {
+        switch ($role) {
+            case "baned":
+            case "superuser":
+            case "editor":
+            case "moderator":
+            case "admin":
+                break;
+            default:
+                $isHiddenPage = true;
+        }
+    }
+}
 
 if ($role=="baned")
 {
@@ -248,8 +245,7 @@ if ($ban_found==5)
 if ($cms_banlog==1)
 	$FileManager 	-> 	enablemodules();
 
-if ($hidepage)
-{
+if ($isHiddenPage) {
 	header('Content-type: text/html; charset=utf-8');
 	$ar = array("{TITLE}","{MESSAGE}","{GENERATOR}","{LOGIN}");
 	$br = array($lcms['hidedpage_title'],$lcms['hidedpage_text'],"Ruxe Engine (http://ruxe-engine.ru/)",$GlobalUsers->returnloginform());

@@ -910,15 +910,11 @@ if (isset($_GET['saverdo']))
   			fclose($config);
   
   			$file = fopen("../conf/users/hidepages.dat","w");
-  			fwrite($file,$_POST['page0']."|".$_POST['page1']."|"
-  			.$_POST['page2']."|"
-  			.$_POST['page3']."|"
-  			.$_POST['page4']."|"
-  			.$_POST['page5']."|"
-  			.$_POST['page6']."|"
-  			.$_POST['page7']."|"
-  			.$_POST['page8']."|"
- 			.$_POST['page9']."|");
+			$pages = "";
+            for ($i = 0; $i < 50; ++$i) {
+                $pages .= $_POST["page{$i}"] . "|";
+            }
+  			fwrite($file, $pages);
   			fclose($file);
   
   			header("location: index.php?action=users&poles=ok&rand=".rand(0,99999));

@@ -151,8 +151,7 @@ function addpage() {
   var i = 0;
   while (found!=true)
   {
-     if (i>9) 
-     {
+     if (i >= 50) {
         found=true;
         alert('Нельзя больше создать');
      }
@@ -187,8 +186,7 @@ function checkpoles() {
  };
  
  i = 0;
- while (i<10)
- {
+ while (i < 50) {
     if (document.getElementById('page'+i).value=='')
     {
       document.getElementById('page'+i).style.display='none';

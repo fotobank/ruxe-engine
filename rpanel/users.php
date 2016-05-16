@@ -376,10 +376,9 @@
    ';
    $hidepages = file("../conf/users/hidepages.dat");
    $pagecaption = explode("|",$hidepages[0]);
-    for ($i=0; $i<=9; $i++)
-    {
+    for ($i = 0; $i < 50; ++$i) {
       
-      $echooptions.='<input style="display: inline" readonly type="text" id="page'.$i.'" name="page'.$i.'" value="'.$pagecaption[$i].'" size=50>
+      $echooptions.='<input style="display: inline" readonly type="text" id="page'.$i.'" name="page'.$i.'" value="'. (isset($pagecaption[$i]) ? $pagecaption[$i] : "") .'" size=50>
       <input type="button" style="display: inline" onClick="delpage(\'page'.$i.'\');" id="page'.$i.'b" value="Удалить"><div style="display:block;" id="page'.$i.'c"><br></div>
       ';
       
