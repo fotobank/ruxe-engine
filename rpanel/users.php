@@ -352,7 +352,7 @@
   $pagesconfig = file("../conf/pages/config");
   $echooptions .='
    </td><td data-label="ОГРАНИЧЕННЫЙ ДОСТУП" valign="top" align="center">
-    <div align="left">Адреса страниц сайта, просмотр которых разрешён только администраторам, модераторам, редакторам и суперпользователям
+    <div align="left">Адреса страниц сайта, просмотр которых разрешён только суперпользователям, редакторам, модераторам и администраторам
     <br>
     <select style="margin-top:10px;" id="newpage">
     ';
