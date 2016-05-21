@@ -147,11 +147,11 @@ a:hover {color: #a00;}
 [class*=bg-blue] {background-color: #4092e5; color: #fff;}
 .loginform .button-default {margin-top: 8px; font-size: 90%;}
 table {width: 98%; margin-left: 0; vertical-align: top !important; overflow: visible; word-break: keep-all;}
-td[data-label=user agent] {word-break: break-all;}
-td[data-label=дата и время] {word-break: break-all;}
-td[data-label=браузер] {word-break: break-all;}
-td[data-label=откуда] {word-break: break-all;}
-td[data-label=адрес] {word-break: break-all;}
+td[data-label=USER AGENT] {word-break: break-all;}
+td[data-label=ДАТА И ВРЕМЯ] {word-break: break-all;}
+td[data-label=БРАУЗЕР] {word-break: break-all !important;}
+td[data-label=ОТКУДА] {word-break: break-all !important;}
+td[data-label=АДРЕС] {word-break: break-all !important;}
 td[data-label=long-word] {word-break: break-all;}
 tbody {width: 100%;}
 tbody tr td {vertical-align: top !important; overflow: visible;}
