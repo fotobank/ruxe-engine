@@ -2319,53 +2319,57 @@
              		$whatdoing = "Дополнения";
              		if (isset($_GET['do']))
              		{
-                 		switch ($_GET['do'])
-                 		{
-                        		case "active":
-                             			$test     = $_GET['name'];
-                             			$original = file("../conf/plugins.dat");
-                             			$new      = fopen("../conf/plugins.dat","a");
-                             			include("../includes/plugins/".$test."/info.dat");
-                                                
-                                                if(isset($install) && !function_exists($install)){
-                                                        include("../includes/plugins/".$_GET['name']."/functions.php");
-                                                        if(function_exists($install)){
-                                                                $install();
-                                                        }
-                                                }
+						if(!isset($_GET['name']) || !isValidePlugin($_GET['name'])){
+							$Notify->addMessage('Плагин ' . $_GET['name'] . ' не может быть задействован', 'warning');
+						}else{
+							switch ($_GET['do'])
+							{
+								case "active":
+									$test     = $_GET['name'];
+									$original = file("../conf/plugins.dat");
+									$new      = fopen("../conf/plugins.dat","a");
+									include("../includes/plugins/".$test."/info.dat");
 
-                                                $isset = false;
-                                                foreach($original as $lines){
-                                                    $line = explode("|", $lines);
-                                                    if($line[0] == $test)
-                                                        $isset = true;
-                                                }
-                             			if(!$isset)
-                                                    fputs($new,$test."|".$name."|".$addaction."|\r\n");
-                             			fclose($new);
-                             			break;
-                        		case "off":
-                             			$name     = $_GET['name'];
-                             			$original = file("../conf/plugins.dat");
-                             			$new      = fopen("../conf/plugins.dat","w");
+									if(isset($install) && !function_exists($install)){
+										include("../includes/plugins/".$_GET['name']."/functions.php");
+										if(function_exists($install)){
+											$install();
+										}
+									}
 
-                             			foreach ($original as $or)
-                             			{
-                                   			$o  = explode("|",$or);
-                                   			if ($o[0]!=$name){
-                                                            fwrite($new,$or); 
-                                                        }else{
-                                                            include("../includes/plugins/".$_GET['name']."/info.dat");
-                                                            if(isset($install)){
-                                                                if(function_exists($uninstall)){
-                                                                    $uninstall();
-                                                                }
-                                                            }
-                                                        }
-                             			}
-                             			fclose($new);
-                             			break;
-                 		};
+									$isset = false;
+									foreach($original as $lines){
+										$line = explode("|", $lines);
+										if($line[0] == $test)
+											$isset = true;
+									}
+									if(!$isset)
+										fputs($new,$test."|".$name."|".$addaction."|\r\n");
+									fclose($new);
+									break;
+								case "off":
+									$name     = $_GET['name'];
+									$original = file("../conf/plugins.dat");
+									$new      = fopen("../conf/plugins.dat","w");
+
+									foreach ($original as $or)
+									{
+										$o  = explode("|",$or);
+										if ($o[0]!=$name){
+											fwrite($new,$or);
+										}else{
+											include("../includes/plugins/".$_GET['name']."/info.dat");
+											if(isset($install)){
+												if(function_exists($uninstall)){
+													$uninstall();
+												}
+											}
+										}
+									}
+									fclose($new);
+									break;
+							};
+						}
              		};
              		if (isset($_GET['choose']))
              		{
@@ -2390,8 +2394,19 @@
                      		{
                            		$echooptions = '<h2>'.$op.'</h2>
                                           <font class="desc"></font><br><br>';
-                          		 include("../includes/plugins/".$Filtr->clear($_GET['choose'])."/admin.php");
-                           		$echooptions .= $print;
+								if(isset($_GET['choose']) && isValidePlugin($_GET['choose'])){
+									include("../includes/plugins/".$Filtr->clear($_GET['choose'])."/admin.php");
+
+									if(isset($print)){
+										$echooptions .= $print;
+									}
+									else{
+										$Notify->addMessage('Ошибка вызова плагина', 'error');
+									}
+								}else{
+									$Notify->addMessage('Ошибка вызова плагина', 'error');
+								}
+
                      		};
              		}
              		else
@@ -2442,8 +2457,8 @@
                      		$echooptions .='</table>
                      			</center>';
              		};
-             		$ar = array("{MENU}","{OPTIONS}");
-             		$br = array("",$echooptions);
+             		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+             		$br = array("",$echooptions, $Notify->getHtmlMessages());
              		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
              		break;
         	case "links":
