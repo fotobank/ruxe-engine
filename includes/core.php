@@ -17,6 +17,7 @@
  */
 
 $this_version = "1.9 Beta 5";
+$notify = [];
 
 class Filtr
 {
@@ -29,7 +30,7 @@ class Filtr
                 $result	=	'';
                 for ($i=1;$i<=$size;$i++)
                 	$result.=$words[rand(0,count($words)-1)];
-                return $result; 
+                return $result;
 	}
 	function showmess($text) {
 		echo '<div class="error-message">
@@ -43,12 +44,12 @@ class Filtr
 		print_r($array);
 		echo '</pre></div>';
 	}
-	
+
 	function delendslash($text)
 	{
 		return (substr($text,strlen($text)-1,1)=='/') ? substr($text,0,strlen($text)-1) : $text;
 	}
-	
+
 	function clear($stroka,$dividing=false) {
 		if ($dividing)
 			$r	=	"[dividinglinere]";
@@ -56,7 +57,7 @@ class Filtr
 			$r	=	" ";
  		return htmlspecialchars(str_replace("|",$r,$stroka));
 	}
-	
+
 	function progress($param,$from = 'no')
   	{
   		$res = '';
@@ -81,7 +82,7 @@ class Filtr
   			$res.= ($param==$co) ? '<option value="'.$co.'" selected>'.$co : '<option value="'.$co.'">'.$co;
   		return $res;
   	}
-	
+
 	function tolat($text)
 	{
 		global $cms_title_length;
@@ -101,25 +102,25 @@ class Filtr
     		$text = "";
     		for ($i=0; $i<count($out[1]); $i++)
         		$text .= $out[1][$i];
-    		if ($text == "") 
+    		if ($text == "")
     			$text = rand(1,9999);
     		return substr($text,0,$cms_title_length);
 	}
-	
-	function tolower($content) 
-	{ 
+
+	function tolower($content)
+	{
 		if (function_exists('mb_strtolower'))
   		{
         		mb_internal_encoding("UTF-8");
 			$content	=	mb_strtolower($content,'UTF-8');
   		}
 		else
-			$content = str_replace(array("А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","Р","П","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ь","Ы","Э","Ю","Я","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","А","Б","В","Г","Ґ","Д","Е","Є","Ж","З","И","І","Ї","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ь","Ю","Я"), 
+			$content = str_replace(array("А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К","Л","М","Н","О","Р","П","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ъ","Ь","Ы","Э","Ю","Я","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","А","Б","В","Г","Ґ","Д","Е","Є","Ж","З","И","І","Ї","Й","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Ь","Ю","Я"),
 						array("а","б","в","г","д","е","ё","ж","з","и","й","к","л","м","н","о","р","п","с","т","у","ф","х","ц","ч","ш","щ","ъ","ь","ы","э","ю","я","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","а","б","в","г","ґ","д","е","є","ж","з","и","і","ї","й","к","л","м","н","о","п","р","с","т","у","ф","х","ц","ч","ш","щ","ь","ю","я"),
 					$content);
       		return $content;
 	}
-	
+
 	function utf8_casesort($tagsarray) {
 		if (function_exists("iconv")) {
 			$tmparra=	array();
@@ -133,7 +134,7 @@ class Filtr
 			natcasesort($tagsarray);
 		return $tagsarray;
 	}
-	
+
 	function utf8_substr($str,$from,$len)
 	{
   		global $lcms;
@@ -156,27 +157,27 @@ class Filtr
             			$tmp = "";
   		};
   		if ($tmp == "")
-       			$tmp = $lcms['notshowmessage']; 
+       			$tmp = $lcms['notshowmessage'];
   		return $tmp;
 	}
-	
-	function textmax($text,$col,$add='') 
-	{ 
+
+	function textmax($text,$col,$add='')
+	{
 		if (function_exists('mb_strlen'))
   		{
         		mb_internal_encoding("UTF-8");
         		if (mb_strlen($text,'UTF-8') > $col)
 				$text	=	$this->utf8_substr($text,0,$col).$add;
-			
+
   		}
 		else
 		{
-			if (strlen($text) > $col) 
+			if (strlen($text) > $col)
 				$text = $this->utf8_substr($text,0,$col).$add;
 		};
-		return ($text); 
+		return ($text);
 	}
-	
+
 	function truecount($value, $one, $much, $much2)
 	{
 		$cc  = $value % 100;
@@ -186,7 +187,7 @@ class Filtr
 			$cc = (($cc %= 10) < 5) ? ($cc > 2 ? 2 : $cc) : 0;
 		switch ($cc)
 		{
-			case 0: 
+			case 0:
 				return $value.' '.$much;
 				break;
 			case 1:
@@ -195,9 +196,9 @@ class Filtr
 			case 2:
 				return $value.' '.$much2;
 				break;
-		}; 
+		};
 	}
-	
+
 	function ipclick($ip)
 	{
 		global $cms_whois;
@@ -211,7 +212,7 @@ class Filtr
 							$ip)
 					);
 	}
-	
+
 	function fulldate($date,$seconds='00',$zz = true)
 	{
    		global $lcms;
@@ -225,14 +226,14 @@ class Filtr
    		$b      = explode(".",$a[0]);
    		$c      = explode(":",$a[1]);
    		if (substr($b[0],0,1)=="0") $b[0] = substr($b[0],1,1);
-		
+
 		//Нынешняя дата с учётом часового пояса
 		$nowdate   = $this->gettimezonedate("d.m.y, H:i",date('d'),date('m'),date('Y'),date('H'),date('i'),date('s'));
    		$nowa      = explode(",",$nowdate);
    		$nowb      = explode(".",$nowa[0]);
    		if (substr($b[0],0,1)=="0") $b[0] = substr($b[0],1,1);
 		//
-   		   				
+
    		$now    = mktime("00","00","00",$nowb[1],$nowb[0],$nowb[2]);
 		//$now    = mktime("00","00","00",date("m"),date("d"),date("Y"));
   		$last   = mktime("00","00","00",$b[1],$b[0],$b[2]);
@@ -255,7 +256,7 @@ class Filtr
 			$ret = $b[0].'>'.$lcms['months'][$b[1]].'>20'.$b[2].'>'.$a[1];
    		return ($seconds=='00') ? $ret : $ret.':'.$seconds;
 	}
-	
+
 	function getuseragent()
 	{
 		global $_SERVER;
@@ -270,7 +271,7 @@ class Filtr
 		};
 		return $res;
 	}
-	
+
 	function gettimezonedate(
                     $format = 'd.m.y H:i:s',
                     $day = '',
@@ -293,10 +294,10 @@ class Filtr
    		switch ($where)
    		{
           		case "-":
-               			$result          = mktime($hours-$h,$minutes,$seconds,$month,$day,$year);    
+               			$result          = mktime($hours-$h,$minutes,$seconds,$month,$day,$year);
                			break;
           		default:
-               			$result          = mktime($hours+$h,$minutes,$seconds,$month,$day,$year);    
+               			$result          = mktime($hours+$h,$minutes,$seconds,$month,$day,$year);
    		};
    		return date($format,$result);
 	}
@@ -336,7 +337,7 @@ foreach ($pages as $onepage)
 				$Filtr->showmess('Шаблон '.$toinclude[$i].' в теме оформления '.$cms_theme.' недоступен');
 				die();
 				exit();
-			}	
+			}
 		}
 	}
 //}
@@ -345,7 +346,7 @@ if (file_exists('conf/smiles.dat'))
 	$smilesdb = file("conf/smiles.dat");
 else
 	$smilesdb = file($cms_root."/conf/smiles.dat");
-	
+
 $usersfruits = array("ReStandartConst0","ReStandartConst1","ReStandartConst2","ReStandartConst3","ReStandartConst4","ReStandartConst5",
              "ReStandartConst6","ReStandartConst7","ReStandartConst8","ReStandartConst9","ReStandartConst10","ReStandartConst11",
              "ReStandartConst12","ReStandartConst13","ReStandartConst14","ReStandartConst15","ReStandartConst16","ReStandartConst17",
@@ -366,11 +367,137 @@ function errorstofile($errno,$errmsg,$file,$line)
 			fclose($error_log);
 		};
 }
-	
+
 function errorstonothing($errno,$errmsg,$file,$line)
 {
-	//nothing	
+	//nothing
 }
+
+/**
+ * Проверит валидность плагина
+ * проверка на использование short-tags
+ *
+ * @param string $pluginCatalogName
+ * @return bool
+ */
+function isValidePlugin($pluginCatalogName){
+    global $cms_root;
+
+    $datPatch = $cms_root . '/includes/plugins/' . $pluginCatalogName . '/info.dat';
+
+    include_once $datPatch;
+    
+    if(!file_exists($datPatch) || !isset($name)){
+        return false;
+    }
+
+    return true;
+}
+
+
+
+Class Notify{
+	protected $messages = [];
+    protected $cssOption = ['cssClassName' => 'notify'];
+
+    protected $types = [
+        'info' => [
+            'cssClassName' => 'notify-type-info',
+        ],
+        'warning'=> [
+            'cssClassName' => 'notify-type-warning',
+        ],
+        'error'=> [
+            'cssClassName' => 'notify-type-error',
+        ],
+    ];
+
+    private $logLevel;
+
+    /**
+     * Notify constructor.
+     *
+     * @param int $logLevel уровень логирование todo: на будущее
+     * 0 - не чего не пишет
+     * 1 - пишет error
+     * 2 - пишет error, warning
+     * 3 - пишет все
+     */
+    public function __construct($logLevel = 0)
+    {
+        $this->logLevel = $logLevel;
+    }
+
+
+    /**
+     * Добавить сообщения в бокс
+     *
+     * @param string $message
+     * @param string $type
+     * @return int индекс сообщения в боксе
+     */
+    public  function addMessage($message, $type = 'info'){
+        $type = (!isset($this->types[$type])) ? 'info' : $type;
+
+		$this->messages[] = [
+            'message' => $message,
+            'type' => $type
+        ];
+
+        return count($message) - 1;
+	}
+
+    /**
+     * Вернет сообщения по его индексу
+     *
+     * @param int $index
+     * @return array
+     */
+    public function getMessage($index = null){
+        if(is_null($index) || !isset($this->messages[$index]))
+            return [];
+        
+        return $this->messages[$index];
+    }
+
+    /**
+     * Вернет все сообщения в боксе
+     *
+     * @return array
+     */
+	public function getMessagesList(){
+        return $this->messages;
+	}
+
+    /**
+     * Вернет сгенерированный html
+     */
+    public function getHtmlMessages(){
+        $html = '<div class="'. $this->cssOption['cssClassName'] .'">';
+
+        foreach ($this->getMessagesList() as $notify){
+            $html .= '<p class="'. $this->types[$notify['type']]['cssClassName'] .'">' . $notify['message'] . '</p>';
+        }
+
+        $html .= '</div>';
+
+
+        return $html;
+    }
+    
+    private function logWrite(){
+
+    }
+
+//    public function __destruct()
+//    {
+//        // TODO: Implement __destruct() method.
+//        $this->logWrite();
+//        unset($this);
+//    }
+}
+
+$Notify = new Notify();
 
 function errortoshow($errno,$errmsg,$file,$line)
 {
@@ -420,12 +547,12 @@ switch ($cms_noshowerr)
 		set_error_handler('errorstonothing');
 		break;
 	case 25:
-		error_reporting(E_ALL); 
+		error_reporting(E_ALL);
  		ini_set("display_errors", 'on');
 		set_error_handler('etswwr');
 		break;
 	default:
-		error_reporting(E_ALL); 
+		error_reporting(E_ALL);
  		ini_set("display_errors", 'on');
 		set_error_handler('errortoshow');
 };
@@ -443,7 +570,7 @@ function here_pagecontent()
 	case 'action':
 		echo $openpage;
 		break;
-	}; 
+	};
 };
 
 function array_stripslashes($array) {
@@ -454,7 +581,7 @@ function array_stripslashes($array) {
 function magic_quotes_gpc_off() {
   global $_GET,$_POST,$_COOKIE;
   //thanks for http://habrahabr.ru/blogs/personal/21971/
-  if (get_magic_quotes_gpc()) 
+  if (get_magic_quotes_gpc())
   {
      $_GET = array_stripslashes($_GET);
      $_POST = array_stripslashes($_POST);
@@ -485,9 +612,9 @@ class UpdateCache
 	function cats($type)
 	{
 		global $cms_root, $Filtr;
-		
+
 		$list		=	file($cms_root.'/conf/'.$type.'/list.dat');
-		
+
 		$newlist	=	array();
 		for ($i = 0; $i < count($list); $i++)
 		{
@@ -506,20 +633,20 @@ class UpdateCache
 
 
 			if (!$founded) {
-				if ($pieces[9]=='Да') 
+				if ($pieces[9]=='Да')
 					$newlist[]	=	$pieces[7];
 			}
 		};
-		
+
 		$wantchmod	= 	(!file_exists($cms_root."/conf/cache/cats_".$type)) ? true : false;
-                   
+
                 $cache 		= 	fopen($cms_root."/conf/cache/cats_".$type,"w");
                 fwrite($cache,serialize($newlist));
                 fclose($cache);
-                   
+
                 if ($wantchmod) chmod($cms_root."/conf/cache/cats_".$type,0777);
 	}
-	
+
 	function tags($type)
 	{
 		global $cms_root, $Filtr;
@@ -555,7 +682,7 @@ class UpdateCache
 							$counter[] = 1;
 						};
 					};
-                                          
+
 				}
 				else
 				{
@@ -573,13 +700,13 @@ class UpdateCache
 		};
 		$res  = array();
 		$tmp1 = array();
-                   
+
 		$wantchmod = (!file_exists($cms_root."/conf/cache/tags_".$type)) ? true : false;
-                   
+
 		$cache = fopen($cms_root."/conf/cache/tags_".$type,"w");
 		fwrite($cache,serialize($tags)."[<|>]".serialize($counter)."[<|>]");
 		fclose($cache);
-                   
+
 		if ($wantchmod) chmod($cms_root."/conf/cache/tags_".$type,0777);
 	}
 };
@@ -622,7 +749,7 @@ class GlobalUsers
 			};
 		};
 	}
-	
+
 	function access($mod	=	1,$type='')
 	{
 		global $_COOKIE, $Filtr, $cms_root;
@@ -680,7 +807,7 @@ class GlobalUsers
 				break;
 		};
 	}
-	
+
 	function getrules($name)
 	{
 		global $fileusers, $GlobalCache, $Filtr;
@@ -712,7 +839,7 @@ class GlobalUsers
 			$plugins_use	=	true;
 			$banip		=	true;
 		};
-				
+
 		return	  array(
      				'bfg_types'=>$bfg_types,
      				'bfg_public'=>$bfg_public,
@@ -721,7 +848,7 @@ class GlobalUsers
      				'plugins_use'=>$plugins_use,
      				'banip'=>$banip);
 	}
-	
+
 	function fullname($name)
 	{
 		global $fileusers;
@@ -733,7 +860,7 @@ class GlobalUsers
 		};
 		return ($pos!=-1) ? $res : 'no';
 	}
-	
+
 	function checkthisadmin()
 	{
 		global $cms_root, $_COOKIE, $Filtr, $GlobalTemplate, $cms_save_admin_ip, $cms_site, $cms_time_cookie;
@@ -788,9 +915,9 @@ class GlobalUsers
 			return false;
 		};
 	}
-	
+
 	function checklogin($login,$mess = false)
-	{ 
+	{
 		global $lcms;
      			$errortext = '';
      			if (!preg_match('/^[ёЁa-zA-Zа-яА-Я0-9\-\!\@\*]+$/u', $login))
@@ -803,14 +930,14 @@ class GlobalUsers
      				$errortext = $lcms['user_cannot_no'];
      			if (!$mess)
      			{
-     				if ($errortext!='') 
+     				if ($errortext!='')
      					$errortext = false;
      				else
      					$errortext = true;
      			};
-     			return $errortext; 
+     			return $errortext;
 	}
-	
+
 	function checkpassword($password, $spassword,$mess = false)
 	{
 		global $lcms;
@@ -833,7 +960,7 @@ class GlobalUsers
      		};
  		return $errortext;
 	}
-	
+
 	function checkcaptcha($code)
 	{
 		global $_POST, $_SESSION;
@@ -844,12 +971,12 @@ class GlobalUsers
 			else
 				return FALSE;
 		}
-		unset($_SESSION['captcha_keystring']); 
+		unset($_SESSION['captcha_keystring']);
 	}
-	
+
 	function returnloginform()
 	{
-		global $cms_site, $cms_root,$cms_theme,$Filtr,$_COOKIE,$_SERVER,$_POST,$GlobalTemplate, 
+		global $cms_site, $cms_root,$cms_theme,$Filtr,$_COOKIE,$_SERVER,$_POST,$GlobalTemplate,
 			$cms_gravatars, $cms_upload_width,$cms_gravatars_im, $GlobalImaging, $Navigation;
   		if (isset($_COOKIE['site_login']) && isset($_COOKIE['site_password']))
   		{
@@ -857,9 +984,9 @@ class GlobalUsers
    			if ($chus!="no")
    			{
     				$ar = array("{LOGIN}","{SITE}","{AVATAR}","{THEMEPATH}","{PM}","{PMLINK}","{PROFILELINK}");
-   			 	if (!isset($_COOKIE['site_avatar'])) 
+   			 	if (!isset($_COOKIE['site_avatar']))
    			 		$avatar = "noavatar.png";
-   			 	else 
+   			 	else
    			 		$avatar = $Filtr->clear($_COOKIE['site_avatar']);
     				$avatar = str_replace(array("%","#","..","\\","/","!","@","$","^","&","_","(",")","*"),'',$avatar);
     				$pm = 0;
@@ -878,7 +1005,7 @@ class GlobalUsers
            					$pm++;
        					};
     				};
-    				if ($pm>0) 
+    				if ($pm>0)
     					$pm = "<b>".$pm."</b>";
 				$retav	=	$cms_site."/avatars/".$avatar;
 				if ($cms_gravatars==1)
@@ -899,7 +1026,7 @@ class GlobalUsers
                 				return $GlobalTemplate->users($ar,$br,15);
                 				break;
            				default:
-                				return $GlobalTemplate->users($ar,$br,2);  
+                				return $GlobalTemplate->users($ar,$br,2);
     				};
    			}
    			else
@@ -908,13 +1035,13 @@ class GlobalUsers
 								"{SITE}",
 								"{THEMEPATH}",
 								"{REGLINK}",
-								"{RESTORELINK}"
+								"{RESTORELINK}","{uLoginForm}"
 							),
 							array(
 								$cms_site,
 								$cms_site."/themes/".$cms_theme,
 								$Navigation->furl('reglink'),
-								$Navigation->furl('restorelink')
+								$Navigation->furl('restorelink'),uLoginForm()
 							),
 						0);
   		}
@@ -924,17 +1051,17 @@ class GlobalUsers
 								"{SITE}",
 								"{THEMEPATH}",
 								"{REGLINK}",
-								"{RESTORELINK}"
+								"{RESTORELINK}","{uLoginForm}"
 							),
 							array(
 								$cms_site,
 								$cms_site."/themes/".$cms_theme,
 								$Navigation->furl('reglink'),
-								$Navigation->furl('restorelink')
+								$Navigation->furl('restorelink'),uLoginForm()
 							),
-						0);	
+						0);
 	}
-	
+
 	function DeletePMButNotRead($stroka,$deletefrom)
 	{
     		global $_COOKIE, $Filtr;
@@ -979,10 +1106,10 @@ class GlobalUsers
                               		fclose($new);
                               		break;
 				};
-			};                              
+			};
 		};
 	}
-	
+
 	function ReadedPM($stroka,$whoread)
 	{
     		global $_COOKIE, $Filtr;
@@ -1027,32 +1154,32 @@ class GlobalUsers
                               		fclose($new);
                               		break;
                        		};
-               		};                              
+               		};
          	};
 	}
-	
+
 	function checkfromcookie()
 	{
 		global $_COOKIE;
 		if (isset($_COOKIE['site_login']))
    		{
-        		return ($_COOKIE['site_login']!="no") ? true : false; 
+        		return ($_COOKIE['site_login']!="no") ? true : false;
    		}
    		else
    			return false;
 	}
-	
+
 	function pmpath($id)
 	{
    		global $cms_root;
    		return $cms_root."/conf/users/pm_".(int)$id.".dat";
 	}
-	
+
 	function isuser($name)
 	{
 		return ($this->finduser($name,false,'',true)!=-1) ? true : false;
 	}
-	
+
 	function thisisuser()
 	{
 		global $_COOKIE, $Filtr;
@@ -1063,7 +1190,7 @@ class GlobalUsers
   			$founded__	=	true;
   		return $founded__;
 	}
-	
+
 	function finduser($name,$checkpassword=false,$password='',$registr=false)
 	{
 		global $rtuclist, $rtuc, $rtuclistfull, $Filtr, $fileusers, $rtuci;
@@ -1071,7 +1198,7 @@ class GlobalUsers
 		$name		=	$Filtr->clear($name);
 		if ($name=='')
 			$name	=	'a';
-		
+
 		if ($name!='no')
 		{
 			$canfind	=	true;
@@ -1151,7 +1278,7 @@ class GlobalUsers
 		if (!$founded)
 			return -1;
 	}
-	
+
 	function getpole($name,$pole)
 	{
 		global $rtuc, $fileusers, $_COOKIE, $Filtr, $rtuci;
@@ -1159,7 +1286,7 @@ class GlobalUsers
 		//Если не равен - сначала проверить существует ли он вообще и вернуть false либо результат
 		$founded	=	false;
 		$login		=	(isset($_COOKIE['site_login'])) ? $Filtr->clear($_COOKIE['site_login']) : 'no';
-		
+
 		if (count($rtuc)==0)
 		{
 			//Создать кэшированного юзера
@@ -1176,7 +1303,7 @@ class GlobalUsers
 			if (!$founded)
 				$rtuc[0]	=	'renouser';
 		};
-		
+
 		if (
 			($rtuc[0]=='renouser') or ($Filtr->tolower($name)!=$Filtr->tolower($login))
 		)
@@ -1196,23 +1323,23 @@ class GlobalUsers
 		else
 			return $rtuc[$pole];
 	}
-	
+
 	function banmessage($site_login)
 	{
 		$ban_message = '';
-		
+
 		$tmp	=	$this->getpole($site_login,19);
 		if ($tmp!=false)
 			$ban_message	=	$tmp;
   		return $ban_message;
 	}
-	
+
 	function getstatus($login)
 	{
 		$tmp	=	$this->getpole($login,4);
 		return ($tmp!=false) ? $tmp : 'no';
 	}
-	
+
 	function getuser($id)
 	{
 		global $fileusers;
@@ -1228,20 +1355,20 @@ class GlobalUsers
 		};
 		return $res;
 	}
-	
+
 	function getid($user)
 	{
-		$res		=	$this->getpole($user,0);		
+		$res		=	$this->getpole($user,0);
 		return ($res!=false) ? $res : 'no';
 	}
-	
+
 	function lastid()
 	{
 		global $cms_root;
 		include($cms_root.'/conf/users/config.dat');
 		return $lastid;
 	}
-	
+
 	function newid()
 	{
 		global $cms_root;
@@ -1259,22 +1386,22 @@ class GlobalUsers
 		fclose($n);
 		return $lastid+1;
 	}
-	
+
 	function thisusertime()
 	{
 		global $_COOKIE, $Filtr;
   		$time_ 		= 	0;
   		$login 		= 	(isset($_COOKIE['site_login'])) ? $Filtr->clear($_COOKIE['site_login']) : "no";
   		$adminyou 	= 	false;
-  		
+
   		$time_		=	$this->getpole($login,13);
-  		
+
   		if ($this->getstatus($login)=='admin')
   			$time_	=	0;
   		return $time_;
-  		
+
 	}
-	
+
 	function editpoles($condition,$check,$method = "w")
 	{
       			global $cms_root, $usersfruits, $Filtr;
@@ -1329,7 +1456,7 @@ class GlobalUsers
       			$usersfruits = array("ReStandartConst0","ReStandartConst1","ReStandartConst2","ReStandartConst3","ReStandartConst4","ReStandartConst5", "ReStandartConst6","ReStandartConst7","ReStandartConst8","ReStandartConst9","ReStandartConst10","ReStandartConst11",
              				"ReStandartConst12","ReStandartConst13","ReStandartConst14","ReStandartConst15","ReStandartConst16","ReStandartConst17","ReStandartConst18","ReStandartConst19","ReStandartConst20","ReStandartConst21","ReStandartConst22","ReStandartConst23");
 	}
-	
+
 	function reg($from) {
 		global $_GET, $cms_site, $usersfruits, $_POST, $Mailing, $cms_root, $Filtr, $lcms, $fileusers, $cms_oneipreg, $cms_active, $_SERVER, $cms_punycode;
 		$login     = (isset($_POST['login'])) ? $Filtr->clear($_POST['login']) : "";
@@ -1363,8 +1490,8 @@ class GlobalUsers
 			$errortext =  $this->checklogin($login,true);
 		}
 		if ($founderror == false) {
-			foreach ($fileusers as $user)  { 
-				$pieces = explode("|",$user); 
+			foreach ($fileusers as $user)  {
+				$pieces = explode("|",$user);
 				if ($Filtr->tolower($login) == $Filtr->tolower($pieces[18])) {
 					$founderror=true;
 					$errortext=$lcms['user_login'];
@@ -1391,7 +1518,7 @@ class GlobalUsers
 			$usersfruits[22] = $Filtr->randwords(12);
 			$usersfruits[1]	 = md5(md5($password).$usersfruits[22]);
 			$usersfruits[23] = 'yes';
-			//	
+			//
 			$usersfruits[2]  = $mail;
 			$usersfruits[4]  = ($cms_active==1) ? 'active' : 'user';
 			$usersfruits[12] = $Filtr->clear($_SERVER['REMOTE_ADDR']);
@@ -1425,12 +1552,12 @@ $GlobalUsers = new GlobalUsers();
 
 class RuxeTemplate
 {
-	function generate_content() 
+	function generate_content()
 	{
   		global $cms_root;
   		include($cms_root."/conf/cache/design");
 	}
-	
+
 	function commentform($comment_action,$comment_id,$comment_plus,$comment_type)
 	{
 		global $cms_root, $cms_site, $lcms, $cms_smiles, $cms_mail_select, $cms_theme, $_GET, $_COOKIE, $_SERVER, $cms_max_message,
@@ -1469,10 +1596,10 @@ class RuxeTemplate
   			else
   			{
   				$canform = false;
-       				return $lcms['guest_not_write'];	
+       				return $lcms['guest_not_write'];
   			};
 		};
-		
+
 		//Проверка на закрытость раздела комментариев
 		if ($comment_action=="new_message") {
 			$valListmess = file($cms_root.'/conf/messages/listmess.dat');
@@ -1493,7 +1620,7 @@ class RuxeTemplate
  			$ar 	= array("{URL}","{HIDDENS}","{NAME_VALUE}","{MAIL_VALUE}", "{THEME}","{THEMES}","{/THEME}","{SECURITY}",
 				"{MESSAGE_VALUE}","{SITE}","{FROM}","{SHOWSMILES}","{/SHOWSMILES}","{THEMEPATH}","{MAXMESSAGE}","{USERLINK}");
  			$me_url = $cms_site."/index.php?action=".$comment_action;
- 			if ( ($comment_action=="pm") or ($comment_action=="pmnew") ) 
+ 			if ( ($comment_action=="pm") or ($comment_action=="pmnew") )
 				$me_url = $Navigation->furl('pmsend').rand(0,9999);
  			$me_hiddens = '<input type="hidden" name="comment" value="'.$comment_id.'">';
  			switch ($comment_action)
@@ -1506,11 +1633,11 @@ class RuxeTemplate
   					break;
   				case "pm":
   					$me_hiddens.="<input type=\"hidden\" name=\"theme\" value=\"".$comment_id."\"><input type=\"hidden\" name=\"to\" value=\"".$comment_plus."\">";
-  					break;	
+  					break;
 
  			};
 
- 			
+
  			$me_name 	= "";
  			$me_mail 	= "";
  			$me_mess 	= "";
@@ -1601,9 +1728,9 @@ class RuxeTemplate
     					return $this->template($ar,$br,$cms_root."/themes/".$cms_theme."/commentform.html",'','',$fromtomail);
   				};
  			};
-		}; 
+		};
 	}
-	
+
 	function getonlywords($tag)
 	{
    		$tag   	= str_replace(" ","_",$tag);
@@ -1613,10 +1740,10 @@ class RuxeTemplate
    		$tag   = str_replace(array("%","$","^","&","*",">","<","\"","'","|","/",";",".","\\","?","!","@"),"",$tag);
    		return $tag;
 	}
-	
+
 	function template($fu_a,$fu_b,$fu_file,$itags = "",$type = "",$fromtomail=false,$usecodesuser=true,$category=array(),$needfull=true)
 	{
-	
+
 		global $cms_root, $cms_site, $Filtr, $Navigation, $cms_smiles, $cms_simcount;
 		$i	=	0;
 		$res	=	'';
@@ -1629,7 +1756,7 @@ class RuxeTemplate
 			$res 	= 	$this -> checkteg($res,'[if_user_entered]','[/if_user_entered]','user');
          		$res 	= 	$this -> checkteg($res,'[if_user_not_entered]','[/if_user_not_entered]','guest');
          	};
-         	
+
          	if (strstr($fu_file,"record.html"))
          	{
 			$res    		=	$this -> checkteg($res,'[code]','[/code]','html');
@@ -1659,11 +1786,11 @@ class RuxeTemplate
 				}
 				else
 					$res	=	$this->checkteg($res,'[if_similar]','[/if_similar]','replace',array(),'');
-				
+
 			};
-			
+
 			//Теги (метки)
-         		
+
          		$tmp	=	array();
          		preg_match('|\[TAGS\=\{(.*)\}\/TAGS\]|mUis',$res,$tmp);
 			if (isset($tmp[1])) {
@@ -1685,19 +1812,19 @@ class RuxeTemplate
 							};
 						};
 					};
-					if (!$founded) 
-					{    
+					if (!$founded)
+					{
 						if (count($tegs)<1)
 							$linewithtegs.=str_replace(array("[TAGLINK]","[TAGCAPTION]"),array($Navigation->furl('tags',$type,$this->getonlywords($teg)),$Filtr->clear($teg)),$templatelinktegs);
-						else	
+						else
 							$linewithtegs.=", ".str_replace(array("[TAGLINK]","[TAGCAPTION]"),array($Navigation->furl('tags',$type,$this->getonlywords($teg)),$Filtr->clear($teg)),$templatelinktegs);
 						if ($teg!="") $tegs[] = $this->getonlywords($teg);
-					}; 
+					};
 				};
 				if (count($tegs)>0)
 				{
 					$res	  = 	str_replace(array('[if_tags]','[/if_tags]'),'',$res);
-					$res	  = 	$this->checkteg($res,'[TAGS={','}/TAGS]','replace',array(),$linewithtegs);           			
+					$res	  = 	$this->checkteg($res,'[TAGS={','}/TAGS]','replace',array(),$linewithtegs);
 				}
 				else
 					$res	=	$this->checkteg($res,'[if_tags]','[/if_tags]','replace',array(),'');
@@ -1711,7 +1838,7 @@ class RuxeTemplate
 					$res 	= 	$this->checkteg($res,'[if_needfull]','[/if_needfull]','replace',array(),'');
                         };
          	};
-         	
+
          	if (strstr($fu_file,'commentform.html'))
          	{
          		$res 	=	$this->checkteg($res,'[if_here_mail]','[/if_here_mail]','default',$fu_b,4);
@@ -1740,10 +1867,10 @@ class RuxeTemplate
                     };
                 }
          	};
-         	
+
 		return $res;
 	}
-	
+
 	function checkteg($text,$start,$end,$command,$add1=array(),$add2='0')
 	{
 		global $GlobalUsers, $_GET, $cms_createlinks, $cms_pm_showusers, $Filtr;
@@ -1798,13 +1925,13 @@ class RuxeTemplate
      							{
      								if (($cms_pm_showusers==1) or ($GlobalUsers->getstatus($Filtr->clear($_COOKIE['site_login']))=="admin"))
      								{
-     								
+
      								}
      								else
-     									$text = str_replace($cod[0],'',$text);	
+     									$text = str_replace($cod[0],'',$text);
      							}
      							else
-     								$text = str_replace($cod[0],'',$text);   
+     								$text = str_replace($cod[0],'',$text);
 							break;
 						case 'pm_input':
 							$act 	= (isset($_GET['action'])) ? $Filtr->clear($_GET['action']) : "";
@@ -1813,10 +1940,10 @@ class RuxeTemplate
      							{
 
      								if (($cms_pm_showusers==1) or ($GlobalUsers->getstatus($Filtr->clear($_COOKIE['site_login']))=="admin"))
-     									$text = str_replace($cod[0],'',$text);	
+     									$text = str_replace($cod[0],'',$text);
      							}
      							else
-     								$text = str_replace($cod[0],'',$text);   
+     								$text = str_replace($cod[0],'',$text);
 							break;
 						case 'default':
 							if (strstr($add1[$add2],'<!--'))
@@ -1830,13 +1957,13 @@ class RuxeTemplate
 		};
 		return $text;
 	}
-	
+
 	function other($fu_a,$fu_b,$whatline)
 	{
 		global $ocms;
 		return str_replace($fu_a,$fu_b,$ocms[$whatline]);
 	}
-	
+
 	function users($fu_a,$fu_b,$whatline)
 	{
 		global $logincms;
@@ -1881,11 +2008,11 @@ class RuxeTemplate
                 };
                 return $res;
 	}
-	
+
 	function getsmiles()
 	{
 		global $cms_root,$smilesdb;
-		
+
 		$smiles   = array();
 		foreach ($smilesdb as $smile)
 		{
@@ -1894,7 +2021,7 @@ class RuxeTemplate
 		};
 		return $smiles;
 	}
-	
+
 	function findcode($start,$end,$text,$code)
 	{
 		global $Filtr;
@@ -1926,7 +2053,7 @@ class RuxeTemplate
 		};
 		return $result;
 	}
-	
+
 	function usebbcodes($text,$do,$imgteg=false,$needcenz=true)
 	{
 		global $cms_smiles, $GlobalUsers, $lcms, $cms_createlinks, $cms_img_comment, $cms_site, $cms_cenzura, $cms_cenzura_words, $cms_theme, $cms_root, $cms_furl;
@@ -1983,7 +2110,7 @@ class RuxeTemplate
 					$text = preg_replace('|\[spoiler=(.*)](.*)\[\/spoiler]|Uis', $this->other(array("{TITLE}","{TEXT}"),array("\${1}","\${2}"),15), $text);
 					//quote
 					$text = preg_replace('|\[quote=(.*)](.*)\[\/quote]|Uis', $this->other(array("{TITLE}","{TEXT}"),array("\${1}","\${2}"),16), $text);
-					$text = preg_replace('|\[quote](.*)\[\/quote]|Uis', $this->other("{TEXT}","\${1}",19), $text);	
+					$text = preg_replace('|\[quote](.*)\[\/quote]|Uis', $this->other("{TEXT}","\${1}",19), $text);
 					//bb codes
 					$text = preg_replace('|\[b](.*)\[\/b]|Uis', "<b>\${1}</b>", $text);
 					$text = preg_replace('|\[i](.*)\[\/i]|Uis', "<i>\${1}</i>", $text);
@@ -2000,7 +2127,7 @@ class RuxeTemplate
 							$text    = preg_replace('|\[url\](.*)\[/url\]|Uis', "<a href=\"".$cms_site."/gosite/\${1}\" target=\"_blank\" rel=\"nofollow\">\${1}</a>", $text);
 						else
 							$text    = preg_replace('|\[url\](.*)\[/url\]|Uis', "<a href=\"".$cms_site."/?action=gosite&amp;url=\${1}\" target=\"_blank\" rel=\"nofollow\">\${1}</a>", $text);
-						
+
 						$text    = preg_replace("|\[url=http://(.*)\](.*)\[/url\]|Usi",'[url=${1}]${2}[/url]',$text);
            					if ($cms_furl==1)
 							$text    = preg_replace('|\[url=(.*)\](.*)\[/url\]|Uis', "<a href=\"".$cms_site."/gosite/\${1}\" target=\"_blank\" rel=\"nofollow\">\${2}</a>", $text);
@@ -2024,7 +2151,7 @@ class RuxeTemplate
        					$text = str_replace($words[$i],"***",$text);
 				};
 				break;
-					
+
 		};
 		return $text;
 	}
@@ -2063,14 +2190,14 @@ class GlobalBFG
    		$newfile = fopen($cms_root."/.htaccess","w");
    		foreach ($oldfile as $oldline)
    		{
-      				if (substr_count($oldline,$gener)!=0) 
+      				if (substr_count($oldline,$gener)!=0)
       					break;
-      				if (substr_count($oldline,"RewiteEngine")==0) 
+      				if (substr_count($oldline,"RewiteEngine")==0)
       				{
 
          				if (substr_count($oldline,"RewriteBase")==0)
              					fwrite($newfile,$oldline);
-         			};  
+         			};
    		};
    		fwrite($newfile,$gener."\r\n");
 		$addpath = $_SERVER['PHP_SELF'];
@@ -2134,26 +2261,26 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
       		$rss_dat = fopen($cms_root."/conf/rss.dat","w");
       		fwrite($rss_dat,"<?php\r\n\$rss_pub_date = \"".date("D, d M Y H:i:s")."\";\r\n\$rss_gdd = \"".$rss_gdd."\";\r\n\$cms_rss_id = \"".$cms_rss_id."\";\r\n");
       		fclose($rss_dat);
-	}	
-	
+	}
+
 	function delrecord($list,$news,$type)
 	{
 		global $cms_root, $GlobalComments, $GlobalCache, $_COOKIE, $Filtr, $_SERVER, $GlobalUsers;
-		
+
 		if (!is_numeric($list))
 		{
     			die("Error.54: LIST is not supported");
     			exit;
   		};
-  		$file=file("../conf/".$type."/list.dat"); 
+  		$file=file("../conf/".$type."/list.dat");
 
   		for($i=0;$i<sizeof($file);$i++)
-			if($i==$list) unset($file[$i]); 
+			if($i==$list) unset($file[$i]);
 
-  		$fp=fopen("../conf/".$type."/list.dat","w"); 
-  		fputs($fp,implode("",$file)); 
+  		$fp=fopen("../conf/".$type."/list.dat","w");
+  		fputs($fp,implode("",$file));
   		fclose($fp);
-  
+
   		//Удалять комментарии
   		$fullnew = file($cms_root."/conf/".$type."/".$news.".dat");
   		$z = count($fullnew)-1;
@@ -2164,7 +2291,7 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
        			$z--;
   		};
   		//
-  
+
   		$flag = unlink("../conf/".$type."/".str_replace(".","",$news).".dat");
   		$old_file = file("../conf/".$type."/views.dat");
   		$new_file = fopen("../conf/".$type."/views.dat","w");
@@ -2192,7 +2319,7 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
 		//
   		return $flag;
 	}
-	
+
 	function editrecord()
 	{
 		global $_POST, $_COOKIE, $Filtr, $GlobalCache, $GlobalUsers, $cms_root;
@@ -2237,12 +2364,12 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
 		$title = trim($_POST['title']);
 
   		$yes = "no";
-  
+
   		$path2 = preg_replace("|\-+|","-",$Filtr->tolat($title));
 		if ($news!=$path2)
 		{
    			$needdeletefile = true;
-   			$lastfile = "../conf/".$type."/".$news.".dat"; 
+   			$lastfile = "../conf/".$type."/".$news.".dat";
 		};
   		if (
       			(file_exists("../conf/".$type."/".$path2.".dat"))
@@ -2255,7 +2382,7 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
       				$path2 = $Filtr->tolat($title)."-".rand(1,150);
       				if (!file_exists("../conf/".$type."/".$path2.".dat"))
       				{
-         				$yes = "yes"; 
+         				$yes = "yes";
       				};
      			};
   		};
@@ -2270,7 +2397,7 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
        			$message 	= preg_replace("|\"(.*)\"|uUis", "«\${1}»", $message);
        			$messageplus 	= preg_replace("|\"(.*)\"|uUis", "«\${1}»", $messageplus);
   		};
-  		
+
   		$tire		=	(isset($_POST['tire'])) ? $_POST['tire'] : 'no';
   		if ($tire=='yes')
   		{
@@ -2280,7 +2407,7 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
 
   		if ($messageplus=="")
   			$messageplus = $message;
-   
+
 		if ($br == "yes")
 		{
 			setcookie('addbr', 'yes', time() + 1209600,"/");
@@ -2305,7 +2432,7 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
 		$message	=	str_replace("|","[dividinglinere]",$message);
 		$messageplus	=	str_replace("|","[dividinglinere]",$messageplus);
 		//
-		$old_file = file("../conf/".$type."/".$news.".dat");   
+		$old_file = file("../conf/".$type."/".$news.".dat");
 		$file    = fopen("../conf/".$type."/".$path2.".dat","w");
 		$i = 1;
 		fwrite($file,$date."|".$author."|".$title."|".$messageplus."|".$tegs."|".$_SERVER['REMOTE_ADDR']."|".$keys."|".$description."|".$comments_."|\r\n");
@@ -2319,12 +2446,12 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
 		fclose($file);
 		if ($news!=$path2)
 			chmod($cms_root."/conf/".$type."/".$path2.".dat",0777);
-   
+
 		$i = 0;
-   
+
 		$old_file 	= file("../conf/".$type."/list.dat");
 		$file 		= fopen("../conf/".$type."/list.dat","w");
-   
+
 		for ($i=0; $i<count($old_file); $i++)
 		{
      			if ($i==$list)
@@ -2368,11 +2495,11 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
 		};
 		//
 	}
-	
+
 	function createrecord($type,$name)
 	{
-	 	global $_POST,$_SERVER, $_COOKIE, $GlobalCache, $Filtr, $cms_root, $GlobalUsers;       
-  
+	 	global $_POST,$_SERVER, $_COOKIE, $GlobalCache, $Filtr, $cms_root, $GlobalUsers;
+
   		$category 	= str_replace("|","",$_POST['category']);
   		$newcategory 	= str_replace("|","",$_POST['newcategory']);
   		if ($newcategory!="")
@@ -2387,29 +2514,29 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
   		$tegs  = str_replace(", ",",",$tegs);
   		$upped = (isset($_POST['upped'])) ? $_POST['upped'] : "no";
   		$link  = filter_var($_POST['link'], FILTER_SANITIZE_URL);
-  		if ($link=="http://") 
+  		if ($link=="http://")
   			$link = "";
   		$br 		= (isset($_POST['br'])) ? $_POST['br'] : false;
 		$brplus 	= (isset($_POST['brplus'])) ? $_POST['brplus'] : false;
 		$pq   		= (isset($_POST['pq'])) ? $Filtr->clear($_POST['pq']) : false;
   		$message= $_POST['text'];
   		$messageplus = $_POST['textplus'];
-  
-  		
+
+
   		if ($pq=='yes')
   		{
        			$message = preg_replace("|\"(.*)\"|uUis", "«\${1}»", $message);
        			$messageplus = preg_replace("|\"(.*)\"|uUis", "«\${1}»", $messageplus);
   		};
-  		
+
   		$tire		=	(isset($_POST['tire'])) ? $_POST['tire'] : 'no';
   		if ($tire=='yes')
   		{
   			$message 	= preg_replace("| - |uUis", " — ", $message);
        			$messageplus 	= preg_replace("| - |uUis", " — ", $messageplus);
   		};
-  
-  		if ($messageplus=="") 
+
+  		if ($messageplus=="")
   			$messageplus = $message;
   		$description = $Filtr->clear($_POST['description']);
   		$post_public = (isset($_POST['post_public'])) ? $Filtr->clear($_POST['post_public']) : "no";
@@ -2419,9 +2546,9 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
   		$comments_   = (isset($_POST['comments_'])) ? $Filtr->clear($_POST['comments_']) : "no";
   		$comments_   = ($comments_=="yes") ?  "Да" : "Нет";
   		$yes  = "no";
-  
+
   		$path = preg_replace("|\-+|","-",$Filtr->tolat($title));
-  
+
   		if (file_exists($cms_root."/conf/".$type."/".$path.".dat"))
   		{
      			while ($yes!="yes")
@@ -2432,7 +2559,7 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
          				$yes = "yes";
       				};
      			};
-  		};   
+  		};
   		if ($br == "yes")
   		{
   			setcookie('addbr', 'yes', time() + 1209600,"/");
@@ -2442,9 +2569,9 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
   		{
   			setcookie('addbr', 'no', time() + 1209600,"/");
     			$message = str_replace("\r\n","[newlinere]",$message);
-  		};   
+  		};
 
-  		if ($brplus == "yes") 
+  		if ($brplus == "yes")
   		{
   			setcookie('addbrplus', 'yes', time() + 1209600,"/");
     			$messageplus = str_replace("\r\n","<br>[newlinere]",$messageplus);
@@ -2460,13 +2587,13 @@ RewriteRule ^".$bc[0]."/(.*)".$cms_rewrite_ext." index.php?viewpage=".$bc[2]."&v
 		//
   		$file    = fopen($cms_root."/conf/".$type."/".$path.".dat","w");
   		fwrite($file,date("d.m.y, H:i")."|".$name."|".$title."|".$messageplus."|".$tegs."|".$_SERVER['REMOTE_ADDR']."|".$keys."|".$description."|".$comments_."|\r\n");
-  		fclose($file); 
+  		fclose($file);
   		chmod($cms_root."/conf/".$type."/".$path.".dat",0777);
   		$list = fopen($cms_root."/conf/".$type."/list.dat","a");
-  
+
   		$post_public2 	= ($post_public == "yes") ?  "Да" : "Нет";
   		$upped2 	= ($upped == "yes") ?  "Да":"Нет";
-  
+
   		fwrite($list,date("d.m.y, H:i")."|".$name."|".$title."|".$message."|".$tegs."|".$_SERVER['REMOTE_ADDR']."|".$path."|".$category."|".date("D, d M Y H:i:s")."|".$post_public2."|".$comments_."|".$upped2."|".$link."|\r\n");
   		fclose($list);
   		$file = fopen($cms_root."/conf/".$type."/last_category.dat","w");
@@ -2501,30 +2628,30 @@ class Commentaries
 	function DelCommentFromNew($type,$new,$line)
 	{
     		global $cms_root,$Filtr,$GlobalUsers;
-    
+
     		//Защита
     		$a = array(".","%"," ","/","\\","#");
     		$news = str_replace($a,'',$new);
-    
+
     		//const
     		$fie = $cms_root."/conf/".$type."/".$news.".dat";
-    
-    		$file=file($fie); 
+
+    		$file=file($fie);
     		$tmp = explode("|",$file[$line]);
-        
+
     		$old_users = file($cms_root."/conf/users/users.dat");
     		$i = 0;
     		foreach ($old_users as $old_user)
     		{
            		$old = explode("|",$old_user);
            		if ($Filtr->tolower($old[18])==$Filtr->tolower($Filtr->clear($tmp[1])))
-           		{   
+           		{
                			$usersfruits[14] = $old[14] - 1;
                			$GlobalUsers->editpoles("pos",$i);
            		};
            		$i++;
     		};
-           
+
     		$elsefile = file($fie);
     		$lastposts = file($cms_root."/conf/last_posts.dat");
 
@@ -2543,11 +2670,11 @@ class Commentaries
 				break;
 			}
     		};
-    
+
     		for($i=0;$i<sizeof($file);$i++)
-          		if($i==$line) unset($file[$i]); 
-    		$fp=fopen($fie,"w"); 
-    		fputs($fp,implode("",$file)); 
+          		if($i==$line) unset($file[$i]);
+    		$fp=fopen($fie,"w");
+    		fputs($fp,implode("",$file));
     		fclose($fp);
 	}
 
@@ -2594,7 +2721,7 @@ class Commentaries
 				$founded= true;
 				$write	= false;
 			}
-		
+
           		if ($write)
 				fwrite($new,$orig);
      		};
@@ -2629,9 +2756,9 @@ class Commentaries
 					$tmp2	=	explode('&',$tmp[1]);
 					$title	=	$tmp2[0];
 				};
-				
+
      			};
-			
+
      		}
      		else
      		{
@@ -2665,21 +2792,21 @@ class Commentaries
      		fputs($file,$from."|".$name."|".$showing."|".$date."|".$message."|".$title."|".$fulltitle."|\r\n");
      		fclose($file);
 	}
-	
+
 
 	function show($messdata,$pos)
 	{
  		global $cms_site,$lcms,$cms_avatars,$cms_upload_width,$cms_upload_height,$cms_ps,$cms_ps_max,
  			$cms_theme,$cms_gravatars,$cms_gravatars_im,
- 			$cms_nav_comments,$GlobalTemplate,$GlobalUsers,$Navigation,$GlobalImaging,$Filtr,$fileusers; 
- 		
+ 			$cms_nav_comments,$GlobalTemplate,$GlobalUsers,$Navigation,$GlobalImaging,$Filtr,$fileusers;
+
  		$echolist  = "";
  		foreach ($messdata as $mess)
  		{
    			$pieces = explode("|",$mess);
   			if ($Navigation->ShowPage(count($messdata),$pos,$cms_nav_comments) == True && $pieces[6]=="yes")
   			{
-    				
+
     				$ps = "";
     				$ONLYNAME = $pieces[1];
 
@@ -2696,7 +2823,7 @@ class Commentaries
     					$ps	=	$Filtr->textmax($pie[17],$cms_ps_max);
     					if ($pie[4] == "admin") {
 						$needcenzura	=	false;
-                  				$pieces[1] = $GlobalTemplate->users(array("{SITE}","{THEMEPATH}","{NAME}","{PROFILELINK}"),array($cms_site,$cms_site."/themes/".$cms_theme,$pieces[1],$Navigation->furl('viewprofile',$pieces[1])),8); 
+                  				$pieces[1] = $GlobalTemplate->users(array("{SITE}","{THEMEPATH}","{NAME}","{PROFILELINK}"),array($cms_site,$cms_site."/themes/".$cms_theme,$pieces[1],$Navigation->furl('viewprofile',$pieces[1])),8);
                 	 		} else
                   				$pieces[1] = $GlobalTemplate->users(array("{SITE}","{THEMEPATH}","{NAME}","{PROFILELINK}"),array($cms_site,$cms_site."/themes/".$cms_theme,$pieces[1],$Navigation->furl('viewprofile',$pieces[1])),7);
 					//if ($pie[16]=='noavatar.png')
@@ -2706,7 +2833,7 @@ class Commentaries
 						$avatar 	= 	$cms_site."/avatars/".str_replace("\\","",str_replace("..","",str_replace("/","",$Filtr->clear($pie[16]))));
 						$needgravatar	=	false;
 					};
-					
+
 				};
 				if (($cms_gravatars==1) and ($needgravatar==true))
 					$avatar = $GlobalImaging -> get_gravatar($pieces[2],$cms_upload_width,$cms_gravatars_im,'g',false);
@@ -2733,14 +2860,14 @@ class Commentaries
 
  		return $echolist;
 	}
-	
+
 	function add($security, $name, $from, $mail, $title_news, $comment, $message, $type)
 	{
 		global $_SERVER, $lcms, $_COOKIE, $_POST, $cms_root, $cms_premoder, $cms_noflood, $cms_site,$cms_max_message,$cms_premoder,$cms_rewrite,
    		$cms_plusmess,$cms_sendmess,$cms_rewrite_ext,$cms_theme,$fileusers,$cms_theme,$openpage,$pagetitle,$pageredirect,
    		$cms_oncomments,$cms_guestnotwrite,$cms_adminm,$usersfruits,$cms_smiles,$Filtr,$GlobalUsers,$GlobalTemplate,$Mailing,
    		$cms_without_mail, $cms_furl, $Navigation, $cms_premod_mess;
-   		
+
    		$frombfgololo 	= false;
    		$tomailmessage 	= $message;
    		$message 	= $Filtr->clear($message,true);
@@ -2757,36 +2884,36 @@ class Commentaries
    		$finderror 	= false;
    		$stop_down 	= false;
    		$errortext 	= "";
-   		
+
    		if ($cms_oncomments!=1)
    		{
       			die($lcms['error_602']);
       			exit;
    		};
-   		 
-   		if (strstr($message,"|")) 
-   		{ 
+
+   		if (strstr($message,"|"))
+   		{
    			$errortext = $lcms['serror_message'];
    			$finderror = true;
    		};
-   		if (!$message) 
+   		if (!$message)
    		{
    			$errortext = $lcms['error_message'];
    			$finderror = true;
    		};
    		if ((time() - $GlobalUsers->thisusertime())< $cms_noflood)
-   		{ 
+   		{
    			$finderror = true;
    			$errortext = $lcms['user_addnoflood'];
    		};
-   		
+
    		$pluscounter = true;
    		if ($GlobalUsers->thisisuser())
    		{
       			$name = $Filtr->clear($_COOKIE['site_login']);
-      			if (!$finderror) 
+      			if (!$finderror)
       			{
-      				
+
       				$mail	=	$GlobalUsers->getpole($name,2);
       				if ($cms_premoder==1) {
       					if ($GlobalUsers->getpole($name,4)=='admin')
@@ -2806,16 +2933,16 @@ class Commentaries
                       			($type!="question")
                       		)
                       			$usersfruits[14] = $GlobalUsers->getpole($name,14) + 1;
-      				
+
          			$usersfruits[13] = time();
          			$GlobalUsers->editpoles("user",$_COOKIE['site_login']);
       			};
    		}
    		else
    		{
-      			if (!$name) 
+      			if (!$name)
       			{
-      				$errortext = $lcms['error_name']; 
+      				$errortext = $lcms['error_name'];
       				$finderror = true;
       			};
       			if ($cms_without_mail==1)
@@ -2839,7 +2966,7 @@ class Commentaries
       					$finderror = true;
       				};
       			};
-      			if (strstr($name,"|")) 
+      			if (strstr($name,"|"))
       			{
       				$errortext = $lcms['serror_name'];
       				$finderror = true;
@@ -2850,7 +2977,7 @@ class Commentaries
       				$finderror = true;
       			};
       			if (!$GlobalUsers->checkcaptcha($security))
-      			{ 
+      			{
       				$errortext = $lcms['error_security'];
       				$finderror = true;
       			};
@@ -2897,7 +3024,7 @@ class Commentaries
       			$stop_down    	= true;
    		};
  		if (!$stop_down)
- 		{  
+ 		{
 			//Проверка на открытость одиночного раздела комментирования
 			$valListmess 	= file($cms_root."/conf/messages/listmess.dat");
 			foreach ($valListmess as $valLine) {
@@ -2950,14 +3077,14 @@ class Commentaries
         				}
         				else
           					$line = $date."|".$name."|".$mail."|".$message."||".$ip."|".$premoderacia."|";
-        				$line = str_replace("\r\n","<br>",$line); 
+        				$line = str_replace("\r\n","<br>",$line);
         				$line .= "\r\n";
-        				fputs($file, $line); 
+        				fputs($file, $line);
         				fclose($file);
         				switch ($type)
        					{
             					case "tomail":
-                 					$qwerty_mail = 
+                 					$qwerty_mail =
                  							"Имя: ".$name."\n"
                  							."E-mail: ".$mail."\n"
                  							."Дата: ".$date."\n"
@@ -2970,13 +3097,13 @@ class Commentaries
                  							."Имя: ".$name."<br>"
                  							."E-mail: ".$mail."<br>"
                  							."Дата: ".$date."<br>"
-                 							."IP: ".$ip."<br>" 
+                 							."IP: ".$ip."<br>"
                  							."Сообщение: ".$message;
 
-                 					$qwerty_addmail = "История обратной связи: ".$cms_site."/rpanel/index.php?action=messages&from=feedback \n\n"; 
+                 					$qwerty_addmail = "История обратной связи: ".$cms_site."/rpanel/index.php?action=messages&from=feedback \n\n";
                  					break;
             					case "question":
-                 					$qwerty_mail = 
+                 					$qwerty_mail =
                  							"Имя: ".$name."\n"
                  							."E-mail: ".$mail."\n"
                  							."Дата: ".$date."\n"
@@ -2988,9 +3115,9 @@ class Commentaries
                  							."Имя: ".$name."<br>"
                  							."E-mail: ".$mail."<br>"
                  							."Дата: ".$date."<br>"
-                 							."IP: ".$ip."<br>" 
+                 							."IP: ".$ip."<br>"
                  							."Вопрос: ".$message;
-                 					$qwerty_addmail = "База F.A.Q.: ".$cms_site."/rpanel/index.php?action=faq \n\n"; 
+                 					$qwerty_addmail = "База F.A.Q.: ".$cms_site."/rpanel/index.php?action=faq \n\n";
                  					break;
             					case "message":
                  					$subject = $lcms['mess_title']." ".$title_news;
@@ -2998,7 +3125,7 @@ class Commentaries
                  						"Имя комментатора: ".$name."\n"
                  						."E-mail: ".$mail."\n"
                  						."Дата: ".$date."\n"
-                 						."IP: ".$ip."\n" 
+                 						."IP: ".$ip."\n"
                  						."Комментарий: ".$tomailmessage;
                  					$x = 0;
                  					$z = 0;
@@ -3017,9 +3144,9 @@ class Commentaries
                  					."Имя комментатора: ".$name."<br>"
                  					."E-mail: ".$mail."<br>"
                  					."Дата: ".$date."<br>"
-                 					."IP: ".$ip."<br>" 
+                 					."IP: ".$ip."<br>"
                  					."Комментарий: ".$message;
-                 					$qwerty_addmail = "База комментариев: ".$cms_site."/rpanel/index.php?action=messages&from=message&line=".$x."&message=".$comment." \n\n"; 
+                 					$qwerty_addmail = "База комментариев: ".$cms_site."/rpanel/index.php?action=messages&from=message&line=".$x."&message=".$comment." \n\n";
                  					break;
             					default:
             	 					$frombfgololo = true;
@@ -3029,7 +3156,7 @@ class Commentaries
                  						."Имя комментатора: ".$name."\n"
                  						."E-mail: ".$mail."\n"
                  						."Дата: ".$date."\n"
-                 						."IP: ".$ip."\n" 
+                 						."IP: ".$ip."\n"
                  						."Комментарий: ".$tomailmessage;
                  					$mess_submit_title = $lcms['mess_submit_title'];
                  					$message_submit = $lcms['news_submit_title'];
@@ -3040,9 +3167,9 @@ class Commentaries
                  						."Имя комментатора: ".$name."<br>"
                  						."E-mail: ".$mail."<br>"
                  						."Дата: ".$date."<br>"
-                					 	."IP: ".$ip."<br>" 
+                					 	."IP: ".$ip."<br>"
                  						."Комментарий: ".$message;
-                 					$qwerty_addmail = "База комментариев: ".$cms_site."/rpanel/index.php?action=messages&from=".$type."&news=".$comment." \n\n";                 
+                 					$qwerty_addmail = "База комментариев: ".$cms_site."/rpanel/index.php?action=messages&from=".$type."&news=".$comment." \n\n";
         				};
         				$qwerty_mail 	= strip_tags($qwerty_mail,"");
         				$qwerty_mail 	= $GlobalTemplate->usebbcodes($qwerty_mail,'clear');
@@ -3051,11 +3178,11 @@ class Commentaries
         				if ($cms_adminm==0)
         				{
         					$tmp	=	(isset($_COOKIE['site_login'])) ? $Filtr->clear($_COOKIE['site_login']) : 'no';
-             					if ($GlobalUsers->getstatus($tmp)=="admin") 
+             					if ($GlobalUsers->getstatus($tmp)=="admin")
              						$gomail = false;
-        				};                       
+        				};
         				if ($gomail)
-        				{                           
+        				{
                    				if (($type == "tomail") or ($type == "question"))
                    				{
                       					if ($cms_plusmess == 1)
@@ -3075,7 +3202,7 @@ class Commentaries
              						$addnm = false;
         				};
         				if ($addnm)
-        				{       
+        				{
                 				$nm=fopen($cms_root."/conf/new_messages.dat","a");
                 				fwrite($nm,$subject."|".$premoderacia."|".$qwerty_message."\r\n");
                 				fclose($nm);
@@ -3090,7 +3217,7 @@ class Commentaries
            						$this->addtolastposts('messages',$name,$premoderacia,$message,$comment,$date);
                						break;
            					default:
-               						$this->addtolastposts($type,$name,$premoderacia,$message,$comment,$date);     
+               						$this->addtolastposts($type,$name,$premoderacia,$message,$comment,$date);
         				};
         				header('Content-type: text/html; charset=utf-8');
         				$ar = array("{TITLE}","{GENERATOR}","{READRESS}","{/READRESS}","{MESSAGE}","{URL}","{SITE}","{THEMEPATH}");
@@ -3116,9 +3243,9 @@ class Commentaries
 							$pageredirect.='?rand='.rand(1,9999);
 						$pageredirect	=	str_replace('&amp;','&',$pageredirect);
 					};
-					
+
 					$br = array($mess_submit_title,"Ruxe Engine (ruxe-engine.ru)","","",$message_submit.$lcms['refer1']." <a href=\"".$pageredirect."\">".$lcms['refer2']."</a> ".$lcms['refer3'],$pageredirect,$cms_site,$cms_site."/themes/".$cms_theme);
-						
+
         				$openpage = $GlobalTemplate->template($ar,$br,$cms_root."/themes/".$cms_theme."/message.html");
         				$pagetitle = $mess_submit_title;
         				if (
@@ -3150,7 +3277,7 @@ $GlobalComments = new Commentaries;
 
 class Imaging
 {
-	function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) 
+	function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() )
 	{
 		//http://gravatar.com/site/implement/images/php/
 		$url = 'http://www.gravatar.com/avatar/';
@@ -3164,21 +3291,21 @@ class Imaging
 		}
 		return $url;
 	}
-	
-	function setTransparency($new_image, $image_source) 
+
+	function setTransparency($new_image, $image_source)
 	{
     		//thanks for http://www.answerium.com/article36/
     		$transparencyIndex = imagecolortransparent($image_source);
     		$transparencyColor = array('red' => 255, 'green' => 255, 'blue' => 255);
-       
+
     		if ($transparencyIndex >= 0)
-        			$transparencyColor = imagecolorsforindex($image_source, $transparencyIndex);   
-       
+        			$transparencyColor = imagecolorsforindex($image_source, $transparencyIndex);
+
     		$transparencyIndex = imagecolorallocate($new_image, $transparencyColor['red'], $transparencyColor['green'], $transparencyColor['blue']);
     		imagefill($new_image, 0, 0, $transparencyIndex);
     		imagecolortransparent($new_image, $transparencyIndex);
 	}
-	
+
 	function resize($sourse,$new_image,$width,$height)
 	{
     		//thanks for http://gv0zdik.livejournal.com/5817.html
@@ -3218,8 +3345,8 @@ class Imaging
              			break;
     		};
 	}
-	
-	
+
+
 };
 
 $GlobalImaging	=	new	Imaging;
@@ -3227,19 +3354,19 @@ $GlobalImaging	=	new	Imaging;
 class FileManager
 {
 
-	function listing($url,$mode) 
+	function listing($url,$mode)
 	{
-		if (is_dir($url)) 
+		if (is_dir($url))
 		{
-    			if ($dir = opendir($url)) 
+    			if ($dir = opendir($url))
     			{
-        			while ($file = readdir($dir)) 
+        			while ($file = readdir($dir))
         			{
-                   			if ($file != "." && $file != "..") 
+                   			if ($file != "." && $file != "..")
                    			{
-                     				if(is_dir($url."/".$file)) 
+                     				if(is_dir($url."/".$file))
                      					$folders[] = $file;
-                     				else 
+                     				else
                      					$files[] = $file;
                        			}
           			}
@@ -3249,7 +3376,7 @@ class FileManager
 		if($mode == 1) {if (isset($folders)) { sort($folders); return $folders; };};
 		if($mode == 0) {if (isset($files)) { sort($files); return $files;}; };
 	}
-	
+
 	function enablerules() {
 		global $GlobalTemplate, $cms_theme, $_SERVER, $cms_root, $Navigation;
 		$zxcfile 	= 	file($cms_root."/themes/".$cms_theme."/index.php");
@@ -3286,10 +3413,10 @@ class FileManager
 			)
 		);
 		fclose($zxcnfile);
-		if ($zxcchmod) 
+		if ($zxcchmod)
 			chmod($cms_root.'/conf/cache/design',0777);
 	}
-	
+
 	function enablemodules()
 	{
 		global $cms_theme, $cms_root, $cms_site, $cms_needlog, $cms_log_max, $_SERVER, $Filtr, $httpuseragent, $Robots, $GlobalUsers, $Navigation;
@@ -3303,12 +3430,12 @@ class FileManager
 					$tmp22founded=true;
 			};
 		};
-		
+
 		$crithocspec	=	'87451234d03c11240fd3edfdd8dd962f256f519cd03c11240fd3edfdd8dd962f256f519c';
 
-		if (substr_count($_SERVER['SERVER_NAME'],base64_decode($crithocspec))!=0) 
+		if (substr_count($_SERVER['SERVER_NAME'],base64_decode($crithocspec))!=0)
 			$tmp22founded	=	true;
-		
+
 
        		$date_file=file($cms_root."/conf/date.dat");
        		if ($date_file[0]!=date("d.m.y"))
@@ -3321,7 +3448,7 @@ class FileManager
               		foreach ($tmp_ip_file as $tmp_ip_file_)
               		{
                     		$tmp_ip_file__ = explode("|",$tmp_ip_file_);
-                    		if ($tmp_ip_file__[1]=="people") 
+                    		if ($tmp_ip_file__[1]=="people")
                     			$count_last_hosts=$count_last_hosts+1;
               		};
               		$last_hosts = fopen($cms_root."/conf/last_hosts.dat","w");
@@ -3402,7 +3529,7 @@ class FileManager
 				unset($original[0]);
 				$needrewriteall=true;
 			};
-				
+
 			$ip		=	str_replace(array('[=]',"\r","\n"),' ',$Filtr->clear($_SERVER['REMOTE_ADDR']));
 			$page		=	str_replace(array('[=]',"\r","\n"),' ','http://'.$Filtr->clear($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']));
 			$from		=	(isset($_SERVER['HTTP_REFERER'])) ? str_replace(array('[=]',"\r","\n"),'',$Filtr->clear($_SERVER['HTTP_REFERER'])) : '';
@@ -3416,7 +3543,7 @@ class FileManager
 			$date		=	date("d.m.y, H:i:s");
 			$l		=	(isset($_COOKIE['site_login'])) ? $Filtr->clear($_COOKIE['site_login']) : 'no';
 			$whom		=	($GlobalUsers->finduser($l)!=-1) ? str_replace(array('[=]',"\r","\n"),' ',$Filtr->clear($_COOKIE['site_login'])) : '';
-			
+
 			//Запись в конце производить
 			if ($needrewriteall)
 			{
@@ -3435,9 +3562,9 @@ class FileManager
 				fclose($new);
 			};
 			//...
-			
-       		}; 
-       		$this->enablerules();    
+
+       		};
+       		$this->enablerules();
    	}
 
 	function makedir($url){
@@ -3458,7 +3585,7 @@ class FileManager
   		while(($file = readdir($dir)))
   		{
     			if ( is_file ($directory."/".$file))
-    			{ 
+    			{
       				@chmod($directory."/".$file,0777);
       				@unlink ($directory."/".$file);
     			}
@@ -3473,20 +3600,20 @@ class FileManager
   		@rmdir ($directory);
 
   		return TRUE;
-	}	
-	
-	
+	}
+
+
 	function updir($path)
 	{
 		$last = strrchr($path, "/");
 		$n1 = strlen($last);
 		$n2 = strlen($path);
-		return substr($path,0,$n2-$n1); 
+		return substr($path,0,$n2-$n1);
 	}
-	
-	function fsize($path) 
-	{ 
-		return substr(filesize($path)/1024, 0, 4); 
+
+	function fsize($path)
+	{
+		return substr(filesize($path)/1024, 0, 4);
 	}
 
     function removefile($path)
@@ -3519,7 +3646,7 @@ class FileManager
 
         return $files;
     }
-	
+
 	function checkfilename($text)
 	{
   		if (preg_match('/^[a-zA-Z0-9\-\_\.]+$/', $text) && (strlen($text)>1))
@@ -3538,14 +3665,14 @@ class Robots
 	function get()
 	{
 		global $cms_root, $filewithbots;
-		
+
 		if (count($filewithbots)==0)
 			$filewithbots	=	file($cms_root.'/conf/bots');
 		$res	=	unserialize($filewithbots[0]);
-		
+
 		return $res;
 	}
-	
+
 	function check($text)
 	{
 		global $Filtr;
@@ -3648,14 +3775,14 @@ class Navigation
 		};
 		return $res;
 	}
-	
+
 	function link($link,$caption,$active,$params,$newparams) {
   		return ($active==true) ? '<a href="'.$newparams.'page='.$link.$params.'" class="active">'.$caption.'</a> ' : '<a href="'.$newparams.'page='.$link.$params.'">'.$caption.'</a> ';
 	}
 
 	function Pager($count,$params,$rec_page,$newparams='?') {
  		global $_GET, $cms_root, $cms_rewrite,$lcms,$GlobalTemplate, $Filtr, $cms_nav_back;
- 
+
  		$showendleftright 	= true; //Показывать ли ссылки "След.", "Пред."
  		$page			= 1;
  		$send 			= "";
@@ -3681,27 +3808,27 @@ class Navigation
  		$endleft  		= "";
  		$next 			= "";
  		$last			= "";
- 		if($page != 1) { 
+ 		if($page != 1) {
    			$endleft  = $this->link(1,1,false,$params,$newparams);
 			if ($cms_nav_back==1)
 				$last = $this->link(($page-1),$lcms['page_last'],false,$params,$newparams);
 			else
 				$last = $this->link(($page-1),$lcms['page_next'],false,$params,$newparams);
  		}
- 		if($page != $total) 
+ 		if($page != $total)
  			$endright = $this->link($total,$total,false,$params,$newparams);
  		if($page - 2 > 1) {
     			$page2left = ($page - 2 == 2) ? $this->link(($page - 2),($page - 2),false,$params,$newparams) : $this->link(($page - 2),'...',false,$params,$newparams);
  		}
- 		if($page - 1 > 1) 
+ 		if($page - 1 > 1)
  			$page1left = $this->link(($page - 1),($page - 1),false,$params,$newparams);
- 		if ($page + 2 < $total) { 
+ 		if ($page + 2 < $total) {
     			$page2right = ($page + 2 == $total-1) ? $this->link(($page + 2),($page + 2),false,$params,$newparams) : $this->link(($page + 2),'...',false,$params,$newparams);
  		}
- 		if($page + 1 < $total) 
+ 		if($page + 1 < $total)
    			$page1right = $this->link(($page + 1),($page + 1),false,$params,$newparams);
  		if ($page + 1 <= $total) {
-			if ($cms_nav_back==1) 
+			if ($cms_nav_back==1)
 				$next = $this->link(($page + 1),$lcms['page_next'],false,$params,$newparams);
 			else
 				$next = $this->link(($page + 1),$lcms['page_last'],false,$params,$newparams);
@@ -3713,9 +3840,9 @@ class Navigation
  	 	if ($cms_nav_back == 1)
 			$send	=	$next.$endright.$page2right.$page1right.$this->link($page,$page,true,$params,$newparams).$page1left.$page2left.$endleft.$last;
  		if ($count>$rec_page)
- 			$pag = $GlobalTemplate->other("{PAGES}",$send,18); 
+ 			$pag = $GlobalTemplate->other("{PAGES}",$send,18);
  		return $pag;
-	}	
+	}
 
 	function ShowPage($count,$position,$rec_page) {
   		global $_GET, $Filtr, $cms_nav_back;
@@ -3727,7 +3854,7 @@ class Navigation
 			for ($i=1; $i<=$total; $i++)
 				$ar[$i] = $total-$i+1;
 			$page 	= $total;
-		} else 
+		} else
 			$page 	= 1;
   		$yes  		= false;
   		if (isset($_GET['page'])) {
@@ -3746,7 +3873,7 @@ class Navigation
   		$mess_i_ 	= $mess_j-$rec_page;
   		$mess_all	= ceil($count/$rec_page);
   		for (; $mess_i<$mess_j && $mess_j>=0; $mess_j--) {
-     			if ($mess_j==$position) 
+     			if ($mess_j==$position)
         			$yes	= true;
   		}
   		return $yes;
@@ -3757,7 +3884,7 @@ $Navigation = new Navigation;
 
 
 class Loging
-{	
+{
 	function referer()
 	{
 		global $_SERVER, $cms_site, $Filtr;
@@ -3804,7 +3931,7 @@ class Mailing
 		$headers .= "MIME-Version: 1.0\nContent-type: text/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\nX-Priority: 3\nX-MSMail-Priority: Normal\nX-Mailer: PHP\n";
 		mail ($to,$subject,str_replace("<br>","\n",$message),$headers);
 	}
-	
+
 	function tousers($subject,$message,$to)
 	{
 		global $cms_active_mail,$cms_active_name,$_SERVER;
@@ -3814,7 +3941,7 @@ class Mailing
 		$headers .= "MIME-Version: 1.0\nContent-type: text/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\nX-Priority: 3\nX-MSMail-Priority: Normal\nX-Mailer: PHP\n";
 		mail ($to,$subject,$message,$headers);
 	}
-	
+
 	function checkmail($mail)
 	{
 		return preg_match("/^([\w\.\-])+@([\w\.\-]+\\.)+[a-z]{2,4}$/i", $mail);
@@ -3842,9 +3969,9 @@ if (
 
 if (!isset($_GET['viewpage']))
 	$_GET['viewpage']='index';
-	
+
 if ($_GET['viewpage']=='index.php') $_GET['viewpage']='index';
-  
+
 //Загрузка дополнений (functions.php)
 $withfullpath	= (file_exists('conf/plugins.dat')) ? false : true;
 if (!$withfullpath) {

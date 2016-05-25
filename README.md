@@ -1022,6 +1022,33 @@ $uninstall - 'uninstallExamplePlugin';
 
 Проверка правильности файлового имени.
 
+### $Notify->
+Данный класс помогает выводить уведомления.
+
+	addMessage(string $message, string $type): int
+
+Добавить сообщения в бокс. Вернет индекс добавленного сообщения
+
+	getMessage(int $index): array
+
+Возвращает сообщения по его индексу
+
+	getMessagesList(): array
+
+Возвращает все сообщения в боксе
+
+	getHtmlMessages(): string
+
+Возвращает сгенерированный html
+
+_**Пример:**_ 
+
+	try {
+        // ..
+    } catch (Exception $e) {
+       $Notify->addMessage($e->getMessage(), 'warning');
+    }
+
 
 <a name="developers"></a>12. Разработчики
 ---------------------------------

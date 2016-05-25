@@ -211,6 +211,6 @@
    
 	$options = $GlobalTemplate->template("{MESSAGES}",$messages,"./theme/messages.tpl");
 	
-	$ar = array("{MENU}","{OPTIONS}");
-	$br = array("",$menu.$options);
+	$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+	$br = array("",$menu.$options, $Notify->getHtmlMessages());
 	echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");

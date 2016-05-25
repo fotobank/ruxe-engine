@@ -389,7 +389,7 @@
   </form>
   </center>
   ';
-  $ar = array("{MENU}","{OPTIONS}");
-  $br = array("",$start.$menu.$echooptions);
+  $ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+  $br = array("",$start.$menu.$echooptions, $Notify->getHtmlMessages());
   echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
 

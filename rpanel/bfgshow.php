@@ -489,7 +489,7 @@
 
   	$echooptions.="</table></center>
 			";
-  
-  	$ar = array("{MENU}","{OPTIONS}");
-  	$br = array("",$start.$echooptions);
+
+  	$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+  	$br = array("",$start.$echooptions, $Notify->getHtmlMessages());
   	echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");

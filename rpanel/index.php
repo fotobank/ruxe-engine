@@ -29,6 +29,7 @@
   	exit;
   };
   include($cms_root."/includes/core.php");
+
   if ($cms_punycode==1)
   {
 	require_once($cms_root.'/includes/idna_convert.class.php');
@@ -519,8 +520,8 @@
   				count(file("../conf/online_users.dat")),$today_bots,($cms_furl==1) ? $cms_site.'/rss' : $cms_site.'/?action=rss',$_SERVER['DOCUMENT_ROOT'],$jfj,$ofj,
 				$notepad,rand(0,99999),$whoonline,$cms_online_time,$install,$Filtr->gettimezonedate(),$messages);
   			$echooptions = $GlobalTemplate->template($ar,$br,"./theme/stat.tpl");
-  			$ar = array("{MENU}","{OPTIONS}");
-  			$br = array("",$echooptions);
+  			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+  			$br = array("",$echooptions, $Notify->getHtmlMessages());
   			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
          		break;
         	case "bfg":
@@ -677,8 +678,8 @@
 			$lists	.= 	'</td></tr></table></center>';
    			$br = array($menu,$lists);
    			$options = $GlobalTemplate->template($ar,$br,"./theme/bfg.tpl");
-   			$ar = array("{MENU}","{OPTIONS}");
-   			$br = array("",$options);
+   			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+   			$br = array("",$options, $Notify->getHtmlMessages());
    			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
          		break;
 		case "localmessage":
@@ -708,8 +709,8 @@
 							<br><br><br>
 						</center>
 			';
-			$ar = array("{MENU}","{OPTIONS}");
-   			$br = array('',$options);
+			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+   			$br = array('',$options, $Notify->getHtmlMessages());
   			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
          		break;
         	case "manager":
@@ -836,8 +837,8 @@
 
    			$br = array($message,$url,$files);
    			$options = $GlobalTemplate->template($ar,$br,"./theme/manager.tpl");
-   			$ar = array("{MENU}","{OPTIONS}");
-   			$br = array($menu,$options);
+   			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+   			$br = array($menu,$options, $Notify->getHtmlMessages());
   			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
          		break;
         	case "general":
@@ -1528,13 +1529,13 @@
 				$WWWREDIRECT1,$WWWREDIRECT2, $Filtr->progress($cms_title_length,'pm'),$REG1,$REG2,
 				$NAV_BACK1,$NAV_BACK2, $Filtr->progress($cms_top_news_max), "","", $IMG_COMMENTS1, $IMG_COMMENTS2);
   			$echooptions = $GlobalTemplate->template($ar,$br,"./theme/general.tpl");
-  			$ar = array("{MENU}","{OPTIONS}");
+  			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
   			if (isset($_GET['go']))
   			{
    				$br = array("<center>Настройки сохранены</center>",$echooptions);  
   			}
   			else
-   				$br = array("",$echooptions);
+   				$br = array("",$echooptions, $Notify->getHtmlMessages());
   			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
          		break;
         	case "pages":
@@ -1891,13 +1892,13 @@
 			*/
   			$br = array($menu,$list);
   			$echooptions = $GlobalTemplate->template($ar,$br,"./theme/pages.tpl");
-  			$ar = array("{MENU}","{OPTIONS}");
-  			$br = array("",$echooptions);
+  			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+  			$br = array("",$echooptions, $Notify->getHtmlMessages());
   			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
          		break;
 		case "bfgcommands":
 			$whatdoing	=	"Просмотр специальных команд для новостей";
-			$ar = array("{MENU}","{OPTIONS}");
+			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
 			$smileslist	=	'';
             		$smiles      = file($cms_root."/conf/smiles.dat");
             		foreach ($smiles as $smile)
@@ -1922,7 +1923,7 @@
 				</table></center>
 				
 			';
-  			$br = array("",$echooptions);
+  			$br = array("",$echooptions, $Notify->getHtmlMessages());
   			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl",'','',false,false);
          		break;
         	case "edit":
@@ -1956,8 +1957,8 @@
   
   			$echooptions.= $GlobalTemplate->template("{MESSAGE}", $message, "./theme/edit_end.tpl");
   
-  			$ar = array("{MENU}","{OPTIONS}");
-  			$br = array("Редактируется файл ".$file,$echooptions);
+  			$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+  			$br = array("Редактируется файл ".$file,$echooptions, $Notify->getHtmlMessages());
   			echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl",'','',false,false);
          		break;
         	case "style":
@@ -2034,8 +2035,8 @@
               					</table>
 					</center><br>
          				';
-         		$ar = array("{MENU}","{OPTIONS}");
-         		$br = array("",$echooptions);
+         		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+         		$br = array("",$echooptions, $Notify->getHtmlMessages());
          		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl",'','',false,false);
          		break;
         	case "faq":
@@ -2146,8 +2147,8 @@
 						<tr><td>&lt;?php here_top_downloads(); ?&gt;</td><td>Выводит список наиболее популярных загрузок</td></tr>
        					</table></center>
         		';
-          		$ar = array("{MENU}","{OPTIONS}");
-          		$br = array("",$echooptions);
+          		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+          		$br = array("",$echooptions, $Notify->getHtmlMessages());
           		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
           		break;
         	case "counts":
@@ -2223,8 +2224,8 @@
              			';
           		};
           		$echooptions.='</table></center>';
-          		$ar = array("{MENU}","{OPTIONS}");
-          		$br = array("",$echooptions);
+          		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+          		$br = array("",$echooptions, $Notify->getHtmlMessages());
           		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
           		break;
 
@@ -2305,8 +2306,8 @@
                      			</table>
              				</center>
              		';
-             		$ar = array("{MENU}","{OPTIONS}");
-             		$br = array("",$echooptions);
+             		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+             		$br = array("",$echooptions, $Notify->getHtmlMessages());
              		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
              		break;
         	case "plugins":
@@ -2514,8 +2515,8 @@
           		$echooptions .= ' 
           				</table></center>
           			';
-          		$ar = array("{MENU}","{OPTIONS}");
-          		$br = array("",$echooptions);
+          		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+          		$br = array("",$echooptions, $Notify->getHtmlMessages());
           		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
           		break;
         	case "modules":
@@ -2555,8 +2556,8 @@
           			};
           			$echooptions .= '';
           		};
-          		$ar = array("{MENU}","{OPTIONS}");
-          		$br = array("",$echooptions);
+          		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+          		$br = array("",$echooptions, $Notify->getHtmlMessages());
           		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
           		break;
         	case "newmessages":
@@ -2587,8 +2588,8 @@
                         "./theme/newmessage.tpl"
                     );
                 };
-                $ar = array("{MENU}", "{OPTIONS}");
-                $br = array("", $GlobalTemplate->template(["{NEW_MESSAGES}"], [$newMessagesToTemplate], "./theme/newmessages.tpl"));
+                $ar = array("{MENU}", "{OPTIONS}", "{NOTIFY}");
+                $br = array("", $GlobalTemplate->template(["{NEW_MESSAGES}"], [$newMessagesToTemplate], "./theme/newmessages.tpl"), $Notify->getHtmlMessages());
                 echo $GlobalTemplate->template($ar, $br, "./theme/admincenteroptions.tpl");
                 break;
         	case "message":
@@ -2679,8 +2680,8 @@
 				$i++;
 			}
 			$echooptions.= '</td></tr></table></center>';
-             		$ar = array("{MENU}","{OPTIONS}");
-             		$br = array("",$echooptions);
+             		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+             		$br = array("",$echooptions, $Notify->getHtmlMessages());
              		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
              		break;
         	case "rotator":
@@ -2758,16 +2759,16 @@
            		$echooptions .= '
            			</table></center>';
            
-           		$ar = array("{MENU}","{OPTIONS}");
-           		$br = array("",$echooptions);
+           		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+           		$br = array("",$echooptions, $Notify->getHtmlMessages());
            		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
            		break;
         	default:
            		$whatdoing="Не найдено";
            		$echooptions = '<h2>Раздел не существует</h2>
            		<font class="desc">Запрашиваемый Вами раздел не существует</font><br><br>';
-           		$ar = array("{MENU}","{OPTIONS}");
-           		$br = array("",$echooptions);
+           		$ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+           		$br = array("",$echooptions, $Notify->getHtmlMessages());
            		echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
            		break;
      	};

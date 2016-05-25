@@ -413,6 +413,6 @@ Roman Mamedov<br><br>
   for ($i=0;$i<count($starts);$i++)
   	$echooptions = $GlobalTemplate->checkteg($echooptions,$starts[$i],$ends[$i],'default',$res,$codes[$i]);
   };
-  $ar = array("{MENU}","{OPTIONS}");
-  $br = array("",$echooptions);
+  $ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+  $br = array("",$echooptions, $Notify->getHtmlMessages());
   echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");

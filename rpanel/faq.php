@@ -173,7 +173,7 @@
   </td></tr>
   </table></center>
   </form>";
-  $ar = array("{MENU}","{OPTIONS}");
-  $br = array("",$echooptions.$add_menu);
+  $ar = array("{MENU}","{OPTIONS}", "{NOTIFY}");
+  $br = array("",$echooptions.$add_menu, $Notify->getHtmlMessages());
   echo $GlobalTemplate->template($ar,$br,"./theme/admincenteroptions.tpl");
 
