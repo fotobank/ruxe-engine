@@ -220,7 +220,14 @@ class Filtr
    		$a      = explode(",",$date);
    		$b      = explode(".",$a[0]);
    		$c      = explode(":",$a[1]);
-   		$date   = $this->gettimezonedate("d.m.y, H:i",$b[0],$b[1],"20".$b[2],$c[0],$c[1],$seconds);
+   		$date   = $this->gettimezonedate("d.m.y, H:i",
+			date("d", strtotime($date)),
+			date("m", strtotime($date)),
+			date("Y", strtotime($date)),
+			date("H", strtotime($date)),
+			date("i", strtotime($date)),
+			date("s", strtotime($date))
+		);
    		$a      = explode(",",$date);
    		$b      = explode(".",$a[0]);
    		$c      = explode(":",$a[1]);
