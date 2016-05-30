@@ -219,8 +219,8 @@ class Filtr
    		//25.03.11, 16:15
    		$a      = explode(",",$date);
    		$b      = explode(".",$a[0]);
-   		$c      = explode(":",$a[1]);
-   		$date   = $this->gettimezonedate("d.m.y, H:i",$b[0],$b[1],"20".$b[2],$c[0],$c[1],$seconds);
+		$timestamp = strtotime($date);
+		$date   = $this->gettimezonedate("d.m.y, H:i",date('d',$timestamp),date('m',$timestamp),date('Y',$timestamp),date('H',$timestamp),date('i',$timestamp),date('s',$timestamp));
    		$a      = explode(",",$date);
    		$b      = explode(".",$a[0]);
    		$c      = explode(":",$a[1]);
