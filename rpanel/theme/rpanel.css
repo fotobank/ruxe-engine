@@ -52,7 +52,6 @@ http://fontawesome.ru/cheatsheet/
 /* Класс bordered (будьте внимательны с цифровыми значениями, меняйте их одновременно (в примере - 1px)) */
 [class*=bordered] {border: solid 1px #d0d6df;}
 [class*=bordered]:hover {border: solid 1px #fff;}
-[class*=bordered] + [class*=bordered] {margin-top: -1px;}
 /* Основное */
 body, html {background: #1c304f; font-family: "Open sans", sans-serif !important; font-weight: 400; font-size: 13px; color: #555; height: 100%; margin: 0;}
 input, button, select, textarea {font-family: inherit; font-size: inherit; line-height: inherit;}
@@ -60,6 +59,7 @@ p {line-height: 1.75em; text-align: left;}
 h1 {
 	font-size:1.5em;
 	font-weight: 300;
+	letter-spacing: 1px;
 }
 h2{
 	font-size:1.375em;
@@ -109,7 +109,7 @@ a:hover {color: #a00;}
 	color: #fff;
 	border-bottom: solid 1px #4d5f7c;
 }
-.admin-header a {font-family: Verdana, Geneva CY, DejaVu Sans, sans-serif !important; text-decoration: none; color: #fff;}
+.admin-header a {font-family: "Open sans", sans-serif !important; text-decoration: none; color: #fff;}
 .admin-header > .container > .pull-left {width: 234px; margin-left: -6px;}
 .nav {
 	display: block;
@@ -118,20 +118,19 @@ a:hover {color: #a00;}
 	width: 240px;
 }
 #menu{
-	margin: 6px 0 auto 6px;
-	border: solid 1px #4d5f7c;
+	margin: 8px 0 auto 6px;
+	outline: solid 1px #4d5f7c;
 }
 #menu li {
 	padding-top: 14px;
-	padding-bottom: 14px;
-	padding-left: 1.125em;
 	background: #5b9fdf;
 	color: #fff;
 }
-#menu a:link span {font-family: Verdana, Geneva CY, DejaVu Sans, sans-serif !important; font-size: 14px;}
+li.bordered {margin-top: -1px;}
+#menu a:link span {font-family: "Open sans", sans-serif !important; font-size: 14px;}
 #menu a:link, #menu a:active, #menu a:visited {text-decoration: none; color: #fff;}
-#menu li:hover {background: #508ddd;}
-#menu span {padding-left: 12px;}
+#menu li:hover {background: #5093dd;}
+#menu .fa:before {display: block; height: 30px; width: 44px; text-align: center; float: left;}
 .menuactive {
     color:#000;
 }
@@ -324,7 +323,8 @@ table td:last-child {border-bottom: 0;}
 [alt=logo] {display: none;}
 .nav {width: 60px;}
 .content {margin-left: 66px;}
-#menu li {padding: 14px 18px;}
+#menu .fa:before {font-size: 1.25em;}
+#menu li {padding: 20px 4px 0;}
 #menu span {display: none;}
 .footer {text-align: center;}
 [class*=pull-] {width: 100%;}

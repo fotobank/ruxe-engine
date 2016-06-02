@@ -207,15 +207,15 @@
      	if ($GlobalUsers->getstatus($login)=='admin')
      	{
      		$generalmenu ='
-     				<li class="bordered"><a href="?action=index"><i class="fa fa-home"><span> Главная</span></i></a></li>
-      				<li class="bordered"><a href="?action=pages"><i class="fa fa-files-o"><span> Страницы</span></i></a></li>
-      				<li class="bordered"><a href="?action=bfg{BFGADD}"><i class="fa fa-list-alt"><span> Новости</span></i></a></li>      
-      				<li class="bordered"><a href="?action=users"><i class="fa fa-users"><span> Пользователи</span></i></a></li>
-      				<li class="bordered"><a href="?action=modules"><i class="fa fa-cubes"><span> Другие модули</span></i></a></li>
-      				<li class="bordered"><a href="?action=style"><i class="fa fa-file-code-o"><span> Оформление</span></i></a></li>
-      				<li class="bordered"><a href="?action=manager"><i class="fa fa-folder-o"><span> Файловый менеджер</span></i></a></li>
-				    <li class="bordered"><a href="?action=general"><i class="fa fa-gears"><span> Настройки</span></i></a></li>
-      				<li class="bordered"><a href="?action=system"><i class="fa fa-calendar-check-o"><span> Обслуживание</span></i></a></li>';
+     				<a href="?action=index"><li class="bordered"><i class="fa fa-home"><span>Главная</span></i></li></a>
+      				<a href="?action=pages"><li class="bordered"><i class="fa fa-files-o"><span>Страницы</span></i></li></a>
+      				<a href="?action=bfg{BFGADD}"><li class="bordered"><i class="fa fa-list-alt"><span>Новости</span></i></li></a>
+      				<a href="?action=users"><li class="bordered"><i class="fa fa-users"><span>Пользователи</span></i></li></a>
+      				<a href="?action=modules"><li class="bordered"><i class="fa fa-cubes"><span>Другие модули</span></i></li></a>
+      				<a href="?action=style"><li class="bordered"><i class="fa fa-file-code-o"><span>Оформление</span></i></li></a>
+      				<a href="?action=manager"><li class="bordered"><i class="fa fa-folder-o"><span>Файловый менеджер</span></i></li></a>
+				    <a href="?action=general"><li class="bordered"><i class="fa fa-gears"><span>Настройки</span></i></a></li>
+      				<a href="?action=system"><li class="bordered"><i class="fa fa-calendar-check-o"><span>Обслуживание</span></i></li></a>';
       	}
       	else
       	{
