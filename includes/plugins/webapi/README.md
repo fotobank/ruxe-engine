@@ -7,7 +7,7 @@ Open Source дополнение, позволяющее внешним одоб
 
 Одним из таких приложений является [Ruxe Engine Monitor на Android](https://play.google.com/store/apps/details?id=ru.ahrameev.ruxeenginemonitor).
 
-Обсуждение на форуме: https://ruxe-engine.ru/forum/viewtopic.php?f=21&t=179&p=2399
+Обсуждение на форуме: http://ruxe-engine.ru/forum/viewtopic.php?f=21&t=179&p=2399
 
 
 0. Установка

@@ -884,6 +884,6 @@ if (isset($_GET['step'])) {
 ?>
 <br><br>
 <center><font style="color:#6B6B6B;">Построено на <a target="_blank" style="color:#6B6B6B;font-weight:bold;"
-                                                   href="https://ruxe-engine.ru">Ruxe Engine</a></font></center>
+                                                   href="http://ruxe-engine.ru">Ruxe Engine</a></font></center>
 </body>
 </html>
