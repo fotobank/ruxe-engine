@@ -163,6 +163,8 @@ table td > table tr:last-child > td {border-bottom: none;}
 table tr:nth-of-type(2n){background: #efefef;}
 .optionstable {vertical-align: top !important;}
 .titletable td {border: solid 1px #c0c5cf;}
+.optionstable img {max-width: 100%; height: auto;}
+img[src*="smiles"] {width: auto; height: auto;}
 .tr-gradient td, .titleblue td {
     background: #c0c5cf;
 	border: solid 1px #b0b5bf;
