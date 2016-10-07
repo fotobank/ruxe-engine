@@ -543,7 +543,7 @@
                  						<table class="optionstable" border=0 cellpadding=1 cellspacing=0>
                   							<tr class="titletable"><td colspan=2>НОВЫЙ НОВОСТНОЙ РАЗДЕЛ</td></tr>
                   							<tr><td>Идентификатор:<br><font class="desc">Например, <b>news</b></font></td>
-                   								<td><input type="text" maxlength=9 size=46 name="type"></td></tr>
+                   								<td><input type="text" maxlength=40 size=46 name="type"></td></tr>
                   							<tr><td>Описание:<br><font class="desc">Например, <b>Новоcти</b></font></td>
                    									<td><input type="text" maxlength=100 size=46 name="description"></td></tr>
                   								<tr><td>Страница, где указана или будет команда <b>&lt;?php here_news...</b>:</td>
@@ -587,7 +587,7 @@
              							     <tr><td>
              								     <input type="hidden" name="pos" value="'.$_GET['pos'].'">
              								     Идентификатор:<br><font class="desc">Например, <b>news</b></font></td>
-            						       <td><input type="text" maxlength=9 size=46 readonly name="type" value="'.$b[0].'"></td></tr>
+            						       <td><input type="text" maxlength=40 size=46 readonly name="type" value="'.$b[0].'"></td></tr>
             							      <tr><td>Описание:<br><font class="desc">Например, <b>Новоcти</b></font></td>
            										        <td><input type="text" maxlength=100 size=46 name="description" value="'.$b[1].'"></td></tr>
            								       <tr><td>Страница, где указана или будет команда <b>&lt;?php here_news...</b>:</td>

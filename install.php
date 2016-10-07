@@ -16,7 +16,7 @@
  *
  */
 
-$installer_version = "1.9";
+$installer_version = "1.9.1";
 
 include("conf/config.php");
 include("includes/core.php");
