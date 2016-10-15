@@ -5,12 +5,12 @@ class MiniNews
 		global $cms_root;
 		if (!file_exists($cms_root.'/conf/mini-news')) {
 			$nf	=	fopen($cms_root.'/conf/mini-news','w');
-			fwrite($nf,'<?
+			fwrite($nf,'<?php
 				$mininews_count		=	5;
 				$mininews_length	=	150;
 				$mininews_template	=	\'<font style="font-size:8pt;">{DATE}:</font><br>
 <div style="margin: 0px 0px 9px 15px;"><a href="{LINK}">{TITLE}</a></div>\';
-			?>');
+			');
 			fclose($nf);
 			chmod($cms_root.'/conf/mini-news',0777);
 		};

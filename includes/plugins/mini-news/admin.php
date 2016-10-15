@@ -1,11 +1,11 @@
 <?php
 	if (isset($_GET['do'])) {
 		$n	=	fopen($cms_root.'/conf/mini-news','w');
-		fwrite($n,'<?
+		fwrite($n,'<?php
 			$mininews_count		=	'.$_POST['count'].';
 			$mininews_length	=	'.$_POST['length'].';
 			$mininews_template	=	\''.str_replace("'","\\'",$_POST['template']).'\';
-		?>');
+		');
 		fclose($n);
 		
 	};

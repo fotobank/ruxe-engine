@@ -1,8 +1,8 @@
-<?
+<?php
 			$mininews_count		=	5;
 			$mininews_length	=	150;
 			$mininews_template	=	'<div class="mini-news">
 	<a href="{LINK}"><h5>{TITLE}</h5></a>
 	<span class="info">{DATE}, просмотров: {VIEWS}</span>
 </div>';
-		?>
+		
