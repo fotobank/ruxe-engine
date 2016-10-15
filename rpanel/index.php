@@ -214,7 +214,7 @@
       				<a href="?action=modules"><li class="bordered"><i class="fa fa-cubes"><span>Другие модули</span></i></li></a>
       				<a href="?action=style"><li class="bordered"><i class="fa fa-file-code-o"><span>Оформление</span></i></li></a>
       				<a href="?action=manager"><li class="bordered"><i class="fa fa-folder-o"><span>Файловый менеджер</span></i></li></a>
-				    <a href="?action=general"><li class="bordered"><i class="fa fa-gears"><span>Настройки</span></i></a></li>
+				    <a href="?action=general"><li class="bordered"><i class="fa fa-gears"><span>Настройки</span></i></li></a>
       				<a href="?action=system"><li class="bordered"><i class="fa fa-calendar-check-o"><span>Обслуживание</span></i></li></a>';
       	}
       	else
